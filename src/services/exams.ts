@@ -9,84 +9,163 @@ import type { Tables } from '@/types/database'
  *
  * 数据库四层结构（见 src/types/database.ts 的真实外键）：
  * exam_papers.id → exam_sections.paper_id → section_items.section_id → item_options.item_id
+ *
+ * ── Phase 4E：公开 DTO 与数据库类型分离 ────────────────────────────────
+ * 数据库行类型（`Tables<...>`）仍然保留 `correct_option` / `explanation` /
+ * `source_data` 等字段，但**详情页 API 只返回下面的公开 DTO**。
+ * 所有查询一律使用显式列白名单（禁止 `*`），答案永远不会进入浏览器网络层。
  */
 
-/** 一行试卷（exam_papers） */
-export type ExamPaper = Tables<'exam_papers'>
-/** 一行大题（exam_sections） */
-export type ExamSection = Tables<'exam_sections'>
-/** 一行小题（section_items） */
-export type ExamItem = Tables<'section_items'>
-/** 一行选项（item_options，无 is_correct 字段） */
-export type ExamOption = Tables<'item_options'>
+/* ------------------------------------------------------------------ *
+ * Public DTO —— 只包含 UI 真正渲染的字段
+ * ------------------------------------------------------------------ */
+
+/** 一行试卷（exam_papers）的公开字段。 */
+export type ExamPaper = Pick<Tables<'exam_papers'>, 'id' | 'year' | 'title'>
+
+/**
+ * 一行大题（exam_sections）的公开字段。
+ *
+ * ⚠️ 故意排除 `source_data`：它是该题的原始 JSON，内含 `questions` / `blanks`
+ * 与每个小题的 `ans`（正确答案）和 `explain`（解析），实测 153 个大题里有 102 个
+ * 带答案。`created_at` / `updated_at` 与渲染无关，同样不下发。
+ */
+export type ExamSection = Pick<
+  Tables<'exam_sections'>,
+  | 'id'
+  | 'paper_id'
+  | 'source_id'
+  | 'type'
+  | 'title'
+  | 'score'
+  | 'minutes'
+  | 'intro'
+  | 'passage'
+  | 'passage_zh'
+  | 'prompt'
+  | 'tips'
+  | 'extra_data'
+  | 'sort_order'
+>
+
+/**
+ * 一行小题（section_items）的公开字段。
+ *
+ * ⚠️ 故意排除 `correct_option`（正确答案下标，0-based）与 `explanation`（解析），
+ * 以及 `extra_data`：翻译小题的 `extra_data.reference_translation` 就是参考答案。
+ * `section_items.extra_data` 里唯一被 UI 用到的 `chart` 布尔值只是兜底，
+ * 正文数据里 17 个写作大题的 `exam_sections.extra_data.chart` 全部存在，故无需下发。
+ */
+export type ExamItem = Pick<
+  Tables<'section_items'>,
+  'id' | 'item_no' | 'item_type' | 'content'
+>
+
+/** 一行选项（item_options）的公开字段。该表本身没有 is_correct。 */
+export type ExamOption = Pick<
+  Tables<'item_options'>,
+  'id' | 'option_index' | 'content'
+>
 
 /**
  * 小题 + 它的选项。
  *
  * 只有 choice 类小题有选项；翻译 / 写作是 text 类，`options` 为空数组。
- * 正确选项下标保留在 `ExamItem['correct_option']`（0-based，与数据库一致，不做 +1 转换）。
  */
 export type ExamItemWithOptions = ExamItem & { options: ExamOption[] }
 
 /** 大题 + 它的小题 */
 export type ExamSectionWithItems = ExamSection & { items: ExamItemWithOptions[] }
 
-/** 试卷完整详情：paper → sections → items → options */
+/** 试卷完整详情：paper → sections → items → options（全部为公开 DTO） */
 export type ExamPaperDetail = ExamPaper & { sections: ExamSectionWithItems[] }
 
+/* ------------------------------------------------------------------ *
+ * 显式列白名单（禁止 *）
+ * ------------------------------------------------------------------ */
+
+/** 列表：只要年份与标题。 */
+const PAPER_LIST_SELECT = 'id, year, title' as const
+
 /**
- * 一次性取回四层树状数据。
+ * 详情：一次四层关系查询，但每一级都只取公开字段。
  *
- * 关系名来自 database.ts 的真实外键（exam_sections_paper_id_fkey /
- * section_items_section_id_fkey / item_options_item_id_fkey）。
+ * 白名单即契约 —— 新增字段必须显式加进来，避免今后有人用 `*`
+ * 把 `correct_option` / `explanation` / `source_data` 又带回前端。
  */
 const PAPER_DETAIL_SELECT =
-  '*, exam_sections(*, section_items(*, item_options(*)))' as const
+  'id, year, title, exam_sections(id, paper_id, source_id, type, title, score, minutes, intro, passage, passage_zh, prompt, tips, extra_data, sort_order, section_items(id, item_no, item_type, content, item_options(id, option_index, content)))' as const
+
+/* ------------------------------------------------------------------ *
+ * 数据库原始返回行（仅本文件内部使用）
+ * ------------------------------------------------------------------ */
+
+type RawItemRow = ExamItem & { item_options: ExamOption[] }
+type RawSectionRow = ExamSection & { section_items: RawItemRow[] }
+type RawPaperDetailRow = ExamPaper & { exam_sections: RawSectionRow[] }
 
 /**
- * 把数据库返回的嵌套行整理成前端结构，并强制按字段排序。
+ * 把数据库返回的嵌套行整理成前端 DTO：显式逐字段重建 + 强制排序。
  *
- * 服务端已通过 `referencedTable` 排序；这里再做一次确定性排序，
- * 保证「不依赖 PostgreSQL 默认返回顺序」这一契约无论如何都成立。
+ * 逐字段重建（而不是 `...row`）是刻意的第二道防线：即使将来查询白名单被改宽，
+ * 多出来的列也不会自动流进 DTO。排序则是为了不依赖 PostgreSQL 的默认返回顺序。
  */
-function toExamPaperDetail(
-  row: ExamPaper & {
-    exam_sections: (ExamSection & {
-      section_items: (ExamItem & { item_options: ExamOption[] })[]
-    })[]
-  },
-): ExamPaperDetail {
-  const { exam_sections: sections, ...paper } = row
-
+function toExamPaperDetail(row: RawPaperDetailRow): ExamPaperDetail {
   return {
-    ...paper,
-    sections: [...sections]
+    id: row.id,
+    year: row.year,
+    title: row.title,
+    sections: [...row.exam_sections]
       .sort((a, b) => a.sort_order - b.sort_order)
-      .map(({ section_items: items, ...section }) => ({
-        ...section,
-        items: [...items]
+      .map((section) => ({
+        id: section.id,
+        paper_id: section.paper_id,
+        source_id: section.source_id,
+        type: section.type,
+        title: section.title,
+        score: section.score,
+        minutes: section.minutes,
+        intro: section.intro,
+        passage: section.passage,
+        passage_zh: section.passage_zh,
+        prompt: section.prompt,
+        tips: section.tips,
+        extra_data: section.extra_data,
+        sort_order: section.sort_order,
+        items: [...section.section_items]
           .sort((a, b) => a.item_no - b.item_no)
-          .map(({ item_options: options, ...item }) => ({
-            ...item,
-            options: [...options].sort(
-              (a, b) => a.option_index - b.option_index,
-            ),
+          .map((item) => ({
+            id: item.id,
+            item_no: item.item_no,
+            item_type: item.item_type,
+            content: item.content,
+            options: [...item.item_options]
+              .sort((a, b) => a.option_index - b.option_index)
+              .map((option) => ({
+                id: option.id,
+                option_index: option.option_index,
+                content: option.content,
+              })),
           })),
       })),
   }
 }
 
+/* ------------------------------------------------------------------ *
+ * 读取 API
+ * ------------------------------------------------------------------ */
+
 /**
  * 当前版本试卷列表。
  *
- * 过滤 is_current = true，按 year 倒序。
+ * 过滤 is_current = true，按 year 倒序。只返回 id / year / title。
  */
 export async function getCurrentExamPapers(): Promise<ExamPaper[]> {
   const supabase = getSupabaseClient()
 
   const { data, error } = await supabase
     .from('exam_papers')
-    .select('*')
+    .select(PAPER_LIST_SELECT)
     .eq('is_current', true)
     .order('year', { ascending: false })
 
@@ -102,6 +181,8 @@ export async function getCurrentExamPapers(): Promise<ExamPaper[]> {
  *
  * 排序契约：sections 按 sort_order、items 按 item_no、options 按 option_index，全部升序。
  * 试卷不存在时返回 null（与数据库错误区分：后者直接抛错）。
+ *
+ * 返回的 `ExamPaperDetail` 不含任何答案字段 —— 答案从未离开数据库。
  */
 export async function getExamPaperById(
   paperId: string,

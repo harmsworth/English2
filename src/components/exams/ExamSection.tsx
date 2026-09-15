@@ -81,10 +81,11 @@ export function ExamSection({
 
   const titlePool = readStringArray(section.extra_data, 'titles')
   const chartUrl = readString(section.extra_data, 'chart_url')
-  const chartFlag =
-    readBoolean(section.extra_data, 'chart') ??
-    readBoolean(textItems[0]?.extra_data, 'chart') ??
-    false
+  // 图表标记只在 section 级 extra_data 读取。
+  // 小题级 extra_data 自 Phase 4E 起不再下发（其中翻译题含参考答案
+  // reference_translation），原先的兜底读取随之移除；正文数据里 17 个写作
+  // 大题的 section.extra_data.chart 全部存在，行为不变。
+  const chartFlag = readBoolean(section.extra_data, 'chart') ?? false
   const sample = readString(section.extra_data, 'sample')
 
   return (
