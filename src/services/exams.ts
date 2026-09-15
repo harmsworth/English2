@@ -92,30 +92,57 @@ const PAPER_LIST_SELECT = 'id, year, title' as const
  *
  * 白名单即契约 —— 新增字段必须显式加进来，避免今后有人用 `*`
  * 把 `correct_option` / `explanation` / `source_data` 又带回前端。
+ *
+ * ── Phase 4F-1：翻译题的 `passage_zh` 不再下发 ──────────────────────────────
+ * `exam_sections` 在同一次查询里被**嵌入两次**（同一关系重复嵌入必须带别名）：
+ *
+ * - `all`：完整的公开 section + `section_items` + `item_options`。**故意不含
+ *   `passage_zh`**。
+ * - `zh` ：只投影 `id, passage_zh`，并用 `zh.type=neq.翻译` 把翻译题挡在外面。
+ *
+ * 为什么这么做：`passage_zh` 对翻译题而言就是参考答案，但它是普通的行内列，
+ * 而 PostgREST 不支持在 `select` 里按行条件取舍（`coalesce` / `nullif` 之类
+ * 函数会被 PGRST100 拒绝）。于是把「要不要下发 `passage_zh`」交给一个**只投影
+ * 该列**的别名层承担：翻译题不在 `zh` 层里 → 它的中文参考译文根本不会出现在
+ * 响应体中。客户端再按 `id` 把 `zh` 合并回 `all`（见 `toExamPaperDetail`）。
+ *
+ * ⚠️ `order` 的 `referencedTable` 必须改用别名前缀（`all` / `all.section_items`
+ * / `all.section_items.item_options`）：继续用真实表名会得到
+ * `400 'section_items' is not an embedded resource in this request`。
  */
 const PAPER_DETAIL_SELECT =
-  'id, year, title, exam_sections(id, paper_id, source_id, type, title, score, minutes, intro, passage, passage_zh, prompt, tips, extra_data, sort_order, section_items(id, item_no, item_type, content, item_options(id, option_index, content)))' as const
+  'id, year, title, all:exam_sections(id, paper_id, source_id, type, title, score, minutes, intro, passage, prompt, tips, extra_data, sort_order, section_items(id, item_no, item_type, content, item_options(id, option_index, content))), zh:exam_sections(id, passage_zh)' as const
 
 /* ------------------------------------------------------------------ *
  * 数据库原始返回行（仅本文件内部使用）
  * ------------------------------------------------------------------ */
 
 type RawItemRow = ExamItem & { item_options: ExamOption[] }
-type RawSectionRow = ExamSection & { section_items: RawItemRow[] }
-type RawPaperDetailRow = ExamPaper & { exam_sections: RawSectionRow[] }
+/** `all` 层：完整公开 section（不含 `passage_zh`）。 */
+type RawSectionRow = Omit<ExamSection, 'passage_zh'> & {
+  section_items: RawItemRow[]
+}
+/** `zh` 层：只为非翻译题提供 `passage_zh`。 */
+type RawZhRow = Pick<Tables<'exam_sections'>, 'id' | 'passage_zh'>
+type RawPaperDetailRow = ExamPaper & { all: RawSectionRow[]; zh: RawZhRow[] }
 
 /**
  * 把数据库返回的嵌套行整理成前端 DTO：显式逐字段重建 + 强制排序。
  *
  * 逐字段重建（而不是 `...row`）是刻意的第二道防线：即使将来查询白名单被改宽，
  * 多出来的列也不会自动流进 DTO。排序则是为了不依赖 PostgreSQL 的默认返回顺序。
+ *
+ * Phase 4F-1：`passage_zh` 只从 `zh` 别名层取。翻译题不在 `zh` 层 → 合并结果
+ * 为 `undefined` → 归一为 `null`，翻译题的参考译文永远不会进入 DTO。
  */
 function toExamPaperDetail(row: RawPaperDetailRow): ExamPaperDetail {
+  const zhById = new Map(row.zh.map((entry) => [entry.id, entry.passage_zh]))
+
   return {
     id: row.id,
     year: row.year,
     title: row.title,
-    sections: [...row.exam_sections]
+    sections: [...row.all]
       .sort((a, b) => a.sort_order - b.sort_order)
       .map((section) => ({
         id: section.id,
@@ -127,7 +154,8 @@ function toExamPaperDetail(row: RawPaperDetailRow): ExamPaperDetail {
         minutes: section.minutes,
         intro: section.intro,
         passage: section.passage,
-        passage_zh: section.passage_zh,
+        // 非翻译题从 zh 层取回 passage_zh；翻译题不在 zh 层，得到 null。
+        passage_zh: zhById.get(section.id) ?? null,
         prompt: section.prompt,
         tips: section.tips,
         extra_data: section.extra_data,
@@ -183,6 +211,8 @@ export async function getCurrentExamPapers(): Promise<ExamPaper[]> {
  * 试卷不存在时返回 null（与数据库错误区分：后者直接抛错）。
  *
  * 返回的 `ExamPaperDetail` 不含任何答案字段 —— 答案从未离开数据库。
+ * 翻译题的 `passage_zh`（即参考译文）同样不会下发：它被 `zh` 别名层的
+ * `zh.type=neq.翻译` 过滤挡在响应体之外，合并后为 `null`（Phase 4F-1）。
  */
 export async function getExamPaperById(
   paperId: string,
@@ -193,13 +223,17 @@ export async function getExamPaperById(
     .from('exam_papers')
     .select(PAPER_DETAIL_SELECT)
     .eq('id', paperId)
-    .order('sort_order', { referencedTable: 'exam_sections', ascending: true })
+    // 只让 `zh` 别名层携带非翻译题的 `passage_zh`：翻译题被这一行过滤掉，
+    // 它的中文参考译文因此不会出现在响应体中（见 PAPER_DETAIL_SELECT 注释）。
+    .neq('zh.type', '翻译')
+    // order 的 referencedTable 必须用别名前缀 —— 用真实表名会 400。
+    .order('sort_order', { referencedTable: 'all', ascending: true })
     .order('item_no', {
-      referencedTable: 'exam_sections.section_items',
+      referencedTable: 'all.section_items',
       ascending: true,
     })
     .order('option_index', {
-      referencedTable: 'exam_sections.section_items.item_options',
+      referencedTable: 'all.section_items.item_options',
       ascending: true,
     })
     .maybeSingle()

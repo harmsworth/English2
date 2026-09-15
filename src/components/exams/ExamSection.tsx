@@ -17,15 +17,23 @@ function normalize(value: string | null | undefined): string {
 }
 
 /**
- * 这些题型的 `passage_zh` 与参考答案同源（翻译题的 passage_zh
- * 就等于小题的 `reference_translation`），整段隐藏，不能折叠展示。
+ * 判断一个 section 是否为「翻译」大题。
+ *
+ * 机器契约是 `source_id`（形如 `zy-2026-trans`），而不是中文展示名 `type`：
+ * 展示名可能随文案调整而漂移，`source_id` 才是稳定的题型标识。
+ *
+ * 翻译题的 `passage_zh` 与参考答案同源（等于小题的 `reference_translation`），
+ * 必须整段隐藏、不能折叠展示。自 Phase 4F-1 起服务层已不再下发翻译题的
+ * `passage_zh`，本判断是第二道防线。
  */
-const ZH_IS_ANSWER_TYPES = new Set(['翻译'])
+function isTranslationSection(sourceId: string): boolean {
+  return sourceId.endsWith('-trans')
+}
 
 /** 主观题题面的小标题，按题型给出更有信息量的说明。 */
-function textItemLabel(sectionType: string): string {
-  if (sectionType === '翻译') return '英文原文（请译成中文）'
-  if (sectionType === '写作') return '题目要求'
+function textItemLabel(section: ExamSectionWithItems): string {
+  if (isTranslationSection(section.source_id)) return '英文原文（请译成中文）'
+  if (section.type === '写作') return '题目要求'
   return '题目'
 }
 
@@ -71,8 +79,9 @@ export function ExamSection({
   const showPassage = Boolean(passage) && !textContents.has(normalize(passage))
   const showPrompt = Boolean(prompt) && !textContents.has(normalize(prompt))
 
-  // 翻译题的 passage_zh 就是参考答案，必须整段隐藏
-  const zhReference = ZH_IS_ANSWER_TYPES.has(section.type)
+  // 翻译题的 passage_zh 就是参考答案，必须整段隐藏。
+  // 服务层（Phase 4F-1）已不再下发翻译题的 passage_zh，此处按 source_id 兜底。
+  const zhReference = isTranslationSection(section.source_id)
     ? null
     : section.passage_zh
 
@@ -119,7 +128,7 @@ export function ExamSection({
           <TextQuestion
             key={item.id}
             item={item}
-            label={textItemLabel(section.type)}
+            label={textItemLabel(section)}
           />
         ))}
 
