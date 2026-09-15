@@ -37,3 +37,6 @@ lerna-debug.log*
 
 # 注意：不要忽略 data/
 # data/exams/*.json 是 GitHub 源题库，是本项目唯一的内容来源。
+
+# Supabase CLI 临时状态（gen types 等命令会产生，属于本地状态，不提交）
+supabase/.temp/

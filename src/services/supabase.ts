@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import type { SupabaseClient } from '@supabase/supabase-js'
+import type { Database } from '@/types/database'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabasePublishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
@@ -9,7 +10,7 @@ export const isSupabaseConfigured: boolean = Boolean(
   supabaseUrl && supabasePublishableKey,
 )
 
-let cachedClient: SupabaseClient | null = null
+let cachedClient: SupabaseClient<Database> | null = null
 
 /**
  * 获取 Supabase 客户端（懒加载单例）。
@@ -17,7 +18,7 @@ let cachedClient: SupabaseClient | null = null
  * 只允许使用 publishable key，service role / 数据库密码 / GitHub Token
  * 一律不允许进入前端。
  */
-export function getSupabaseClient(): SupabaseClient {
+export function getSupabaseClient(): SupabaseClient<Database> {
   if (cachedClient) {
     return cachedClient
   }
@@ -28,6 +29,6 @@ export function getSupabaseClient(): SupabaseClient {
     )
   }
 
-  cachedClient = createClient(supabaseUrl, supabasePublishableKey)
+  cachedClient = createClient<Database>(supabaseUrl, supabasePublishableKey)
   return cachedClient
 }
