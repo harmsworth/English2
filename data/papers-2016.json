@@ -1,0 +1,548 @@
+[
+ {
+  "id": "zy-2016-cloze",
+  "type": "完形填空",
+  "title": "2016年真题 · 完形填空",
+  "score": 20,
+  "minutes": 15,
+  "passage": "Happy people work differently. They're more productive, more creative, and willing to take greater risks. And new research suggests that happiness might influence (1) firms work, too. Companies located in places with happier people invest more, according to a recent research paper. (2) , firms in happy places spend more on R&D (research and development). That's because happiness is linked to the kind of longer-term thinking (3) for making investments for the future. The researchers wanted to know if the (4) and inclination for risk-taking that come with happiness would (5) the way companies invested. So they compared U.S. cities' average happiness (6) by Gallup polling with the investment activity of publicly traded firms in those areas. (7) enough, firms' investment and R&D intensity were correlated with the happiness of the area in which they were (8) . But is it really happiness that's linked to investment, or could something else about happier cities (9) why firms there spend more on R&D? To find out, the researchers controlled for various (10) that might make firms more likely to invest – like size, industry, and sales – and for indicators that a place was (11) to live in, like growth in wages or population. The link between happiness and investment generally (12) even after accounting for these things. The correlation between happiness and investment was particularly strong for younger firms, which the authors (13) to \"less codified decision making process\" and the possible presence of \"younger and less (14) managers who are more likely to be influenced by sentiment.\" The relationship was (15) stronger in places where happiness was spread more (16) . Firms seem to invest more in places where most people are relatively happy, rather than in places with happiness inequality. (17) this doesn't prove that happiness causes firms to invest more or to take a longer-term view, the authors believe it at least (18) at that possibility. It's not hard to imagine that local culture and sentiment would help (19) how executives think about the future. \"It surely seems plausible that happy people would be more forward-thinking and creative and (20) R&D more than the average,\" said one researcher.",
+  "blanks": [
+   {
+    "opts": [
+     "why",
+     "how",
+     "where",
+     "when"
+    ],
+    "ans": 1,
+    "explain": "答案B（语法形态）。线索：上句铺垫“工作方式不同”"
+   },
+   {
+    "opts": [
+     "In return",
+     "In particular",
+     "In contrast",
+     "In conclusion"
+    ],
+    "ans": 1,
+    "explain": "答案B（逻辑关系）。线索：下句是上句的子集化具体"
+   },
+   {
+    "opts": [
+     "necessary",
+     "famous",
+     "perfect",
+     "sufficient"
+    ],
+    "ans": 0,
+    "explain": "答案A（词义辨析）。线索：本句内的因果链"
+   },
+   {
+    "opts": [
+     "individualism",
+     "realism",
+     "optimism",
+     "modernism"
+    ],
+    "ans": 2,
+    "explain": "答案C（词义辨析）。线索：全文反复出现的“快乐→冒险/前瞻”"
+   },
+   {
+    "opts": [
+     "miss",
+     "echo",
+     "spoil",
+     "change"
+    ],
+    "ans": 3,
+    "explain": "答案D（词义辨析）。线索：整段研究设问"
+   },
+   {
+    "opts": [
+     "imagined",
+     "measured",
+     "assumed",
+     "invented"
+    ],
+    "ans": 1,
+    "explain": "答案B（词义辨析）。线索：Gallup polling 是测量工具"
+   },
+   {
+    "opts": [
+     "Sure",
+     "Odd",
+     "Unfortunate",
+     "Often"
+    ],
+    "ans": 0,
+    "explain": "答案A（固定搭配）。线索：前后预期 vs 结果一致"
+   },
+   {
+    "opts": [
+     "divided",
+     "advertised",
+     "overtaxed",
+     "headquartered"
+    ],
+    "ans": 3,
+    "explain": "答案D（词义辨析）。线索：前文已反复表述选址"
+   },
+   {
+    "opts": [
+     "summarize",
+     "overstate",
+     "explain",
+     "emphasize"
+    ],
+    "ans": 2,
+    "explain": "答案C（词义辨析）。线索：研究在排查替代解释"
+   },
+   {
+    "opts": [
+     "factors",
+     "stages",
+     "levels",
+     "methods"
+    ],
+    "ans": 0,
+    "explain": "答案A（词义辨析）。线索：举例 like size, industry, and sales"
+   },
+   {
+    "opts": [
+     "desirable",
+     "sociable",
+     "reliable",
+     "reputable"
+    ],
+    "ans": 0,
+    "explain": "答案A（词义辨析）。线索：并列举例 growth in wages or population"
+   },
+   {
+    "opts": [
+     "resumed",
+     "emerged",
+     "held",
+     "broke"
+    ],
+    "ans": 2,
+    "explain": "答案C（词义辨析）。线索：控制变量后结论仍成立"
+   },
+   {
+    "opts": [
+     "assign",
+     "attribute",
+     "transfer",
+     "compare"
+    ],
+    "ans": 1,
+    "explain": "答案B（固定搭配）。线索：Y 是给“为何更强”的解释"
+   },
+   {
+    "opts": [
+     "serious",
+     "civilized",
+     "ambitious",
+     "experienced"
+    ],
+    "ans": 3,
+    "explain": "答案D（词义辨析）。线索：并列 younger + less X 同轴"
+   },
+   {
+    "opts": [
+     "instead",
+     "thus",
+     "also",
+     "never"
+    ],
+    "ans": 2,
+    "explain": "答案C（逻辑关系）。线索：上一句先讲一种条件下更强"
+   },
+   {
+    "opts": [
+     "rapidly",
+     "directly",
+     "regularly",
+     "equally"
+    ],
+    "ans": 3,
+    "explain": "答案D（词义辨析）。线索：后句 happiness inequality 反推 equally"
+   },
+   {
+    "opts": [
+     "While",
+     "Until",
+     "After",
+     "Since"
+    ],
+    "ans": 0,
+    "explain": "答案A（逻辑关系）。线索：从句否定结论+主句给出弱主张"
+   },
+   {
+    "opts": [
+     "arrives",
+     "jumps",
+     "hints",
+     "strikes"
+    ],
+    "ans": 2,
+    "explain": "答案C（固定搭配）。线索：前句 doesn't prove + 主句 at least"
+   },
+   {
+    "opts": [
+     "share",
+     "rediscover",
+     "simplify",
+     "shape"
+    ],
+    "ans": 3,
+    "explain": "答案D（词义辨析）。线索：全文主旨 influence/change/help shape"
+   },
+   {
+    "opts": [
+     "pray for",
+     "lean towards",
+     "send out",
+     "give away"
+    ],
+    "ans": 1,
+    "explain": "答案B（固定搭配）。线索：全文一以贯之的“快乐者更愿投 R&D”"
+   }
+  ]
+ },
+ {
+  "id": "zy-2016-read-1",
+  "type": "阅读理解",
+  "title": "2016年真题 · Text 1",
+  "score": 10,
+  "minutes": 8,
+  "passage": "It's true that high-school coding classes aren't essential for learning computer science in college. Students without experience can catch up after a few introductory courses, said Tom Cortina, the assistant dean at Carnegie Mellon's School of Computer Science.\n\nHowever, Cortina said, early exposure is beneficial. When younger kids learn computer science, they learn that it's not just a confusing, endless string of letters and numbers – but a tool to build apps, or create artwork, or test hypotheses. It's not as hard for them to transform their thought processes as it is for older students. Breaking down problems into bite-sized chunks and using code to solve them becomes normal. Giving more children this training could increase the number of people interested in the field and help fill the jobs gap, Cortina said.\n\nStudents also benefit from learning something about coding before they get to college, where introductory computer-science classes are packed to the brim, which can drive the less-experienced or less-determined students away.\n\nThe Flatiron School, where people pay to learn programming, started as one of the many coding bootcamps that have become popular for adults looking for a career change. The high-schoolers get the same curriculum, but \"we try to gear lessons toward things they're interested in,\" said Victoria Friedman, an instructor. For instance, one of the apps the students are developing suggests movies based on your mood.\n\nThe students in the Flatiron class probably won't drop out of high school and build the next Facebook. Programming languages have a quick turnover, so the \"Ruby on Rails\" language they learned may not even be relevant by the time they enter the job market. But the skills they learn – how to think logically through a problem and organize the results – apply to any coding language, said Deborah Seehorn, an education consultant for the state of North Carolina.\n\nIndeed, the Flatiron students might not go into IT at all. But creating a future army of coders is not the sole purpose of the classes. These kids are going to be surrounded by computers – in their pockets, in their offices, in their homes – for the rest of their lives. The younger they learn how computers think, how to coax the machine into producing what they want – the earlier they learn that they have the power to do that – the better.",
+  "passage_zh": "诚然,高中编程课程对于在大学学习计算机科学并非必不可少。卡内基梅隆大学计算机科学学院的副院长Tom Cortina表示,没有经验的学生在学习几门入门课程后就能赶上进度。\n\n然而,Cortina说,早期接触是有益的。当年幼的孩子学习计算机科学时,他们会了解到这不仅仅是令人困惑的、无穷无尽的字母和数字串,而是构建应用程序、创作艺术作品或检验假设的工具。对他们来说,转变思维过程并不像对年龄较大的学生那样困难。将问题分解成小块并使用代码解决它们成为常态。Cortina说,让更多儿童接受这种训练可以增加对该领域感兴趣的人数,并有助于填补就业缺口。\n\n学生在上大学之前学习一些编程知识也会受益,因为大学的计算机科学入门课程人满为患,这可能会让经验较少或决心不够坚定的学生望而却步。\n\nFlatiron School是一所人们付费学习编程的学校,最初是众多编程训练营之一,这些训练营在寻求职业转变的成年人中变得流行起来。高中生接受同样的课程,但教师Victoria Friedman说,\"我们试图让课程面向他们感兴趣的事物\"。例如,学生正在开发的一个应用程序根据你的心情推荐电影。\n\nFlatiron班级的学生可能不会从高中辍学去创建下一个Facebook。编程语言更新换代很快,因此他们学习的Ruby on Rails语言到他们进入就业市场时甚至可能已经不再相关。但北卡罗来纳州教育顾问Deborah Seehorn说,他们学到的技能——如何从逻辑上思考问题并组织结果——适用于任何编程语言。\n\n事实上,Flatiron的学生可能根本不会进入IT行业。但培养未来的程序员大军并非这些课程的唯一目的。这些孩子在他们余生中都将被计算机包围——在他们的口袋里、办公室里、家里。他们越早学会计算机如何思考,如何哄骗机器产出他们想要的东西——越早学会他们有能力做到这一点——就越好。",
+  "questions": [
+   {
+    "q": "Cortina holds that early exposure to computer science makes it easier to____.",
+    "opts": [
+     "complete future job training",
+     "remodel the way of thinking",
+     "formulate logical hypotheses",
+     "perfect artwork production"
+    ],
+    "ans": 1,
+    "explain": "答案B（细节题）。定位：当年幼的孩子学习计算机科学时，他们会明白它不只是令人困惑的、没完没了的字母与数字串——而是用来开发应用、创作艺术作品或检验假设的工具。对他们来说，改变思维方式不像对年纪大些的学生那样困难。"
+   },
+   {
+    "q": "In delivering lessons for high-schoolers, Flatiron has considered their____.",
+    "opts": [
+     "experience",
+     "interest",
+     "career prospects",
+     "academic backgrounds"
+    ],
+    "ans": 1,
+    "explain": "答案B（细节题）。定位：高中生上的是同样的课程，但教师 Victoria Friedman 说：\"我们会努力把课程内容朝向他们感兴趣的方向去调整。\""
+   },
+   {
+    "q": "Deborah Seehorn believes that the skills learned at Flatiron will____.",
+    "opts": [
+     "help students learn other computer languages",
+     "have to be upgraded when new technologies come",
+     "need improving when students look for jobs",
+     "enable students to make big quick money"
+    ],
+    "ans": 0,
+    "explain": "答案A（细节题）。定位：但 Deborah Seehorn——北卡罗来纳州的一位教育顾问——说，他们学到的技能，即如何对一个问题进行逻辑思考并组织结果，适用于任何编程语言。"
+   },
+   {
+    "q": "According to the last paragraph, Flatiron students are expected to____.",
+    "opts": [
+     "bring forth innovative computer technologies",
+     "stay longer in the information technology industry",
+     "become better prepared for the digitalized world",
+     "compete with a future army of programmers"
+    ],
+    "ans": 2,
+    "explain": "答案C（细节题）。定位：这些孩子在余生中将被电脑包围——口袋里、办公室里、家里都是电脑。他们越早学会电脑如何思考、如何让机器做出自己想要的东西，越早明白自己有这种能力，就越好。"
+   },
+   {
+    "q": "The word \"coax\" (Line 4, Para. 6) is closest in meaning to____.",
+    "opts": [
+     "persuade",
+     "frighten",
+     "misguide",
+     "challenge"
+    ],
+    "ans": 0,
+    "explain": "答案A（词义句意题）。定位：他们越早学会电脑如何思考、如何\"哄\"机器做出自己想要的东西——越早明白自己有这种能力——就越好。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2016-read-2",
+  "type": "阅读理解",
+  "title": "2016年真题 · Text 2",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Biologists estimate that as many as 2 million lesser prairie chickens – a kind of bird living on stretching grasslands – once lent red to the often grey landscape of the midwestern and southwestern United States. But just some 22,000 birds remain today, occupying about 16% of the species' historic range.\n\nThe crash was a major reason the U.S. Fish and Wildlife Service (USFWS) decided to formally list the bird as threatened. \"The lesser prairie chicken is in a desperate situation,\" said USFWS Director Daniel Ashe. Some environmentalists, however, were disappointed. They had pushed the agency to designate the bird as \"endangered,\" a status that gives federal officials greater regulatory power to crack down on threats. But Ashe and others argued that the \"threatened\" tag gave the federal government flexibility to try out new, potentially less confrontational conservation approaches. In particular, they called for forging closer collaborations with western state governments, which are often uneasy with federal action, and with the private landowners who control an estimated 95% of the prairie chicken's habitat.\n\nUnder the plan, for example, the agency said it would not prosecute landowners or businesses that unintentionally kill, harm, or disturb the bird, as long as they had signed a range-wide management plan to restore prairie chicken habitat. Negotiated by USFWS and the states, the plan requires individuals and businesses that damage habitat as part of their operations to pay into a fund to replace every acre destroyed with 2 new acres of suitable habitat. The fund will also be used to compensate landowners who set aside habitat. USFWS also set an interim goal of restoring prairie chicken populations to an annual average of 67,000 birds over the next 10 years. And it gives the Western Association of Fish and Wildlife Agencies (WAFWA), a coalition of state agencies, the job of monitoring progress. Overall, the idea is to let \"states remain in the driver's seat for managing the species,\" Ashe said.\n\nNot everyone buys the win-win rhetoric. Some Congress members are trying to block the plan, and at least a dozen industry groups, four states, and three environmental groups are challenging it in federal court. Not surprisingly, industry groups and states generally argue it goes too far; environmentalists say it doesn't go far enough. \"The federal government is giving responsibility for managing the bird to the same industries that are pushing it to extinction,\" says biologist Jay Lininger.",
+  "passage_zh": "生物学家估计，曾有多达200万只小草原松鸡——一种生活在广袤草原上的鸟类——为美国中西部和西南部常常灰暗的景观增添了红色。但如今仅剩约22000只鸟，占据该物种历史分布范围的约16%。\n\n数量骤减是美国鱼类及野生动物管理局(USFWS)决定正式将该鸟列为受威胁物种的主要原因。USFWS局长Daniel Ashe说：\"小草原松鸡正处于绝望的境地。\"然而,一些环保人士感到失望。他们曾敦促该机构将这种鸟指定为\"濒危\"物种,这一地位赋予联邦官员更大的监管权力来打击威胁。但Ashe和其他人辩称,\"受威胁\"标签赋予联邦政府灵活性,可以尝试新的、潜在冲突较少的保护方法。特别是,他们呼吁与西部各州政府建立更紧密的合作关系,这些州政府往往对联邦行动感到不安,并与控制着估计95%的草原松鸡栖息地的私人土地所有者合作。\n\n例如,根据该计划,该机构表示不会起诉无意中杀死、伤害或干扰该鸟的土地所有者或企业,只要他们签署了恢复草原松鸡栖息地的全面管理计划。该计划由USFWS和各州协商制定,要求在其运营过程中破坏栖息地的个人和企业向一个基金支付费用,用每2英亩合适的栖息地替换被破坏的每1英亩。该基金还将用于补偿那些预留栖息地的土地所有者。USFWS还设定了一个中期目标,即在未来10年内将草原松鸡种群恢复到年平均67000只。它还将监测进展的工作交给西部鱼类和野生动物机构协会(WAFWA),这是一个州级机构联盟。总体而言,其理念是让\"各州在管理该物种方面保持主导地位\",Ashe说。\n\n并非所有人都认同这种双赢的说辞。一些国会议员正试图阻止该计划,至少有十几个行业团体、四个州和三个环保组织正在联邦法院对其提出质疑。不出所料,行业团体和各州普遍认为该计划走得太远;环保人士则说它做得还不够。生物学家Jay Lininger说:\"联邦政府正将管理这种鸟的责任交给那些正在将它推向灭绝的行业。",
+  "questions": [
+   {
+    "q": "The major reason for listing the lesser prairie chicken as threatened is____.",
+    "opts": [
+     "its drastically decreased population",
+     "the underestimate of the grassland acreage",
+     "a desperate appeal from some biologists",
+     "the insistence of private landowners"
+    ],
+    "ans": 0,
+    "explain": "答案A（细节题）。定位：生物学家估计曾有多达 200 万只小草原松鸡为美国中西部和西南部常为灰色的景观增添了一抹红色。但今天只剩约 22,000 只，分布范围只占该物种历史栖息地的 16%。这一种群崩溃是美国鱼类与野生动植物管理局（USFWS）正式将其列为 threatened 的主要原因。"
+   },
+   {
+    "q": "The \"threatened\" tag disappointed some environmentalists in that it____.",
+    "opts": [
+     "was a give-in to governmental pressure",
+     "would involve fewer agencies in action",
+     "granted less federal regulatory power",
+     "went against conservation policies"
+    ],
+    "ans": 2,
+    "explain": "答案C（细节题）。定位：然而，一些环保主义者感到失望。他们曾推动该机构把这鸟定为 \"endangered\"（濒危）——这一身份赋予联邦官员更大的监管权力以打击威胁。"
+   },
+   {
+    "q": "It can be learned from Paragraph 3 that unintentional harm-doers will not be prosecuted if they____.",
+    "opts": [
+     "agree to pay a sum for compensation",
+     "volunteer to set up an equally big habitat",
+     "offer to support the WAFWA monitoring job",
+     "promise to raise funds for USFWS operations"
+    ],
+    "ans": 0,
+    "explain": "答案A（细节题）。定位：比如根据该计划，机构表示，只要无意杀伤、骚扰该鸟的地主或企业签署了一份全域管理方案以恢复松鸡栖息地，就不会被追诉。这份由 USFWS 与各州协商制定的方案要求，因经营活动破坏栖息地的个人和企业向一项基金交款，按 \"毁一英亩补两英亩适宜栖息地\" 的标准赔付。"
+   },
+   {
+    "q": "According to Ashe, the leading role in managing the species is____.",
+    "opts": [
+     "the federal government",
+     "the wildlife agencies",
+     "the landowners",
+     "the states"
+    ],
+    "ans": 3,
+    "explain": "答案D（细节题）。定位：Ashe 表示，总体思路是让 \"各州继续坐在管理这一物种的驾驶位上\"。"
+   },
+   {
+    "q": "Jay Lininger would most likely support____.",
+    "opts": [
+     "industry groups",
+     "the win-win rhetoric",
+     "environmental groups",
+     "the plan under challenge"
+    ],
+    "ans": 2,
+    "explain": "答案C（推断题）。定位：并非所有人都买账这套 \"双赢\" 说辞。一些国会议员正试图阻止该方案；至少十几个行业团体、四个州、三个环保团体已在联邦法院提起诉讼。不出所料，行业团体和各州普遍认为方案过头，而环保人士则认为远远不够。生物学家 Jay Lininger 说：\"联邦政府正把管理这鸟的责任，交给那些正在把它推向灭绝的同一批行业。\""
+   }
+  ]
+ },
+ {
+  "id": "zy-2016-read-3",
+  "type": "阅读理解",
+  "title": "2016年真题 · Text 3",
+  "score": 10,
+  "minutes": 8,
+  "passage": "That everyone's too busy these days is a cliché. But one specific complaint is made especially mournfully: There's never any time to read.\n\nWhat makes the problem thornier is that the usual time-management techniques don't seem sufficient. The web's full of articles offering tips on making time to read: \"Give up TV\" or \"Carry a book with you at all times.\" But in my experience, using such methods to free up the odd 30 minutes doesn't work. Sit down to read and the flywheel of work-related thoughts keeps spinning – or else you're so exhausted that a challenging book's the last thing you need. The modern mind, Tim Parks, a novelist and critic, writes, \"is overwhelmingly inclined toward communication… It is not simply that one is interrupted; it is that one is actually inclined to interruption.\" Deep reading requires not just time, but a special kind of time which can't be obtained merely by becoming more efficient.\n\nIn fact, \"becoming more efficient\" is part of the problem. Thinking of time as a resource to be maximised means you approach it instrumentally, judging any given moment as well spent only in so far as it advances progress toward some goal. Immersive reading, by contrast, depends on being willing to risk inefficiency, goallessness, even time-wasting. Try to slot it in as a to-do list item and you'll manage only goal-focused reading – useful, sometimes, but not the most fulfilling kind. \"The future comes at us like empty bottles along an unstoppable and nearly infinite conveyor belt,\" writes Gary Eberle in his book Sacred Time, and \"we feel a pressure to fill these different-sized bottles (days, hours, minutes) as they pass, for if they get by without being filled, we will have wasted them.\" No mind-set could be worse for losing yourself in a book.\n\nSo what does work? Perhaps surprisingly, scheduling regular times for reading. You'd think this might fuel the efficiency mind-set, but in fact, Eberle notes, such ritualistic behaviour helps us \"step outside time's flow\" into \"soul time.\" You could limit distractions by reading only physical books, or on single-purpose e-readers. \"Carry a book with you at all times\" can actually work, too – providing you dip in often enough, so that reading becomes the default state from which you temporarily surface to take care of business, before dropping back down. On a really good day, it no longer feels as if you're \"making time to read,\" but just reading, and making time for everything else.",
+  "passage_zh": "如今每个人都太忙了,这已是陈词滥调。但有一种抱怨尤其令人哀伤:永远没有时间阅读。\n\n让这个问题更棘手的是,通常的时间管理技巧似乎并不够用。网上充斥着提供腾出时间阅读建议的文章:\"放弃看电视\"或\"随时随地带本书\"。但根据我的经验,用这些方法来挤出零星的30分钟并不奏效。坐下来阅读时,与工作相关的思绪飞轮依然转个不停——要么就是你疲惫不堪,一本有挑战性的书是你最不需要的东西。小说家兼评论家Tim Parks写道,现代人的思维\"压倒性地倾向于交流……问题不仅仅在于一个人被打断;而在于一个人实际上倾向于被打断\"。深度阅读不仅需要时间,还需要一种特殊的时间,这种时间无法仅仅通过提高效率来获得。\n\n事实上,\"提高效率\"本身就是问题的一部分。把时间视为需要最大化利用的资源,意味着你会工具性地对待它,仅仅根据某个时刻是否推进了某个目标的进展来判断它是否被妥善利用。相比之下,沉浸式阅读依赖于愿意冒无效率、无目标甚至浪费时间的风险。试图把它作为待办事项清单中的一项塞进去,你只能做到目标导向的阅读——有时有用,但不是最令人满足的那种。Gary Eberle在其著作《神圣时间》中写道:\"未来像空瓶子一样沿着一条无法停止且几乎无限的传送带向我们涌来\",\"我们感到一种压力,要在这些不同大小的瓶子(天、小时、分钟)经过时填满它们,因为如果它们没被填满就过去了,我们就浪费了它们\"。没有哪种心态比这更不利于让自己沉浸在一本书中。\n\n那么什么方法有效呢?或许令人惊讶的是,安排固定的阅读时间。你可能会认为这会助长效率心态,但事实上,Eberle指出,这种仪式化行为帮助我们\"走出时间的流动\"进入\"灵魂时间\"。你可以通过只阅读纸质书或专用电子阅读器来减少干扰。\"随时随地带本书\"实际上也能奏效——只要你足够频繁地翻阅,让阅读成为默认状态,你只是暂时从中浮出水面来处理事务,然后再沉回去。在真正美好的一天,你不再觉得自己是在\"腾出时间阅读\",而只是在阅读,并为其他一切事情腾出时间。",
+  "questions": [
+   {
+    "q": "The usual time-management techniques don't work because____.",
+    "opts": [
+     "what they can offer does not ease the modern mind",
+     "what challenging books demand is repetitive reading",
+     "what people often forget is carrying a book with them",
+     "what deep reading requires cannot be guaranteed"
+    ],
+    "ans": 3,
+    "explain": "答案D（细节题）。定位：深度阅读所需要的不仅是时间，而是一种特殊的时间，这种时间不是仅靠提升效率就能得到的。"
+   },
+   {
+    "q": "The \"empty bottles\" metaphor illustrates that people feel a pressure to____.",
+    "opts": [
+     "update their to-do lists",
+     "make passing time fulfilling",
+     "carry their plans through",
+     "pursue carefree reading"
+    ],
+    "ans": 1,
+    "explain": "答案B（词义句意题）。定位：\"未来像传送带上一只只空瓶子一样朝我们涌来\"，Gary Eberle 在《神圣时间》里写道，\"我们感到一种压力，要把不同大小的瓶子（日、时、分）在它们经过时一个个装满，因为如果它们空着流过去，我们就等于浪费了它们。\""
+   },
+   {
+    "q": "Eberle would agree that scheduling regular times for reading helps____.",
+    "opts": [
+     "encourage the efficiency mind-set",
+     "develop online reading habits",
+     "promote ritualistic reading",
+     "achieve immersive reading"
+    ],
+    "ans": 3,
+    "explain": "答案D（细节题）。定位：你可能会觉得这反而会助长效率思维，但事实上，Eberle 指出，这种仪式化的行为能帮我们\"跳出时间的洪流\"，进入\"灵魂时间\"。"
+   },
+   {
+    "q": "\"Carry a book with you at all times\" can work if____.",
+    "opts": [
+     "reading becomes your primary business of the day",
+     "all the daily business has been promptly dealt with",
+     "you are able to drop back to business after reading",
+     "time can be evenly split for reading and business"
+    ],
+    "ans": 0,
+    "explain": "答案A（细节题）。定位：\"随身带本书\"也确实有效——前提是你要经常翻读，让阅读变成你的默认状态，你只是偶尔短暂地浮出水面去处理事务，然后再沉回阅读里去。"
+   },
+   {
+    "q": "The best title for this text could be____.",
+    "opts": [
+     "How to Enjoy Easy Reading",
+     "How to Find Time to Read",
+     "How to Set Reading Goals",
+     "How to Read Extensively"
+    ],
+    "ans": 1,
+    "explain": "答案B（主旨题）。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2016-read-4",
+  "type": "阅读理解",
+  "title": "2016年真题 · Text 4",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Against a backdrop of drastic changes in economy and population structure, younger Americans are drawing a new 21st-century road map to success, the latest poll has found.\n\nAcross generational lines, Americans continue to prize many of the same traditional milestones of a successful life, including getting married, having children, owning a home, and retiring in their sixties. But while young and old mostly agree on what constitutes the finish line of a fulfilling life, they offer strikingly different paths for reaching it.\n\nYoung people who are still getting started in life were more likely than older adults to prioritize personal fulfillment in their work, to believe they will advance their careers most by regularly changing jobs, to favor communities with more public services and a faster pace of life, to agree that couples should be financially secure before getting married or having children, and to maintain that children are best served by two parents working outside the home, the survey found.\n\nFrom career to community and family, these contrasts suggest that in the aftermath of the searing Great Recession, those just starting out in life are defining priorities and expectations that will increasingly spread through virtually all aspects of American life, from consumer preferences to housing patterns to politics.\n\nYoung and old converge on one key point: Overwhelming majorities of both groups said they believe it is harder for young people today to get started in life than it was for earlier generations. While younger people are somewhat more optimistic than their elders about the prospects for those starting out today, big majorities in both groups believe those \"just getting started in life\" face a tougher climb than earlier generations in reaching such signpost achievements as securing a good-paying job, starting a family, managing debt, and finding affordable housing.\n\nPete Schneider considers the climb tougher today. Schneider, a 27-year-old auto technician from the Chicago suburbs, says he struggled to find a job after graduating from college. Even now that he is working steadily, he said, \"I can't afford to pay my monthly mortgage payments on my own, so I have to rent rooms out to people to make that happen.\" Looking back, he is struck that his parents could provide a comfortable life for their children even though neither had completed college when he was young. \"I still grew up in an upper middle-class home with parents who didn't have college degrees,\" Schneider said. \"I don't think people are capable of that anymore.\"",
+  "passage_zh": "最新民意调查发现，在经济和人口结构发生剧烈变化的背景下，美国年轻一代正在绘制一幅通往成功的21世纪新路线图。\n\n跨越代际界线，美国人继续珍视许多相同的传统成功人生里程碑,包括结婚、生育子女、拥有住房以及在六十多岁退休。但是,尽管年轻人和老年人在充实人生的终点线是什么这一问题上基本达成一致,他们却为实现这一目标提供了截然不同的路径。\n\n调查发现,仍处于人生起步阶段的年轻人比老年人更有可能将工作中的个人满足感放在优先位置,相信他们通过定期更换工作最能推进职业发展,偏好拥有更多公共服务和更快生活节奏的社区,认同夫妻应在经济上有保障后再结婚或生育子女,并坚持认为父母双方都外出工作最有利于子女成长。\n\n从职业到社区再到家庭,这些对比表明,在严重的大衰退之后,那些刚开始人生旅程的人正在确定优先事项和期望,这些将日益扩散到美国生活的几乎所有方面,从消费偏好到住房模式再到政治。\n\n年轻人和老年人在一个关键点上达成一致:两个群体中的压倒性多数都表示,他们认为今天的年轻人开始人生比早期几代人更加困难。尽管年轻人对今天起步者的前景比他们的长辈稍微乐观一些,但两个群体中的绝大多数都认为那些\"刚开始人生\"的人在实现诸如获得一份薪酬优厚的工作、组建家庭、管理债务和找到负担得起的住房等标志性成就方面,比早期几代人面临更艰难的攀登。\n\nPete Schneider认为今天的攀登更加艰难。Schneider是来自芝加哥郊区的一名27岁汽车技师,他说自己大学毕业后很难找到工作。即使现在有了稳定的工作,他说:\"我无法独自负担每月的抵押贷款,所以我不得不把房间租给别人来实现这一点。\"回首往事,他惊讶于他的父母能够为子女提供舒适的生活,尽管在他年幼时父母双方都没有完成大学学业。\"我仍然是在一个中上层阶级家庭中长大的,父母都没有大学学位,\"Schneider说。\"我认为人们不再有能力做到这一点了。",
+  "questions": [
+   {
+    "q": "One cross-generation mark of a successful life is____.",
+    "opts": [
+     "trying out different lifestyles",
+     "having a family with children",
+     "working beyond retirement age",
+     "setting up a profitable business"
+    ],
+    "ans": 1,
+    "explain": "答案B（细节题）。定位：跨越代际的分野，美国人依然珍视诸多相同的、传统的成功人生里程碑，包括结婚、生育子女、拥有住房，以及在六十多岁时退休。"
+   },
+   {
+    "q": "It can be learned from Paragraph 3 that young people tend to____.",
+    "opts": [
+     "favor a slower life pace",
+     "hold an occupation longer",
+     "attach importance to pre-marital finance",
+     "give priority to childcare outside the home"
+    ],
+    "ans": 2,
+    "explain": "答案C（细节题）。定位：调查发现，那些还在人生起步阶段的年轻人比年长者更倾向于：把工作中的个人满足感放在首位、相信靠经常跳槽最能让事业上升、偏爱公共服务更多且生活节奏更快的社区、同意夫妇在结婚或生子之前应当先实现财务稳定、坚持认为孩子由双职工父母抚养是最好的。"
+   },
+   {
+    "q": "The priorities and expectations defined by the young will____.",
+    "opts": [
+     "become increasingly clear",
+     "focus on materialistic issues",
+     "depend largely on political preferences",
+     "reach almost all aspects of American life"
+    ],
+    "ans": 3,
+    "explain": "答案D（细节题）。定位：从职业到社区再到家庭，这些代际反差表明：在惨烈的大衰退之后，那些刚刚起步的人正在确立的优先级与预期，将日益渗透到美国生活的几乎所有方面——从消费偏好到住房模式到政治。"
+   },
+   {
+    "q": "Both young and old agree that____.",
+    "opts": [
+     "good-paying jobs are less available",
+     "the old made more life achievements",
+     "housing loans today are easy to obtain",
+     "getting established is harder for the young"
+    ],
+    "ans": 3,
+    "explain": "答案D（细节题）。定位：两个群体中的绝大多数人都说，他们相信如今的年轻人在人生起步上比之前几代人更难。"
+   },
+   {
+    "q": "Which of the following is true about Schneider?",
+    "opts": [
+     "He found a dream job after graduating from college.",
+     "His parents believe working steadily is a must for success.",
+     "His parents' good life has little to do with a college degree.",
+     "He thinks his job as a technician quite challenging."
+    ],
+    "ans": 2,
+    "explain": "答案C（细节题）。定位：\"我还是在一个父母都没有大学学历的中上层家庭长大的，\" Schneider 说。\"我觉得现在的人已经做不到这一点了。\""
+   }
+  ]
+ },
+ {
+  "id": "zy-2016-match",
+  "type": "新题型",
+  "title": "2016年真题 · 新题型",
+  "score": 10,
+  "minutes": 8,
+  "intro": "Directions: Read the following text and answer the questions by choosing the most suitable subheading from the list A-G for each of the numbered paragraphs (41-45). There are two extra subheadings which you do not need to use. Mark your answers on the ANSWER SHEET. (10 points)",
+  "titles": [
+   "A. Be silly",
+   "B. Have fun",
+   "C. Ask for help",
+   "D. Express your emotions",
+   "E. Don't overthink it",
+   "F. Be easily pleased",
+   "G. Notice things"
+  ],
+  "paras": [
+   {
+    "text": "What does a child do when he's sad? He cries. When he's angry? He shouts. Scared? Probably a bit of both. As we grow up, we learn to control our emotions so they are manageable and don't dictate our behaviours, which is in many ways a good thing. But too often we take this process too far and end up suppressing emotions, especially negative ones. That's about as effective as brushing dirt under a carpet and can even make us ill. What we need to do is find a way to acknowledge and express what we feel appropriately, and then – again, like children – move on.",
+    "ans": 3,
+    "explain": "答案D。主旨：承认并恰当表达情绪"
+   },
+   {
+    "text": "A couple of Christmases ago, my youngest stepdaughter, who was nine years old at the time, got a Superman T-shirt for Christmas. It cost less than a fiver but she was overjoyed, and couldn't stop talking about it. Too often we believe that a new job, bigger house or better car will be the magic silver bullet that will allow us to finally be content, but the reality is these things have very little lasting impact on our happiness levels. Instead, being grateful for small things every day is a much better way to improve wellbeing.",
+    "ans": 5,
+    "explain": "答案F。主旨：为小事感恩、易满足"
+   },
+   {
+    "text": "Have you ever noticed how much children laugh? If we adults could indulge in a bit of silliness and giggling, we would reduce the stress hormones in our bodies, increase good hormones like endorphins, improve blood flow to our hearts and even have a greater chance of fighting off infection. All of which would, of course, have a positive effect on our happiness levels.",
+    "ans": 0,
+    "explain": "答案A。主旨：多笑、放任傻气嬉闹"
+   },
+   {
+    "text": "The problem with being a grownup is that there's an awful lot of serious stuff to deal with – work, mortgage payments, figuring out what to cook for dinner. But as adults we also have the luxury of being able to control our own diaries and it's important that we schedule in time to enjoy the things we love. Those things might be social, sporting, creative or completely random (dancing around the living room, anyone?) – it doesn't matter, so long as they're enjoyable, and not likely to have negative side effects, such as drinking too much alcohol or going on a wild spending spree if you're on a tight budget.",
+    "ans": 1,
+    "explain": "答案B。主旨：腾出时间做喜欢的事"
+   },
+   {
+    "text": "Having said all of the above, it's important to add that we shouldn't try too hard to be happy. Scientists tell us this can backfire and actually have a negative impact on our wellbeing. As the Chinese philosopher Chuang Tzu is reported to have said: \"Happiness is the absence of striving for happiness.\" And in that, once more, we need to look to the example of our children, to whom happiness is not a goal but a natural byproduct of the way they live.",
+    "ans": 4,
+    "explain": "答案E。主旨：别太刻意追求幸福"
+   }
+  ]
+ },
+ {
+  "id": "zy-2016-trans",
+  "type": "翻译",
+  "title": "2016年真题 · 翻译",
+  "score": 15,
+  "minutes": 20,
+  "passage": "The supermarket is designed to lure customers into spending as much time as possible within its doors. The reason for this is simple: The longer you stay in the store, the more stuff you'll see, and the more stuff you see, the more you'll buy. And supermarkets contain a lot of stuff. The average supermarket, according to the Food Marketing Institute, carries some 44,000 different items, and many carry tens of thousands more. The sheer volume of available choice is enough to send shoppers into a state of information overload. According to brain-scan experiments, the demands of so much decision-making quickly become too much for us. After about 40 minutes of shopping, most people stop struggling to be rationally selective, and instead begin shopping emotionally – which is the point at which we accumulate the 50 percent of stuff in our cart that we never intended buying.",
+  "passage_zh": "超市的设计就是为了诱使顾客在店内逗留尽可能长的时间。这样做的原因很简单：你在店里待得越久，看到的商品就越多；而看到的商品越多，买得也就越多。而超市里有大量商品。据食品营销协会称，一家普通超市经营着约 44000 种不同的商品，许多超市经营的种类还要多出数万种。可供选择的商品数量之大，足以使购物者陷入信息过载的状态。脑部扫描实验表明，要做这么多决定所带来的负担，很快就会让我们吃不消。购物大约 40 分钟之后，大多数人就不再努力保持理性的挑选，反而开始凭情绪购物——而正是在这时，我们把购物车里那 50% 自己从没打算买的商品堆积了起来。",
+  "intro": "Directions: Translate the following text into Chinese. Write your translation on the ANSWER SHEET. (15 points)"
+ },
+ {
+  "id": "zy-2016-write-s",
+  "type": "写作",
+  "title": "2016年真题 · 小作文",
+  "score": 10,
+  "minutes": 15,
+  "prompt": "Directions: Suppose you won a translation contest and your friend, Jack, wrote an email to congratulate you and ask for advice on translation. Write him a reply to 1)thank him, and 2)give your advice. You should write about 100 words on the ANSWER SHEET. Do not use your own name. Use “Li Ming” instead. Do not write your address. (10 points)",
+  "tips": "【参考范文】\nDear Jack, Thank you so much for your warm congratulations on my winning the translation contest. Your kind words mean a lot to me, and I am truly delighted to share the good news with a friend like you. As for translation, here are a few tips I found helpful. First, read plenty of bilingual texts and collect fixed expressions, which sharpen your sense of both languages. Second, understand the whole sentence before you start, rather than translating word by word. Finally, keep practising and revising your drafts, since skill grows only through steady effort. Yours,\nLi Ming\n\n【参考译文】\n亲爱的杰克： 非常感谢你为我在翻译比赛中获奖发来温暖的祝贺。你的话对我意义重大，能把这个好消息和你这样的朋友分享，我真的很开心。 说到翻译，这里有几条我觉得很有用的小建议。第一，多读双语对照的材料，积累固定表达，这能磨练你对两种语言的语感。第二，动笔前先理解整句话的意思，而不是逐字翻译。最后，坚持多练、勤改草稿，因为能力只有靠持续努力才会长进。 此致\n李明"
+ },
+ {
+  "id": "zy-2016-write-b",
+  "type": "写作",
+  "title": "2016年真题 · 大作文",
+  "score": 15,
+  "minutes": 30,
+  "prompt": "Directions: Write an essay based on the chart below. In your writing, you should 1)interpret the chart, and 2)give your comments. You should write about 150 words on the ANSWER SHEET. (15 points)（配图：这张图片是一个饼图，图中的每个扇形代表了一个类别，并标有各自的百分比）",
+  "tips": "【参考范文】\nThe pie chart clearly illustrates the various purposes that drive students at a certain university to travel. As is shown, appreciating scenery ranks first, accounting for 37 percent, closely followed by relieving stress at 33 percent. In contrast, making friends and cultivating independence lie at the bottom, occupying merely 9 and 6 percent respectively. What the chart reveals is well worth pondering. The dominance of enjoying scenery and easing pressure can be attributed to the heavy academic burden that students shoulder today. Travelling offers them a precious chance to embrace nature and unwind, thus recharging for further study. Meanwhile, few regard travel as a means to make friends or foster independence, which suggests that many still overlook its social and educational value. In my view, students should broaden their vision of travel. Rather than merely a way to relax, it can also cultivate independence and enrich friendships if approached thoughtfully.\n\n【参考译文】\n这张饼图清晰地展示了某高校学生外出旅游的各种目的。如图所示，欣赏风景占比最高，达到 37%，紧随其后的是缓解压力，占 33%。相比之下，广交朋友与培养独立能力位居末端，分别仅占 9% 和 6%。 图表所揭示的现象值得深思。欣赏风景与缓解压力之所以占主导，可归因于当今学生所承受的沉重学业负担。旅游为他们提供了亲近自然、放松身心的宝贵机会，从而为后续学习充电。与此同时，很少有人把旅游视为结交朋友或培养独立的途径，这说明许多人仍然忽视了它在社交与成长方面的价值。 在我看来，学生应当拓宽对旅游的认识。旅游不应只是一种放松方式，若安排得当，它同样能锻炼独立、增进友谊。"
+ }
+]

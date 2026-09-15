@@ -1,0 +1,548 @@
+[
+ {
+  "id": "zy-2015-cloze",
+  "type": "完形填空",
+  "title": "2015年真题 · 完形填空",
+  "score": 20,
+  "minutes": 15,
+  "passage": "In our contemporary culture, the prospect of communicating with – or even looking at – a stranger is virtually unbearable. Everyone around us seems to agree by the way they cling to their phones, even without a (1) on a subway. It's a sad reality – our desire to avoid interacting with other human beings – because there's (2) to be gained from talking to the stranger standing by you. But you wouldn't know it, (3) into your phone. This universal protection sends the (4) : \"Please don't approach me.\" What is it that makes us feel we need to hide (5) our screens? One answer is fear, according to Jon Wortmann, an executive mental coach. We fear rejection, or that our innocent social advances will be (6) as \"weird.\" We fear we'll be (7) . We fear we'll be disruptive. Strangers are inherently (8) to us, so we are more likely to feel (9) when communicating with them compared with our friends and acquaintances. To avoid this uneasiness, we (10) to our phones. \"Phones become our security blanket,\" Wortmann says. \"They are our happy glasses that protect us from what we perceive is going to be more (11) .\" But once we rip off the band-aid, tuck our smartphones in our pockets and look up, it doesn't (12) so bad. In one 2011 experiment, behavioral scientists Nicholas Epley and Juliana Schroeder asked commuters to do the unthinkable: Start a (13) . They had Chicago train commuters talk to their fellow (14) . \"When Dr. Epley and Ms. Schroeder asked other people in the same train station to (15) how they would feel after talking to a stranger, the commuters thought their (16) would be more pleasant if they sat on their own,\" The New York Times summarizes. Though the participants didn't expect a positive experience, after they (17) with the experiment, \"not a single person reported having been embarrassed.\" (18) , these commutes were reportedly more enjoyable compared with those without communication, which makes absolute sense, (19) human beings thrive off of social connections. It's that (20) : Talking to strangers can make you feel connected.",
+  "blanks": [
+   {
+    "opts": [
+     "signal",
+     "permit",
+     "ticket",
+     "record"
+    ],
+    "ans": 0,
+    "explain": "答案A（词义辨析）。线索：地铁里没信号也照刷手机"
+   },
+   {
+    "opts": [
+     "nothing",
+     "little",
+     "another",
+     "much"
+    ],
+    "ans": 3,
+    "explain": "答案D（词义辨析）。线索：作者立场：和陌生人聊有收获"
+   },
+   {
+    "opts": [
+     "beaten",
+     "plugged",
+     "guided",
+     "brought"
+    ],
+    "ans": 1,
+    "explain": "答案B（词义辨析）。线索：你埋头进手机里，所以浑然不觉"
+   },
+   {
+    "opts": [
+     "message",
+     "code",
+     "notice",
+     "sign"
+    ],
+    "ans": 0,
+    "explain": "答案A（词义辨析）。线索：冒号后是完整一句话内容"
+   },
+   {
+    "opts": [
+     "under",
+     "beyond",
+     "behind",
+     "from"
+    ],
+    "ans": 2,
+    "explain": "答案C（固定搭配）。线索：屏幕是用来挡住自己的"
+   },
+   {
+    "opts": [
+     "misapplied",
+     "misinterpreted",
+     "misadjusted",
+     "mismatched"
+    ],
+    "ans": 1,
+    "explain": "答案B（词义辨析）。线索：我们怕善意的搭话被解读成'怪异'"
+   },
+   {
+    "opts": [
+     "judged",
+     "fired",
+     "replaced",
+     "delayed"
+    ],
+    "ans": 0,
+    "explain": "答案A（词义辨析）。线索：三个 We fear 并列，本题为社交担忧"
+   },
+   {
+    "opts": [
+     "unreasonable",
+     "ungrateful",
+     "unconventional",
+     "unfamiliar"
+    ],
+    "ans": 3,
+    "explain": "答案D（词义辨析）。线索：陌生人本质上对我们是'不熟悉的'"
+   },
+   {
+    "opts": [
+     "comfortable",
+     "confident",
+     "anxious",
+     "angry"
+    ],
+    "ans": 2,
+    "explain": "答案C（词义辨析）。线索：feel + 与 fear 同向的负面情绪"
+   },
+   {
+    "opts": [
+     "attend",
+     "turn",
+     "take",
+     "point"
+    ],
+    "ans": 1,
+    "explain": "答案B（固定搭配）。线索：为了躲不安，我们转向手机求助"
+   },
+   {
+    "opts": [
+     "dangerous",
+     "mysterious",
+     "violent",
+     "boring"
+    ],
+    "ans": 0,
+    "explain": "答案A（词义辨析）。线索：保护 us → 免遭'危险'"
+   },
+   {
+    "opts": [
+     "bend",
+     "resist",
+     "hurt",
+     "decay"
+    ],
+    "ans": 2,
+    "explain": "答案C（词义辨析）。线索：撕掉创可贴的隐喻：其实没那么疼"
+   },
+   {
+    "opts": [
+     "lecture",
+     "debate",
+     "conversation",
+     "negotiation"
+    ],
+    "ans": 2,
+    "explain": "答案C（词义辨析）。线索：实验任务＝和陌生人开口聊聊"
+   },
+   {
+    "opts": [
+     "trainees",
+     "employees",
+     "researchers",
+     "passengers"
+    ],
+    "ans": 3,
+    "explain": "答案D（词义辨析）。线索：commuters 的同身份指代＝passengers"
+   },
+   {
+    "opts": [
+     "reveal",
+     "choose",
+     "predict",
+     "design"
+    ],
+    "ans": 2,
+    "explain": "答案C（词义辨析）。线索：请受试者先预测搭话后的感受"
+   },
+   {
+    "opts": [
+     "voyage",
+     "flight",
+     "walk",
+     "ride"
+    ],
+    "ans": 3,
+    "explain": "答案D（词义辨析）。线索：train commuters 的旅程＝乘车 ride"
+   },
+   {
+    "opts": [
+     "went through",
+     "did away",
+     "caught up",
+     "put up"
+    ],
+    "ans": 0,
+    "explain": "答案A（固定搭配）。线索：受试者完成了实验之后"
+   },
+   {
+    "opts": [
+     "In turn",
+     "In fact",
+     "In particular",
+     "In consequence"
+    ],
+    "ans": 1,
+    "explain": "答案B（逻辑关系）。线索：预期糟糕→实际更愉快：反差"
+   },
+   {
+    "opts": [
+     "unless",
+     "whereas",
+     "if",
+     "since"
+    ],
+    "ans": 3,
+    "explain": "答案D（逻辑关系）。线索：实验结果由人性常识解释"
+   },
+   {
+    "opts": [
+     "funny",
+     "simple",
+     "logical",
+     "rare"
+    ],
+    "ans": 1,
+    "explain": "答案B（词义辨析）。线索：结论就这么简单"
+   }
+  ]
+ },
+ {
+  "id": "zy-2015-read-1",
+  "type": "阅读理解",
+  "title": "2015年真题 · Text 1",
+  "score": 10,
+  "minutes": 8,
+  "passage": "A new study suggests that contrary to most surveys, people are actually more stressed at home than at work. Researchers measured people's cortisol, which is a stress marker, while they were at work and while they were at home and found it higher at what is supposed to be a place of refuge.\n\n\"Further contradicting conventional wisdom, we found that women as well as men have lower levels of stress at work than at home,\" writes one of the researchers, Sarah Damaske. In fact women even say they feel better at work, she notes. \"It is men, not women, who report being happier at home than at work.\" Another surprise is that the findings hold true for both those with children and without, but more so for nonparents. This is why people who work outside the home have better health.\n\nWhat the study doesn't measure is whether people are still doing work when they're at home, whether it is household work or work brought home from the office. For many men, the end of the workday is a time to kick back. For women who stay home, they never get to leave the office. And for women who work outside the home, they often are playing catch-up with household tasks. With the blurring of roles, and the fact that the home front lags well behind the workplace in making adjustments for working women, it's not surprising that women are more stressed at home.\n\nBut it's not just a gender thing. At work, people pretty much know what they're supposed to be doing: working, making money, doing the tasks they have to do in order to draw an income. The bargain is very pure: Employee puts in hours of physical or mental labor and employee draws out life-sustaining moola.\n\nOn the home front, however, people have no such clarity. Rare is the household in which the division of labor is so clinically and methodically laid out. There are a lot of tasks to be done, there are inadequate rewards for most of them. Your home colleagues – your family – have no clear rewards for their labor; they need to be talked into it, or if they're teenagers, threatened with complete removal of all electronic devices. Plus, they're your family. You cannot fire your family. You never really get to go home from home.\n\nSo it's not surprising that people are more stressed at home. Not only are the tasks apparently infinite, the co-workers are much harder to motivate.",
+  "passage_zh": "一项新研究表明,与大多数调查结果相反,人们实际上在家中比在工作时压力更大。研究人员测量了人们在工作时和在家时的皮质醇水平,这是一种压力标志物,结果发现在本应是避难所的地方,皮质醇水平反而更高。\n\n研究人员之一Sarah Damaske写道:\"进一步违背传统观念的是,我们发现女性和男性一样,在工作时的压力水平低于在家时。\"事实上,她指出,女性甚至表示在工作时感觉更好。\"是男性而非女性,报告说在家比在工作时更快乐。\"另一个令人惊讶的发现是,这些结果对有孩子和没有孩子的人都成立,但对没有孩子的人更为明显。这就是为什么在外工作的人拥有更好的健康状况。\n\n这项研究没有衡量的是,人们在家时是否仍在工作,无论是家务劳动还是从办公室带回家的工作。对许多男性来说,工作日结束是放松的时间。对于待在家里的女性,她们永远无法离开办公室。而对于在外工作的女性,她们常常在追赶家务任务。随着角色的模糊,以及家庭在为职业女性做出调整方面远远落后于职场这一事实,女性在家中压力更大就不足为奇了。\n\n但这不仅仅是性别问题。在工作中,人们很清楚自己应该做什么:工作、赚钱、完成为了获得收入而必须做的任务。这种交换非常纯粹:员工投入体力或脑力劳动的时间,员工获得维持生活的报酬。\n\n然而在家庭方面,人们没有这样的清晰度。很少有家庭能够如此临床化和有条理地安排劳动分工。有很多任务要做,其中大多数任务的回报不足。你的家庭同事——你的家人——他们的劳动没有明确的回报;他们需要被说服,或者如果他们是青少年,需要威胁完全没收所有电子设备。此外,他们是你的家人。你不能解雇你的家人。你永远无法真正从家中回家。\n\n因此,人们在家中压力更大并不令人惊讶。不仅任务显然无穷无尽,同事也更难激励。",
+  "questions": [
+   {
+    "q": "According to Paragraph 1, most previous surveys found that home____.",
+    "opts": [
+     "offered greater relaxation than the workplace",
+     "was an ideal place for stress measurement",
+     "generated more stress than the workplace",
+     "was an unrealistic place for relaxation"
+    ],
+    "ans": 0,
+    "explain": "答案A（细节题）。定位：一项新研究指出，与大多数调查相反，人们其实在家里比在职场更紧张。"
+   },
+   {
+    "q": "According to Damaske, who are likely to be the happiest at home?",
+    "opts": [
+     "Working mothers.",
+     "Childless husbands.",
+     "Working fathers.",
+     "Childless wives."
+    ],
+    "ans": 1,
+    "explain": "答案B（细节题）。定位：在家里报告“比上班更开心”的是男性而非女性。另一个意外发现是，这一结果在有孩子和无孩子的人群中都成立，但在无孩家庭中更明显。"
+   },
+   {
+    "q": "The blurring of working women's roles refers to the fact that____.",
+    "opts": [
+     "their home is also a place for kicking back",
+     "they are both bread winners and housewives",
+     "there is often much housework left behind",
+     "it is difficult for them to leave their office"
+    ],
+    "ans": 1,
+    "explain": "答案B（词义句意题）。定位：对于在外工作的女性，她们常常在追赶家务进度。由于角色界限模糊，加上家庭这一战线在为职业女性做出调整方面远远落后于职场，难怪女性在家里更紧张。"
+   },
+   {
+    "q": "The word \"moola\" (Line 4, Para. 4) most probably means____.",
+    "opts": [
+     "skills",
+     "energy",
+     "earnings",
+     "nutrition"
+    ],
+    "ans": 2,
+    "explain": "答案C（词义句意题）。定位：这笔交易非常纯粹：员工投入若干小时的体力或脑力劳动，员工从中换取维持生计的 moola。"
+   },
+   {
+    "q": "The home front differs from the workplace in that____.",
+    "opts": [
+     "family labor is often adequately rewarded",
+     "home is hardly a cozier working environment",
+     "household tasks are generally more motivating",
+     "division of labor at home is seldom clear-cut"
+    ],
+    "ans": 3,
+    "explain": "答案D（细节题）。定位：然而在家庭这条战线上，人们没有这种清晰感。少有家庭能把分工那么条理分明地划定出来。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2015-read-2",
+  "type": "阅读理解",
+  "title": "2015年真题 · Text 2",
+  "score": 10,
+  "minutes": 8,
+  "passage": "For years, studies have found that first-generation college students – those who do not have a parent with a college degree – lag other students on a range of education achievement factors. Their grades are lower and their dropout rates are higher. But since such students are most likely to advance economically if they succeed in higher education, colleges and universities have pushed for decades to recruit more of them. This has created \"a paradox\" in that recruiting first-generation students, but then watching many of them fail, means that higher education has \"continued to reproduce and widen, rather than close\" an achievement gap based on social class, according to the depressing beginning of a paper forthcoming in the journal Psychological Science.\n\nBut the article is actually quite optimistic, as it outlines a potential solution to this problem, suggesting that an approach (which involves a one-hour, next-to-no-cost program) can close 63 percent of the achievement gap (measured by such factors as grades) between first-generation and other students.\n\nThe authors of the paper are from different universities, and their findings are based on a study involving 147 students (who completed the project) at an unnamed private university. First generation was defined as not having a parent with a four-year college degree. Most of the first-generation students (59.1 percent) were recipients of Pell Grants, a federal grant for undergraduates with financial need, while this was true only for 8.6 percent of the students with at least one parent with a four-year degree.\n\nTheir thesis – that a relatively modest intervention could have a big impact – was based on the view that first-generation students may be most lacking not in potential but in practical knowledge about how to deal with the issues that face most college students. They cite past research by several authors to show that this is the gap that must be narrowed to close the achievement gap.\n\nMany first-generation students \"struggle to navigate the middle-class culture of higher education, learn the 'rules of the game,' and take advantage of college resources,\" they write. And this becomes more of a problem when colleges don't talk about the class advantages and disadvantages of different groups of students. \"Because US colleges and universities seldom acknowledge how social class can affect students' educational experiences, many first-generation students lack insight about why they are struggling and do not understand how students 'like them' can improve.\"",
+  "passage_zh": "多年来,研究发现第一代大学生——即父母均未获得大学学位的学生——在一系列教育成就因素上落后于其他学生。他们的成绩更低,辍学率更高。但由于这类学生如果在高等教育中取得成功,最有可能在经济上获得提升,因此数十年来,各高校一直在努力招收更多这样的学生。这造成了\"一个悖论\":招收第一代大学生,却眼看着他们中的许多人失败,意味着高等教育\"继续再造并扩大,而非缩小\"基于社会阶层的成就差距,正如即将发表在《心理科学》期刊上的一篇论文令人沮丧的开头所指出的那样。\n\n但这篇文章实际上相当乐观,因为它概述了解决这一问题的潜在方案,表明一种方法(涉及一个一小时、几乎零成本的项目)可以缩小第一代大学生与其他学生之间63%的成就差距(以成绩等因素衡量)。\n\n这篇论文的作者来自不同的大学,他们的研究结果基于一项涉及某所未具名私立大学147名学生(完成了该项目)的研究。第一代大学生被定义为父母均未获得四年制大学学位。大多数第一代大学生(59.1%)是Pell助学金的受助者,这是一项面向有经济需求的本科生的联邦助学金,而在至少有一位父母拥有四年制大学学位的学生中,这一比例仅为8.6%。\n\n他们的论点——相对适度的干预可以产生重大影响——基于这样一种观点:第一代大学生最缺乏的可能不是潜力,而是关于如何应对大多数大学生面临问题的实用知识。他们引用了几位作者过去的研究来表明,这正是必须缩小以弥合成就差距的鸿沟。\n\n许多第一代大学生\"难以适应高等教育的中产阶级文化,难以学会'游戏规则',难以利用大学资源\",他们写道。当高校不谈论不同学生群体的阶层优势和劣势时,这就变成了一个更大的问题。\"由于美国高校很少承认社会阶层如何影响学生的教育经历,许多第一代大学生对自己为何挣扎缺乏认识,也不理解'像他们一样'的学生如何才能进步。",
+  "questions": [
+   {
+    "q": "Recruiting more first-generation students has____.",
+    "opts": [
+     "reduced their dropout rates",
+     "narrowed the achievement gap",
+     "missed its original purpose",
+     "depressed college students"
+    ],
+    "ans": 2,
+    "explain": "答案C（细节题）。定位：这造成了一个 \"悖论\"：招收一代生、然后又看着许多人失败，意味着高等教育在基于社会阶层的成绩差距上 \"持续在复制和扩大，而非缩小\"——这是《心理科学》一篇即将发表的论文那段令人沮丧的开头给出的说法。"
+   },
+   {
+    "q": "The authors of the research article are optimistic because____.",
+    "opts": [
+     "their findings appeal to students",
+     "the recruiting rate has increased",
+     "the problem is solvable",
+     "their approach is costless"
+    ],
+    "ans": 2,
+    "explain": "答案C（细节题）。定位：但这篇文章其实相当乐观，因为它勾勒出一个针对这个问题的潜在解决方案——它建议一种方法（包含一个仅一小时、几乎零成本的项目）可以缩小一代生与其他学生之间 63% 的成绩差距。"
+   },
+   {
+    "q": "The study suggests that most first-generation students____.",
+    "opts": [
+     "are from single-parent families",
+     "study at private universities",
+     "are in need of financial support",
+     "have failed their college"
+    ],
+    "ans": 2,
+    "explain": "答案C（细节题）。定位：大多数一代生（59.1%）是 Pell Grants 的获得者——这是一项面向有经济需求的本科生的联邦助学金——而在至少有一方父母拥有四年制学位的学生中，只有 8.6% 是其获得者。"
+   },
+   {
+    "q": "The authors of the paper believe that first-generation students____.",
+    "opts": [
+     "may lack opportunities to apply for research projects",
+     "are inexperienced in handling their issues at college",
+     "can have a potential influence on other students",
+     "are actually indifferent to the achievement gap"
+    ],
+    "ans": 1,
+    "explain": "答案B（细节题）。定位：他们的论点——一个相对小的干预即可产生大的影响——是基于这样一个看法：一代生最缺的不是潜能，而是关于如何处理大多数大学生面临的问题的实用知识。"
+   },
+   {
+    "q": "We may infer from the last paragraph that____.",
+    "opts": [
+     "universities often reject the culture of the middle-class",
+     "students are usually to blame for their lack of resources",
+     "social class greatly helps enrich educational experiences",
+     "colleges are partly responsible for the problem in question"
+    ],
+    "ans": 3,
+    "explain": "答案D（推断题）。定位：因为美国的大学很少承认社会阶层会如何影响学生的教育经历，许多一代生缺乏对自己为何陷入困境的洞察，也不理解 \"像他们这样\" 的学生如何能改善处境。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2015-read-3",
+  "type": "阅读理解",
+  "title": "2015年真题 · Text 3",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Even in traditional offices, \"the lingua franca of corporate America has gotten much more emotional and much more right-brained than it was 20 years ago,\" said Harvard Business School professor Nancy Koehn. She started spinning off examples. \"If you and I parachuted back to Fortune 500 companies in 1990, we would see much less frequent use of terms like journey, mission, passion. There were goals, there were strategies, there were objectives, but we didn't talk about energy; we didn't talk about passion.\"\n\nKoehn pointed out that this new era of corporate vocabulary is very \"team\"-oriented – and not by coincidence. \"Let's not forget sports – in male-dominated corporate America, it's still a big deal. It's not explicitly conscious; it's the idea that I'm a coach, and you're my team, and we're in this together. There are lots and lots of CEOs in very different companies, but most think of themselves as coaches and this is their team and they want to win.\"\n\nThese terms are also intended to infuse work with meaning – and, as Rakesh Khurana, another professor, points out, increase allegiance to the firm. \"You have the importation of terminology that historically used to be associated with non-profit organizations and religious organizations: terms like vision, values, passion, and purpose,\" said Khurana.\n\nThis new focus on personal fulfillment can help keep employees motivated amid increasingly loud debates over work-life balance. The \"mommy wars\" of the 1990s are still going on today, prompting arguments about why women still can't have it all and books like Sheryl Sandberg's Lean In, whose title has become a buzzword in its own right. Terms like unplug, offline, life-hack, bandwidth, and capacity are all about setting boundaries between the office and the home. But if your work is your \"passion,\" you'll be more likely to devote yourself to it, even if that means going home for dinner and then working long after the kids are in bed.\n\nBut this seems to be the irony of office speak: Everyone makes fun of it, but managers love it, companies depend on it, and regular people willingly absorb it. As a linguist once said, \"You can get people to think it's nonsense at the same time that you buy into it.\" In a workplace that's fundamentally indifferent to your life and its meaning, office speak can help you figure out how you relate to your work – and how your work defines who you are.",
+  "passage_zh": "哈佛商学院教授Nancy Koehn说，即使在传统办公室里，\"美国企业界的通用语言也比20年前变得更加感性化、更加偏重右脑思维\"。她开始列举实例。\"如果你我空降回1990年的财富500强公司，我们会发现像旅程、使命、激情这样的词汇使用频率要低得多。那时有目标、有战略、有目的，但我们不谈论能量，不谈论激情。\"\n\nKoehn指出，这个企业词汇的新时代非常强调\"团队\"——这并非巧合。\"我们不要忘记体育运动——在男性主导的美国企业界,它仍然是件大事。这不是明确的有意识行为,而是一种理念:我是教练,你们是我的团队,我们共同奋斗。不同公司有很多很多CEO,但大多数人都把自己看作教练,这是他们的团队,他们想要获胜。\"\n\n这些术语还旨在为工作注入意义——正如另一位教授Rakesh Khurana指出的,增强对公司的忠诚度。Khurana说:\"你看到了历史上曾与非营利组织和宗教组织相关的术语的引入:像愿景、价值观、激情和目标这样的词汇。\"\n\n这种对个人成就感的新关注可以帮助员工在关于工作生活平衡的日益激烈的辩论中保持动力。20世纪90年代的\"妈妈之战\"今天仍在继续,引发了关于为什么女性仍然无法兼顾一切的争论,以及像Sheryl Sandberg的《向前一步》这样的书籍,其标题本身就已成为一个流行语。像拔掉插头、离线、生活窍门、带宽和容量这样的术语都是关于在办公室和家庭之间设定界限。但如果你的工作是你的\"激情所在\",你就更有可能全身心投入其中,即使这意味着回家吃晚饭后在孩子们上床睡觉后还要长时间工作。\n\n但这似乎正是办公室用语的讽刺之处:每个人都嘲笑它,但管理者热爱它,公司依赖它,而普通人也心甘情愿地接受它。正如一位语言学家曾经说过的,\"你可以让人们一边认为它是废话,一边又接受它。\"在一个从根本上对你的生活及其意义漠不关心的职场中,办公室用语可以帮助你弄清楚自己与工作的关系——以及你的工作如何定义你是谁。",
+  "questions": [
+   {
+    "q": "According to Nancy Koehn, office language has become____.",
+    "opts": [
+     "less strategic",
+     "less energetic",
+     "more objective",
+     "more emotional"
+    ],
+    "ans": 3,
+    "explain": "答案D（细节题）。定位：哈佛商学院教授 Nancy Koehn 说：\"美国企业界的通用语已经比 20 年前更感性、更右脑化得多。\""
+   },
+   {
+    "q": "\"Team\"-oriented corporate vocabulary is closely related to ____.",
+    "opts": [
+     "sports culture",
+     "gender difference",
+     "historical incidents",
+     "athletic executives"
+    ],
+    "ans": 0,
+    "explain": "答案A（细节题）。定位：Koehn 指出，这种新时代的企业用语非常 \"团队\" 化——这并非巧合。\"别忘了体育——在男性主导的美国企业界，它依然是件大事。\""
+   },
+   {
+    "q": "Khurana believes that the importation of terminology aims to____.",
+    "opts": [
+     "revive historical terms",
+     "promote company image",
+     "foster corporate cooperation",
+     "strengthen employee loyalty"
+    ],
+    "ans": 3,
+    "explain": "答案D（细节题）。定位：这些用语也意在赋予工作以意义——并且，正如另一位教授 Rakesh Khurana 指出的，增强对公司的忠诚。"
+   },
+   {
+    "q": "It can be inferred that Lean In____.",
+    "opts": [
+     "voices for working women",
+     "appeals to passionate workaholics",
+     "triggers debates among mommies",
+     "praises motivated employees"
+    ],
+    "ans": 0,
+    "explain": "答案A（推断题）。定位：1990 年代的 \"妈妈战争\" 至今仍在继续，引发了关于为什么女性仍无法兼得一切的争论，以及像 Sheryl Sandberg 的 Lean In 这样的书——其书名本身已成为流行语。"
+   },
+   {
+    "q": "Which of the following statements is true about office speak?",
+    "opts": [
+     "Linguists believe it to be nonsense.",
+     "Regular people mock it but accept it.",
+     "Companies find it to be fundamental.",
+     "Managers admire it but avoid it."
+    ],
+    "ans": 1,
+    "explain": "答案B（细节题）。定位：但这似乎正是 office speak 的反讽之处：人人都拿它取笑，但经理们喜欢它，公司依赖它，普通人也心甘情愿地吸收它。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2015-read-4",
+  "type": "阅读理解",
+  "title": "2015年真题 · Text 4",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Many people talked of the 288,000 new jobs the Labor Department reported for June, along with the drop in the unemployment rate to 6.1 percent, as good news. And they were right. For now it appears the economy is creating jobs at a decent pace. We still have a long way to go to get back to full employment, but at least we are now finally moving forward at a faster pace.\n\nHowever, there is another important part of the jobs picture that was largely overlooked. There was a big jump in the number of people who report voluntarily working part-time. This figure is now 830,000 (4.4 percent) above its year ago level.\n\nBefore explaining the connection to the Obamacare, it is worth making an important distinction. Many people who work part-time jobs actually want full-time jobs. They take part-time work because this is all they can get. An increase in involuntary part-time work is evidence of weakness in the labor market and it means that many people will be having a very hard time making ends meet.\n\nThere was an increase in involuntary part-time in June, but the general direction has been down. Involuntary part-time employment is still far higher than before the recession, but it is down by 640,000 (7.9 percent) from its year ago level.\n\nWe know the difference between voluntary and involuntary part-time employment because people tell us. The survey used by the Labor Department asks people if they worked less than 35 hours in the reference week. If the answer is \"yes,\" they are classified as working part-time. The survey then asks whether they worked less than 35 hours in that week because they wanted to work less than full time or because they had no choice. They are only classified as voluntary part-time workers if they tell the survey taker they chose to work less than 35 hours a week.\n\nThe issue of voluntary part-time relates to Obamacare because one of the main purposes was to allow people to get insurance outside of employment. For many people, especially those with serious health conditions or family members with serious health conditions, before Obamacare the only way to get insurance was through a job that provided health insurance.\n\nHowever, Obamacare has allowed more than 12 million people to either get insurance through Medicaid or the exchanges. These are people who may previously have felt the need to get a full-time job that provided insurance in order to cover themselves and their families. With Obamacare there is no longer a link between employment and insurance.",
+  "passage_zh": "许多人将劳工部报告的6月新增28.8万个就业岗位以及失业率降至6.1%视为好消息,他们是对的。目前看来,经济正在以适当的速度创造就业岗位。我们距离实现充分就业还有很长的路要走,但至少现在我们终于以更快的速度向前推进了。\n\n然而,就业状况的另一个重要方面在很大程度上被忽视了。报告自愿从事兼职工作的人数出现了大幅增长。这一数字目前比去年同期水平高出83万人(4.4%)。\n\n在解释与Obamacare的联系之前,有必要做一个重要的区分。许多从事兼职工作的人实际上想要全职工作。他们从事兼职工作是因为这是他们能得到的全部。非自愿兼职工作的增加是劳动力市场疲软的证据,这意味着许多人将很难维持生计。\n\n6月份非自愿兼职工作有所增加,但总体趋势是下降的。非自愿兼职就业仍远高于经济衰退前的水平,但比去年同期水平下降了64万人(7.9%)。\n\n我们知道自愿兼职和非自愿兼职就业之间的区别,因为人们告诉了我们。劳工部使用的调查询问人们在参照周内工作时间是否少于35小时。如果答案是肯定的,他们就被归类为兼职工作。然后调查询问他们在那一周工作时间少于35小时是因为想要少于全职工作还是因为别无选择。只有当他们告诉调查人员自己选择每周工作少于35小时时,才会被归类为自愿兼职工作者。\n\n自愿兼职问题与Obamacare相关,因为其主要目的之一是允许人们在就业之外获得保险。对许多人来说,尤其是那些有严重健康问题或家庭成员有严重健康问题的人,在Obamacare出台之前,获得保险的唯一途径是通过提供医疗保险的工作。\n\n然而,Obamacare已使超过1200万人通过Medicaid或交易所获得保险。这些人以前可能觉得有必要找一份提供保险的全职工作,以便为自己和家人提供保障。有了Obamacare,就业和保险之间不再有关联。",
+  "questions": [
+   {
+    "q": "Which part of the jobs picture was neglected?",
+    "opts": [
+     "The prospect of a thriving job market.",
+     "The increase of voluntary part-time jobs.",
+     "The possibility of full employment.",
+     "The acceleration of job creation."
+    ],
+    "ans": 1,
+    "explain": "答案B（细节题）。定位：然而，就业图景里还有重要的另一块，被很大程度上忽视了：自愿做兼职的人数出现了大幅跃升。"
+   },
+   {
+    "q": "Many people work part-time because they____.",
+    "opts": [
+     "prefer part-time jobs to full-time jobs",
+     "feel that is enough to make ends meet",
+     "cannot get their hands on full-time jobs",
+     "haven't seen the weakness of the market"
+    ],
+    "ans": 2,
+    "explain": "答案C（细节题）。定位：许多做兼职的人其实想要全职；他们之所以做兼职，是因为他们只能找到这样的工作。"
+   },
+   {
+    "q": "Involuntary part-time employment in the US____.",
+    "opts": [
+     "shows a general tendency of decline",
+     "is harder to acquire than one year ago",
+     "satisfies the real need of the jobless",
+     "is lower than before the recession"
+    ],
+    "ans": 0,
+    "explain": "答案A（细节题）。定位：6 月非自愿兼职有所上升，但整体方向一直是向下的。"
+   },
+   {
+    "q": "It can be learned that with Obamacare, ____.",
+    "opts": [
+     "it is no longer easy for part-timers to get insurance",
+     "full-time employment is still essential for insurance",
+     "it is still challenging to get insurance for family members",
+     "employment is no longer a precondition to get insurance"
+    ],
+    "ans": 3,
+    "explain": "答案D（推断题）。定位：有了 Obamacare 之后，就业和保险之间不再有绑定。"
+   },
+   {
+    "q": "The text mainly discusses____.",
+    "opts": [
+     "employment in the US",
+     "part-timer classification",
+     "insurance through Medicaid",
+     "Obamacare's trouble"
+    ],
+    "ans": 0,
+    "explain": "答案A（主旨题）。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2015-match",
+  "type": "新题型",
+  "title": "2015年真题 · 新题型",
+  "score": 10,
+  "minutes": 8,
+  "intro": "Directions: Read the following text and answer the questions by choosing the most suitable subheading from the list A-G for each of the numbered paragraphs (41-45). There are two extra subheadings which you do not need to use. Mark your answers on the ANSWER SHEET. (10 points)",
+  "titles": [
+   "A. You are not alone",
+   "B. Experience helps you grow",
+   "C. Pave your own unique path",
+   "D. Most of your fears are unreal",
+   "E. Think about the present moment",
+   "F. Don't fear responsibility for your life",
+   "G. There are many things to be grateful for"
+  ],
+  "paras": [
+   {
+    "text": "Fear is both useful and harmful. This normal human reaction is used to protect us by signaling danger and preparing us to deal with it. Unfortunately, people create inner barriers with the help of exaggerating fears. My favorite actor Will Smith once said, \"Fear is not real. It is a product of thoughts you create. Do not misunderstand me. Danger is very real. But fear is a choice.\" I do completely agree that fears are just the product of our luxuriant imagination.",
+    "ans": 3,
+    "explain": "答案D。主旨：恐惧大多是自己想象出来的、并非真实"
+   },
+   {
+    "text": "If you are surrounded by problems and cannot stop thinking about the past, try to focus on the present moment. Many of us are weighed down by the past or anxious about the future. You may feel guilt over your past, but you are poisoning the present with the things and circumstances you cannot change. Value the present moment and remember how fortunate you are to be alive. Enjoy the beauty of the world around and keep your eyes open to see the possibilities before you. Happiness is not a point in the future and not a moment from the past, but a mindset that can be designed into the present.",
+    "ans": 4,
+    "explain": "答案E。主旨：别困在过去或焦虑未来，专注当下此刻"
+   },
+   {
+    "text": "Sometimes it is easy to feel bad because you are going through tough times. You can be easily caught up by life problems that you forget to pause and appreciate the things you have. Only strong people prefer to smile and value their life instead of crying and complaining about something.",
+    "ans": 6,
+    "explain": "答案G。主旨：别只顾烦恼，停下来珍惜你所拥有的"
+   },
+   {
+    "text": "No matter how isolated you might feel and how serious the situation is, you should always remember that you are not alone. Try to keep in mind that almost everyone respects and wants to help you if you are trying to make a good change in your life, especially your dearest and nearest people. You may have a circle of friends who provide constant good humor, help and companionship. If you have no friends or relatives, try to participate in several online communities, full of people who are always willing to share advice and encouragement.",
+    "ans": 0,
+    "explain": "答案A。主旨：无论多孤立，你都不是一个人、总有人愿帮你"
+   },
+   {
+    "text": "Today many people find it difficult to trust their own opinion and seek balance by gaining objectivity from external sources. This way you devalue your opinion and show that you are incapable of managing your own life. When you are struggling to achieve something important you should believe in yourself and be sure that your decision is the best. You live in your skin, think your own thoughts, have your own values and make your own choices.",
+    "ans": 2,
+    "explain": "答案C。主旨：相信自己的判断、自己做主，别依赖外部"
+   }
+  ]
+ },
+ {
+  "id": "zy-2015-trans",
+  "type": "翻译",
+  "title": "2015年真题 · 翻译",
+  "score": 15,
+  "minutes": 20,
+  "passage": "Think about driving a route that's very familiar. It could be your commute to work, a trip into town or the way home. Whichever it is, you know every twist and turn like the back of your hand. On these sorts of trips it's easy to lose concentration on the driving and pay little attention to the passing scenery. The consequence is that you perceive that the trip has taken less time than it actually has.\n\nThis is the well-travelled road effect: People tend to underestimate the time it takes to travel a familiar route.\n\nThe effect is caused by the way we allocate our attention. When we travel down a well-known route, because we don't have to concentrate much, time seems to flow more quickly. And afterwards, when we come to think back on it, we can't remember the journey well because we didn't pay much attention to it. So we assume it was shorter.",
+  "passage_zh": "设想一下，你正开车行驶在一条十分熟悉的路上。它可能是你上班的通勤路，可能是进城的一趟，或是回家的路。无论是哪一条，路上的每一处弯道、每一个转角，你都了如指掌。开这类熟路时，人很容易对驾驶本身走神，而对沿途掠过的风景也几乎不加留意。结果就是，你会觉得这趟路花的时间，比它实际花的要少。\n\n这就是「熟路效应」：人们往往会低估走一条熟悉路线所需要的时间。\n\n这种效应源于我们分配注意力的方式。当我们沿着一条熟悉的路线行驶时，由于无需太过集中注意力，时间似乎就过得更快。而事后，当我们回过头去回想这趟行程时，却记不太清了，因为当时我们并没怎么留意它。于是，我们便想当然地以为这趟路花的时间更短。",
+  "intro": "Directions: Translate the following text into Chinese. Write your translation on the ANSWER SHEET. (15 points)"
+ },
+ {
+  "id": "zy-2015-write-s",
+  "type": "写作",
+  "title": "2015年真题 · 小作文",
+  "score": 10,
+  "minutes": 15,
+  "prompt": "Directions: Suppose your university is going to host a summer camp for high school students. Write a notice to 1)briefly introduce the camp activities, and 2)call for volunteers. You should write about 100 words on the ANSWER SHEET. Do not use your name or the name of your university. Do not write your address. (10 points)",
+  "tips": "【参考范文】\nNotice A summer camp for high school students will be held on our campus from July 20 to July 30. During these ten days, participants will enjoy inspiring lectures, visit our laboratories, and take part in outdoor team activities, which aim to broaden their horizons and enrich their vacation. To make the camp a success, we sincerely call for volunteers. Volunteers will help guide the students, organize activities, and keep order. Anyone who is patient, responsible, and warm-hearted is warmly welcomed. Those interested may sign up by emailing summercamp@office.com before July 10. The Organizing Committee\nJune 25\n\n【参考译文】\n通知 一场面向高中生的夏令营将于7月20日至7月30日在本校校园举行。在这十天里，营员们将聆听精彩讲座、参观我们的实验室、参加户外团队活动，这些活动旨在开阔他们的视野、丰富他们的假期。 为使夏令营圆满成功，我们诚挚招募志愿者。志愿者将协助引导学生、组织活动并维持秩序。凡有耐心、有责任心、热心的同学，我们都热忱欢迎。有意者可于7月10日前发邮件至 summercamp@office.com 报名。 组委会\n6月25日"
+ },
+ {
+  "id": "zy-2015-write-b",
+  "type": "写作",
+  "title": "2015年真题 · 大作文",
+  "score": 15,
+  "minutes": 30,
+  "prompt": "Directions: Write an essay based on the following chart. In your writing, you should 1)interpret the chart, and 2)give your comments. You should write about 150 words on the ANSWER SHEET. (15 points)（配图：这张图片是一个三维饼图，显示了四个类别及其相应的百分比占比）",
+  "tips": "【参考范文】\nThe pie chart clearly illustrates how residents in a certain Chinese city spent their money during the Spring Festival holiday. According to the figures, spending on New Year gifts accounted for the largest share, reaching 40% of the total. The remaining expenses were evenly divided, with dining gatherings, transportation and other items each taking up 20%. Several factors may account for this pattern. Firstly, giving gifts is a time-honored tradition through which Chinese people express affection and maintain relationships, so it naturally consumes the biggest portion. Secondly, family reunions and long-distance travel back home are essential parts of the festival, which explains why dining and transportation also weigh heavily. In my view, this spending structure reflects the deep cultural value that Chinese people place on family ties and human relationships. However, we should keep our consumption rational and avoid blindly comparing gifts, so that the festival remains about warmth rather than money.\n\n【参考译文】\n这张饼图清楚地展示了中国某市居民在春节假期期间是如何花钱的。根据数据，新年礼物的花销占比最大，达到总额的40%。其余开销则平均分配，聚会吃饭、交通和其它各占20%。 造成这一格局的原因有几点。首先，送礼是一项历史悠久的传统，中国人借此表达情谊、维系关系，所以它自然占去最大一块。其次，家庭团聚和长途返乡是春节不可或缺的环节，这也解释了为何聚餐和交通的花销同样不小。 在我看来，这样的花销结构折射出中国人极为看重家庭亲情与人情往来。然而，我们也应保持理性消费，不盲目攀比礼物，让节日回归温情，而非金钱。"
+ }
+]

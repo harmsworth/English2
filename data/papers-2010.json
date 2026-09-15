@@ -1,0 +1,547 @@
+[
+ {
+  "id": "zy-2010-read-1",
+  "type": "阅读理解",
+  "title": "2010年真题 · Text 1",
+  "score": 10,
+  "minutes": 8,
+  "passage": "The longest bull run in a century of art-market history ended on a dramatic note with a sale of 56 works by Damien Hirst, Beautiful Inside My Head Forever, at Sotheby's in London on September 15th 2008. All but two pieces sold, fetching more than £70m, a record for a sale by a single artist. It was a last victory. As the auctioneer called out bids, in New York one of the oldest banks on Wall Street, Lehman Brothers, filed for bankruptcy.\n\nThe world art market had already been losing momentum for a while after rising bewilderingly since 2003. At its peak in 2007 it was worth some $65 billion, reckons Clare McAndrew, founder of Arts Economics, a research firm – double the figure five years earlier. Since then it may have come down to $50 billion. But the market generates interest far beyond its size because it brings together great wealth, enormous egos, greed, passion and controversy in a way matched by few other industries.\n\nIn the weeks and months that followed Mr. Hirst's sale, spending of any sort became deeply unfashionable. In the art world that meant collectors stayed away from galleries and salerooms. Sales of contemporary art fell by two-thirds, and in the most overheated sector, they were down by nearly 90% in the year to November 2008. Within weeks the world's two biggest auction houses, Sotheby's and Christie's, had to pay out nearly $200m in guarantees to clients who had placed works for sale with them.\n\nThe current downturn in the art market is the worst since the Japanese stopped buying Impressionists at the end of 1989. This time experts reckon that prices are about 40% down on their peak on average, though some have been far more fluctuant. But Edward Dolman, Christie's chief executive, says: \"I'm pretty confident we're at the bottom.\"\n\nWhat makes this slump different from the last, he says, is that there are still buyers in the market. Almost everyone who was interviewed for this special report said that the biggest problem at the moment is not a lack of demand but a lack of good work to sell. The three Ds – death, debt and divorce – still deliver works of art to the market. But anyone who does not have to sell is keeping away, waiting for confidence to return.",
+  "passage_zh": "一个世纪以来艺术市场历史上最长的牛市以戏剧性的方式结束，2008年9月15日，Damien Hirst的56件作品在伦敦苏富比以\"Beautiful Inside My Head Forever\"为题进行拍卖。除两件作品外全部售出，成交额超过7000万英镑，创下单一艺术家作品拍卖的纪录。这是最后的胜利。就在拍卖师喊出竞价时，华尔街最古老的银行之一雷曼兄弟在纽约申请破产。\n\n全球艺术市场在2003年以来令人眩目的上涨之后,已经失去动力有一段时间了。研究公司Arts Economics的创始人Clare McAndrew估计，艺术市场在2007年达到顶峰时价值约650亿美元——是五年前数字的两倍。此后可能已降至500亿美元。但这个市场引发的关注远超其规模，因为它以少数其他行业难以匹敌的方式汇聚了巨额财富、膨胀的自我、贪婪、激情和争议。\n\n在Hirst先生拍卖后的数周和数月里，任何形式的消费都变得极不合时宜。在艺术界，这意味着收藏家远离画廊和拍卖行。当代艺术品销售额下降了三分之二，在最过热的领域，截至2008年11月的一年中销售额下降了近90%。几周之内，全球两大拍卖行苏富比和佳士得不得不向委托他们出售作品的客户支付近2亿美元的担保金。\n\n艺术市场当前的低迷是自1989年底日本人停止购买印象派作品以来最严重的一次。这次专家估计价格平均比峰值下降了约40%，尽管有些作品的波动要大得多。但佳士得首席执行官Edward Dolman说：\"我相当确信我们已经触底了。\"\n\n他说，这次衰退与上次的不同之处在于市场上仍然有买家。几乎所有接受本特别报道采访的人都表示，目前最大的问题不是需求不足，而是缺乏可供出售的优质作品。三个D——死亡、债务和离婚——仍在向市场输送艺术品。但任何不必出售的人都在观望，等待信心回归。",
+  "questions": [
+   {
+    "q": "In the first paragraph, Damien Hirst's sale was referred to as \"a last victory\" because________________.",
+    "opts": [
+     "the art market had witnessed a succession of victories",
+     "the auctioneer finally got the two pieces at the highest bids",
+     "Beautiful Inside My Head Forever won over all masterpieces",
+     "it was successfully made just before the world financial crisis"
+    ],
+    "ans": 3,
+    "explain": "预判命中'拍卖紧贴危机爆发'，四个选项里只有 it was successfully made just before the world financial crisis 把'时间贴近危机'写出来，直接锁定 D。"
+   },
+   {
+    "q": "By saying \"spending of any sort became deeply unfashionable\" (Line 1-2, Para. 3), the author suggests that ________________.",
+    "opts": [
+     "collectors were no longer actively involved in art-market auctions",
+     "people stopped every kind of spending and stayed away from galleries",
+     "art collection as a fashion had lost its appeal to a great extent",
+     "works of art in general had gone out of fashion so they were not worth buying"
+    ],
+    "ans": 0,
+    "explain": "预判的'藏家不再下场买'与 collectors were no longer actively involved in art-market auctions 字面贴合，且 A 准确锁定 collectors 这一主语，避免把 'any sort of spending' 推广到所有人。"
+   },
+   {
+    "q": "Which of the following statements is NOT true?",
+    "opts": [
+     "Sales of contemporary art fell dramatically from 2007 to 2008.",
+     "The art market surpassed many other industries in momentum.",
+     "The art market generally went downward in various ways.",
+     "Some art dealers were awaiting better chances to come."
+    ],
+    "ans": 1,
+    "explain": "B 借用了'no other industries can match'的句式外壳，但把 interest 换成 momentum——后者是增长动能、与 P2 'may have come down to $50 billion' 描绘的下滑明显冲突，故 B 不符原文，被 NOT 题选中。"
+   },
+   {
+    "q": "The three Ds mentioned in the last paragraph are ________________.",
+    "opts": [
+     "auction houses' favorites",
+     "contemporary trends",
+     "factors promoting artwork circulation",
+     "styles representing Impressionists"
+    ],
+    "ans": 2,
+    "explain": "四个选项里只有 factors promoting artwork circulation 同时把'起作用的因素'与'让艺术品流入市场'两层意思都覆盖，与定位句完全对应。"
+   },
+   {
+    "q": "The most appropriate title for this text could be ________________.",
+    "opts": [
+     "Fluctuation of Art Prices",
+     "Up-to-date Art Auctions",
+     "Art Market in Decline",
+     "Shifted Interest in Arts"
+    ],
+    "ans": 2,
+    "explain": "C 用 in Decline 概括了 P2/P3/P4/P5 的所有下行表述，是唯一能装下全部段落功能的标题。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2010-read-2",
+  "type": "阅读理解",
+  "title": "2010年真题 · Text 2",
+  "score": 10,
+  "minutes": 8,
+  "passage": "I was addressing a small gathering in a suburban Virginia living room – a women's group that had invited men to join them. Throughout the evening, one man had been particularly talkative, frequently offering ideas and anecdotes, while his wife sat silently beside him on the couch. Toward the end of the evening, I commented that women frequently complain that their husbands don't talk to them. This man quickly nodded in agreement. He gestured toward his wife and said, \"She's the talker in our family.\" The room burst into laughter; the man looked puzzled and hurt. \"It's true,\" he explained. \"When I come home from work I have nothing to say. If she didn't keep the conversation going, we'd spend the whole evening in silence.\"\n\nThis episode crystallizes the irony that although American men tend to talk more than women in public situations, they often talk less at home. And this pattern is wreaking havoc with marriage.\n\nThe pattern was observed by political scientist Andrew Hacker in the late 1970s. Sociologist Catherine Kohler Riessman reports in her new book Divorce Talk that most of the women she interviewed – but only a few of the men – gave lack of communication as the reason for their divorces. Given the current divorce rate of nearly 50 percent, that amounts to millions of cases in the United States every year – a virtual epidemic of failed conversation.\n\nIn my own research, complaints from women about their husbands most often focused not on tangible inequities such as having given up the chance for a career to accompany a husband to his, or doing far more than their share of daily life-support work like cleaning, cooking and social arrangements. Instead, they focused on communication: \"He doesn't listen to me.\" \"He doesn't talk to me.\" I found, as Hacker observed years before, that most wives want their husbands to be, first and foremost, conversational partners, but few husbands share this expectation of their wives.\n\nIn short, the image that best represents the current crisis is the stereotypical cartoon scene of a man sitting at the breakfast table with a newspaper held up in front of his face, while a woman glares at the back of it, wanting to talk.",
+  "passage_zh": "我正在弗吉尼亚州郊区一间起居室里对一小群人发言——一个邀请了男性参加的女性团体。整个晚上,有一位男士特别健谈,频繁地提出想法和讲述轶事,而他的妻子则静静地坐在他旁边的沙发上。临近晚会结束时,我评论说女性经常抱怨她们的丈夫不与她们交谈。这位男士很快点头表示赞同。他朝他妻子做了个手势,说道:\"她才是我们家里爱说话的人。\"房间里爆发出一阵笑声;那位男士看起来既困惑又受伤。\"这是真的,\"他解释道,\"当我下班回家时我没什么可说的。如果不是她让谈话继续下去,我们整个晚上都会在沉默中度过。\"\n\n这一插曲凸显了一个讽刺现象:尽管美国男性在公共场合往往比女性说得更多,但他们在家里却常常说得更少。而这种模式正在对婚姻造成严重破坏。\n\n这种模式是政治学家Andrew Hacker在20世纪70年代末观察到的。社会学家Catherine Kohler Riessman在她的新书《离婚访谈》中报告说,她采访的大多数女性——但只有少数男性——把缺乏沟通作为离婚的原因。鉴于目前近50%的离婚率,这相当于美国每年有数百万案例——实际上是一场对话失败的流行病。\n\n在我自己的研究中,女性对丈夫的抱怨最常聚焦的不是有形的不公平,比如为了陪伴丈夫而放弃职业机会,或者承担了远超自己应有份额的日常生活支持工作,如清洁、烹饪和社交安排。相反,她们关注的是沟通:\"他不听我说话。\"\"他不和我说话。\"正如Hacker多年前观察到的,我发现大多数妻子希望她们的丈夫首先是谈话伙伴,但很少有丈夫对妻子抱有这种期望。\n\n简而言之,最能代表当前危机的画面是一个老套的卡通场景:一个男人坐在早餐桌旁,面前举着一份报纸挡住脸,而一个女人怒视着报纸的背面,想要说话。",
+  "questions": [
+   {
+    "q": "What is most wives' main expectation of their husbands?",
+    "opts": [
+     "Talking to them.",
+     "Trusting them.",
+     "Supporting their careers.",
+     "Sharing housework."
+    ],
+    "ans": 0,
+    "explain": "预判得到的\"丈夫能跟自己说话\"与 Talking to them 完全同义，且原文 not on tangible inequities such as ... cleaning, cooking 已显式排除 D，C、B 在原文找不到出处，A 唯一成立。"
+   },
+   {
+    "q": "Judging from the context, the phrase \"wreaking havoc\" (Line 3, Para. 2) most probably means ________________.",
+    "opts": [
+     "generating motivation",
+     "exerting influence",
+     "causing damage",
+     "creating pressure"
+    ],
+    "ans": 2,
+    "explain": "四个选项里只有 causing damage 表纯负面后果，其他三项要么中性 (exerting influence)、要么正面 (generating motivation)，要么仅表\"压力\"未到\"破坏\"程度 (creating pressure)。"
+   },
+   {
+    "q": "All of the following are true EXCEPT ________________.",
+    "opts": [
+     "men tend to talk more in public than women",
+     "nearly 50 percent of recent divorces are caused by failed conversation",
+     "women attach much importance to communication between couples",
+     "a female tends to be more talkative at home than her spouse"
+    ],
+    "ans": 1,
+    "explain": "原文只说\"大多数受访女性\"把沟通缺失列为离婚原因，且 a virtual epidemic of failed conversation 中 virtual epidemic（堪称瘟疫）是作者的渲染比喻，不是 50% 这一数字的归因依据；A、C、D 均能在原文找到正面对应，唯 B 不真。"
+   },
+   {
+    "q": "Which of the following can best summarize the main idea of this text?",
+    "opts": [
+     "The moral decay deserves more research by sociologists.",
+     "Marriage break-up stems from sex inequalities.",
+     "Husband and wife have different expectations from their marriage.",
+     "Conversational patterns between man and wife are different."
+    ],
+    "ans": 3,
+    "explain": "Conversational patterns between man and wife are different 能同时覆盖 P1 轶事、P2 论点、P3 数据、P4 期望差、P5 漫画——它们都在论证\"夫妻在 talk 这件事上不一样\"；其他三项要么超出文本范围，要么只覆盖局部。"
+   },
+   {
+    "q": "In the following part immediately after this text, the author will most probably focus on ________________.",
+    "opts": [
+     "a vivid account of the new book Divorce Talk",
+     "a detailed description of the stereotypical cartoon",
+     "other possible reasons for a high divorce rate in the U.S.",
+     "a brief introduction to the political scientist Andrew Hacker"
+    ],
+    "ans": 1,
+    "explain": "B 项 the stereotypical cartoon 与末段 the stereotypical cartoon scene 原词复现，且选项动作 a detailed description 正是\"对末段未展开意象的细描\"——一步延伸成立。其他三项要么向前回退（A、D 回到前文已写过的人/书），要么跳到全文外（C）。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2010-read-3",
+  "type": "阅读理解",
+  "title": "2010年真题 · Text 3",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Over the past decade, many companies had perfected the art of creating automatic behaviors – habits – among consumers. These habits have helped companies earn billions of dollars when customers eat snacks or wipe counters almost without thinking, often in response to a carefully designed set of daily cues.\n\n\"There are fundamental public health problems, like dirty hands instead of a soap habit, that remain killers only because we can't figure out how to change people's habits,\" said Dr. Curtis, the director of the Hygiene Center at the London School of Hygiene & Tropical Medicine. \"We wanted to learn from private industry how to create new behaviors that happen automatically.\"\n\nThe companies that Dr. Curtis turned to – Procter & Gamble, Colgate-Palmolive and Unilever – had invested hundreds of millions of dollars finding the subtle cues in consumers' lives that corporations could use to introduce new routines.\n\nIf you look hard enough, you'll find that many of the products we use every day – chewing gums, skin moisturizers, disinfecting wipes, air fresheners, water purifiers, health snacks, teeth whiteners, fabric softeners, vitamins – are results of manufactured habits. A century ago, few people regularly brushed their teeth multiple times a day. Today, because of shrewd advertising and public health campaigns, many Americans habitually give their pearly whites a cavity-preventing scrub twice a day, often with Colgate, Crest or one of the other brands.\n\nA few decades ago, many people didn't drink water outside of a meal. Then beverage companies started bottling the production of far-off springs, and now office workers unthinkingly sip bottled water all day long. Chewing gum, once bought primarily by adolescent boys, is now featured in commercials as a breath freshener and teeth cleanser for use after a meal. Skin moisturizers are advertised as part of morning beauty rituals, slipped in between hair brushing and putting on makeup.\n\n\"Our products succeed when they become part of daily or weekly patterns,\" said Carol Berning, a consumer psychologist who recently retired from Procter & Gamble, the company that sold $76 billion of Tide, Crest and other products last year. \"Creating positive habits is a huge part of improving our consumers' lives, and it's essential to making new products commercially viable.\"\n\nThrough experiments and observation, social scientists like Dr. Berning have learned that there is power in tying certain behaviors to habitual cues through ruthless advertising. As this new science of habit has emerged, controversies have erupted when the tactics have been used to sell questionable beauty creams or unhealthy foods.",
+  "passage_zh": "在过去十年中,许多公司已经完善了在消费者中创造自动行为——习惯——的艺术。当顾客几乎不假思索地吃零食或擦拭台面时,这些习惯帮助公司赚取了数十亿美元,这通常是对一系列精心设计的日常提示的反应。\n\n伦敦卫生与热带医学学院卫生中心主任Curtis博士说:\"存在一些基本的公共卫生问题,比如脏手而非肥皂习惯,它们之所以仍然是致命因素,仅仅是因为我们无法弄清楚如何改变人们的习惯。我们想向私营企业学习如何创造自动发生的新行为。\"\n\nCurtis博士求助的公司——宝洁、高露洁棕榄和联合利华——已经投资了数亿美元来寻找消费者生活中那些公司可以用来引入新习惯的微妙提示。\n\n如果你仔细观察,你会发现我们每天使用的许多产品——口香糖、皮肤保湿霜、消毒湿巾、空气清新剂、净水器、健康零食、牙齿美白剂、织物柔顺剂、维生素——都是人为制造的习惯的结果。一个世纪前,很少有人每天多次定期刷牙。今天,由于精明的广告和公共健康运动,许多美国人习惯性地每天两次给他们洁白的牙齿进行预防蛀牙的清洁,通常使用高露洁、佳洁士或其他品牌之一。\n\n几十年前,许多人在用餐之外不喝水。然后饮料公司开始将遥远泉水的产品装瓶,现在办公室职员整天不假思索地啜饮瓶装水。口香糖曾经主要由青春期男孩购买,现在在广告中被宣传为餐后使用的口气清新剂和牙齿清洁剂。皮肤保湿霜被宣传为晨间美容仪式的一部分,插入在梳头和化妆之间。\n\n消费心理学家Carol Berning最近从宝洁公司退休,该公司去年销售了760亿美元的汰渍、佳洁士和其他产品,她说:\"当我们的产品成为日常或每周模式的一部分时,它们就会成功。创造积极的习惯是改善消费者生活的重要部分,对于使新产品在商业上可行至关重要。\"\n\n通过实验和观察,像Berning博士这样的社会科学家已经了解到,通过无情的广告将某些行为与习惯性提示联系起来具有力量。随着这种关于习惯的新科学的出现,当这些策略被用来销售可疑的美容霜或不健康食品时,争议就爆发了。",
+  "questions": [
+   {
+    "q": "According to Dr. Curtis, habits like hand washing with soap ________________.",
+    "opts": [
+     "should be further cultivated",
+     "should be changed gradually",
+     "are deeply rooted in history",
+     "are basically private concerns"
+    ],
+    "ans": 0,
+    "explain": "预判“还需被培养”，A 项 should be further cultivated 与 create new behaviors that happen automatically 精确对接，故锁 A。"
+   },
+   {
+    "q": "Bottled water, chewing gum and skin moisturizers are mentioned in Paragraph 5 so as to ________________.",
+    "opts": [
+     "reveal their impact on people's habits",
+     "show the urgent need of daily necessities",
+     "indicate their effect on people's buying power",
+     "manifest the significant role of good habits"
+    ],
+    "ans": 0,
+    "explain": "三件商品被共同用来展示“产品如何成为下意识的日常行为”，与 reveal their impact on people's habits 完全吻合，故选 A。"
+   },
+   {
+    "q": "Which of the following does NOT belong to products that help create people's habits?",
+    "opts": [
+     "Tide.",
+     "Crest.",
+     "Colgate.",
+     "Unilever."
+    ],
+    "ans": 3,
+    "explain": "Tide/Crest/Colgate 都能在 P4、P6 找到“产品”身份证据；Unilever 唯一身份是公司，与题干 products 不匹配，故选 D。"
+   },
+   {
+    "q": "From the text we know that some of consumers' habits are developed due to ________________.",
+    "opts": [
+     "perfected art of products",
+     "automatic behavior creation",
+     "commercial promotions",
+     "scientific experiments"
+    ],
+    "ans": 2,
+    "explain": "预判答案为“广告/宣传推动”，C 项 commercial promotions 以“商业推广”作上位词覆盖两者，故选 C。"
+   },
+   {
+    "q": "The author's attitude toward the influence of advertisement on people's habits is ________________.",
+    "opts": [
+     "indifferent",
+     "negative",
+     "positive",
+     "biased"
+    ],
+    "ans": 1,
+    "explain": "末段评价词清一色指向负面后果，与 negative 一一对应，故选 B。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2010-read-4",
+  "type": "阅读理解",
+  "title": "2010年真题 · Text 4",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Many Americans regard the jury system as a concrete expression of crucial democratic values, including the principles that all citizens who meet minimal qualifications of age and literacy are equally competent to serve on juries; that jurors should be selected randomly from a representative cross section of the community; that no citizen should be denied the right to serve on a jury on account of race, religion, sex, or national origin; that defendants are entitled to trial by their peers; and that verdicts should represent the conscience of the community and not just the letter of the law. The jury is also said to be the best surviving example of direct rather than representative democracy. In a direct democracy, citizens take turns governing themselves, rather than electing representatives to govern for them.\n\nBut as recently as in 1968, jury selection procedures conflicted with these democratic ideals. In some states, for example, jury duty was limited to persons of supposedly superior intelligence, education, and moral character. Although the Supreme Court of the United States had prohibited intentional racial discrimination in jury selection as early as the 1880 case of Strauder v. West Virginia, the practice of selecting so-called elite or blue-ribbon juries provided a convenient way around this and other antidiscrimination laws.\n\nThe system also failed to regularly include women on juries until the mid-20th century. Although women first served on state juries in Utah in 1898, it was not until the 1940s that a majority of states made women eligible for jury duty. Even then several states automatically exempted women from jury duty unless they personally asked to have their names included on the jury list. This practice was justified by the claim that women were needed at home, and it kept juries unrepresentative of women through the 1960s.\n\nIn 1968, the Congress of the United States passed the Jury Selection and Service Act, ushering in a new era of democratic reforms for the jury. This law abolished special educational requirements for federal jurors and required them to be selected at random from a cross section of the entire community. In the landmark 1975 decision Taylor v. Louisiana, the Supreme Court extended the requirement that juries be representative of all parts of the community to the state level. The Taylor decision also declared sex discrimination in jury selection to be unconstitutional and ordered states to use the same procedures for selecting male and female jurors.",
+  "passage_zh": "许多美国人将陪审团制度视为重要民主价值观的具体体现,这些价值观包括以下原则:所有符合年龄和文化程度最低资格的公民都同样有资格担任陪审员;陪审员应从具有代表性的社区横断面中随机选出;任何公民都不应因种族、宗教、性别或民族出身而被剥夺担任陪审员的权利;被告有权由其同辈审判;裁决应代表社区的良知,而不仅仅是法律条文。陪审团也被认为是直接民主而非代议制民主现存的最佳范例。在直接民主中,公民轮流自我治理,而不是选举代表来为他们治理。\n\n但直到1968年,陪审员选拔程序仍与这些民主理想相冲突。例如,在一些州,陪审义务仅限于被认为具有优越智力、教育程度和道德品质的人。尽管美国最高法院早在1880年Strauder诉West Virginia案中就禁止了陪审员选拔中的蓄意种族歧视,但选拔所谓精英陪审团或蓝带陪审团的做法为规避这项法律和其他反歧视法律提供了便利途径。\n\n该制度也未能定期让女性进入陪审团,直到20世纪中叶。虽然女性于1898年首次在Utah州担任州陪审员,但直到20世纪40年代,大多数州才使女性有资格担任陪审义务。即便如此,仍有几个州自动豁免女性的陪审义务,除非她们亲自要求将自己的名字列入陪审员名单。这种做法以女性需要待在家中为由加以辩护,并使陪审团在整个20世纪60年代都不能代表女性。\n\n1968年,美国国会通过了《陪审员选拔与服务法》,为陪审团开启了民主改革的新时代。该法律废除了对联邦陪审员的特殊教育要求,并要求从整个社区的横断面中随机选拔他们。在1975年具有里程碑意义的Taylor诉Louisiana案判决中,最高法院将陪审团必须代表社区各阶层的要求扩展到州一级。Taylor案判决还宣布陪审员选拔中的性别歧视违宪,并命令各州对男性和女性陪审员使用相同的选拔程序。",
+  "questions": [
+   {
+    "q": "From the principles of the US jury system, we learn that ________________.",
+    "opts": [
+     "both literate and illiterate people can serve on juries",
+     "defendants are immune from trial by their peers",
+     "no age limit should be imposed for jury service",
+     "judgment should consider the opinion of the public"
+    ],
+    "ans": 3,
+    "explain": "预判中 \"裁决应反映社区良心\" 一条与 judgment should consider the opinion of the public 字面句式相同、语义等值，可直接锁定。"
+   },
+   {
+    "q": "The practice of selecting so-called elite jurors prior to 1968 showed ________________.",
+    "opts": [
+     "the inadequacy of antidiscrimination laws",
+     "the prevalent discrimination against certain races",
+     "the conflicting ideals in jury selection procedures",
+     "the arrogance common among the Supreme Court judges"
+    ],
+    "ans": 0,
+    "explain": "预判中 \"法律可被便捷绕过\" 与 the inadequacy of antidiscrimination laws 语义等值，便直接锁定 A。"
+   },
+   {
+    "q": "Even in the 1960s, women were seldom on the jury list in some states because ________________.",
+    "opts": [
+     "they were automatically banned by state laws",
+     "they fell far short of the required qualifications",
+     "they were supposed to perform domestic duties",
+     "they tended to evade public engagement"
+    ],
+    "ans": 2,
+    "explain": "预判中 \"妇女被认为应在家\" 与 they were supposed to perform domestic duties 字面对应，直接锁定。"
+   },
+   {
+    "q": "After the Jury Selection and Service Act was passed, ________________.",
+    "opts": [
+     "sex discrimination in jury selection was unconstitutional and had to be abolished",
+     "educational requirements became less rigid in the selection of federal jurors",
+     "jurors at the state level ought to be representative of the entire community",
+     "states ought to conform to the federal court in reforming the jury system"
+    ],
+    "ans": 1,
+    "explain": "预判中 \"废除联邦陪审员特殊教育要求\" 与 educational requirements became less rigid in the selection of federal jurors 在主体与方向上均一致，直接锁定。"
+   },
+   {
+    "q": "In discussing the US jury system, the text centers on ________________.",
+    "opts": [
+     "its nature and problems",
+     "its characteristics and tradition",
+     "its problems and their solutions",
+     "its tradition and development"
+    ],
+    "ans": 3,
+    "explain": "its tradition and development 两个名词分别覆盖 P1 的原则与 P2P3P4 的演进；与预判的双轴主线吻合。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2010-cloze",
+  "type": "完形填空",
+  "title": "2010年真题 · 完形填空",
+  "score": 20,
+  "minutes": 15,
+  "passage": "The outbreak of swine flu that was first detected in Mexico was declared a global epidemic on June 11, 2009. It is the first worldwide epidemic __(1)__ by the World Health Organization in 41 years.\n\nThe heightened alert __(2)__ an emergency meeting with flu experts in Geneva that assembled after a sharp rise in cases in Australia, and rising __(3)__ in Britain, Japan, Chile and elsewhere.\n\nBut the epidemic is \" __(4)__ \" in severity, according to Margaret Chan, the organization's director general, __(5)__ the overwhelming majority of patients experiencing only mild symptoms and a full recovery, often in the __(6)__ of any medical treatment.\n\nThe outbreak came to global __(7)__ in late April 2009, when Mexican authorities noted an unusually large number of hospitalizations and deaths __(8)__ healthy adults. As much of Mexico City shut down at the height of a panic, cases began to __(9)__ in New York City, the southwestern United States and around the world.\n\nIn the United States, new cases seemed to fade __(10)__ warmer weather arrived. But in late September 2009, officials reported there was __(11)__ flu activity in almost every state and that virtually all the __(12)__ tested are the new swine flu, also known as (A) H1N1, not seasonal flu. In the U.S., it has __(13)__ more than one million people, and caused more than 600 deaths and more than 6,000 hospitalizations.\n\nFederal health officials __(14)__ Tamiflu for children from the national stockpile and began __(15)__ orders from the states for the new swine flu vaccine. The new vaccine, which is different from the annual flu vaccine, is __(16)__ ahead of expectations. More than three million doses were to be made available in early October 2009, though most of those __(17)__ doses were of the FluMist nasal spray type, which is not __(18)__ for pregnant women, people over 50 or those with breathing difficulties, heart disease or several other __(19)__ . But it was still possible to vaccinate people in other high-risk groups: health care workers, people __(20)__ infants and healthy young people.",
+  "passage_zh": "2009年6月11日,首次在墨西哥发现的猪流感疫情被宣布为全球流行病。这是世界卫生组织41年来首次指定的全球流行病。\n\n在日内瓦与流感专家召开紧急会议后,警戒级别提高。此次会议是在澳大利亚病例急剧增加以及英国、日本、智利和其他地区病例数量上升后召集的。\n\n但根据该组织总干事陈冯富珍的说法,此次流行病的严重程度为\"中等\",绝大多数患者仅出现轻微症状并完全康复,通常无需任何医疗治疗。\n\n此次疫情于2009年4月下旬引起全球关注,当时墨西哥当局注意到健康成年人中出现了异常大量的住院和死亡病例。在恐慌高峰期墨西哥城大部分地区关闭之际,病例开始在纽约市、美国西南部和世界各地出现。\n\n在美国,随着温暖天气的到来,新增病例似乎有所减少。但在2009年9月下旬,官员报告称几乎每个州都有显著的流感活动,并且几乎所有检测样本都是新型猪流感,也称为甲型H1N1流感,而非季节性流感。在美国,它已感染超过一百万人,造成600多人死亡和6000多人住院。\n\n联邦卫生官员从国家储备中释放了儿童用达菲,并开始接受各州订购新型猪流感疫苗的订单。这种新疫苗不同于年度流感疫苗,其供应时间早于预期。2009年10月初将提供超过三百万剂疫苗,尽管这些初始剂量中的大部分是FluMist鼻喷雾型疫苗,不推荐孕妇、50岁以上人群或患有呼吸困难、心脏病或其他一些问题的人使用。但仍然可以为其他高风险群体接种疫苗:医护人员、照顾婴儿的人员和健康的年轻人。",
+  "blanks": [
+   {
+    "opts": [
+     "criticized",
+     "appointed",
+     "commented",
+     "designated"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：主语是 epidemic，动作是 WHO 对它的官方‘认定/命名’。契合——‘正式认定/指定为’"
+   },
+   {
+    "opts": [
+     "proceeded",
+     "activated",
+     "followed",
+     "prompted"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：会议是在病例激增‘之后’召集的，故警戒‘跟随’会议这一时序。契合——警戒‘紧随’会议而升级"
+   },
+   {
+    "opts": [
+     "digits",
+     "numbers",
+     "amounts",
+     "sums"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：承接 cases（可数），指‘病例数目’。契合——numbers 表可数事物的‘数目’"
+   },
+   {
+    "opts": [
+     "moderate",
+     "normal",
+     "unusual",
+     "extreme"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：后文‘绝大多数患者只有轻症并痊愈’定调‘温和’。契合——‘温和、适中’呼应‘只有轻症’"
+   },
+   {
+    "opts": [
+     "with",
+     "in",
+     "from",
+     "by"
+    ],
+    "ans": 0,
+    "explain": "固定搭配：本句内即可定：with + 名词 + doing 表伴随。契合——with 引导复合结构表伴随"
+   },
+   {
+    "opts": [
+     "progress",
+     "absence",
+     "presence",
+     "favor"
+    ],
+    "ans": 1,
+    "explain": "固定搭配：上文‘只有轻症、完全康复’暗示‘无需治疗也能好’。契合——in the absence of=‘在没有……情况下’"
+   },
+   {
+    "opts": [
+     "reality",
+     "phenomenon",
+     "concept",
+     "notice"
+    ],
+    "ans": 3,
+    "explain": "固定搭配：下文‘墨西哥当局注意到大量住院死亡’点明‘进入关注’。契合——come to notice=‘引起注意’"
+   },
+   {
+    "opts": [
+     "over",
+     "for",
+     "among",
+     "to"
+    ],
+    "ans": 2,
+    "explain": "固定搭配：本句内：death 这一现象发生‘在健康成年人群体中’。契合——among=‘在……（群体）之中’"
+   },
+   {
+    "opts": [
+     "stay up",
+     "crop up",
+     "fill up",
+     "cover up"
+    ],
+    "ans": 1,
+    "explain": "固定搭配：主语 cases + began to，需‘开始（接连）冒出’。契合——crop up=‘（意外地）出现、冒出’"
+   },
+   {
+    "opts": [
+     "as",
+     "if",
+     "unless",
+     "until"
+    ],
+    "ans": 0,
+    "explain": "逻辑关系：‘病例消退’与‘天气转暖’是同步伴随关系。契合——as=‘随着/当……时’"
+   },
+   {
+    "opts": [
+     "excessive",
+     "enormous",
+     "significant",
+     "magnificent"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：‘几乎每个州都有’说明流感活动‘相当显著’。契合——‘显著的、可观的’，中性贴切"
+   },
+   {
+    "opts": [
+     "categories",
+     "examples",
+     "patterns",
+     "samples"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：被 tested、且结果是 swine flu，对象只能是‘检测样本’。契合——‘（化验）样本’正是被检测物"
+   },
+   {
+    "opts": [
+     "imparted",
+     "immersed",
+     "injected",
+     "infected"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：主语是流感、宾语是百万人，并列‘死亡、住院’，指‘感染’。契合——infect=‘感染’"
+   },
+   {
+    "opts": [
+     "released",
+     "relayed",
+     "relieved",
+     "remained"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：‘从国家储备中’取出儿童用达菲，指‘释放/投放’。契合——release=‘释放、投放（储备）’"
+   },
+   {
+    "opts": [
+     "placing",
+     "delivering",
+     "taking",
+     "giving"
+    ],
+    "ans": 2,
+    "explain": "固定搭配：联邦官员‘接受’来自各州的疫苗订单。契合——take orders=‘接受/受理订单’"
+   },
+   {
+    "opts": [
+     "feasible",
+     "available",
+     "reliable",
+     "applicable"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：下文‘三百万剂将供应’印证疫苗‘可获得’。契合——available=‘可获得/可供应的’"
+   },
+   {
+    "opts": [
+     "prevalent",
+     "principal",
+     "innovative",
+     "initial"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：前句‘early October 可供的首批三百万剂’指‘最初的’。契合——initial=‘最初的、首批的’"
+   },
+   {
+    "opts": [
+     "presented",
+     "restricted",
+     "recommended",
+     "introduced"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：对象是孕妇、50 岁以上等高危人群，‘不被推荐’使用。契合——not recommended for=‘不推荐给’"
+   },
+   {
+    "opts": [
+     "problems",
+     "issues",
+     "agonies",
+     "sufferings"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：前列 breathing difficulties、heart disease 是健康‘问题’。契合——(health) problems 概括前述病症"
+   },
+   {
+    "opts": [
+     "involved in",
+     "caring for",
+     "concerned with",
+     "warding off"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：与‘医护、健康年轻人’并列的优先接种群体——‘照护婴儿者’。契合——care for=‘照料、照护’"
+   }
+  ]
+ },
+ {
+  "id": "zy-2010-match",
+  "type": "新题型",
+  "title": "2010年真题 · 新题型",
+  "score": 10,
+  "minutes": 8,
+  "intro": "Read the following text and decide whether each of the statements is true or false. Choose T if the statement is true or F if the statement is not true. (10 points)",
+  "titles": [
+   "T. True",
+   "F. False"
+  ],
+  "paras": [
+   {
+    "text": "Findings of the Stanford University researchers will promote the sales of new Boeing and Airbus aircraft.",
+    "ans": 1,
+    "explain": "题干预判结论 \"不会促进新机销售\" 直接对应 F；不需要做进一步推断。"
+   },
+   {
+    "text": "The upwash experience may save propelling energy as well as reducing resistance.",
+    "ans": 0,
+    "explain": "题干 as well as 连接的两件事在定位句中各有出处且语义一致，整句判 T。"
+   },
+   {
+    "text": "Formation flight is more comfortable because passengers can not see the other planes.",
+    "ans": 1,
+    "explain": "原文从未把 \"乘客看不见其它飞机\" 定为 \"更舒适\" 的原因，因此 because 句不成立，整题判 F。"
+   },
+   {
+    "text": "The role that weather plays in formation flight has not yet been clearly defined.",
+    "ans": 0,
+    "explain": "原文两处信号词指向同一状态：天气作用 \"尚未明确\"；题干断言与原文完全等值，判 T。"
+   },
+   {
+    "text": "It has been documented that during World War Ⅱ, America's armed forces once tried formation flight to save fuel.",
+    "ans": 1,
+    "explain": "题干在 \"证据状态\" 和 \"主体\" 两个维度都与原文不符，任一维度不符即可判 F。"
+   }
+  ],
+  "passage": "Both Boeing and Airbus have trumpeted the efficiency of their newest aircraft, the 787 and A350 respectively. Their clever designs and lightweight composites certainly make a difference. But a group of researchers at Stanford University, led by Ilan Kroo, has suggested that airlines could take a more naturalistic approach to cutting jet-fuel use and it would not require them to buy new aircraft.\n\nThe answer, says Dr. Kroo, lies with birds. Since 1914, scientists have known that birds flying in formation – a V-shape – expend less energy. The air flowing over a bird's wings curls upwards behind the wingtips, a phenomenon known as upwash. Other birds flying in the upwash experience reduced drag, and spend less energy propelling themselves. Peter Lissaman, an aeronautics expert who was formerly at Caltech and the University of Southern California, has suggested that a formation of 25 birds might enjoy a range increase of 71%.\n\nWhen applied to aircraft, the principles are not substantially different. Dr. Kroo and his team modeled what would happen if three passenger jets departing from Los Angeles, San Francisco and Las Vegas were to assemble over Utah, assume an inverted V-formation, occasionally change places so all could have a turn in the most favourable positions, and proceed to London. They found that the aircraft consumed as much as 15% less fuel (coupled with a reduction in carbon-dioxide output). Nitrogen-oxide emissions during the cruising portions of the flight fell by around a quarter.\n\nThere are, of course, knots to be worked out. One consideration is safety, or at least the perception of it. Would passengers feel comfortable travelling in company? Dr. Kroo points out that the aircraft could be separated by several nautical miles, and would not be in the intimate groupings favoured by display teams like the Red Arrows. A passenger peering out of the window might not even see the other planes. Whether the separation distances involved would satisfy air-traffic-control regulations is another matter, although a working group at the International Civil Aviation Organisation has included the possibility of formation flying in a blueprint for new operational guidelines.\n\nIt remains to be seen how weather conditions affect the air flows that make formation flight more efficient. In zones of increased turbulence, the planes' wakes will decay more quickly and the effect will diminish. Dr. Kroo says this is one of the areas his team will investigate further. It might also be hard for airlines to co-ordinate the departure times and destinations of passenger aircraft in a way that would allow them to gain from formation flight. Cargo aircraft, in contrast, might be easier to reschedule, as might routine military flights.\n\nAs it happens, America's armed forces are on the case already. Earlier this year the country's Defence Advanced Research Projects Agency announced plans to pay Boeing to investigate formation flight, though the programme has yet to begin. There are reports that some military aircraft flew in formation when they were low on fuel during the Second World War, but Dr. Lissaman says they are unsubstantiated. \"My father was an RAF pilot and my cousin the skipper of a Lancaster lost over Berlin,\" he adds. So he should know.",
+  "passage_zh": "波音和空客都大力宣传其最新机型——分别是787和A350——的效率。它们巧妙的设计和轻质复合材料确实带来了改变。但斯坦福大学由Ilan Kroo领导的一组研究人员提出,航空公司可以采用一种更加自然的方法来减少喷气燃料的使用,而且这不需要它们购买新飞机。\n\nKroo博士说,答案在于鸟类。自1914年以来,科学家们就知道以编队——V字形——飞行的鸟类消耗的能量更少。流过鸟类翅膀的气流在翼尖后方向上卷曲,这种现象被称为上升气流。其他在上升气流中飞行的鸟类会经历减小的阻力,并消耗更少的能量来推进自己。曾在加州理工学院和南加州大学工作的航空学专家Peter Lissaman提出,25只鸟组成的编队可能会享有71%的航程增加。\n\n当应用于飞机时,这些原理并无本质不同。Kroo博士和他的团队模拟了如果三架分别从洛杉矶、旧金山和拉斯维加斯起飞的客机在犹他州上空集结,采用倒V字形编队,偶尔变换位置以便所有飞机都能轮流处于最有利位置,然后飞往伦敦,会发生什么。他们发现飞机的燃料消耗减少了多达15%(同时二氧化碳排放也相应减少)。飞行巡航阶段的氮氧化物排放下降了约四分之一。\n\n当然,还有一些问题需要解决。一个考虑因素是安全,或者至少是对安全的感知。乘客会愿意结伴飞行吗?Kroo博士指出,飞机之间可以相隔数海里,不会像红箭飞行表演队那样采用紧密编组。从窗户向外望的乘客甚至可能看不到其他飞机。所涉及的间隔距离是否能满足空中交通管制法规是另一回事,尽管国际民用航空组织的一个工作组已在新操作指南的蓝图中纳入了编队飞行的可能性。\n\n天气条件如何影响使编队飞行更高效的气流,还有待观察。在湍流加剧的区域,飞机的尾流会更快衰减,效果会减弱。Kroo博士说这是他的团队将进一步研究的领域之一。航空公司可能也很难以一种能让它们从编队飞行中获益的方式来协调客机的起飞时间和目的地。相比之下,货机可能更容易重新安排时间,常规军事飞行也是如此。\n\n碰巧的是,美国军方已经在着手处理这个问题了。今年早些时候,该国的国防高级研究计划局宣布计划付钱让波音公司研究编队飞行,尽管该项目尚未开始。有报道称,第二次世界大战期间,一些军用飞机在燃料不足时曾以编队飞行,但Lissaman博士说这些报道未经证实。他补充道:'我父亲是一名英国皇家空军飞行员,我的堂兄是一架在柏林上空失事的Lancaster轰炸机的机长。'所以他应该知道。"
+ },
+ {
+  "id": "zy-2010-trans",
+  "type": "翻译",
+  "title": "2010年真题 · 翻译",
+  "score": 15,
+  "minutes": 20,
+  "passage": "\"Sustainability\" has become a popular word these days, but to Ted Ning, the concept will always have personal meaning. Having endured a painful period of unsustainability in his own life made it clear to him that sustainability-oriented values must be expressed through everyday action and choice.\n\nNing recalls spending a confusing year in the late 1990s selling insurance. He'd been through the dot-com boom and burst and, desperate for a job, signed on with a Boulder agency.\n\nIt didn't go well. \"It was a really bad move because that's not my passion,\" says Ning, whose dilemma about the job translated, predictably, into a lack of sales. \"I was miserable. I had so much anxiety that I would wake up in the middle of the night and stare at the ceiling. I had no money and needed the job. Everyone said, 'Just wait, you'll turn the corner, give it some time.'\"",
+  "passage_zh": "「可持续性」如今已成为一个流行词，但对泰德·宁来说，这个概念将始终带有他个人的意义。正是因为在自己的人生中亲历过一段痛苦的、难以为继的时期，他才清楚地认识到：以可持续为导向的价值观，必须通过日常的行动和选择来体现。\n\n宁回忆起20世纪90年代末卖保险、令他困惑的那一年。他经历过互联网公司的繁荣与破灭，当时急需一份工作，便与博尔德的一家代理公司签了约。\n\n可这件事并不顺利。「那真是个糟糕的决定，因为那并不是我热爱的事，」宁说。不出所料，他对这份工作的纠结最终表现为销售业绩惨淡。「我当时痛苦极了。我焦虑到半夜常常会醒过来，直愣愣地盯着天花板。我身无分文，却又离不开这份工作。大家都说：『再等等吧，你会熬过这道坎的，给它点时间。』」",
+  "intro": "Translate the following text into Chinese. Write your translation on the ANSWER SHEET. (15 points)"
+ },
+ {
+  "id": "zy-2010-write-s",
+  "type": "写作",
+  "title": "2010年真题 · 小作文",
+  "score": 10,
+  "minutes": 15,
+  "prompt": "You have just come back from the U.S. as a member of a Sino-American cultural exchange program. Write a letter to your American colleague to 1) express your thanks for his/her warm reception; 2) welcome him/her to visit China in due course. You should write about 100 words on ANSWER SHEET 2. Do not sign your own name at the end of the letter. Use “Zhang Wei” instead. Do not write your address.(10 points)",
+  "tips": "感谢＋回访邀请；要点：具体致谢；发出回访邀请"
+ },
+ {
+  "id": "zy-2010-write-b",
+  "type": "写作",
+  "title": "2010年真题 · 大作文",
+  "score": 15,
+  "minutes": 30,
+  "prompt": "In this section, you are asked to write an essay based on the following chart. In your writing, you should 1) interpret the chart and 2) give your comments. You should write at least 150 words. Write your essay on ANSWER SHEET 2. (15 points)\n\n图表说明：这张图片是一张柱状图，标题是“Mobile-phone subscriptions (2000-2008)”，横轴表示年份，从左到右是2000年至2008年",
+  "chart": true,
+  "tips": "读图＋评论两步一个不能少；要点：读图段—说清暴涨与停滞的对比；原因段—为什么发展中国家能暴涨；结论段—给出看法或建议"
+ }
+]

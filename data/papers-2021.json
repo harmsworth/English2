@@ -1,0 +1,552 @@
+[
+ {
+  "id": "zy-2021-read-1",
+  "type": "阅读理解",
+  "title": "2021年真题 · Text 1",
+  "score": 10,
+  "minutes": 8,
+  "passage": "\"Reskilling\" is something that sounds like a buzzword but is actually a requirement if we plan to have a future where a lot of would-be workers do not get left behind. We know we are moving into a period where the jobs in demand will change rapidly, as will the requirements of the jobs that remain. Research by the World Economic Forum finds that on average 42 per cent of the \"core skills\" within job roles will change by 2022. That is a very short timeline.\n\nThe question of who should pay for reskilling is a thorny one. For individual companies, the temptation is always to let go of workers whose skills are no longer in demand and replace them with those whose skills are. That does not always happen. AT&T is often given as the gold standard of a company who decided to do a massive reskilling program rather than go with a fire-and-hire strategy. Other companies including Amazon and Disney had also pledged to create their own plans. When the skills mismatch is in the broader economy though, the focus usually turns to government to handle. Efforts in Canada and elsewhere have been arguably languid at best, and have given us a situation where we frequently hear of employers begging for workers, even at times and in regions where unemployment is high.\n\nWith the pandemic, unemployment is very high indeed. In February, at 3.5 per cent and 5.5 per cent respectively, unemployment rates in Canada and the United States were at generational lows and worker shortages were everywhere. As of May, those rates had spiked up to 13.3 per cent and 13.7 per cent, and although many worker shortages had disappeared, not all had done so. In the medical field, to take an obvious example, the pandemic meant that there were still clear shortages of doctors, nurses and other medical personnel.\n\nOf course, it is not like you can take an unemployed waiter and train him to be a doctor in a few weeks, no matter who pays for it. But even if you cannot close that gap, maybe you can close others, and doing so would be to the benefit of all concerned. That seems to be the case in Sweden: When forced to furlough 90 per cent of their cabin staff, Scandinavian Airlines decided to start up a short retraining program that reskilled the laid-off workers to support hospital staff. The effort was a collective one and involved other companies as well as a Swedish university.",
+  "passage_zh": "\"再培训\"听起来像是一个流行词，但如果我们计划拥有一个不让大量潜在劳动者掉队的未来，它实际上是一项必需。我们知道我们正在进入一个需求岗位将快速变化的时期，现有岗位的要求也会随之变化。世界经济论坛的研究发现，到2022年，平均42%的岗位角色\"核心技能\"将发生变化。这是一个非常短的时间线。\n\n谁应该为再培训买单是一个棘手的问题。对于单个公司而言，诱惑总是解雇技能不再有需求的员工，并用那些拥有所需技能的人取而代之。但情况并非总是如此。AT&T常被视为决定实施大规模再培训计划而非采取解雇再招聘策略的公司的黄金标准。包括亚马逊和迪士尼在内的其他公司也承诺制定自己的计划。然而,当技能不匹配出现在更广泛的经济领域时,焦点通常转向政府来处理。加拿大和其他地方的努力可以说充其量是疲软的,并给我们带来了这样一种局面:我们经常听到雇主恳求招工,即使是在失业率很高的时期和地区。\n\n随着疫情的到来,失业率确实非常高。2月份,加拿大和美国的失业率分别为3.5%和5.5%,处于几代人以来的最低水平,各地都出现了劳动力短缺。到5月份,这些比率已飙升至13.3%和13.7%,尽管许多劳动力短缺已经消失,但并非所有短缺都消失了。以医疗领域为例,疫情意味着医生、护士和其他医务人员仍然明显短缺。\n\n当然,你不可能在几周内把一个失业的服务员培训成医生,无论由谁买单。但即使你无法弥合那种差距,也许你可以弥合其他差距,而这样做将使所有相关方受益。瑞典的情况似乎就是如此:当被迫让90%的机舱乘务员休假时,斯堪的纳维亚航空公司决定启动一个短期再培训项目,对下岗员工进行再培训以支援医院工作人员。这项努力是集体性的,涉及其他公司以及一所瑞典大学。",
+  "questions": [
+   {
+    "q": "Research by the World Economic Forum suggests____.",
+    "opts": [
+     "an increase in full-time employment",
+     "an urgent demand for new job skills",
+     "a steady growth of job opportunities",
+     "a controversy about the \"core skills\""
+    ],
+    "ans": 1,
+    "explain": "答案B。预判的\"对新技能有迫切需求\"被选项 B 几乎逐字对应：urgent ↔ short timeline，demand for new job skills ↔ core skills will change。"
+   },
+   {
+    "q": "AT&T is cited to show____.",
+    "opts": [
+     "an alternative to the fire-and-hire strategy",
+     "an immediate need for government support",
+     "the importance of staff appraisal standards",
+     "the characteristics of reskilling programs"
+    ],
+    "ans": 0,
+    "explain": "答案A。原文以动词短语\"rather than go with...\"表达替代关系，选项 A 用 an alternative to 这一名词短语把同一关系抽象出来，完全契合预判\"另一条路\"。"
+   },
+   {
+    "q": "Efforts to resolve the skills mismatch in Canada____.",
+    "opts": [
+     "have driven up labour costs",
+     "have proved to be inconsistent",
+     "have met with fierce opposition",
+     "have appeared to be insufficient"
+    ],
+    "ans": 3,
+    "explain": "答案D。原文既有 languid at best 这一直接评价，又有\"高失业仍缺人\"这一后果证据，两侧合力把语义钉在\"力度不足\"上，与 D 完全一致。"
+   },
+   {
+    "q": "We can learn from Paragraph 3 that there was____.",
+    "opts": [
+     "a call for policy adjustment",
+     "a change in hiring practices",
+     "a lack of medical workers",
+     "a sign of economic recovery"
+    ],
+    "ans": 2,
+    "explain": "答案C。原文以\"doctors+nurses+medical personnel\"具体列举，选项以 medical workers 一个上位短语整体涵盖，与预判\"医护短缺\"对位。"
+   },
+   {
+    "q": "Scandinavian Airlines decided to____.",
+    "opts": [
+     "create job vacancies for the unemployed",
+     "prepare their laid-off workers for other jobs",
+     "retrain their cabin staff for better services",
+     "finance their staff's college education"
+    ],
+    "ans": 1,
+    "explain": "答案B。原文具体动作\"reskill...to support hospital staff\"被选项以\"prepare...for other jobs\"做语义抽象，正好对应预判\"让被裁员工胜任另一份工作\"。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2021-read-2",
+  "type": "阅读理解",
+  "title": "2021年真题 · Text 2",
+  "score": 10,
+  "minutes": 8,
+  "passage": "With the global population predicted to hit close to 10 billion by 2050, and forecasts that agricultural production in some regions will need to nearly double to keep pace, food security is increasingly making headlines. In the UK, it has become a big talking point recently too, for a rather particular reason: Brexit.\n\nBrexit is seen by some as an opportunity to reverse a recent trend towards the UK importing food. The country produces only about 60 per cent of the food it eats, down from almost three-quarters in the late 1980s. A move back to self-sufficiency, the argument goes, would boost the farming industry, political sovereignty and even the nation's health. Sounds great—but how feasible is this vision?\n\nAccording to a report on UK food production from the University of Leeds, UK, 85 per cent of the country's total land area is associated with meat and dairy production. That supplies 80 per cent of what is consumed, so even covering the whole country in livestock farms wouldn't allow us to cover all our meat and dairy needs.\n\nThere are many caveats to those figures, but they are still grave. To become much more self-sufficient, the UK would need to drastically reduce its consumption of animal foods, and probably also farm more intensively—meaning fewer green fields and more factory-style production.\n\nBut switching to a mainly plant-based diet wouldn't help. There is a good reason why the UK is dominated by animal husbandry: most of its terrain doesn't have the right soil or climate to grow crops on a commercial basis. Just 25 per cent of the country's land is suitable for crop-growing, most of which is already occupied by arable fields. Even if we converted all the suitable land to fields of fruit and veg—which would involve taking out all the nature reserves and removing thousands of people from their homes—we would achieve only a 30 per cent boost in crop production.\n\nJust 23 per cent of the fruit and vegetables consumed in the UK are currently home-grown, so even with the most extreme measures we could meet only 30 per cent of our fresh produce needs. That is before we look for the space to grow the grains, sugars, seeds and oils that provide us with the vast bulk of our current calorie intake.",
+  "passage_zh": "据预测，到2050年全球人口将接近100亿，并且有预测称某些地区的农业生产需要增加近一倍才能跟上步伐,粮食安全正日益成为头条新闻。在英国,最近它也成为一个热门话题,原因相当特殊:英国脱欧。\n\n一些人将英国脱欧视为扭转英国近期进口粮食趋势的一个机会。该国仅生产其消费粮食的约60%,而在20世纪80年代末这一比例接近四分之三。有观点认为,回归自给自足将促进农业、政治主权甚至国民健康。听起来很好——但这一愿景的可行性如何?\n\n根据英国利兹大学一份关于英国粮食生产的报告,该国85%的土地总面积与肉类和乳制品生产相关。这供应了消费量的80%,因此即使将整个国家都覆盖上畜牧农场,我们也无法满足所有肉类和乳制品需求。\n\n这些数字有许多附加说明,但它们仍然严峻。要变得更加自给自足,英国需要大幅减少动物性食品的消费,并且可能还需要更集约化地耕作——这意味着更少的绿地和更多的工厂式生产。\n\n但转向以植物为主的饮食也无济于事。英国以畜牧业为主有一个很好的理由:其大部分地形没有合适的土壤或气候来进行商业化作物种植。该国只有25%的土地适合种植作物,其中大部分已被耕地占用。即使我们将所有适合的土地都转换为果蔬田——这将涉及占用所有自然保护区并将成千上万的人从家中迁出——我们也只能实现作物产量30%的提升。\n\n目前英国消费的水果和蔬菜中只有23%是本土种植的,因此即使采取最极端的措施,我们也只能满足30%的新鲜农产品需求。这还是在我们寻找空间种植谷物、糖类、种子和油料作物之前,而这些作物为我们提供了当前卡路里摄入的绝大部分。",
+  "questions": [
+   {
+    "q": "Some people argue that food self-sufficiency in the UK would____.",
+    "opts": [
+     "be hindered by its population growth",
+     "contribute to the nation's well-being",
+     "become a priority of the government",
+     "pose a challenge to its farming industry"
+    ],
+    "ans": 1,
+    "explain": "答案B。预判中三项支持理由之一是「国民健康」，选项 contribute to the nation's well-being 用 well-being 包住 health 这一具体维度，与定位句中 even the nation's health 完全对应。"
+   },
+   {
+    "q": "The report by the University of Leeds shows that in the UK____.",
+    "opts": [
+     "farmland has been inefficiently utilized",
+     "factory-style production needs reforming",
+     "most land is used for meat and dairy production",
+     "more green fields will be converted for farming"
+    ],
+    "ans": 2,
+    "explain": "答案C。预判中的「绝大多数国土用于肉与奶制品生产」与 most land is used for meat and dairy production 完全等价，是定位句的标准同义改写。"
+   },
+   {
+    "q": "Crop-growing in the UK is restricted due to____.",
+    "opts": [
+     "its farming technology",
+     "its dietary tradition",
+     "its natural conditions",
+     "its commercial interests"
+    ],
+    "ans": 2,
+    "explain": "答案C。预判要点是「土壤+气候」两项自然要素，its natural conditions 用 natural conditions 这一上位概念把两者打包覆盖，最贴合定位句。"
+   },
+   {
+    "q": "It can be learned from the last paragraph that British people____.",
+    "opts": [
+     "rely largely on imports for fresh produce",
+     "enjoy a steady rise in fruit consumption",
+     "are seeking effective ways to cut calorie intake",
+     "are trying to grow new varieties of grains"
+    ],
+    "ans": 0,
+    "explain": "答案A。预判要点是「大部分新鲜农产品依赖进口」，rely largely on imports for fresh produce 用 largely 量化补集，rely on imports 是 home-grown 反义的标准对应；属典型的推断题正答。"
+   },
+   {
+    "q": "The author's attitude to food self-sufficiency in the UK is____.",
+    "opts": [
+     "defensive",
+     "doubtful",
+     "tolerant",
+     "optimistic"
+    ],
+    "ans": 1,
+    "explain": "答案B。预判全文极性是「怀疑」，doubtful 正是该极性的标准英文态度词；既不至于强烈到批判，也不会弱到中性，恰好对应作者保留观察、不轻信的姿态。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2021-read-3",
+  "type": "阅读理解",
+  "title": "2021年真题 · Text 3",
+  "score": 10,
+  "minutes": 8,
+  "passage": "When Microsoft bought task management app Wunderlist and mobile calendar Sunrise in 2015, it picked two newcomers that were attracting considerable buzz in Silicon Valley. Microsoft's own Office dominates the market for \"productivity\" software, but the start-ups represented a new wave of technology designed from the ground up for the smartphone world.\n\nBoth apps, however, were later scrapped, after Microsoft said it had used their best features in its own products. Their teams of engineers stayed on, making them two of the many \"acqui-hires\" that the biggest companies have used to feed their great hunger for tech talent.\n\nTo Microsoft's critics, the fates of Wunderlist and Sunrise are examples of a remorseless drive by Big Tech to chew up any innovative companies that lie in their path. \"They bought the seedlings and closed them down,\" complained Paul Arnold, a partner at San Francisco-based Switch Ventures, putting an end to businesses that might one day turn into competitors. Microsoft declined to comment.\n\nLike other start-up investors, Mr. Arnold's own business often depends on selling start-ups to larger tech companies, though he admits to mixed feelings about the result: \"I think these things are good for me, if I put my selfish hat on. But are they good for the American economy? I don't know.\"\n\nThe US Federal Trade Commission says it wants to find the answer to that question. This week, it asked the five most valuable US tech companies for information about their many small acquisitions over the past decade. Although only a research project at this stage, the request has raised the prospect of regulators wading into early-stage tech markets that until now have been beyond their reach.\n\nGiven their combined market value of more than $5.5 trillion, rifling through such small deals—many of them much less prominent than Wunderlist and Sunrise—might seem beside the point. Between them, the five biggest tech companies have spent an average of only $3.4 billion a year on sub-$1 billion acquisitions over the past five years—a drop in the ocean compared with their massive financial reserves, and the more than $130 billion of venture capital that was invested in the US last year.\n\nHowever, critics say the big companies use such deals to buy their most threatening potential competitors before their businesses have a chance to gain momentum, in some cases as part of a \"buy and kill\" tactic to simply close them down.",
+  "passage_zh": "当微软在2015年收购任务管理应用Wunderlist和移动日历应用Sunrise时,它选中了两家在硅谷引起相当大关注的新兴公司。微软自己的Office在\"生产力\"软件市场占据主导地位,但这些初创公司代表着一波专为智能手机世界从零开始设计的新技术浪潮。\n\n然而,这两款应用后来都被废弃了,微软表示已经在自己的产品中使用了它们的最佳功能。它们的工程师团队留了下来,使它们成为最大型公司为满足对技术人才的巨大需求而采用的众多\"收购即招聘\"案例中的两个。\n\n在微软的批评者看来,Wunderlist和Sunrise的命运是大型科技公司无情吞噬任何挡在其道路上的创新公司的例证。\"他们买下幼苗然后关闭它们,\"旧金山Switch Ventures的合伙人Paul Arnold抱怨道,终结了那些有朝一日可能成为竞争对手的企业。微软拒绝置评。\n\n与其他初创企业投资者一样,Arnold先生自己的业务往往依赖于将初创企业出售给更大的科技公司,尽管他承认对结果心情复杂:\"我认为如果我戴上自私的帽子,这些事情对我有利。但它们对美国经济有利吗?我不知道。\n\n美国联邦贸易委员会表示它想找到这个问题的答案。本周,它要求五家最有价值的美国科技公司提供关于它们在过去十年中进行的众多小型收购的信息。尽管目前只是一个研究项目,但这一要求引发了监管机构涉足迄今为止超出其管辖范围的早期科技市场的可能性。\n\n考虑到它们总计超过5.5万亿美元的市值,仔细审查这些小型交易——其中许多远不如Wunderlist和Sunrise那样知名——似乎无关紧要。在过去五年中,五大科技公司平均每年仅在10亿美元以下的收购上花费34亿美元——与它们庞大的财务储备以及去年在美国投资的超过1300亿美元风险资本相比不过是沧海一粟。\n\n然而,批评者称,大公司利用此类交易在最具威胁性的潜在竞争对手的业务有机会获得发展势头之前将其收购,在某些情况下作为\"买了就关\"策略的一部分,干脆将它们关闭。",
+  "questions": [
+   {
+    "q": "What is true about Wunderlist and Sunrise after their acquisitions?",
+    "opts": [
+     "Their engineers were retained.",
+     "Their market values declined.",
+     "Their tech features improved.",
+     "Their products were re-priced."
+    ],
+    "ans": 0,
+    "explain": "答案A。预判要找「工程师 + 留下」的语义，A 项 Their engineers were retained 主谓完全对应，无多余信息，无信息缺失，是定位句的标准同义替换。"
+   },
+   {
+    "q": "Microsoft's critics believe that the big tech companies tend to____.",
+    "opts": [
+     "exaggerate their product quality",
+     "eliminate their potential competitors",
+     "treat new tech talent unfairly",
+     "ignore public opinions"
+    ],
+    "ans": 1,
+    "explain": "答案B。预判要找「消灭/扼杀 + 潜在竞争对手」的语义，B 项 eliminate their potential competitors 在动词和宾语两端都与原文等值，无多余、无遗漏。"
+   },
+   {
+    "q": "Paul Arnold is concerned that small acquisitions might____.",
+    "opts": [
+     "weaken big tech companies",
+     "worsen market competition",
+     "harm the national economy",
+     "discourage start-up investors"
+    ],
+    "ans": 2,
+    "explain": "答案C。预判要找「损害 + 国家经济」的语义，C 项 harm the national economy 动词 harm 抓住了 not good 的反面，宾语 national economy 与 American economy 对应，无多余无遗漏。"
+   },
+   {
+    "q": "The US Federal Trade Commission intends to____.",
+    "opts": [
+     "limit Big Tech's expansion",
+     "encourage research collaboration",
+     "examine small acquisitions",
+     "supervise start-ups' operation"
+    ],
+    "ans": 2,
+    "explain": "答案C。预判要找「审视/调查 + 小型收购」，C 项 examine small acquisitions 动词宾语两端都与原文等值——examine 是 ask for information about 的目的层概括。"
+   },
+   {
+    "q": "For the five biggest tech companies, their small acquisitions have____.",
+    "opts": [
+     "brought little financial pressure",
+     "raised few management challenges",
+     "set an example for future deals",
+     "generated considerable profits"
+    ],
+    "ans": 0,
+    "explain": "答案A。预判要找「财务压力很小」，A 项 brought little financial pressure 用 little + financial pressure 准确转译 a drop in the ocean 的比喻含义，等值无偏。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2021-read-4",
+  "type": "阅读理解",
+  "title": "2021年真题 · Text 4",
+  "score": 10,
+  "minutes": 8,
+  "passage": "We're fairly good at judging people based on first impressions, thin slices of experience ranging from a glimpse of a photo to five-minute interaction, and deliberation can be not only extraneous but intrusive. In one study of the ability she called \"thin slicing,\" the late psychologist Nalini Ambady asked participants to watch silent 10-second video clips of professors and to rate the instructor's overall effectiveness. Their ratings correlated strongly with students' end-of-semester ratings. Another set of participants had to count backward from 1,000 by nines as they watched the clips, occupying their conscious working memory. Their ratings were just as accurate, demonstrating the intuitive nature of the social processing.\n\nCritically, another group was asked to spend a minute writing down reasons for their judgment, before giving the rating. Accuracy dropped dramatically. Ambady suspected that deliberation focused them on vivid but misleading cues, such as certain gestures or utterances, rather than letting the complex interplay of subtle signals form a holistic impression. She found similar interference when participants watched 15-second clips of pairs of people and judged whether they were strangers, friends, or dating partners.\n\nOther research shows we're better at detecting deception from thin slices when we rely on intuition instead of reflection. \"It's as if you're driving a stick shift,\" says Judith Hall, a psychologist at Northeastern University, \"and if you start thinking about it too much, you can't remember what you're doing. But if you go on automatic pilot, you're fine. Much of our social life is like that.\"\n\nThinking too much can also harm our ability to form preferences. College students' ratings of strawberry jams and college courses aligned better with experts' opinions when the students weren't asked to analyze their rationale. And people made car-buying decisions that were both objectively better and more personally satisfying when asked to focus on their feelings rather than on details, but only if the decision was complex—when they had a lot of information to process.\n\nIntuition's special powers are unleashed only in certain circumstances. In one study, participants completed a battery of eight tasks, including four that tapped reflective thinking (discerning rules, comprehending vocabulary) and four that tapped intuition and creativity (generating new products or figures of speech). Then they rated the degree to which they had used intuition (\"gut feelings,\" \"hunches,\" \"my heart\"). Use of their gut hurt their performance on the first four tasks, as expected, and helped them on the rest. Sometimes the heart is smarter than the head.",
+  "passage_zh": "我们相当擅长基于第一印象来判断他人，这种薄片体验范围从瞥见一张照片到五分钟的互动，而深思熟虑不仅可能是多余的，还可能是干扰性的。在一项关于她称之为\"薄片切割\"能力的研究中,已故心理学家Nalini Ambady要求参与者观看教授们的10秒无声视频片段,并对教师的整体有效性进行评分。他们的评分与学生的学期末评分高度相关。另一组参与者在观看视频片段时必须从1000倒数,每次减9,占用他们有意识的工作记忆。他们的评分同样准确,证明了社会处理过程的直觉性质。\n\n关键的是,另一组被要求在给出评分之前花一分钟写下他们判断的理由。准确性急剧下降。Ambady怀疑深思熟虑使他们专注于生动但具有误导性的线索,例如某些手势或话语,而不是让微妙信号的复杂相互作用形成整体印象。当参与者观看15秒的两人配对视频片段并判断他们是陌生人、朋友还是约会对象时,她发现了类似的干扰。\n\n其他研究表明,当我们依靠直觉而非反思时,我们更善于从薄片中检测欺骗。东北大学心理学家Judith Hall说:\"这就像你在开手动挡车,如果你开始想得太多,你就记不住自己在做什么。但如果你进入自动驾驶模式,你就没问题。我们的社会生活很大程度上就是这样。\"\n\n思考过多也会损害我们形成偏好的能力。当大学生不被要求分析他们的理由时,他们对草莓酱和大学课程的评分与专家意见更一致。当人们被要求关注自己的感受而非细节时,他们做出的购车决策既在客观上更好,也在个人层面上更令人满意,但只有在决策复杂时才如此——当他们有大量信息需要处理时。\n\n直觉的特殊力量只在特定情况下才会释放。在一项研究中,参与者完成了八项任务,其中四项利用反思性思维(辨别规则、理解词汇),四项利用直觉和创造力(生成新产品或修辞手法)。然后他们评估自己使用直觉的程度(\"直觉感受\"、\"预感\"、\"我的内心\")。如预期的那样,使用直觉损害了他们在前四项任务上的表现,但帮助了他们完成其余任务。有时心灵比头脑更聪明。",
+  "questions": [
+   {
+    "q": "Nalini Ambady's study deals with____.",
+    "opts": [
+     "the power of people's memory",
+     "the reliability of first impressions",
+     "Instructor-student interaction",
+     "people's ability to influence others"
+    ],
+    "ans": 1,
+    "explain": "答案B。the reliability of first impressions 恰好是\"凭第一印象判断他人有多准\"的名词化表达，与定位句的语义和预判一致。"
+   },
+   {
+    "q": "In Ambady's study, rating accuracy dropped when participants____.",
+    "opts": [
+     "focused on specific details",
+     "gave the rating in limited time",
+     "watched shorter video clips",
+     "discussed with one another"
+    ],
+    "ans": 0,
+    "explain": "答案A。focused on specific details 用上位概括词覆盖了原文的具体细节例证，与预判完全一致。"
+   },
+   {
+    "q": "Judith Hall mentions driving to show that____.",
+    "opts": [
+     "reflection can be distracting",
+     "memory may be selective",
+     "social skills must be cultivated",
+     "deception is difficult to detect"
+    ],
+    "ans": 0,
+    "explain": "答案A。reflection can be distracting 就是论点句\"靠直觉胜过反思\"的反面表述——反思会分散/扰乱判断，正好契合开车比喻的目的。"
+   },
+   {
+    "q": "When you are making complex decisions, it is advisable to____.",
+    "opts": [
+     "collect enough data",
+     "list your preferences",
+     "seek expert advice",
+     "follow your feelings"
+    ],
+    "ans": 3,
+    "explain": "答案D。follow your feelings 直接取了 focus on their feelings 的同义表达，完美对应预判。"
+   },
+   {
+    "q": "What can we learn from the last paragraph?",
+    "opts": [
+     "Generating new products takes time.",
+     "Intuition may affect reflective tasks.",
+     "Vocabulary comprehension needs creativity.",
+     "Objective thinking may boost intuitiveness."
+    ],
+    "ans": 1,
+    "explain": "答案B。Intuition may affect reflective tasks. 用情态动词 may + 中性动词 affect 给原文的 hurt 加了\"推断式\"语气，是教科书式的推断题正确项形态。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2021-cloze",
+  "type": "完形填空",
+  "title": "2021年真题 · 完形填空",
+  "score": 20,
+  "minutes": 15,
+  "passage": "It's not difficult to set targets for staff. It is much harder, __(1)__ , to understand their negative consequences. Most work-related behaviors have multiple components. __(2)__ one and the others become distorted.\n\nTravel on a London bus and you'll __(3)__ see how this works with drivers. Watch people get on and show their tickets. Are they carefully inspected? Never. Do people get on without paying? Of course! Are there inspectors to __(4)__ that people have paid? Possibly, but very few. And people who run for the bus? They are __(5)__ . How about jumping lights? Buses do so almost as frequently as cyclists.\n\nWhy? Because the target is __(6)__ . People complained that buses were late and infrequent. __(7)__ , the number of buses and bus lanes was increased, and drivers were __(8)__ or punished according to the time they took. And drivers hit these targets. But they __(9)__ hit cyclists. If the target was changed to __(10)__ , you would have more inspectors and more sensitive pricing. If the criterion changed to safety, you would get more __(11)__ drivers who obeyed traffic laws. But both these criteria would be at the expense of time.\n\nThere is another __(12)__ : people became immensely inventive in hitting targets. Have you __(13)__ that you can leave on a flight an hour late but still arrive on time? Tailwinds? Of course not! Airlines have simply changed the time a __(14)__ is meant to take. A one-hour flight is now billed as a two-hour flight.\n\nThe __(15)__ of the story is simple. Most jobs are multidimensional, with multiple criteria. Choose one criterion and you may well __(16)__ others. Everything can be done faster and made cheaper, but there is a __(17)__ . Setting targets can and does have unforeseen negative consequences.\n\nThis is not an argument against target-setting. But it is an argument for exploring consequences first. All good targets should have multiple criteria __(18)__ critical factors such as time, money, quality and customer feedback. The trick is not only to __(19)__ just one or even two dimensions of the objective, but also to understand how to help people better __(20)__ the objective.",
+  "passage_zh": "为员工设定目标并不困难。然而，理解这些目标的负面后果却要困难得多。大多数与工作相关的行为都有多个组成部分。强调其中一个,其他部分就会变得扭曲。\n\n乘坐伦敦公交车,你很快就会看到这在司机身上是如何体现的。观察人们上车并出示车票。车票会被仔细检查吗?从来不会。有人不付钱就上车吗?当然有!有检票员检查人们是否付费吗?可能有,但非常少。那些追赶公交车的人呢?他们被忽视了。闯红灯呢?公交车闯红灯的频率几乎和骑自行车的人一样高。\n\n为什么?因为目标是准点。人们抱怨公交车晚点且班次不频繁。因此,公交车数量和公交专用道增加了,司机根据他们所花费的时间受到奖励或惩罚。司机们达到了这些目标。但他们也撞到了骑自行车的人。如果目标改为收入,你会有更多检票员和更灵活的定价。如果标准改为安全,你会得到更谨慎、遵守交通法规的司机。但这两个标准都将以时间为代价。\n\n还有另一个问题:人们在达成目标方面变得极其善于创新。你有没有注意到,你可以晚一个小时起飞但仍能准点到达?顺风?当然不是!航空公司只是改变了行程应该花费的时间。一小时的航班现在被标注为两小时的航班。\n\n这个故事的寓意很简单。大多数工作都是多维度的,有多个标准。选择一个标准,你很可能会牺牲其他标准。一切都可以做得更快、成本更低,但这是有代价的。设定目标可能而且确实会产生意想不到的负面后果。\n\n这并不是反对设定目标的论点。但这是一个主张首先探讨后果的论点。所有好的目标都应该有与时间、金钱、质量和客户反馈等关键因素相关的多个标准。诀窍不仅在于只明确目标的一个甚至两个维度,还在于理解如何帮助人们更好地实现目标。",
+  "blanks": [
+   {
+    "opts": [
+     "therefore",
+     "however",
+     "again",
+     "moreover"
+    ],
+    "ans": 1,
+    "explain": "逻辑关系：easy 与 much harder 形成对照。完美承接 easy 到 hard 的反差"
+   },
+   {
+    "opts": [
+     "Emphasize",
+     "Identify",
+     "Assess",
+     "Explain"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：上文 multiple components 与本句 others become distorted 互证。唯一能引起其他维度被牺牲的动作"
+   },
+   {
+    "opts": [
+     "nearly",
+     "curiously",
+     "eagerly",
+     "quickly"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：下文一连串反问把现象推到眼前。'很快就能看出'与即时举证最契合"
+   },
+   {
+    "opts": [
+     "claim",
+     "prove",
+     "check",
+     "recall"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：主语 inspectors 决定动作是'查验'。'核查'正是查票员的本职动作"
+   },
+   {
+    "opts": [
+     "threatened",
+     "ignored",
+     "mocked",
+     "blamed"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：整段主线'司机为赶时间而无视乘客'。'被无视'与赶点不停车完全对应"
+   },
+   {
+    "opts": [
+     "punctuality",
+     "hospitality",
+     "competition",
+     "innovation"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：前句'晚点、班次少'＋后句'按用时奖惩'共同锁定准点。'准点'与 late/time 双重对应"
+   },
+   {
+    "opts": [
+     "Yet",
+     "So",
+     "Besides",
+     "Still"
+    ],
+    "ans": 1,
+    "explain": "逻辑关系：抱怨→对策标准因果链。'因此'精准衔接问题与对策"
+   },
+   {
+    "opts": [
+     "hired",
+     "trained",
+     "rewarded",
+     "grouped"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：or punished 锁定'奖—罚'对照。'被奖励'与 punished 完美对偶"
+   },
+   {
+    "opts": [
+     "only",
+     "rather",
+     "once",
+     "also"
+    ],
+    "ans": 3,
+    "explain": "逻辑关系：前句 hit these targets 与本句 hit cyclists 同动词不同宾语。'同时也'把'达标'与'撞人'并置成讽刺"
+   },
+   {
+    "opts": [
+     "comfort",
+     "revenue",
+     "efficiency",
+     "security"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：措施'多查票员＋灵活定价'指向收入。'收入'唯一对应查票＋灵活定价"
+   },
+   {
+    "opts": [
+     "friendly",
+     "quiet",
+     "cautious",
+     "diligent"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：safety＋obeyed traffic laws 双锁'谨慎'。'谨慎'与 safety 同义复现"
+   },
+   {
+    "opts": [
+     "purpose",
+     "problem",
+     "prejudice",
+     "policy"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：前文公交例已是'问题'，本句揭出另一个'问题'。'另一个问题'承接前文副作用脉络"
+   },
+   {
+    "opts": [
+     "reported",
+     "revealed",
+     "admitted",
+     "noticed"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：对读者发问＋飞行常识＝'注意到'。'注意到'最贴合读者日常感知"
+   },
+   {
+    "opts": [
+     "break",
+     "trip",
+     "departure",
+     "transfer"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：前句 flight、后句 flight 双向夹击。'行程'是 flight 的上义同义词"
+   },
+   {
+    "opts": [
+     "moral",
+     "background",
+     "style",
+     "form"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：后文直接给出'寓意'内容。'寓意'与后文主旨句完美匹配"
+   },
+   {
+    "opts": [
+     "interpret",
+     "criticize",
+     "sacrifice",
+     "tolerate"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：首段 distorted、第三段 at the expense of 持续指向'牺牲'。'牺牲'与 distorted/at the expense of 同义闭环"
+   },
+   {
+    "opts": [
+     "task",
+     "secret",
+     "product",
+     "cost"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：but 反差＋下句负面后果。'代价'承前转折、启后负面"
+   },
+   {
+    "opts": [
+     "leading to",
+     "calling for",
+     "relating to",
+     "accounting for"
+    ],
+    "ans": 2,
+    "explain": "固定搭配：criteria 与 critical factors 是包含关系。'与…相关'最贴合'标准涉及多个因素'"
+   },
+   {
+    "opts": [
+     "specify",
+     "predict",
+     "restore",
+     "create"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：前文'好目标多维'＋本句'不止指明一两维'。'指明、明确指定'与维度搭配自然"
+   },
+   {
+    "opts": [
+     "modify",
+     "review",
+     "present",
+     "achieve"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：全文主旨'让目标真正达成'。'达成'是全文落脚点"
+   }
+  ]
+ },
+ {
+  "id": "zy-2021-trans",
+  "type": "翻译",
+  "title": "2021年真题 · 翻译",
+  "score": 15,
+  "minutes": 20,
+  "passage": "We tend to think that friends and family members are our biggest sources of connection, laughter, and warmth. While that may well be true, researchers have also recently found that interacting with strangers actually brings a boost in mood and feelings of belonging that we didn't expect.\n\nIn one series of studies, researchers instructed Chicago-area commuters using public transportation to strike up a conversation with someone near them. On average, participants who followed this instruction felt better than those who had been told to stand or sit in silence. The researchers also argued that when we shy away from casual interactions with strangers, it is often due to a misplaced anxiety that they might not want to talk to us. Much of the time, however, this belief is false. As it turns out, many people are actually perfectly willing to talk—and may even be flattered to receive your attention.",
+  "passage_zh": "我们往往认为，朋友和家人是我们获得情感联结、欢笑与温暖的最大来源。这种看法很可能没错，但研究者最近还发现，与陌生人互动其实会带来一种我们未曾预料到的心情提升和归属感。\n\n在一系列研究中，研究者要求乘坐公共交通的芝加哥地区通勤者，主动与身边的人攀谈。平均而言，照做攀谈的参与者，比那些被要求默不作声地站着或坐着的人心情更好。研究者还指出，当我们回避与陌生人的随意攀谈时，往往是出于一种没来由的担忧——担心对方可能不想搭理我们。然而，多数时候，这种担心其实是站不住脚的。事实证明，许多人其实非常乐意交谈——甚至会因为得到你的关注而感到受宠若惊。",
+  "intro": "Translate the following text into Chinese. Write your translation on the ANSWER SHEET. (15 points)"
+ },
+ {
+  "id": "zy-2021-write-s",
+  "type": "写作",
+  "title": "2021年真题 · 小作文",
+  "score": 10,
+  "minutes": 15,
+  "prompt": "Suppose you are organizing an online meeting. Write an email to Jack, an international student, to 1)invite him to participate, and 2)tell him the details. You should write about 100 words on the ANSWER SHEET.",
+  "tips": "邀请Jack开线上会并交代细节；要点：发出邀请；交代时间与平台；交代进入方式与主题"
+ },
+ {
+  "id": "zy-2021-write-b",
+  "type": "写作",
+  "title": "2021年真题 · 大作文",
+  "score": 15,
+  "minutes": 30,
+  "prompt": "Write an essay based on the chart below. In your writing, you should 1)interpret the chart, and 2)give your comments. You should write about 150 words on the ANSWER SHEET.(15 points)\n\n图表说明：这张图片是一张垂直柱状图，图表的纵轴标有百分比，从0.0%开始，以10.0%为间隔，直到60.0%",
+  "chart": true,
+  "tips": "先读图再评论，两件事都要做；要点：客观描述四项占比与对比；分析个人锻炼流行的原因；给出评价与建议"
+ },
+ {
+  "id": "zy-2021-match",
+  "type": "新题型",
+  "title": "2021年真题 · 新题型（段落小标题 7选5）",
+  "score": 10,
+  "minutes": 8,
+  "intro": "Read the following text and answer the questions by choosing the most suitable subheading from the list A-G for each of the numbered paragraphs (41-45). There are two extra subheadings which you do not need to use. Mark your answers on the ANSWER SHEET. (10 points)",
+  "titles": [
+   "A. Stay calm.",
+   "B. Stay humble.",
+   "C. Decide whether to wait.",
+   "D. Be realistic about the risks.",
+   "E. Don't make judgements.",
+   "F. Identify a shared goal.",
+   "G. Ask permission to disagree."
+  ],
+  "paras": [
+   {
+    "text": "You may decide it's best to hold off on voicing your opinion. Maybe you haven't finished thinking the problem through, or you want to get a clearer sense of what the group thinks. If you think other people are going to disagree, too, you might want to gather your army first. People can contribute experience or information to your thinking—all the things that would make the disagreement stronger or more valid. It's also a good idea to delay the conversation if you are in a meeting or other public space. Discussing the issue in private will make the powerful person feel less threatened.",
+    "ans": 2,
+    "explain": "答案C。主旨：先权衡该不该现在开口、要不要缓一缓；依据：同义对上「hold off = wait」"
+   },
+   {
+    "text": "Before you share your thoughts, think about what the powerful person cares about—it may be the credibility of their team or getting a project done on time. You're more likely to be heard if you can connect your disagreement to a higher purpose. When you do speak up, don't assume the link will be clear. You'll want to state it overtly, contextualizing your statements so that you're seen not as a disagreeable subordinate but as a colleague who's trying to advance a common objective. The discussion will then become more like a chess game than a boxing match.",
+    "ans": 5,
+    "explain": "答案F。主旨：先想清对方在意什么、把异议接到更高目的上；依据：同义对上「common objective = shared goal」"
+   },
+   {
+    "text": "This step may sound overly deferential, but it's a smart way to give the powerful person psychological safety and control. You can say something like, \"I know we seem to be moving toward a first-quarter commitment here. I have reasons to think that won't work. I'd like to lay out my reasoning. Would that be OK?\" This gives the person a choice, allowing him to verbally opt in. And, assuming he says yes, it will make you feel more confident about voicing your disagreement.",
+    "ans": 6,
+    "explain": "答案G。主旨：开口反对前，先正式征得对方同意；依据：同义对上「opt in / OK? = Ask permission」"
+   },
+   {
+    "text": "You might feel your heart racing or your face turning red, but do whatever you can to remain neutral in both your words and actions. When your body language communicates reluctance or anxiety, it undercuts the message. It sends a mixed message, and your counterpart gets to choose what signals to read. Deep breaths can help, as can speaking more slowly and deliberately. When we feel panicky, we tend to talk louder and faster. Simply slowing the pace and talking in an even tone helps the other person cool down and does the same for you. It also makes you seem confident, even if you aren't.",
+    "ans": 0,
+    "explain": "答案A。主旨：控制情绪、言行保持平稳镇定；依据：同义对上「remain neutral = Stay calm」"
+   },
+   {
+    "text": "Emphasize that you're only offering your opinion, not gospel truth. It may be a well-informed, well-researched opinion, but it's still an opinion, so talk tentatively and slightly understate your confidence. Instead of saying: \"If we set an end-of-quarter deadline, we will never make it,\" say, \"This is just my opinion, but I don't see how we will make that deadline.\" Having asserted your opinion (as a position, not as a fact), demonstrate equal curiosity about other views. Remind the person that this is your point of view, and then invite critique. Be open to hearing other opinions.",
+    "ans": 1,
+    "explain": "答案B。主旨：放低姿态，把话说成观点而非定论，并欢迎别人反驳；依据：同义对上「only an opinion / tentatively = Stay humble」"
+   }
+  ],
+  "passage": "Your boss proposes a new initiative you think won't work. Your senior colleague outlines a project timeline you believe is unrealistic. What do you say when you disagree with someone who has more power than you do? How do you decide whether it's worth speaking up? And if you do, what exactly should you say? Here's how to disagree with someone more powerful than you.\n\n(41)占位符这是等待完型填空的句子位置\n\nYou may decide it's best to hold off on voicing your opinion. Maybe you haven't finished thinking the problem through, or you want to get a clearer sense of what the group thinks. If you think other people are going to disagree, too, you might want to gather your army first. People can contribute experience or information to your thinking—all the things that would make the disagreement stronger or more valid. It's also a good idea to delay the conversation if you are in a meeting or other public space. Discussing the issue in private will make the powerful person feel less threatened.\n\n(42)占位符这是等待完型填空的句子位置\n\nBefore you share your thoughts, think about what the powerful person cares about—it may be the credibility of their team or getting a project done on time. You're more likely to be heard if you can connect your disagreement to a higher purpose. When you do speak up, don't assume the link will be clear. You'll want to state it overtly, contextualizing your statements so that you're seen not as a disagreeable subordinate but as a colleague who's trying to advance a common objective. The discussion will then become more like a chess game than a boxing match.\n\n(43)占位符这是等待完型填空的句子位置\n\nThis step may sound overly deferential, but it's a smart way to give the powerful person psychological safety and control. You can say something like, \"I know we seem to be moving toward a first-quarter commitment here. I have reasons to think that won't work. I'd like to lay out my reasoning. Would that be OK?\" This gives the person a choice, allowing him to verbally opt in. And, assuming he says yes, it will make you feel more confident about voicing your disagreement.\n\n(44)占位符这是等待完型填空的句子位置\n\nYou might feel your heart racing or your face turning red, but do whatever you can to remain neutral in both your words and actions. When your body language communicates reluctance or anxiety, it undercuts the message. It sends a mixed message, and your counterpart gets to choose what signals to read. Deep breaths can help, as can speaking more slowly and deliberately. When we feel panicky, we tend to talk louder and faster. Simply slowing the pace and talking in an even tone helps the other person cool down and does the same for you. It also makes you seem confident, even if you aren't.\n\n(45)占位符这是等待完型填空的句子位置\n\nEmphasize that you're only offering your opinion, not gospel truth. It may be a well-informed, well-researched opinion, but it's still an opinion, so talk tentatively and slightly understate your confidence. Instead of saying: \"If we set an end-of-quarter deadline, we will never make it,\" say, \"This is just my opinion, but I don't see how we will make that deadline.\" Having asserted your opinion (as a position, not as a fact), demonstrate equal curiosity about other views. Remind the person that this is your point of view, and then invite critique. Be open to hearing other opinions.",
+  "passage_zh": "你的老板提出了一项你认为行不通的新举措。你的资深同事概述了一个你认为不切实际的项目时间表。当你不同意一个比你更有权力的人时,你会说什么?你如何决定是否值得说出来?如果你真的说出来,你到底应该说什么?以下是如何与比你更有权力的人持不同意见的方法。\n\n决定是否等待。\n\n你可能会决定最好推迟表达你的意见。也许你还没有把问题想透彻,或者你想更清楚地了解团队的想法。如果你认为其他人也会不同意,你可能想先集结你的队伍。人们可以为你的思考贡献经验或信息——所有这些都会使异议更有力或更有效。如果你在会议或其他公共场合,推迟对话也是一个好主意。私下讨论这个问题会让有权势的人感到威胁更小。\n\n确定一个共同目标。\n\n在你分享你的想法之前,想想有权势的人关心什么——可能是他们团队的信誉或按时完成项目。如果你能把你的异议与更高的目标联系起来,你更有可能被倾听。当你确实说出来时,不要认为这种联系是显而易见的。你需要明确地陈述它,将你的陈述置于情境中,这样你就不会被看作是一个难相处的下属,而是一个试图推进共同目标的同事。这样一来,讨论就会更像一场国际象棋比赛,而不是一场拳击比赛。\n\n请求允许表达不同意见。\n\n这一步听起来可能过于恭顺,但它是给予有权势的人心理安全感和控制权的明智方式。你可以说类似这样的话:'我知道我们似乎正朝着第一季度承诺的方向前进。我有理由认为那行不通。我想陈述我的理由。可以吗?'这给了对方一个选择,让他口头表示同意。而且,假设他说可以,这会让你对表达异议感到更有信心。\n\n保持冷静。\n\n你可能会感到心跳加速或脸红,但无论如何都要在言语和行动上保持中立。当你的肢体语言传达出不情愿或焦虑时,它会削弱信息。它发出混合信号,而你的对话者可以选择读取什么信号。深呼吸有帮助,说话更慢、更从容也有帮助。当我们感到恐慌时,我们往往会说得更大声、更快。仅仅是放慢节奏并以平稳的语气说话就能帮助对方冷静下来,对你自己也有同样的作用。它还会让你看起来自信,即使你并不自信。\n\n保持谦逊。\n\n强调你只是提供你的意见,而不是绝对真理。它可能是一个见多识广、经过充分研究的意见,但它仍然是一个意见,所以要试探性地说话,稍微低估你的信心。不要说:'如果我们设定季度末截止日期,我们永远无法完成',而要说:'这只是我的意见,但我看不出我们如何能在那个截止日期前完成。'在表明你的意见(作为一种立场,而不是事实)之后,对其他观点表现出同样的好奇心。提醒对方这是你的观点,然后邀请批评。对听取其他意见持开放态度。"
+ }
+]

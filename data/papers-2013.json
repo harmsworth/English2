@@ -1,0 +1,552 @@
+[
+ {
+  "id": "zy-2013-read-1",
+  "type": "阅读理解",
+  "title": "2013年真题 · Text 1",
+  "score": 10,
+  "minutes": 8,
+  "passage": "In an essay entitled \"Making It in America,\" the author Adam Davidson relates a joke from cotton country about just how much a modern textile mill has been automated: The average mill has only two employees today, \"a man and a dog. The man is there to feed the dog, and the dog is there to keep the man away from the machines.\"\nDavidson's article is one of a number of pieces that have recently appeared making the point that the reason we have such stubbornly high unemployment and declining middle-class incomes today is largely because of the big drop in demand because of the Great Recession, but it is also because of the advances in both globalization and the information technology revolution, which are more rapidly than ever replacing labor with machines or foreign workers.\nIn the past, workers with average skills, doing an average job, could earn an average lifestyle. But, today, average is officially over. Being average just won't earn you what it used to. It can't when so many more employers have so much more access to so much more above average cheap foreign labor, cheap robotics, cheap software, cheap automation and cheap geniuses. Therefore, everyone needs to find their extra – their unique value contribution that makes them stand out in whatever is their field of employment.\nYes, new technology has been eating jobs forever, and always will. But there's been an acceleration. As Davidson notes, \"In the 10 years ending in 2009, [U.S.] factories shed workers so fast that they erased almost all the gains of the previous 70 years; roughly one out of every three manufacturing jobs – about 6 million in total – disappeared.\"\nThere will always be change – new jobs, new products, new services. But the one thing we know for sure is that with each advance in globalization and the I. T. revolution, the best jobs will require workers to have more and better education to make themselves above average.\nIn a world where average is officially over, there are many things we need to do to support employment, but nothing would be more important than passing some kind of G. I. Bill for the 21st century that ensures that every American has access to post-high school education.",
+  "passage_zh": "在一篇题为《在美国取得成功》的文章中,作者Adam Davidson讲述了一个来自棉花产区的笑话,说的是现代纺织厂的自动化程度有多高:如今一个普通工厂只有两名员工,\"一个人和一条狗。人在那里是为了喂狗,而狗在那里是为了不让人靠近机器。\"\nDavidson的文章是最近出现的多篇文章之一,这些文章指出,我们今天失业率居高不下、中产阶级收入下降的原因,很大程度上是因为大衰退导致的需求大幅下降,但也是因为全球化和信息技术革命的进步,它们正以前所未有的速度用机器或外国工人取代劳动力。\n过去,拥有普通技能、做着普通工作的工人可以过上普通的生活。但如今,普通已经正式终结。仅仅普通已经不能让你获得过去那样的待遇。当如此多的雇主能够更广泛地接触到远超普通水平的廉价外国劳动力、廉价机器人、廉价软件、廉价自动化设备和廉价天才时,这已经不可能了。因此,每个人都需要找到自己的额外价值——使他们在各自就业领域脱颖而出的独特价值贡献。\n是的,新技术一直在吞噬就业岗位,而且将永远如此。但现在出现了加速。正如Davidson指出的,\"在截至2009年的10年里,[美国]工厂裁员速度如此之快,以至于几乎抹去了前70年的所有增长;大约三分之一的制造业岗位——总计约600万个——消失了。\"\n总会有变化——新的工作、新的产品、新的服务。但我们确定无疑的一件事是,随着全球化和信息技术革命的每一次进步,最好的工作将要求工人接受更多更好的教育,使自己高于平均水平。\n在一个普通已经正式终结的世界里,我们需要做很多事情来支持就业,但最重要的莫过于通过某种21世纪的《退伍军人权利法案》,确保每个美国人都能接受高中后教育。",
+  "questions": [
+   {
+    "q": "The joke in Paragraph 1 is used to illustrate____.",
+    "opts": [
+     "the impact of technological advances",
+     "the alleviation of job pressure",
+     "the shrinkage of textile mills",
+     "the decline of middle-class incomes"
+    ],
+    "ans": 0,
+    "explain": "例证目的题。Davidson 的文章是近来一批论及此话题的文章之一，它们要说明的是：当今美国之所以失业率居高不下、中产阶级收入持续下滑，很大程度上是因为大衰退导致的需求骤降，但另一…"
+   },
+   {
+    "q": "According to Paragraph 3, to be a successful employee, one has to____.",
+    "opts": [
+     "work on cheap software",
+     "ask for a moderate salary",
+     "adopt an average lifestyle",
+     "contribute something unique"
+    ],
+    "ans": 3,
+    "explain": "细节题。因此，每个人都必须找到属于自己的那份额外——即能让自己在所属领域中脱颖而出的独特价值贡献。"
+   },
+   {
+    "q": "The quotation in Paragraph 4 explains that____.",
+    "opts": [
+     "gains of technology have been erased",
+     "job opportunities are disappearing at a high speed",
+     "factories are making much less money than before",
+     "new jobs and services have been offered"
+    ],
+    "ans": 1,
+    "explain": "例证目的题。正如 Davidson 指出的：在截至 2009 年的十年里，美国工厂裁员速度之快，几乎抹去了之前 70 年间所有岗位增长；大约每三个制造业岗位中就有一个——总数约 6…"
+   },
+   {
+    "q": "According to the author, to reduce unemployment, the most important is ____.",
+    "opts": [
+     "to accelerate the I.T. revolution",
+     "to ensure more education for people",
+     "to advance economic globalization",
+     "to pass more bills in the 21st century"
+    ],
+    "ans": 1,
+    "explain": "细节题。在一个 average 已被官方宣告失效的世界里，要支撑就业当然有很多事可做，但最重要的莫过于通过某种类似 21 世纪版 G.I. Bill 的法案，确保每一位美国人都能接…"
+   },
+   {
+    "q": "Which of the following would be the most appropriate title for the text?",
+    "opts": [
+     "New Law Takes Effect.",
+     "Technology Goes Cheap.",
+     "Average Is Over.",
+     "Recession Is Bad."
+    ],
+    "ans": 2,
+    "explain": "主旨题。预判主线是平均已不再够用，Average Is Over 字面就是这条主线，且首尾两次原文出现已为它锁定主旨地位。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2013-read-2",
+  "type": "阅读理解",
+  "title": "2013年真题 · Text 2",
+  "score": 10,
+  "minutes": 8,
+  "passage": "A century ago, the immigrants from across the Atlantic included settlers and sojourners. Along with the many folks looking to make a permanent home in the United States came those who had no intention to stay, and who would make some money and then go home. Between 1908 and 1915, about 7 million people arrived while about 2 million departed. About a quarter of all Italian immigrants, for example, eventually returned to Italy for good. They even had an affectionate nickname, \"uccelli di passaggio,\" birds of passage.\nToday, we are much more rigid about immigrants. We divide newcomers into two categories: legal or illegal, good or bad. We hail them as Americans in the making, or brand them as aliens to be kicked out. That framework has contributed mightily to our broken immigration system and the long political paralysis over how to fix it. We don't need more categories, but we need to change the way we think about categories. We need to look beyond strict definitions of legal and illegal. To start, we can recognize the new birds of passage, those living and thriving in the gray areas. We might then begin to solve our immigration challenges.\nCrop pickers, violinists, construction workers, entrepreneurs, engineers, home health-care aides and physicists are among today's birds of passage. They are energetic participants in a global economy driven by the flow of work, money and ideas. They prefer to come and go as opportunity calls them. They can manage to have a job in one place and a family in another.\nWith or without permission, they straddle laws, jurisdictions and identities with ease. We need them to imagine the United States as a place where they can be productive for a while without committing themselves to staying forever. We need them to feel that home can be both here and there and that they can belong to two nations honorably.\nAccommodating this new world of people in motion will require new attitudes on both sides of the immigration battle. Looking beyond the culture war logic of right or wrong means opening up the middle ground and understanding that managing immigration today requires multiple paths and multiple outcomes, including some that are not easy to accomplish legally in the existing system.",
+  "passage_zh": "一个世纪前，来自大西洋彼岸的移民包括定居者和旅居者。在许多希望在美国永久定居的人当中，也有那些无意久留、赚些钱后就回国的人。1908年至1915年间，约有700万人抵达美国,而约有200万人离开。例如，大约四分之一的意大利移民最终永久返回了意大利。他们甚至有一个亲切的昵称——\"uccelli di passaggio\",即过境之鸟。\n今天,我们对移民的态度要严格得多。我们将新来者分为两类：合法或非法,好或坏。我们把他们誉为未来的美国人,或把他们打上外来者的烙印予以驱逐。这种框架极大地导致了我们破碎的移民制度以及在如何修复这一问题上长期的政治僵局。我们不需要更多的分类,但我们需要改变思考分类的方式。我们需要超越合法与非法的严格定义。首先,我们可以认识到新的过境之鸟,那些生活并繁荣在灰色地带的人们。然后我们或许就能开始解决我们的移民挑战。\n采摘工、小提琴手、建筑工人、企业家、工程师、家庭医疗护理人员和物理学家都属于当今的过境之鸟。他们是由工作、资金和思想流动驱动的全球经济中充满活力的参与者。他们更愿意随着机会的召唤来来去去。他们能够做到在一个地方工作而家庭在另一个地方。\n无论是否获得许可,他们都能轻松地跨越法律、管辖权和身份。我们需要他们把美国想象成一个可以暂时发挥生产力而无需承诺永久居留的地方。我们需要他们感到家可以既在这里又在那里,他们可以光荣地属于两个国家。\n适应这个人员流动的新世界将需要移民争论双方的新态度。超越对与错的文化战争逻辑意味着开辟中间地带,并理解管理当今的移民需要多种途径和多种结果,包括一些在现有制度下难以通过合法方式实现的结果。",
+  "questions": [
+   {
+    "q": "\"Birds of passage\" refers to those who____.",
+    "opts": [
+     "stay in a foreign country temporarily",
+     "leave their home countries for good",
+     "immigrate across the Atlantic",
+     "find permanent jobs overseas"
+    ],
+    "ans": 0,
+    "explain": "细节题。在大批想在美国安家落户的人之外，还有一批根本不打算久留、只想挣点钱就回去的人。……人们甚至给他们起了一个亲昵的绰号——「uccelli di passaggio」，意为「候…"
+   },
+   {
+    "q": "It is implied in Paragraph 2 that the current immigration system in the US ____.",
+    "opts": [
+     "needs new immigrant categories",
+     "has loosened control over immigrants",
+     "should be adapted to meet challenges",
+     "has been fixed via political means"
+    ],
+    "ans": 2,
+    "explain": "推断题。那种框架在很大程度上造成了我们破败的移民体制，也造成了围绕「怎么修」长期的政治僵局。我们要的不是更多类别，而是要改变我们对类别的思考方式。我们要超越合法与非法的严格定义。"
+   },
+   {
+    "q": "According to the author, today's birds of passage want____.",
+    "opts": [
+     "financial incentives",
+     "a global recognition",
+     "the freedom to stay and leave",
+     "opportunities to get regular jobs"
+    ],
+    "ans": 2,
+    "explain": "细节题。他们更愿意随着机会的召唤来来去去；他们能做到工作在一个地方、家庭在另一个地方。"
+   },
+   {
+    "q": "The author suggests that the birds of passage today should be treated____.",
+    "opts": [
+     "as faithful partners",
+     "with legal tolerance",
+     "with economic favors",
+     "as mighty rivals"
+    ],
+    "ans": 1,
+    "explain": "推断题。无论是否有许可，他们都轻松地跨越法律、辖区与身份的界限。我们需要让他们把美国想象成一个可以在此短期出力、不必承诺永居的地方；我们需要让他们觉得「家」既可以在这里、也可以在那…"
+   },
+   {
+    "q": "The most appropriate title for this text would be____.",
+    "opts": [
+     "Come and Go: Big Mistake",
+     "Living and Thriving: Great Risk",
+     "With or Without: Great Risk",
+     "Legal or Illegal: Big Mistake"
+    ],
+    "ans": 3,
+    "explain": "主旨题。唯一既能涵盖「合法/非法」这一全文主话题、又能传达作者「错」立场的标题就是Legal or Illegal: Big Mistake。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2013-read-3",
+  "type": "阅读理解",
+  "title": "2013年真题 · Text 3",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Scientists have found that although we are prone to snap overreactions, if we take a moment and think about how we are likely to react, we can reduce or even eliminate the negative effects of our quick, hard-wired responses.\nSnap decisions can be important defense mechanisms; if we are judging whether someone is dangerous, our brains and bodies are hard-wired to react very quickly, within milliseconds. But we need more time to assess other factors. To accurately tell whether someone is sociable, studies show, we need at least a minute, preferably five. It takes a while to judge complex aspects of personality, like neuroticism or open-mindedness.\nBut snap decisions in reaction to rapid stimuli aren't exclusive to the interpersonal realm. Psychologists at the University of Toronto found that viewing a fast-food logo for just a few milliseconds primes us to read 20 percent faster, even though reading has little to do with eating. We unconsciously associate fast food with speed and impatience and carry those impulses into whatever else we're doing, Subjects exposed to fast-food flashes also tend to think a musical piece lasts too long.\nYet we can reverse such influences. If we know we will overreact to consumer products or housing options when we see a happy face (one reason good sales representatives and real estate agents are always smiling), we can take a moment before buying. If we know female job screeners are more likely to reject attractive female applicants, we can help screeners understand their biases – or hire outside screeners.\nJohn Gottman, the marriage expert, explains that we quickly \"thin slice\" information reliably only after we ground such snap reactions in \"thick sliced\" long-term study. When Dr. Gottman really wants to assess whether a couple will stay together, he invites them to his island retreat for a much longer evaluation: two days, not two seconds.\nOur ability to mute our hard-wired reactions by pausing is what differentiates us from animals: dogs can think about the future only intermittently or for a few minutes. But historically we have spent about 12 percent of our days contemplating the longer term. Although technology might change the way we react, it hasn't changed our nature. We still have the imaginative capacity to rise above temptation and reverse the high-speed trend.",
+  "passage_zh": "科学家发现，尽管我们容易做出过激的本能反应，但如果我们花一点时间思考自己可能会如何反应，就能减少甚至消除这种快速的、与生俱来的反应所带来的负面影响。\n快速决策可能是重要的防御机制；如果我们在判断某人是否危险时，我们的大脑和身体会在几毫秒内做出非常迅速的本能反应。但我们需要更多时间来评估其他因素。研究表明，要准确判断某人是否善于社交，我们至少需要一分钟，最好是五分钟。判断性格中的复杂方面，如神经质或开放性，需要一段时间。\n但对快速刺激做出的本能决策并不仅限于人际领域。多伦多大学的心理学家发现，仅仅看几毫秒的快餐标志就会促使我们的阅读速度提高百分之二十，尽管阅读与进食几乎没有关系。我们会无意识地将快餐与速度和不耐烦联系起来，并将这些冲动带入我们正在做的其他任何事情中。接触快餐闪现画面的受试者也倾向于认为一段音乐持续时间过长。\n然而我们可以扭转这种影响。如果我们知道当看到笑脸时会对消费品或住房选择反应过度（这是优秀销售代表和房地产经纪人总是面带微笑的一个原因），我们可以在购买前稍作停顿。如果我们知道女性招聘筛选人员更可能拒绝有吸引力的女性应聘者，我们可以帮助筛选人员理解他们的偏见——或者聘请外部筛选人员。\n婚姻专家John Gottman解释说，只有在我们将这种快速反应建立在\"厚切片\"式的长期研究基础上之后，我们才能可靠地快速\"薄切片\"信息。当Gottman博士真正想要评估一对夫妇是否会在一起时，他会邀请他们到他的岛屿静修所进行更长时间的评估：两天，而不是两秒钟。\n我们通过暂停来抑制与生俱来的反应的能力，正是我们与动物的区别所在：狗只能间歇性地或在几分钟内思考未来。但从历史上看，我们每天大约有百分之十二的时间在思考长远问题。尽管技术可能会改变我们的反应方式，但它并没有改变我们的本性。我们仍然拥有超越诱惑、扭转高速趋势的想象力。",
+  "questions": [
+   {
+    "q": "The time needed in making decisions may____.",
+    "opts": [
+     "predetermine the accuracy of our judgment",
+     "prove the complexity of our brain reaction",
+     "depend on the importance of the assessment",
+     "vary according to the urgency of the situation"
+    ],
+    "ans": 3,
+    "explain": "细节题。快速决策可以是重要的防御机制；如果判断的是某人是否危险，我们的大脑和身体被天生设定为在毫秒内迅速反应。但要评估其他因素，我们就需要更多时间：要准确判断一个人是否合群，研究显…"
+   },
+   {
+    "q": "Our reaction to a fast-food logo shows that snap decisions____.",
+    "opts": [
+     "can be associative",
+     "are not unconscious",
+     "can be dangerous",
+     "are not impulsive"
+    ],
+    "ans": 0,
+    "explain": "细节题。多伦多大学的心理学家发现，仅看几毫秒的快餐 logo 就能让人阅读速度提高 20%，即便阅读与吃饭几乎无关。我们无意识地把快餐与速度、急躁联想在一起，并把这种冲动带进我们正…"
+   },
+   {
+    "q": "To reverse the negative influences of snap decisions, we should____.",
+    "opts": [
+     "trust our first impression",
+     "think before we act",
+     "do as people usually do",
+     "ask for expert advice"
+    ],
+    "ans": 1,
+    "explain": "细节题。然而我们能扭转这些影响。如果我们知道看到笑脸时会冲动消费或对房产选择反应过度（这正是好销售和房产中介总挂着微笑的原因之一），我们就能在购买前先停顿一下。如果知道女面试官更可…"
+   },
+   {
+    "q": "John Gottman says that reliable snap reactions are based on____.",
+    "opts": [
+     "critical assessment",
+     "\"thin sliced\" study",
+     "adequate information",
+     "sensible explanation"
+    ],
+    "ans": 2,
+    "explain": "细节题。婚姻专家约翰·戈特曼解释说：只有当我们把这种快速反应建立在「厚切」长期研究的基础上之后，「薄切」式的快速信息处理才会变得可靠。"
+   },
+   {
+    "q": "The author's attitude toward reversing the high-speed trend is____.",
+    "opts": [
+     "tolerant",
+     "optimistic",
+     "uncertain",
+     "Doubtful"
+    ],
+    "ans": 1,
+    "explain": "态度题。预判是「正向、相信能做到」；首段 can reduce/eliminate、中段 Yet we can reverse、末段 We still have the capac…"
+   }
+  ]
+ },
+ {
+  "id": "zy-2013-read-4",
+  "type": "阅读理解",
+  "title": "2013年真题 · Text 4",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Europe is not a gender-equality heaven. In particular, the corporate workplace will never be completely family-friendly until women are part of senior management decisions, and Europe's top corporate-governance positions remain overwhelmingly male. Indeed, women hold only 14 per cent of positions on European corporate boards.\nThe European Union is now considering legislation to compel corporate boards to maintain a certain proportion of women – up to 60 per cent. This proposed mandate was born of frustration. Last year, European Commission Vice President Viviane Reding issued a call to voluntary action. Reding invited corporations to sign up for gender balance goals of 40 per cent female board membership. But her appeal was considered a failure: only 24 companies took it up.\nDo we need quotas to ensure that women can continue to climb the corporate ladder fairly as they balance work and family?\n\"Personally, I don't like quotas,\" Reding said recently. \"But I like what the quotas do.\" Quotas get action: they \"open the way to equality and they break through the glass ceiling,\" according to Reding, a result seen in France and other countries with legally binding provisions on placing women in top business positions.\nI understand Reding's reluctance – and her frustration. I don't like quotas either; they run counter to my belief in meritocracy, governance by the capable. But, when one considers the obstacles to achieving the meritocratic ideal, it does look as if a fairer world must be temporarily ordered.\nAfter all, four decades of evidence has now shown that corporations in Europe as well as the US are evading the meritocratic hiring and promotion of women to top positions – no matter how much \"soft pressure\" is put upon them. When women do break through to the summit of corporate power – as, for example, Sheryl Sandberg recently did at Facebook – they attract massive attention precisely because they remain the exception to the rule.\nIf appropriate public policies were in place to help all women – whether CEOs or their children's caregivers – and all families, Sandberg would be no more newsworthy than any other highly capable person living in a more just society.",
+  "passage_zh": "欧洲并非性别平等的天堂。尤其是,企业职场永远不会完全对家庭友好,除非女性成为高层管理决策的一部分,而欧洲顶级企业治理职位仍然绝大多数由男性担任。事实上,女性在欧洲企业董事会中仅占14%的席位。\n欧盟目前正在考虑立法,强制要求企业董事会维持一定比例的女性成员——最高达60%。这项拟议的强制规定源于挫败感。去年,欧盟委员会副主席Viviane Reding发出了自愿行动的呼吁。Reding邀请企业签署女性董事会成员占40%的性别平衡目标。但她的呼吁被认为是失败的:只有24家公司响应。\n我们是否需要配额制来确保女性在平衡工作与家庭的同时,能够公平地继续攀登企业阶梯?\nReding最近说:\"就个人而言,我不喜欢配额制。但我喜欢配额制所带来的结果。\"配额制能促成行动:根据Reding的说法,它们\"为平等开辟道路,并打破玻璃天花板\",这一结果在法国和其他对女性担任企业高层职位有法律约束性规定的国家已经显现。\n我理解Reding的不情愿——以及她的挫败感。我也不喜欢配额制;它们与我对精英治理、由能者治理的信念相悖。但是,当人们考虑到实现精英治理理想所面临的障碍时,看起来确实需要暂时建立一个更公平的秩序。\n毕竟,四十年的证据现已表明,欧洲和美国的企业都在回避按精英原则聘用和提拔女性担任高层职位——无论对它们施加多少\"软压力\"。当女性确实突破到企业权力顶层时——例如Sheryl Sandberg最近在Facebook所做的那样——她们会引起巨大关注,恰恰是因为她们仍然是规则的例外。\n如果有适当的公共政策来帮助所有女性——无论是CEO还是她们孩子的照料者——以及所有家庭,Sandberg就不会比生活在一个更公正社会中的任何其他高能力人士更具新闻价值。",
+  "questions": [
+   {
+    "q": "In the European corporate workplace, generally____.",
+    "opts": [
+     "women take the lead",
+     "men have the final say",
+     "corporate governance is overwhelmed",
+     "senior management is family-friendly"
+    ],
+    "ans": 1,
+    "explain": "细节题。尤其是，公司职场绝不会变得完全家庭友好，除非女性参与高级管理层决策；而欧洲顶层公司治理职位仍然压倒性地由男性占据。"
+   },
+   {
+    "q": "The European Union's intended legislation is____.",
+    "opts": [
+     "a reflection of gender balance",
+     "a response to Reding's call",
+     "a reluctant choice",
+     "a voluntary action"
+    ],
+    "ans": 2,
+    "explain": "细节题。这项提议中的强制规定是因挫败感而生的。"
+   },
+   {
+    "q": "According to Reding, quotas may help women____.",
+    "opts": [
+     "get top business positions",
+     "see through the glass ceiling",
+     "balance work and family",
+     "anticipate legal results"
+    ],
+    "ans": 0,
+    "explain": "细节题。配额会带来行动：据 Reding 说，\"它们打开通往平等之路，打破玻璃天花板\"——在法国及其他对女性进入商业高位有法律强制规定的国家，已经能看到这种结果。"
+   },
+   {
+    "q": "The author's attitude toward Reding's appeal is one of____.",
+    "opts": [
+     "skepticism",
+     "objectiveness",
+     "indifference",
+     "approval"
+    ],
+    "ans": 3,
+    "explain": "态度题。预判是\"明确赞同\"，四个选项中只有 approval 是正极性，skepticism/objectiveness/indifference 都偏负面或中立，故选 D。"
+   },
+   {
+    "q": "Women entering top management become headlines due to the lack of____.",
+    "opts": [
+     "more social justice",
+     "massive media attention",
+     "suitable public policies",
+     "greater \"soft pressure\""
+    ],
+    "ans": 2,
+    "explain": "细节题。如果有合适的公共政策来帮助所有女性（不论是 CEO 还是她们孩子的照护者）和所有家庭，那么 Sandberg 就不会比一个生活在更公正社会里的其他能干者更值得上新闻。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2013-cloze",
+  "type": "完形填空",
+  "title": "2013年真题 · 完形填空",
+  "score": 20,
+  "minutes": 15,
+  "passage": "Given the advantages of electronic money, you might think that we would move quickly to the cashless society in which all payments are made electronically. __(1)__ , a true cashless society is probably not around the corner. Indeed, predictions have been __(2)__ for two decades but have not yet come to fruition. For example, Business Week predicted in 1975 that electronic means of payment would soon \"revolutionize the very __(3)__ of money itself,\" only to __(4)__ itself several years later. Why has the movement to a cashless society been so __(5)__ in coming?\nAlthough electronic means of payment may be more efficient than a payments system based on paper, several factors work __(6)__ the disappearance of the paper system. First, it is very __(7)__ to set up the computer, card reader, and telecommunications networks necessary to make electronic money the __(8)__ form of payment. Second, paper checks have the advantage that they __(9)__ receipts, something that many consumers are unwilling to __(10)__ . Third, the use of paper checks gives consumers several days of \"float\" – it takes several days __(11)__ a check is cashed and funds are __(12)__ from the issuer's account, which means that the writer of the check can earn interest on the funds in the meantime. __(13)__ electronic payments are immediate, they eliminate the float for the consumer.\nFourth, electronic means of payment may __(14)__ security and privacy concerns. We often hear media reports that an unauthorized hacker has been able to access a computer database and to alter information __(15)__ there. The fact that this is not an __(16)__ occurrence means that dishonest persons might be able to access bank accounts in electronic payments systems and __(17)__ from someone else's accounts. The __(18)__ of this type of fraud is no easy task, and a new field of computer science is developing to __(19)__ security issues. A further concern is that the use of electronic means of payment leaves an electronic __(20)__ that contains a large amount of personal data. There are concerns that government, employers, and marketers might be able to access these data, thereby violating our privacy.",
+  "passage_zh": "鉴于电子货币的优势，你可能会认为我们将迅速迈向无现金社会，在这个社会中所有支付都通过电子方式进行。然而,真正的无现金社会可能并不会很快到来。事实上，这种预测已经存在了二十年，但尚未实现。例如，《商业周刊》在1975年预测电子支付手段将很快\"彻底改变货币本身的概念\"，但几年后却推翻了自己的说法。为什么向无现金社会的转变如此缓慢？\n尽管电子支付手段可能比基于纸质的支付系统更高效，但有几个因素阻碍着纸质系统的消失。首先，建立使电子货币成为主要支付形式所需的计算机、读卡器和电信网络成本非常昂贵。其次，纸质支票的优势在于它们提供收据，而许多消费者不愿意放弃这一点。第三，使用纸质支票给消费者提供了几天的\"浮动期\"——支票兑现和从发行人账户中提取资金需要几天时间，这意味着支票开具者可以在此期间从账户资金中赚取利息。由于电子支付是即时的，它们消除了消费者的浮动期。\n第四，电子支付手段可能引发安全和隐私方面的担忧。我们经常听到媒体报道称未经授权的黑客能够访问计算机数据库并更改其中存储的信息。这种情况并不少见，意味着不诚实的人可能能够访问电子支付系统中的银行账户并从他人账户中盗取资金。防止这类欺诈并非易事，计算机科学的一个新领域正在发展以应对安全问题。另一个担忧是，使用电子支付手段会留下包含大量个人数据的电子痕迹。人们担心政府、雇主和营销人员可能能够访问这些数据，从而侵犯我们的隐私。",
+  "blanks": [
+   {
+    "opts": [
+     "Moreover",
+     "However",
+     "Therefore",
+     "Otherwise"
+    ],
+    "ans": 1,
+    "explain": "逻辑关系。前后句语义相反。"
+   },
+   {
+    "opts": [
+     "off",
+     "back",
+     "over",
+     "around"
+    ],
+    "ans": 3,
+    "explain": "固定搭配。predictions 与时间状语共现。"
+   },
+   {
+    "opts": [
+     "power",
+     "concept",
+     "history",
+     "role"
+    ],
+    "ans": 1,
+    "explain": "词义辨析。revolutionize 指向\"本质/根本观念\"。"
+   },
+   {
+    "opts": [
+     "reverse",
+     "resist",
+     "resume",
+     "reward"
+    ],
+    "ans": 0,
+    "explain": "词义辨析。only to + 几年后 = 反讽自打脸。"
+   },
+   {
+    "opts": [
+     "silent",
+     "sudden",
+     "slow",
+     "steady"
+    ],
+    "ans": 2,
+    "explain": "词义辨析。全段论证\"无现金社会迟迟未到\"。"
+   },
+   {
+    "opts": [
+     "for",
+     "against",
+     "with",
+     "on"
+    ],
+    "ans": 1,
+    "explain": "固定搭配。Although + 转折显示几大因素是\"阻力\"。"
+   },
+   {
+    "opts": [
+     "expensive",
+     "imaginative",
+     "sensitive",
+     "productive"
+    ],
+    "ans": 0,
+    "explain": "词义辨析。First 之下用基础设施投入做支撑。"
+   },
+   {
+    "opts": [
+     "similar",
+     "original",
+     "temporary",
+     "dominant"
+    ],
+    "ans": 3,
+    "explain": "词义辨析。对照 paper system 的消失。"
+   },
+   {
+    "opts": [
+     "collect",
+     "copy",
+     "provide",
+     "print"
+    ],
+    "ans": 2,
+    "explain": "词义辨析。Second 段子论点—\"支票自带收据\"是优势。"
+   },
+   {
+    "opts": [
+     "give up",
+     "take over",
+     "bring back",
+     "pass down"
+    ],
+    "ans": 0,
+    "explain": "固定搭配。unwilling + 上文优势 → 不愿\"放弃\"。"
+   },
+   {
+    "opts": [
+     "before",
+     "after",
+     "since",
+     "when"
+    ],
+    "ans": 0,
+    "explain": "固定搭配。上文给出 float 概念。"
+   },
+   {
+    "opts": [
+     "kept",
+     "borrowed",
+     "withdrawn",
+     "released"
+    ],
+    "ans": 2,
+    "explain": "词义辨析。支票兑现 → 资金\"被取走\"。"
+   },
+   {
+    "opts": [
+     "Unless",
+     "Because",
+     "Until",
+     "Though"
+    ],
+    "ans": 1,
+    "explain": "逻辑关系。\"即时\"是\"消除浮动期\"的原因。"
+   },
+   {
+    "opts": [
+     "hide",
+     "express",
+     "ease",
+     "raise"
+    ],
+    "ans": 3,
+    "explain": "词义辨析。Fourth 引出第四条阻碍因素。"
+   },
+   {
+    "opts": [
+     "analyzed",
+     "shared",
+     "stored",
+     "displayed"
+    ],
+    "ans": 2,
+    "explain": "词义辨析。数据库就是用来存信息的。"
+   },
+   {
+    "opts": [
+     "unsafe",
+     "unnatural",
+     "unclear",
+     "uncommon"
+    ],
+    "ans": 3,
+    "explain": "词义辨析。强调黑客事件不少见。"
+   },
+   {
+    "opts": [
+     "steal",
+     "choose",
+     "benefit",
+     "return"
+    ],
+    "ans": 0,
+    "explain": "词义辨析。dishonest persons → 非法盗取。"
+   },
+   {
+    "opts": [
+     "consideration",
+     "prevention",
+     "manipulation",
+     "justification"
+    ],
+    "ans": 1,
+    "explain": "词义辨析。下句计算机科学新分支用于应对欺诈。"
+   },
+   {
+    "opts": [
+     "call for",
+     "fight against",
+     "adapt to",
+     "cope with"
+    ],
+    "ans": 3,
+    "explain": "固定搭配。新计算机分支应对安全问题。"
+   },
+   {
+    "opts": [
+     "chunk",
+     "chip",
+     "trail",
+     "path"
+    ],
+    "ans": 2,
+    "explain": "词义辨析。电子支付留下含个人数据的\"痕迹\"。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2013-match",
+  "type": "新题型",
+  "title": "2013年真题 · 新题型",
+  "score": 10,
+  "minutes": 8,
+  "intro": "Directions: Read the following text and answer the questions by choosing the most suitable subheading from the list A-G for each of the numbered paragraphs (41-45). There are two extra subheadings which you do not need to use. Mark your answers on the ANSWER SHEET. (10 points)\n\nThe hugely popular blog the Skint Foodie chronicles how Tony balances his love of good food with living on benefits. After bills, Tony has £60 a week to spend, £40 of which goes on food, but 10 years ago he was earning £130,000 a year working in corporate communications and eating at London's best restaurants at least twice a week. Then his marriage failed, his career burned out and his drinking became serious. \"The community mental health team saved my life. And I felt like that again, to a certain degree, when people responded to the blog so well. It gave me the validation and confidence that I'd lost. But it's still a day-by-day thing.\" Now he's living in a council flat and fielding offers from literary agents. He's feeling positive, but he'll carry on blogging – not about eating as cheaply as you can – \"there are so many people in a much worse state, with barely any money to spend on food\" – but eating well on a budget. Here's his advice for economical foodies.",
+  "titles": [
+   "Live like a peasant",
+   "Balance your diet",
+   "Shopkeepers are your friends",
+   "Remember to treat yourself",
+   "Stick to what you need",
+   "Planning is everything",
+   "Waste not, want not"
+  ],
+  "paras": [
+   {
+    "text": "Impulsive spending isn't an option, so plan your week's menu in advance, making shopping lists for your ingredients in their exact quantities. I have an Excel template for a week of breakfast, lunch and dinner. Stop laughing: it's not just cost effective but helps you balance your diet. It's also a good idea to shop daily instead of weekly, because, being human, you'll sometimes change your mind about what you fancy.",
+    "ans": 5,
+    "explain": "计划就是一切。事先把一周菜单和购物清单都规划好。"
+   },
+   {
+    "text": "This is where supermarkets and their anonymity come in handy. With them, there's not the same embarrassment as when buying one carrot in a little greengrocer. And if you plan properly, you'll know that you only need, say, 350g of shin of beef and six rashers of bacon, not whatever weight is pre-packed in the supermarket chiller.",
+    "ans": 4,
+    "explain": "坚持你所需要的。在超市按你实际所需的精确分量购买。"
+   },
+   {
+    "text": "You may proudly claim to only have frozen peas in the freezer – that's not good enough. Mine is filled with leftovers, bread, stock, meat and fish. Planning ahead should eliminate wastage, but if you have surplus vegetables you'll do a vegetable soup, and all fruits threatening to \"go off\" will be cooked or juiced.",
+    "ans": 6,
+    "explain": "不浪费,不匮乏。把冰箱填满剩料、让食材物尽其用不浪费。"
+   },
+   {
+    "text": "Everyone says this, but it really is a top tip for frugal eaters. Shop at butchers, delis and fish-sellers regularly, even for small things, and be super friendly. Soon you'll feel comfortable asking if they've any knuckles of ham for soups and stews, or beef bones, chicken carcasses and fish heads for stock which, more often than not, they'll let you have for free.",
+    "ans": 2,
+    "explain": "店主是你的朋友。常光顾小店、对店主友好，就能拿到免费边角料。"
+   },
+   {
+    "text": "You won't be eating out a lot, but save your pennies and once every few months treat yourself to a set lunch at a good restaurant – £1.75 a week for three months gives you £21 – more than enough for a three-course lunch at Michelin-starred Arbutus. It's £16.95 there – or £12.99 for a large pizza from Domino's: I know which I'd rather eat.",
+    "ans": 3,
+    "explain": "记得犒劳自己。攒下小钱，隔几个月去好餐厅犒劳自己一次。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2013-trans",
+  "type": "翻译",
+  "title": "2013年真题 · 翻译",
+  "score": 15,
+  "minutes": 20,
+  "passage": "I can pick a date from the past 53 years and know instantly where I was, what happened in the news and even the day of the week. I've been able to do this since I was four.\nI never feel overwhelmed with the amount of information my brain absorbs. My mind seems to be able to cope and the information is stored away neatly. When I think of a sad memory, I do what everybody does – try to put it to one side. I don't think it's harder for me just because my memory is clearer. Powerful memory doesn't make my emotions any more acute or vivid. I can recall the day my grandfather died and the sadness I felt when we went to the hospital the day before. I also remember that the musical play Hair opened on Broadway on the same day – they both just pop into my mind in the same way.",
+  "passage_zh": "我可以从过去 53 年里随便挑出一天，立刻说出自己当时身在何处、新闻里发生了什么，甚至那天是星期几。自四岁起，我就一直能这样。\n我从不觉得大脑所吸收的海量信息会让我招架不住。我的头脑似乎应付得来，各种信息都被整齐地归置妥当。当想起一段悲伤的记忆时，我和大家一样——设法把它搁到一边。我并不觉得，仅仅因为我的记忆更清晰，这件事对我而言就更难。超强的记忆并不会让我的情绪变得更加强烈或鲜明。我能回忆起外公去世的那天，以及前一天我们去医院时我所感到的悲伤；我也记得，音乐剧《长发》就在那天在百老汇首演——这两件事就这样以同样的方式涌入我的脑海。",
+  "intro": "Directions: Translate the following text into Chinese. Write your translation on the ANSWER SHEET. (15 points)"
+ },
+ {
+  "id": "zy-2013-write-s",
+  "type": "写作",
+  "title": "2013年真题 · 小作文",
+  "score": 10,
+  "minutes": 15,
+  "prompt": "Directions: Suppose your class is to hold a charity sale for kids in need of help. Write your classmates an email to 1)inform them about the details, and 2)encourage them to participate. You should write about 100 words on the ANSWER SHEET. Do not use your own name. Use “Li Ming” instead. Do not write your address. (10 points)",
+  "tips": "参考范文约102词；称呼独占一行；目的句领起细节；号召加意义收束；只署Li Ming",
+  "chart": false
+ },
+ {
+  "id": "zy-2013-write-b",
+  "type": "写作",
+  "title": "2013年真题 · 大作文",
+  "score": 15,
+  "minutes": 30,
+  "prompt": "Directions: Write an essay based on the following chart. In your writing, you should 1)interpret the chart, and 2)give your comments. You should write about 150 words on the ANSWER SHEET. (15 points)",
+  "tips": "参考范文约141词；总括＋端点数据完成读图；过渡句领起、逐条析因；表态＋让步给建议收尾",
+  "chart": true,
+  "chart_url": "https://img-paper.lazynote.cn/2025/08/08/6uTgD5CX.jpg"
+ }
+]

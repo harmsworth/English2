@@ -1,0 +1,552 @@
+[
+ {
+  "id": "zy-2023-read-1",
+  "type": "阅读理解",
+  "title": "2023年真题 · Text 1",
+  "score": 10,
+  "minutes": 8,
+  "passage": "In the quest for the perfect lawn, homeowners across the country are taking a shortcut—and it is the environment that is paying the price. About eight million square metres of plastic grass is sold each year but opposition has now spread to the highest gardening circles. The Chelsea Flower Show has banned fake grass from this year's event, declaring it to be not part of its ethos. The Royal Horticultural Society (RHS), which runs the annual show in west London, says it has introduced the ban because of the damage plastic grass does to the environment and biodiversity.\n\nEd Home, of the RHS, said: \"We launched our sustainability strategy last year and fake grass is just not in line with our ethos and views on plastic. We recommend using real grass because of its environmental benefits, which include supporting wildlife, alleviating flooding and cooling the environment.\"\n\nThe RHS's decision comes as campaigners try to raise awareness of the problems fake grass causes. A Twitter account, which claims to \"cut through the greenwash\" of artificial grass, already has more than 20,000 followers. It is trying to encourage people to sign two petitions, one calling for a ban on the sale of plastic grass and another calling for an \"ecological damage\" tax on such lawns. They have gathered 7,276 and 11,282 signatures.\n\nHowever, supporters of fake grass point out that there is also an environmental impact with natural lawns, which need mowing and therefore usually consume electricity or petrol. The industry also points out that real grass requires considerable amounts of water, weed killer or other treatments and that people who lay fake grass tend to use their garden more. The industry also claims that people who lay fake grass spend an average of £500 on trees or shrubs for their garden, which provides habitat for insects.\n\nIn response to another petition last year about banning fake lawns, which gathered 30,000 signatures, the government responded that it has \"no plans to ban the use of artificial grass\".\n\nIt added: \"We prefer to help people and organisations make the right choice rather than legislating on such matters. However, the use of artificial grass must comply with the legal and policy safeguards in place to protect biodiversity and ensure sustainable drainage, while measures such as the strengthened biodiversity duty should serve to encourage public authorities to consider sustainable alternatives.\"",
+  "passage_zh": "在追求完美草坪的过程中,全国各地的房主正在走捷径——而为此付出代价的却是环境。每年约有八百万平方米的塑料草坪被售出,但反对声音现已蔓延至最高园艺圈层。切尔西花展已从今年的活动中禁止人造草,宣称其不符合该展会的理念。主办这一伦敦西部年度展览的英国皇家园艺学会表示,之所以实施这一禁令,是因为塑料草坪对环境和生物多样性造成的破坏。\n\n英国皇家园艺学会的Ed Home说:\"我们去年发布了可持续发展战略,而人造草与我们在塑料问题上的理念和观点完全不符。我们建议使用真草,因为它具有环境效益,包括支持野生动物、缓解洪涝以及冷却环境。\"\n\n英国皇家园艺学会的这一决定正值活动人士试图提高人们对人造草所造成问题的认识之际。一个声称要\"揭穿\"人造草\"漂绿行为\"的Twitter账号已经拥有超过两万名关注者。该账号正试图鼓励人们签署两份请愿书,一份呼吁禁止销售塑料草坪,另一份呼吁对此类草坪征收\"生态破坏\"税。这两份请愿书已分别征集到7276和11282个签名。\n\n然而,人造草的支持者指出,天然草坪也会产生环境影响,因为需要修剪,因此通常会消耗电力或汽油。该行业还指出,真草需要大量的水、除草剂或其他处理,而铺设人造草的人往往会更多地使用他们的花园。该行业还声称,铺设人造草的人平均会花费500英镑购买树木或灌木来装点花园,这为昆虫提供了栖息地。\n\n去年,另一份关于禁止人造草坪的请愿书征集到三万个签名,政府对此回应称\"没有禁止使用人造草的计划\"。\n\n政府补充道:\"我们更倾向于帮助个人和组织做出正确选择,而非就此类事项立法。然而,人造草的使用必须遵守现行的法律和政策保障措施,以保护生物多样性并确保可持续排水,同时诸如强化的生物多样性义务等措施应有助于鼓励公共机构考虑可持续的替代方案。\"",
+  "questions": [
+   {
+    "q": "The RHS thinks that plastic grass_____.",
+    "opts": [
+     "is harmful to the environment",
+     "is a hot topic in gardening circles",
+     "is overpraised in the annual show",
+     "is ruining the view of west London"
+    ],
+    "ans": 0,
+    "explain": "答案A。is harmful to the environment 是对定位句 damage plastic grass does to the environment and biodiversity 的直接同义转述，与预判一致，可锁定 A。"
+   },
+   {
+    "q": "The petitions mentioned in Paragraph 3 reveal the campaigners'_____.",
+    "opts": [
+     "disappointment with the RHS",
+     "resistance to fake grass use",
+     "anger over the proposed tax",
+     "concern about real grass supply"
+    ],
+    "ans": 1,
+    "explain": "答案B。禁售要求和\"生态破坏\"税都直接指向反对人造草坪，与预判\"反对使用人造草坪\"完全吻合，锁 B。"
+   },
+   {
+    "q": "In Paragraph 4, supporters of fake grass point out_____.",
+    "opts": [
+     "the necessity to lower the costs of fake grass",
+     "the disadvantages of growing real grass",
+     "the way to take care of artificial lawns",
+     "the challenges of insect habitat protection"
+    ],
+    "ans": 1,
+    "explain": "答案B。支持方所列的真草维护成本与环境代价，正是 the disadvantages of growing real grass 的具象化，与预判一致，锁 B。"
+   },
+   {
+    "q": "What would the government do with regard to artificial grass?",
+    "opts": [
+     "Urge legislation to restrict its use.",
+     "Take measures to guarantee its quality.",
+     "Remind its users to obey existing rules.",
+     "Replace it with sustainable alternatives."
+    ],
+    "ans": 2,
+    "explain": "答案C。C 既反映\"政府选择引导而非立法\"，又反映\"要求使用者守现行规则\"，与定位句和预判完全一致。"
+   },
+   {
+    "q": "It can be learned from the text that fake grass_____.",
+    "opts": [
+     "is being improved continuously",
+     "has seen a market share decline",
+     "is becoming increasingly affordable",
+     "has been a controversial product"
+    ],
+    "ans": 3,
+    "explain": "答案D。全文同时呈现禁用与反禁用两派、加上政府居中表态，controversial product 是对这一格局最精准的整体概括，与预判一致。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2023-read-2",
+  "type": "阅读理解",
+  "title": "2023年真题 · Text 2",
+  "score": 10,
+  "minutes": 8,
+  "passage": "It's easy to dismiss as absurd the federal government's ideas for plugging the chronic funding gap of our national parks. Can anyone really think it's a good idea to allow Amazon deliveries to your tent in Yosemite or food trucks to line up under the redwood trees at Sequoia National Park?\n\nBut the government is right about one thing: U.S. national parks are in crisis. Collectively, they have a maintenance backlog of more than $12 billion. Roads, trails, restrooms, visitor centers and other infrastructure are crumbling.\n\nBut privatizing and commercializing the campgrounds would not be a cure-all. Campgrounds are a tiny portion of the overall infrastructure backlog, and businesses in the parks hand over, on average, only about 5% of their revenues to the National Park Service.\n\nMoreover, increased privatization would certainly undercut one of the major reasons why 300 million visitors come to the parks each year: to enjoy nature and get a break from the commercial drumbeat that overwhelms daily life.\n\nThe real problem is that the parks have been chronically starved of funding. An economic survey of 700 U.S. taxpayers found that people would be willing to pay a significant amount of money to make sure the parks and their programs are kept intact. Some 81% of respondents said they would be willing to pay additional taxes for the next 10 years to avoid any cuts to the national parks.\n\nThe national parks provide great value to U.S. residents both as places to escape and as symbols of nature. On top of this, they produce value from their extensive educational programs, their positive impact on the climate through carbon sequestration, their contribution to our cultural and artistic life, and of course through tourism. The parks also help keep America's past alive, working with thousands of local jurisdictions around the country to protect historical sites and to bring the stories of these places to life.\n\nThe parks do all this on a shoestring. Congress allocates only $3 billion a year to the national park system—an amount that has been flat since 2001 (in inflation-adjusted dollars) with the exception of a onetime boost in 2009. Meanwhile, the number of annual visitors has increased by more than 50% since 1980, and now stands at 330 million visitors per year.",
+  "passage_zh": "联邦政府为弥补我们国家公园长期资金缺口而提出的想法很容易被视为荒谬。真的有人认为允许亚马逊将货物送到你在约塞米蒂的帐篷里，或者让餐车在红杉国家公园的红杉树下排成行是个好主意吗？\n\n但政府在一件事上是对的：美国国家公园正处于危机之中。它们总共积压了超过120亿美元的维护费用。道路、小径、卫生间、游客中心和其他基础设施正在破败。\n\n但将露营地私有化和商业化并不是万能药。露营地只占整体基础设施积压的很小一部分，而且公园内的企业平均只向国家公园管理局上交其收入的约5%。\n\n此外，私有化程度的提高肯定会削弱每年3亿游客来公园的一个主要原因：享受自然，从充斥日常生活的商业鼓噪中得到喘息。\n\n真正的问题是公园长期以来一直资金匮乏。一项针对700名美国纳税人的经济调查发现，人们愿意支付大量金钱以确保公园及其项目保持完整。约81%的受访者表示，他们愿意在未来10年缴纳额外税款，以避免国家公园遭受任何削减。\n\n国家公园作为逃离之地和自然象征，为美国居民提供了巨大价值。除此之外，它们还通过广泛的教育项目、通过碳封存对气候产生的积极影响、对我们文化和艺术生活的贡献，当然还有旅游业，创造价值。这些公园还帮助保持美国历史的鲜活，与全国数千个地方司法管辖区合作保护历史遗址，并让这些地方的故事生动起来。\n\n公园以极少的预算完成所有这些工作。国会每年只拨款30亿美元给国家公园系统——这一数额自2001年以来一直持平（按通胀调整后的美元计算），除了2009年的一次性增加。与此同时，年游客数量自1980年以来增长了50%以上，现在达到每年3.3亿游客。",
+  "questions": [
+   {
+    "q": "What problem are U.S. national parks faced with?",
+    "opts": [
+     "Decline of business profits.",
+     "Inadequate commercialization.",
+     "Lack of transportation services.",
+     "Poorly maintained infrastructure."
+    ],
+    "ans": 3,
+    "explain": "答案D。预判「基础设施年久失修」与 Poorly maintained infrastructure 完全对应，且 D 的两词都能在第二段找到原文支撑，故锁定 D。"
+   },
+   {
+    "q": "Increased privatization of the campgrounds may_____.",
+    "opts": [
+     "spoil visitor experience",
+     "help preserve nature",
+     "bring operational pressure",
+     "boost visits to parks"
+    ],
+    "ans": 0,
+    "explain": "答案A。预判「破坏游客游园体验」与 spoil visitor experience 一一对应：spoil 等值 undercut，visitor experience 概括 enjoy nature + get a break，故锁定 A。"
+   },
+   {
+    "q": "According to Paragraph 5, most respondents in the survey would_____.",
+    "opts": [
+     "go to the national parks on a regular basis",
+     "advocate a bigger budget for the national parks",
+     "agree to pay extra for the national parks",
+     "support the national parks' recent reforms"
+    ],
+    "ans": 2,
+    "explain": "答案C。预判的「愿意多缴税保公园」三要素——意愿(willing/agree)、多付(additional/extra)、目的(avoid cuts/for parks)——在 agree to pay extra for the national parks 中全部对应，故锁定 C。"
+   },
+   {
+    "q": "The national parks are valuable in that they_____.",
+    "opts": [
+     "lead the way in tourism",
+     "have historical significance",
+     "sponsor research on climate",
+     "provide an income for the locals"
+    ],
+    "ans": 1,
+    "explain": "答案B。预判中「保护历史遗址、让历史故事鲜活」这一价值项与 have historical significance 完全对应，且无其他选项能在段中找到完整支撑，故锁定 B。"
+   },
+   {
+    "q": "It can be concluded from the text that the national park system _____.",
+    "opts": [
+     "is able to cope with staff shortages",
+     "is able to meet visitors' demands",
+     "is in need of a new pricing policy",
+     "is in need of a funding increase"
+    ],
+    "ans": 3,
+    "explain": "答案D。预判「系统需要增加资金投入」与 is in need of a funding increase 一一对应，且 D 同时覆盖第二、五、七段的核心论断，是唯一覆盖全文主线的选项，故锁定 D。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2023-read-3",
+  "type": "阅读理解",
+  "title": "2023年真题 · Text 3",
+  "score": 10,
+  "minutes": 8,
+  "passage": "The Internet may be changing merely what we remember, not our capacity to do so, suggests Columbia University psychology professor Betsy Sparrow. In 2011, Sparrow led a study in which participants were asked to record 40 factoids in a computer (\"an ostrich's eye is bigger than its brain,\" for example). Half of the participants were told the information would be erased, while the other half were told it would be saved. Guess what? The latter group made no effort to recall the information when quizzed on it later, because they knew they could find it on their computers. In the same study, a group was asked to remember both the information and the folders it was stored in. They didn't remember the information, but they remembered how to find the folders. In other words, human memory is not deteriorating but \"adapting to new communications technology,\" Sparrow says.\n\nIn a very practical way, the Internet is becoming an external hard drive for our memories, a process known as \"cognitive offloading.\" Traditionally, this role was fulfilled by data banks, libraries, and other humans. Your father may never remember birthdays because your mother does, for instance. Some worry that this is having a destructive effect on society, but Sparrow sees an upside. Perhaps, she suggests, the trend will change our approach to learning from a focus on individual facts and memorization to an emphasis on more conceptual thinking—something that is not available on the Internet. \"I personally have never seen all that much intellectual value in memorizing things,\" Sparrow says, adding that we haven't lost our ability to do it.\n\nStill other experts say it's too soon to understand how the Internet affects our brains. There is no experimental evidence showing that it interferes with our ability to focus, for instance, wrote psychologists Christopher Chabris and Daniel J. Simons. And surfing the web exercised the brain more than reading did among computer-savvy older adults in a 2008 study involving 24 participants at the Semel Institute for Neuroscience and Human Behavior at the University of California, Los Angeles.\n\n\"There may be costs associated with our increased reliance on the Internet, but I'd have to imagine that overall the benefits are going to outweigh those costs,\" observes psychology professor Benjamin Storm. \"It seems pretty clear that memory is changing, but is it changing for the better? At this point, we don't know.\"",
+  "passage_zh": "互联网也许只是改变了我们记忆的内容，而非我们的记忆能力，Columbia University心理学教授Betsy Sparrow如此认为。2011年，Sparrow主持了一项研究，参与者被要求在计算机中记录40条小知识(例如\"鸵鸟的眼睛比它的大脑还大\")。一半参与者被告知这些信息将被删除,而另一半被告知信息会被保存。结果如何?后一组在随后被测试时完全没有努力回忆这些信息,因为他们知道可以在电脑上找到它们。在同一研究中,另一组被要求同时记住信息和存储信息的文件夹。他们没有记住信息,但记住了如何找到文件夹。换句话说,Sparrow表示,人类记忆并非在退化,而是\"在适应新的通信技术\"。\n\n从非常实际的角度来说,互联网正在成为我们记忆的外部硬盘,这一过程被称为\"认知卸载\"。传统上,这一角色由数据库、图书馆和其他人来承担。例如,你的父亲可能永远记不住生日,因为你的母亲会记得。一些人担心这对社会产生破坏性影响,但Sparrow看到了积极的一面。她认为,这一趋势也许会改变我们的学习方式,从关注个别事实和记忆转向强调更具概念性的思维——这是互联网上无法获得的东西。Sparrow说:\"我个人从未认为记忆事物有多大的智力价值\",并补充说我们并未失去记忆的能力。\n\n还有其他专家表示,现在就理解互联网如何影响我们的大脑还为时过早。心理学家Christopher Chabris和Daniel J. Simons写道,没有实验证据表明互联网会干扰我们的专注能力。而且在2008年一项涉及University of California, Los Angeles的Semel Institute for Neuroscience and Human Behavior的24名参与者的研究中,在精通计算机的老年人群体中,浏览网页比阅读更能锻炼大脑。\n\n心理学教授Benjamin Storm指出:\"我们日益依赖互联网可能会带来一些代价,但我必须认为总体而言收益将超过这些代价。记忆似乎确实在发生变化,但它是在向好的方向变化吗?目前,我们还不知道。\"",
+  "questions": [
+   {
+    "q": "Sparrow's study shows that with the Internet, the human brain will_____.",
+    "opts": [
+     "analyze information in detail",
+     "collect information efficiently",
+     "switch its focus of memory",
+     "extend its memory duration"
+    ],
+    "ans": 2,
+    "explain": "答案C。预判是\"换了记什么\"，C 项 switch its focus of memory 把\"换了记什么\"翻译成 switch focus，与预判精确对齐"
+   },
+   {
+    "q": "The process of \"cognitive offloading\" _____.",
+    "opts": [
+     "helps us identify false information",
+     "keeps our memory from failing",
+     "enables us to classify trivial facts",
+     "lessens our memory burdens"
+    ],
+    "ans": 3,
+    "explain": "答案D。预判\"减轻记忆负担\"，D 项 lessens our memory burdens 与之逐词对应，无需推理"
+   },
+   {
+    "q": "Which of the following would Sparrow support about the Internet?",
+    "opts": [
+     "It may reform our learning approach.",
+     "It may impact our society negatively.",
+     "It may enhance our adaptability to technology.",
+     "It may interfere with our conceptual thinking."
+    ],
+    "ans": 0,
+    "explain": "答案A。预判\"会重塑学习方式\"，A 项 It may reform our learning approach 在情态（Perhaps↔may）与动作（change↔reform）上双重对齐"
+   },
+   {
+    "q": "It is indicated in Paragraph 3 that how the Internet affects our brains_____.",
+    "opts": [
+     "requires further academic research",
+     "is most studied in older adults",
+     "is reflected in our reading speed",
+     "depends on our web-surfing habits"
+    ],
+    "ans": 0,
+    "explain": "答案A。预判\"结论未定、需更多研究\"，A 项 requires further academic research 把这一语义直接表述出来，是首句立场的同义改写"
+   },
+   {
+    "q": "Neither Sparrow nor Storm would agree that_____.",
+    "opts": [
+     "our reliance on the Internet will be costly",
+     "the Internet is weakening our memory",
+     "memory exercise is a must for our brains",
+     "our ability to focus declines with age"
+    ],
+    "ans": 1,
+    "explain": "答案B。预判\"记忆被削弱\"为两人共同不接受的命题，B 项 the Internet is weakening our memory 与 Sparrow 的 not deteriorating 和 Storm 的 benefits outweigh costs 都相反，是唯一两人都不会同意的项"
+   }
+  ]
+ },
+ {
+  "id": "zy-2023-read-4",
+  "type": "阅读理解",
+  "title": "2023年真题 · Text 4",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Teenagers are paradoxical. That's a mild and detached way of saying something that parents often express with considerably stronger language. But the paradox is scientific as well as personal. In adolescence, helpless and dependent children who have relied on grown-ups for just about everything become independent people who can take care of themselves and help each other. At the same time, once cheerful and compliant children become rebellious teenage risk-takers.\n\nA new study published in the journal Child Development, by Eveline Crone of the University of Leiden and colleagues, suggests that the positive and negative sides of teenagers go hand in hand. The study is part of a new wave of thinking about adolescence. For a long time, scientists and policy makers concentrated on the idea that teenagers were a problem that needed to be solved. The new work emphasizes that adolescence is a time of opportunity as well as risk.\n\nThe researchers studied \"prosocial\" and rebellious traits in more than 200 children and young adults, ranging from 11 to 28 years old. The participants filled out questionnaires about how often they did things that were altruistic and positive, like sacrificing their own interests to help a friend, or rebellious and negative, like getting drunk or staying out late.\n\nOther studies have shown that rebellious behavior increases as you become a teenager and then fades away as you grow older. But the new study shows that, interestingly, the same pattern holds for prosocial behavior. Teenagers were more likely than younger children or adults to report that they did things like unselfishly helping a friend.\n\nMost significantly, there was a positive correlation between prosociality and rebelliousness. The teenagers who were more rebellious were also more likely to help others. The good and bad sides of adolescence seem to develop together.\n\nIs there some common factor that underlies these apparently contradictory developments? One idea is that teenage behavior is related to what researchers call \"reward sensitivity.\" Decision-making always involves balancing rewards and risks, benefits and costs. \"Reward sensitivity\" measures how much reward it takes to outweigh risk.\n\nTeenagers are particularly sensitive to social rewards—winning the game, impressing a new friend, getting that boy to notice you. Reward sensitivity, like prosocial behavior and risk-taking, seems to go up in adolescence and then down again as we age. Somehow, when you hit 30, the chance that something exciting and new will happen at that party just doesn't seem to outweigh the effort of getting up off the couch.",
+  "passage_zh": "青少年是矛盾的。这是一种温和而超然的说法,而父母们在表达同样的意思时往往会使用强烈得多的语言。但这种矛盾既是科学的,也是个人的。在青春期,几乎所有事情都依赖成年人的无助和依赖的儿童变成了能够照顾自己并互相帮助的独立个体。与此同时,曾经快乐顺从的孩子变成了叛逆的冒险少年。\n\n莱顿大学的Eveline Crone及其同事在《儿童发展》期刊上发表的一项新研究表明,青少年的积极面和消极面是相伴而生的。这项研究是关于青春期思考新浪潮的一部分。长期以来,科学家和政策制定者专注于青少年是一个需要解决的问题这一观念。新的研究强调青春期既是机遇期也是风险期。\n\n研究人员对200多名年龄从11岁到28岁的儿童和年轻成人的亲社会特质和叛逆特质进行了研究。参与者填写了关于他们做利他和积极的事情(如牺牲自己的利益去帮助朋友)或叛逆和消极的事情(如喝醉或深夜不归)频率的问卷。\n\n其他研究表明,叛逆行为在进入青少年时期时增加,然后随着年龄增长而减弱。但这项新研究显示,有趣的是,亲社会行为也呈现出同样的模式。青少年比年幼的儿童或成年人更有可能报告他们会做无私地帮助朋友之类的事情。\n\n最重要的是,亲社会性和叛逆性之间存在正相关关系。越叛逆的青少年也越有可能帮助他人。青春期的好坏两面似乎是共同发展的。\n\n是否存在某种共同因素作为这些看似矛盾的发展的基础?一种观点认为青少年行为与研究人员所说的奖赏敏感性有关。决策总是涉及平衡奖赏与风险、收益与成本。奖赏敏感性衡量的是需要多大的奖赏才能超过风险。\n\n青少年对社会奖赏特别敏感——赢得比赛、给新朋友留下深刻印象、让那个男孩注意到你。奖赏敏感性和亲社会行为及冒险行为一样,似乎在青春期上升,然后随着我们年龄增长而再次下降。不知何故,当你到了30岁,那个聚会上可能会发生令人兴奋的新鲜事的机会似乎就不足以抵消从沙发上起身的努力了。",
+  "questions": [
+   {
+    "q": "According to Paragraph 1, children growing into adolescence tend to_____.",
+    "opts": [
+     "develop opposite personality traits",
+     "see the world in an unreasonable way",
+     "have fond memories of their past",
+     "show affection for their parents"
+    ],
+    "ans": 0,
+    "explain": "答案A。预判要求「同时朝相反方向变化」，A 项 develop opposite personality traits 正是对两组 become 对立平行句的最简概括，与预判一一吻合。"
+   },
+   {
+    "q": "It can be learned from Paragraph 2 that Crone's study_____.",
+    "opts": [
+     "explores teenagers' social responsibilities",
+     "examines teenagers' emotional problems",
+     "provides a new insight into adolescence",
+     "highlights negative adolescent behavior"
+    ],
+    "ans": 2,
+    "explain": "答案C。预判要的是「新视角 / 新认识」，C 项 provides a new insight into adolescence 是对 a new wave of thinking + emphasizes that adolescence is a time of opportunity as well as risk 最精确的概括。"
+   },
+   {
+    "q": "What does Crone's study find about prosocial behavior?",
+    "opts": [
+     "It results from the wish to cooperate.",
+     "It is cultivated through education.",
+     "It is subject to family influence.",
+     "It tends to peak in adolescence."
+    ],
+    "ans": 3,
+    "explain": "答案D。预判要的是「青春期最旺、之后回落」，D 项 It tends to peak in adolescence 正是这一曲线的最简概括，且主语 It 准确回指 prosocial behavior。"
+   },
+   {
+    "q": "It can be learned from the last two paragraphs that teenagers_____.",
+    "opts": [
+     "overstress their influence on others",
+     "care a lot about social recognition",
+     "become anxious about their future",
+     "endeavor to live a joyful life"
+    ],
+    "ans": 1,
+    "explain": "答案B。预判要的是「在意社会认可」，B 项 care a lot about social recognition 正是 particularly sensitive to social rewards 加上三项列举的最简概括，与预判一致。"
+   },
+   {
+    "q": "What is the text mainly about?",
+    "opts": [
+     "Why teenagers are self-contradictory.",
+     "Why teenagers are risk-sensitive.",
+     "How teenagers develop prosociality.",
+     "How teenagers become independent."
+    ],
+    "ans": 0,
+    "explain": "答案A。主线既包含「现象＝矛盾」也包含「解释＝共同成因」，A 项 Why teenagers are self-contradictory 一次性覆盖「为什么」+「自相矛盾」，与主线吻合。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2023-cloze",
+  "type": "完形填空",
+  "title": "2023年真题 · 完形填空",
+  "score": 20,
+  "minutes": 15,
+  "passage": "Here's a common scenario that any number of entrepreneurs face today: you're the CEO of a small business, and though you're making a nice __(1)__ , you need to find a way to take it to the next level. What you need to do is __(2)__ growth by establishing a growth team. A growth team is made up of members from different departments within your company, and it harnesses the power of collaboration to focus __(3)__ on finding ways to grow.\n\nLet's look at a real-world __(4)__ . Prior to forming a growth team, the software company BitTorrent had 50 employees working in the __(5)__ departments of engineering, marketing and product development. This brought them good results until 2012, when their growth plateaued. The __(6)__ was that too many customers were using the basic, free version of their product. And __(7)__ improvements to the premium, paid version, few people were making the upgrade.\n\nThings changed, __(8)__ , when an innovative project-marketing manager came aboard, __(9)__ a growth team and sparked the kind of __(10)__ perspective they needed. By looking at engineering issues from a marketing point of view, it became clear that the __(11)__ of upgrades wasn't due to a quality issue. Most customers were simply unaware of the premium version and what it offered.\n\nArmed with this __(12)__ , the marketing and engineering teams joined forces to raise awareness by prominently __(13)__ the premium version to users of the free version. __(14)__ , upgrades skyrocketed, and revenue increased by 92 percent.\n\nBut in order for your growth team to succeed, it needs to have a strong leader. It needs someone who can __(15)__ the interdisciplinary team and keep them on course for improvement. This leader will __(16)__ the target area, set clear goals and establish a time frame for the __(17)__ of these goals.\n\nThe growth leader is also __(18)__ for keeping the team focused on moving forward and steering them clear of distractions. __(19)__ attractive, new ideas can be distracting; the team leader must recognize when these ideas don't __(20)__ the current goal and need to be put on the back burner.",
+  "passage_zh": "以下是当今许多创业者面临的常见情景：你是一家小企业的首席执行官，虽然你盈利不错,但你需要找到一种方法将其提升到更高水平。你需要做的是通过建立增长团队来优先考虑增长。增长团队由来自公司内不同部门的成员组成，它利用协作的力量专注于寻找增长的方法。\n\n让我们看一个真实案例。在组建增长团队之前，软件公司BitTorrent有50名员工在传统的工程、营销和产品开发部门工作。这为他们带来了良好的成果，直到2012年，他们的增长陷入停滞。问题在于太多客户使用的是基础免费版本的产品。尽管对高级付费版本进行了改进，但很少有人升级。\n\n然而，当一位创新的项目营销经理加入、创建了增长团队并激发了他们所需的新视角时，情况发生了变化。通过从营销角度审视工程问题，很明显升级不足并非由于质量问题。大多数客户只是不了解高级版本及其提供的功能。\n\n有了这一洞察，营销和工程团队联手通过向免费版本用户显著推广高级版本来提高知晓度。结果，升级量激增，收入增长了92%。\n\n但是为了让你的增长团队取得成功，它需要有一位强有力的领导者。它需要一个能够团结跨学科团队并使他们保持改进方向的人。这位领导者将确定目标领域、设定明确目标并为实现这些目标建立时间框架。\n\n增长领导者还负责让团队专注于前进并引导他们避开干扰。虽然具有吸引力，但新想法可能会分散注意力；团队领导者必须识别何时这些想法不服务于当前目标并需要暂时搁置。",
+  "blanks": [
+   {
+    "opts": [
+     "purchase",
+     "profit",
+     "connection",
+     "bet"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：「生意做得不错却要更上一层」的小企业语境。搭配地道且语义贴合"
+   },
+   {
+    "opts": [
+     "define",
+     "predict",
+     "prioritize",
+     "appreciate"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：全段在号召把增长放在第一位。完美契合「专设团队聚焦增长」"
+   },
+   {
+    "opts": [
+     "exclusively",
+     "temporarily",
+     "potentially",
+     "initially"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：团队的全部精力都给增长。把 focus 推到「只」的极致"
+   },
+   {
+    "opts": [
+     "experiment",
+     "proposal",
+     "debate",
+     "example"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：下面是 BitTorrent 的故事而非实验或辩论。正是「举一个真实案例」"
+   },
+   {
+    "opts": [
+     "identical",
+     "marginal",
+     "provisional",
+     "traditional"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：「成立成长团队前」的常规架构。对「新做法」之前的「老套」精准对照"
+   },
+   {
+    "opts": [
+     "rumor",
+     "secret",
+     "myth",
+     "problem"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：增长停滞 + 顾客不付费=问题。完美匹配「困境」语境"
+   },
+   {
+    "opts": [
+     "despite",
+     "unlike",
+     "through",
+     "besides"
+    ],
+    "ans": 0,
+    "explain": "逻辑关系：「付费版有改进」却「升级的人少」是让步。正反差让步关系一拍即合"
+   },
+   {
+    "opts": [
+     "moreover",
+     "however",
+     "therefore",
+     "again"
+    ],
+    "ans": 1,
+    "explain": "逻辑关系：上段是困境、本段是转机。上段困境到本段转机正需 however"
+   },
+   {
+    "opts": [
+     "inspected",
+     "created",
+     "expanded",
+     "reformed"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：P2 公司还没有成长团队。从无到有的「组建」"
+   },
+   {
+    "opts": [
+     "cultural",
+     "objective",
+     "fresh",
+     "personal"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：「创新经理」+「跨部门视角」=新视角。与 innovative、跨部门视角共振"
+   },
+   {
+    "opts": [
+     "end",
+     "burden",
+     "lack",
+     "decrease"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：上一段「很少人升级」 = 升级少。对应「升级很少」的本质"
+   },
+   {
+    "opts": [
+     "policy",
+     "suggestion",
+     "purpose",
+     "insight"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：P3 末「发现真因」=洞察。正是上段「发现」的同义提升"
+   },
+   {
+    "opts": [
+     "contributing",
+     "allocating",
+     "promoting",
+     "transferring"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：「提升认知」需要「推介/推广」型动作。「推广」精准对接「提升认知」"
+   },
+   {
+    "opts": [
+     "As a result",
+     "At any rate",
+     "By the way",
+     "In a sense"
+    ],
+    "ans": 0,
+    "explain": "逻辑关系：上文「推广」=因，「升级暴涨」=果。因果关系精准对应"
+   },
+   {
+    "opts": [
+     "unite",
+     "finance",
+     "follow",
+     "choose"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：「跨学科团队 + 让大家走在轨道上」=凝聚。「凝聚跨学科团队」是核心动作"
+   },
+   {
+    "opts": [
+     "share",
+     "identify",
+     "divide",
+     "broaden"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：「设定目标前」要先「确定目标区域」。「确定目标区域」是首要动作"
+   },
+   {
+    "opts": [
+     "announcement",
+     "assessment",
+     "adjustment",
+     "accomplishment"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：目标是用来「完成」的。「完成目标」是 time frame 的天然对象"
+   },
+   {
+    "opts": [
+     "famous",
+     "responsible",
+     "available",
+     "respectable"
+    ],
+    "ans": 1,
+    "explain": "固定搭配：句中 keeping ... 是 leader 的具体职责。「负责…」精准对接职责陈述"
+   },
+   {
+    "opts": [
+     "Before",
+     "Once",
+     "While",
+     "Unless"
+    ],
+    "ans": 2,
+    "explain": "逻辑关系：「吸引力 + 分心」一正一反 = 让步。让步连词最契合「虽诱人却可能分心」"
+   },
+   {
+    "opts": [
+     "serve",
+     "limit",
+     "summarize",
+     "alter"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：「服务于目标」才不该被搁置。「服务于目标」是地道搭配"
+   }
+  ]
+ },
+ {
+  "id": "zy-2023-trans",
+  "type": "翻译",
+  "title": "2023年真题 · 翻译",
+  "score": 15,
+  "minutes": 20,
+  "passage": "In the late 18th century, William Wordsworth became famous for his poems about nature. And he was one of the founders of a movement called Romanticism, which celebrated the wonders of the natural world.\n\nPoetry is powerful. Its energy and rhythm can capture a reader, transport them to another world and make them see things differently. Through carefully selected words and phrases, poems can be dramatic, funny, beautiful, moving and inspiring.\n\nNo one knows for sure when poetry began but it has been around for thousands of years, even before people could write. It was a way to tell stories and pass down history. It is closely related to song and even when written it is usually created to be performed out loud. Poems really come to life when they are recited. This can also help with understanding them too, because the rhythm and sounds of the words become clearer.",
+  "passage_zh": "世纪晚期,威廉·华兹华斯因创作描写自然的诗歌而声名远扬。他还是一场名为浪漫主义的运动的发起人之一,这场运动讴歌自然界的神奇。\n\n诗歌极具感染力。它的活力与韵律能够吸引读者,把他们带入另一个世界,让他们以全新的视角看待事物。借助精心遴选的词句,诗歌可以富有戏剧性、风趣幽默、优美动人,且催人奋进。\n\n没有人确切知道诗歌起源于何时,但它已经存在了数千年,甚至早在人类掌握文字之前就已出现。诗歌曾是讲述故事、传承历史的一种方式。它与歌唱密切相关,即便写成文字,通常也是为了供人大声诵读而创作的。当诗歌被大声诵读时,它们才真正鲜活灵动起来。这样做还有助于理解诗歌,因为如此一来,词句的韵律与声音会变得更加清晰。",
+  "intro": "Translate the following text into Chinese. Write your translation on the ANSWER SHEET. (15 points)"
+ },
+ {
+  "id": "zy-2023-write-s",
+  "type": "写作",
+  "title": "2023年真题 · 小作文",
+  "score": 10,
+  "minutes": 15,
+  "prompt": "An art exhibition and a robot show are to be held on Sunday, and your friend David asks you which one he should go to. Write him an email to 1) make a suggestion, and 2) give your reason(s). Write your answer in about 100 words on the ANSWER SHEET. Do not use your own name in your email, use “Li Ming\" instead. (10 points)",
+  "tips": "二选一给建议＋讲清理由；要点：任务点一：明确给出建议；理由一：契合 David 的兴趣；理由二：现场体验更震撼、有启发"
+ },
+ {
+  "id": "zy-2023-write-b",
+  "type": "写作",
+  "title": "2023年真题 · 大作文",
+  "score": 15,
+  "minutes": 30,
+  "prompt": "Write an essay based on the chart below. In your essay, you should 1) describe and interpret the chart, and 2) give your comments. Write your answer in about 150 words on the ANSWER SHEET. (15 points)\n\n图表说明：这张图片展示的是一张线图，它描述了2012年至2021年期间我国居民健康素养水平的变化",
+  "chart": true,
+  "tips": "描述并评论健康素养图；要点：客观描述上升趋势；分析上升原因；评论并提出展望"
+ },
+ {
+  "id": "zy-2023-match",
+  "type": "新题型",
+  "title": "2023年真题 · 新题型（多项对应）",
+  "score": 10,
+  "minutes": 8,
+  "intro": "Read the following text and match each of the numbered items in the left column to its corresponding information in the right column. There are two extra choices in the right column. Mark your answers on the ANSWER SHEET. (10 points)",
+  "titles": [
+   "A. The rise of home prices is a temporary matter.",
+   "B. Builders possibly need to submit new estimates of their projects.",
+   "C. There will be specific limits on home extensions to prevent heat loss.",
+   "D. The new rules will take home prices to an even higher level.",
+   "E. Many people feel that home prices are already beyond what they can afford.",
+   "F. The new rules will affect people whose home extensions include new windows or doors.",
+   "G. The rule changes will benefit homeowners eventually."
+  ],
+  "paras": [
+   {
+    "text": "41. Brian Berry",
+    "ans": 3,
+    "explain": "答案D。锚点：消费者必然要多付钱；依据：涨价主张配 D"
+   },
+   {
+    "text": "42. Gareth Belsham",
+    "ans": 5,
+    "explain": "答案F。锚点：扩建含新门窗者受影响；依据：扩建含门窗配 F"
+   },
+   {
+    "text": "43. Marcus Jefford",
+    "ans": 1,
+    "explain": "答案B。锚点：建筑商或需重交估价；依据：重交估价配 B"
+   },
+   {
+    "text": "44. John Kelly",
+    "ans": 0,
+    "explain": "答案A。锚点：涨价是暂时、终会回落；依据：暂时上涨配 A"
+   },
+   {
+    "text": "45. Andrew Mellor",
+    "ans": 6,
+    "explain": "答案G。锚点：房主长期终将获益；依据：长期受益配 G"
+   }
+  ],
+  "passage": "New building regulations aimed at improving energy efficiency are set to increase the price of new homes, as well as those of extensions and loft conversions on existing ones.\n\nThe rules, which came into effect on Wednesday in England, are part of government plans to reduce the UK's carbon emissions to net zero by 2050. They set new standards for ventilation, energy efficiency and heating, and state that new residential buildings must have charging points for electric vehicles.\n\nThe moves are the most significant change to building regulations in years, and industry experts say they will inevitably lead to higher prices at a time when a shortage of materials and high labour costs are already driving up bills.\n\nBrian Berry, chief executive of the Federation of Master Builders, says the measures will require new materials, testing methods, products and systems to be installed. \"All this comes at an increased cost during a time when prices are already sky high. Inevitably, consumers will have to pay more,\" he says.\n\nGareth Belsham, of surveyors Naismiths, says people who are upgrading, or extending their home, will be directly affected. \"The biggest changes relate to heating and insulation,\" he explains. \"There are new rules concerning the amount of glazing used in extensions, and any new windows or doors must be highly insulated.\"\n\nWindows and doors will have to adhere to higher standards, while there are new limits on the amount of glazing you can have to reduce unwanted heat from the sun.\n\nThomas Goodman, of MyJobQuote, says this will bring in new restrictions for extensions. \"Glazing on windows, doors and roof lights must cover no more than 25% of the floor area to prevent heat loss,\" he says.\n\nAs the rules came into effect last Wednesday, property developers were rushing to file plans just before the deadline. Any plans submitted before that date are considered to be under the previous rules, and can go ahead as long as work starts before 15 June next year.\n\nBuilders which have costed projects, but have not filed the paperwork, may need to go back and submit fresh estimates, says Marcus Jefford of Build Aviator.\n\nMaterials prices are already up 25% in the last two years. How much overall prices will increase as a result of the rule changes is not clear. \"Whilst admirable in their intentions, they will add to the cost of housebuilding at a time when many already feel that they are priced out of homeownership,\" says Jonathan Rolande of the National Association of Property Buyers. \"An average extension will probably see around £3,000 additional cost thanks to the new regs.\"\n\nJohn Kelly, a construction lawyer at Freeths law firm, believes prices will eventually come down. But not in the immediate future. \"As the marketplace adapts to the new requirements, and the technologies that support them, the scaling up of these technologies will eventually bring costs down, but in the short term, we will all have to pay the price of the necessary transition,\" he says.\n\nHowever, the long-term effects of the changes will be more comfortable and energy-efficient homes, adds Andrew Mellor, of PRP architects. \"Homeowners will probably recoup that cost over time in energy bill savings. It will obviously be very volatile at the moment, but they will have that benefit over time.\"",
+  "passage_zh": "旨在提高能源效率的新建筑法规将提高新房价格,以及现有住房的扩建和阁楼改造价格。\n\n这些法规于周三在英格兰生效,是政府到2050年将英国碳排放降至净零排放计划的一部分。它们为通风、能源效率和供暖设定了新标准,并规定新住宅建筑必须配备电动汽车充电桩。\n\n这些举措是多年来建筑法规最重大的变化,行业专家表示,在材料短缺和高昂人工成本已经推高账单的时期,这些变化将不可避免地导致价格上涨。\n\nFederation of Master Builders首席执行官Brian Berry表示,这些措施将需要安装新材料、测试方法、产品和系统。\"所有这些都会在价格已经高企的时期增加成本。消费者不可避免地将不得不支付更多费用,\"他说。\n\n测量师事务所Naismiths的Gareth Belsham表示,升级或扩建房屋的人将直接受到影响。\"最大的变化与供暖和隔热有关,\"他解释道。\"关于扩建中使用的玻璃量有新规定,任何新窗户或门都必须高度隔热。\"\n\n窗户和门将必须遵守更高标准,同时对玻璃使用量设有新限制,以减少来自太阳的不必要热量。\n\nMyJobQuote的Thomas Goodman表示,这将为扩建带来新限制。\"窗户、门和天窗上的玻璃覆盖面积不得超过地板面积的25%,以防止热量流失,\"他说。\n\n随着法规于上周三生效,房地产开发商正赶在截止日期前提交计划。在该日期之前提交的任何计划都被视为按照先前规则执行,只要在明年6月15日之前开工即可继续进行。\n\nBuild Aviator的Marcus Jefford表示,已经完成项目成本核算但尚未提交文件的建筑商可能需要重新提交新的估价。\n\n材料价格在过去两年已经上涨了25%。规则变化将导致整体价格上涨多少尚不清楚。\"尽管其意图值得称赞,但它们将增加住房建设成本,而此时许多人已经觉得自己买不起房,\"National Association of Property Buyers的Jonathan Rolande说。\"由于新法规,一个普通扩建项目可能会增加约3000英镑的额外成本。\"\n\nFreeths律师事务所的建筑律师John Kelly认为价格最终会下降。但不是在近期。\"随着市场适应新要求以及支持这些要求的技术,这些技术的规模化最终会降低成本,但在短期内,我们都将不得不为必要的转型付出代价,\"他说。\n\n然而,PRP建筑师事务所的Andrew Mellor补充说,这些变化的长期影响将是更舒适、更节能的住宅。\"房主可能会随着时间推移通过节省能源账单来收回这笔成本。目前显然会非常不稳定,但随着时间推移他们将获得这一好处。\""
+ }
+]

@@ -1,0 +1,552 @@
+[
+ {
+  "id": "zy-2022-read-1",
+  "type": "阅读理解",
+  "title": "2022年真题 · Text 1",
+  "score": 10,
+  "minutes": 8,
+  "passage": "On a recent sunny day, 13,000 chickens roam over Larry Brown's 40 windswept acres in Shiner, Texas. Some rest in the shade of a parked car. Others drink water with the cows. This all seems random, but it's by design, part of what the $6.1 billion U.S. egg industry bets will be its next big thing: climate-friendly eggs.\n\nThese eggs, which are making their debut now on shelves for as much as $8 a dozen, are still labeled organic and animal-friendly, but they're also from birds that live on farms using regenerative agriculture—special techniques to cultivate rich soils that can trap greenhouse gases. Such eggs could be marketed as helping to fight climate change.\n\n\"I'm excited about our progress,\" says Brown, who harvests eggs for Denver-based Nest Fresh Eggs and is adding more cover crops that draw worms and crickets for the chickens to eat. The birds' waste then fertilizes fields. Such improvements \"allow our hens to forage for higher-quality natural feed that will be good for the land, the hens, and the eggs that we supply to our customers.\"\n\nThe egg industry's push is the first major test of whether animal products from regenerative farms can become the next premium offering. In barely more than a decade, organic eggs went from being dismissed as a niche product in natural foods stores to being sold at Walmart. More recently there were similar doubts about probiotics and plant-based meats, but both have exploded into major supermarket categories. If the sustainable-egg rollout is successful, it could open the floodgates for regenerative beef, broccoli, and beyond.\n\nRegenerative products could be a hard sell, because the concept is tough to define quickly, says Julie Stanton, associate professor of agricultural economics at Pennsylvania State University Brandywine. Such farming also brings minimal, if any, improvement to the food products (though some producers say their eggs have more protein).\n\nThe industry is betting that the same consumers paying more for premium attributes such as free-range, non-GMO, and pasture-raised eggs will embrace sustainability. Surveys show that younger generations are more concerned about climate change, and some of the success of plant-based meat can be chalked up to shoppers wanting to signal their desire to protect the environment. Young adults \"really care about the planet,\" says John Brunnquell, president of Egg Innovations. \"They are absolutely altering the food chain beyond what I think even they understand what they're doing.\"",
+  "passage_zh": "在最近一个阳光明媚的日子里,13000只鸡在德克萨斯州Shiner的Larry Brown那片40英亩的多风土地上漫步。一些鸡在停放的汽车阴影下休息。另一些则和奶牛一起喝水。这一切看似随意,但实际上是经过设计的,是这个价值61亿美元的美国鸡蛋产业押注的下一个大趋势的一部分:气候友好型鸡蛋。\n\n这些鸡蛋目前正在货架上首次亮相,售价高达每打8美元,它们仍然标有有机和动物友好的标签,但它们也来自生活在使用再生农业的农场上的鸟类——这种特殊技术培育能够捕获温室气体的肥沃土壤。这类鸡蛋可以作为帮助对抗气候变化的产品进行营销。\n\n\"我对我们的进展感到兴奋,\"为位于丹佛的Nest Fresh Eggs收获鸡蛋的Brown说,他正在增加更多覆盖作物,以吸引蚯蚓和蟋蟀供鸡食用。然后鸟类的粪便为田地施肥。这些改进\"使我们的母鸡能够觅食更高质量的天然饲料,这对土地、母鸡以及我们供应给客户的鸡蛋都有好处。\"\n\n鸡蛋行业的推动是对来自再生农场的动物产品能否成为下一个高端产品的首次重大考验。在短短十多年里,有机鸡蛋从被视为天然食品商店的小众产品发展到在沃尔玛销售。最近,益生菌和植物基肉类也曾遭遇类似质疑,但两者都已爆发式增长成为超市的主要品类。如果可持续鸡蛋的推出取得成功,它可能为再生牛肉、西兰花及更多产品打开闸门。\n\n宾夕法尼亚州立大学Brandywine分校农业经济学副教授Julie Stanton说,再生产品可能难以销售,因为这个概念很难快速定义。这种农业方式对食品本身的改善也极少,甚至没有(尽管一些生产商声称他们的鸡蛋含有更多蛋白质)。\n\n该行业押注那些愿意为自由放养、非转基因和牧场饲养等优质属性支付更多费用的消费者将会接受可持续性。调查显示,年轻一代更关注气候变化,植物基肉类的部分成功可以归因于购物者希望表明他们保护环境的愿望。Egg Innovations总裁John Brunnquell说,年轻人\"真的很关心地球\",\"他们正在彻底改变食物链,其影响甚至超出了我认为他们自己所理解的程度。\"",
+  "questions": [
+   {
+    "q": "The climate-friendly eggs are produced____",
+    "opts": [
+     "at a considerably low cost.",
+     "at the demand of regular shoppers.",
+     "as a replacement for organic eggs.",
+     "on specially designed farms."
+    ],
+    "ans": 3,
+    "explain": "答案D。预判要的「特殊农场」与 specially designed farms 在语义上一致——specially designed 是 using regenerative agriculture—special techniques 的高度概括，没有改变范围。"
+   },
+   {
+    "q": "Larry Brown is excited about his progress in____",
+    "opts": [
+     "reducing the damage of worms.",
+     "accelerating the disposal of waste.",
+     "creating a sustainable system.",
+     "attracting customers to his products."
+    ],
+    "ans": 2,
+    "explain": "答案C。C 项的 sustainable system 恰好覆盖循环链与三方共益两层信息，与预判一字不差。"
+   },
+   {
+    "q": "The example of organic eggs is used in Paragraph 4 to suggest____",
+    "opts": [
+     "the doubts over natural feeds.",
+     "the setbacks in the egg industry.",
+     "the potential of regenerative products.",
+     "the promotional success of supermarkets."
+    ],
+    "ans": 2,
+    "explain": "答案C。预判「再生类产品有潜力」与 the potential of regenerative products 完全对应；只有 C 抓住了例证服务的真正论点。"
+   },
+   {
+    "q": "It can be learned from the last paragraph that young people____",
+    "opts": [
+     "are reluctant to change their diet.",
+     "are likely to buy climate-friendly eggs.",
+     "are curious about new food.",
+     "are amazed at agriculture advances."
+    ],
+    "ans": 1,
+    "explain": "答案B。B 正好把「关心气候 + 愿为环保付钱」推到「会买气候友好蛋」，恰好一步、未跨步，与预判完全契合。"
+   },
+   {
+    "q": "John Brunnquell would disagree with Julie Stanton over regenerative products'____",
+    "opts": [
+     "market prospects.",
+     "standard definition.",
+     "nutritional value.",
+     "moral implication."
+    ],
+    "ans": 0,
+    "explain": "答案A。B/C/D 三个维度要么只有一方提及，要么两方未呈现对立；只有「市场前景」是双方都涉及且方向相反，符合 disagree 的要求。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2022-read-2",
+  "type": "阅读理解",
+  "title": "2022年真题 · Text 2",
+  "score": 10,
+  "minutes": 8,
+  "passage": "More Americans are opting to work well into retirement, a growing trend that threatens to upend the old workforce model.\n\nOne in three Americans who are at least 40 have or plan to have a job in retirement to prepare for a longer life, according to a survey conducted by Harris Poll for TD Ameritrade. Even more surprising is that more than half of \"unretirees\"—those who plan to work in retirement or went back to work after retiring—said they would be employed in their later years even if they had enough money to settle down, the survey showed.\n\nFinancial needs aren't the only culprit for the \"unretirement\" trend. Other reasons, according to the study, include personal fulfillment such as staying mentally fit, preventing boredom or avoiding depression. About 72% of \"unretiree\" respondents said that they would return to work once retired to keep mentally fit while 59% said it would be tied to making ends meet.\n\n\"The concept of retirement is evolving,\" said Christine Russell, senior manager of retirement at TD Ameritrade. \"It's not just about finances. The value of work is also driving folks to continue working past retirement.\"\n\nOne reason for the change in retirement patterns: Americans are living longer. The share of the population 65 and older was 16% in 2018, up 32% from the prior year, according to the U.S. Census Bureau. That's also up 30.2% since 2010. Older Americans are also the fastest-growing segment of the US workforce, and boomers are expected to live longer than previous generations. The percentage of retirement-age people in the labor force has doubled over the past three decades. About 20% of people 65 and older were in the workforce in February, up from an all-time low of 10% in January 1985, according to money manager United Income.\n\nBecause of longer life spans, Americans are also boosting their savings to preserve their nest eggs, the TD Ameritrade study showed, which surveyed 2000 adults between 40 and 79. Six in 10 \"unretirees\" are increasing their savings in anticipation of a longer life, according to the survey. Among the most popular ways they are doing this, the company said, is by reducing their overall expenses, securing life insurance or maximizing their contributions to retirement accounts.\n\nUnfortunately, many people who are opting to work in retirement are preparing to do so because they are worried about making ends meet in their later years, said Brent Weiss, a co-founder at Baltimore-based financial-planning firm Facet Wealth. He suggested that preretirees should speak with a financial adviser to set long-term financial goals.\n\n\"The most challenging moments in life are getting married, starting a family and ultimately retiring,\" Weiss said. \"It's not just a financial decision, but an emotional one. Many people believe they can't retire.\"",
+  "passage_zh": "越来越多的美国人选择工作到退休后很久，这一日益增长的趋势可能会颠覆旧有的劳动力模式。\n\n根据Harris Poll为TD Ameritrade进行的一项调查，年龄至少40岁的美国人中有三分之一已经或计划在退休后找一份工作，为更长的寿命做准备。更令人惊讶的是，调查显示，超过半数的\"不退休者\"——那些计划在退休后工作或退休后重返工作岗位的人——表示即使有足够的钱安顿下来,他们也会在晚年继续工作。\n\n经济需求并非\"不退休\"趋势的唯一原因。根据该研究，其他原因包括个人成就感,如保持精神健康、防止无聊或避免抑郁。约72%的\"不退休者\"受访者表示,他们会在退休后重返工作以保持精神健康,而59%的人表示这与维持生计有关。\n\nTD Ameritrade退休业务高级经理Christine Russell表示:\"退休的概念正在演变。这不仅仅关乎财务。工作的价值也在驱使人们在退休后继续工作。\"\n\n退休模式改变的一个原因是:美国人的寿命更长了。根据美国人口普查局的数据,2018年65岁及以上人口占总人口的16%,比前一年增长32%。这也比2010年增长了30.2%。老年美国人也是美国劳动力中增长最快的群体,婴儿潮一代预计比前几代人更长寿。过去三十年中,退休年龄人口在劳动力中的比例翻了一番。根据资产管理公司United Income的数据,2月份约有20%的65岁及以上人口在劳动力队伍中,高于1985年1月10%的历史最低水平。\n\nTD Ameritrade的研究显示,由于寿命延长,美国人也在增加储蓄以保护他们的养老金,该研究调查了2000名年龄在40至79岁之间的成年人。根据调查,十分之六的\"不退休者\"正在增加储蓄以应对更长的寿命。该公司表示,他们这样做的最流行方式包括减少总体开支、购买人寿保险或最大化他们对退休账户的缴款。\n\n位于Baltimore的财务规划公司Facet Wealth的联合创始人Brent Weiss表示,不幸的是,许多选择在退休后工作的人准备这样做是因为他们担心晚年无法维持生计。他建议即将退休的人应该与财务顾问交谈以设定长期财务目标。\n\nWeiss说:\"人生中最具挑战性的时刻是结婚、组建家庭以及最终退休。这不仅仅是一个财务决定,而且是一个情感决定。许多人认为他们无法退休。\"",
+  "questions": [
+   {
+    "q": "The survey conducted by Harris Poll indicates that____",
+    "opts": [
+     "over half of the retirees are physically fit for work.",
+     "the old workforce is as active as the younger one.",
+     "one in three Americans enjoy earlier retirement.",
+     "more Americans are willing to work in retirement."
+    ],
+    "ans": 3,
+    "explain": "答案D。D 同时覆盖了\"1/3 计划退休后工作\"和\"过半 unretirees 钱够也愿继续\"两组数据的共同指向，与预判一致。"
+   },
+   {
+    "q": "It can be inferred from Paragraph 3 that Americans tend to think that____",
+    "opts": [
+     "retirement may cause problems for them.",
+     "boredom can be relieved after retirement.",
+     "the mental health of retirees is overlooked.",
+     "\"unretirement\" contributes to the economy."
+    ],
+    "ans": 0,
+    "explain": "答案A。三条原因都把退休的负面可能视为应预防的目标，其最大公约数正是\"退休可能给人带来问题\"，与预判完全对应。"
+   },
+   {
+    "q": "Retirement patterns are changing partly due to____",
+    "opts": [
+     "labor shortage.",
+     "population growth.",
+     "longer life expectancy.",
+     "rising living costs."
+    ],
+    "ans": 2,
+    "explain": "答案C。选项 C 即定位句 Americans are living longer. 的术语化转写，与预判完全一致。"
+   },
+   {
+    "q": "Many \"unretirees\" are increasing their savings by____",
+    "opts": [
+     "investing more in stocks.",
+     "taking up odd jobs.",
+     "getting well-paid work.",
+     "spending less."
+    ],
+    "ans": 3,
+    "explain": "答案D。D 精准对应清单第一项 reducing their overall expenses，与预判中的三项之一吻合。"
+   },
+   {
+    "q": "With regard to retirement, Brent Weiss thinks that many people are____",
+    "opts": [
+     "unprepared.",
+     "unafraid.",
+     "disappointed.",
+     "enthusiastic."
+    ],
+    "ans": 0,
+    "explain": "答案A。Weiss 的评价（worried）+建议（should set goals）+转述（can't retire）共同指向\"许多人对退休未做好准备\"，与预判完全一致。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2022-read-3",
+  "type": "阅读理解",
+  "title": "2022年真题 · Text 3",
+  "score": 10,
+  "minutes": 8,
+  "passage": "We have all encountered them, in both our personal and professional lives. Think about the times you felt tricked or frustrated by a membership or subscription that had a seamless sign-up process but was later difficult to cancel. Something that should be simple and transparent can be complicated, intentionally or unintentionally, in ways that impair consumer choice. These are examples of dark patterns.\n\nFirst coined in 2010 by user experience expert Harry Brignull, \"dark patterns\" is a catch-all term for practices that manipulate user interfaces to influence the decision-making ability of users. Brignull identifies 12 types of common dark patterns, ranging from misdirection and hidden costs to \"roach motel\", where a user experience seems easy and intuitive at the start, but turns difficult when the user tries to get out.\n\nIn a 2019 study of 53,000 product pages and 11,000 websites, researchers found that about one in 10 employs these design practices. Though widely prevalent, the concept of dark patterns is still not well understood. Business and nonprofit leaders should be aware of dark patterns and try to avoid the gray areas they engender.\n\nWhere is the line between ethical, persuasive design and dark patterns? Businesses should engage in conversations with IT, compliance, risk, and legal teams to review their privacy policy, and include in the discussion the customer/user experience designers and coders responsible for the company's user interface, as well as the marketers and advertisers responsible for sign-ups, checkout baskets, pricing, and promotions. Any or all these teams can play a role in creating or avoiding \"digital deception.\"\n\nLawmakers and regulators are slowly starting to address the ambiguity around dark patterns, most recently at the state level. In March, the California Attorney General announced the approval of additional regulations under the California Consumer Privacy Act (CCPA) that \"ensure that consumers will not be confused or misled when seeking to exercise their data privacy rights. The regulations aim to ban dark patterns—this means prohibiting companies from using confusing language or unnecessary steps such as forcing them to click through multiple screens or listen to reasons why they shouldn't opt out.\"\n\nAs more states consider promulgating additional regulations, there is a need for greater accountability from within the business community. Dark patterns also can be addressed on a self-regulatory basis, but only if organizations hold themselves accountable, not just to legal requirements but also to industry best practices and standards.",
+  "passage_zh": "我们在个人生活和职业生涯中都遇到过它们。想想那些让你感到被欺骗或沮丧的会员资格或订阅服务，它们注册过程无缝顺畅，但后来却很难取消。本应简单透明的事情却可能被有意或无意地复杂化，从而损害消费者的选择权。这些就是暗黑模式的例子。\n\n2010年由用户体验专家Harry Brignull首次提出，\"暗黑模式\"是一个概括性术语，指操纵用户界面以影响用户决策能力的做法。Brignull识别出12种常见的暗黑模式类型，从误导和隐藏成本到\"蟑螂旅馆\"，即用户体验在开始时看起来简单直观，但当用户试图退出时却变得困难。\n\n在2019年一项对53000个产品页面和11000个网站的研究中，研究人员发现约十分之一采用了这些设计做法。尽管广泛流行，暗黑模式的概念仍未被充分理解。企业和非营利组织领导者应该意识到暗黑模式，并努力避免它们所产生的灰色地带。\n\n道德的、具有说服力的设计与暗黑模式之间的界限在哪里?企业应该与IT、合规、风险和法律团队展开对话，审查其隐私政策，并将负责公司用户界面的客户/用户体验设计师和编码人员，以及负责注册、结账篮、定价和促销的营销人员和广告商纳入讨论。这些团队中的任何一个或全部都可能在创造或避免\"数字欺骗\"中发挥作用。\n\n立法者和监管机构正在缓慢开始解决暗黑模式周围的模糊性问题，最近主要在州一级。3月，加州总检察长宣布批准California Consumer Privacy Act (CCPA)下的附加法规，\"确保消费者在寻求行使其数据隐私权时不会感到困惑或被误导。这些法规旨在禁止暗黑模式——这意味着禁止公司使用令人困惑的语言或不必要的步骤，例如强迫他们点击多个屏幕或听取他们不应该选择退出的理由。\"\n\n随着更多州考虑颁布额外的法规，商业界需要更大的问责制。暗黑模式也可以在自律的基础上得到解决，但前提是组织不仅要对法律要求负责，还要对行业最佳实践和标准负责。",
+  "questions": [
+   {
+    "q": "It can be learned from the first two paragraphs that dark patterns____",
+    "opts": [
+     "improve user experiences",
+     "leak user information for profit",
+     "undermine users' decision-making",
+     "remind users of hidden costs"
+    ],
+    "ans": 2,
+    "explain": "答案C。预判要的是\"损害决策\"，选项 C 用 undermine 这一明确贬义动词承接 decision-making，与定位句意一一对应，唯一吻合。"
+   },
+   {
+    "q": "The 2019 study on dark patterns is mentioned to show____",
+    "opts": [
+     "their major flaws",
+     "their complex designs",
+     "their severe damage",
+     "their strong presence"
+    ],
+    "ans": 3,
+    "explain": "答案D。预判要的是\"很普遍\"，strong presence 是普遍存在的名词化表述，与 widely prevalent 直接同义。"
+   },
+   {
+    "q": "To handle digital deception, businesses should____",
+    "opts": [
+     "listen to customer feedback",
+     "talk with relevant teams",
+     "turn to independent agencies",
+     "rely on professional training"
+    ],
+    "ans": 1,
+    "explain": "答案B。预判要的是\"和相关团队对话\"，talk with relevant teams 在动作（talk）和对象（relevant teams）两个维度都与定位句一一对应，唯一吻合。"
+   },
+   {
+    "q": "The additional regulations under the CCPA are intended to____",
+    "opts": [
+     "guide users through opt-out processes",
+     "protect consumers from being tricked",
+     "grant companies data privacy rights",
+     "restrict access to problematic content"
+    ],
+    "ans": 1,
+    "explain": "答案B。预判要的是\"保护消费者不被误导\"，protect consumers from being tricked 在目的（protect）与对象（consumers）两个维度都与定位句一一对应。"
+   },
+   {
+    "q": "According to the last paragraph, a key to coping with dark patterns is ____",
+    "opts": [
+     "new legal requirements",
+     "businesses' self-discipline",
+     "strict regulatory standards",
+     "consumers' safety awareness"
+    ],
+    "ans": 1,
+    "explain": "答案B。预判要的是\"组织自我问责\"，businesses' self-discipline 是其名词化等价形式，与 but only if 后的关键条件直接对应。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2022-read-4",
+  "type": "阅读理解",
+  "title": "2022年真题 · Text 4",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Although ethics classes are common around the world, scientists are unsure if their lessons can actually change behavior; evidence either way is weak, relying on contrived laboratory tests or sometimes unreliable self-reports. But a new study published in Cognition found that, in at least one real-world situation, a single ethics lesson may have had lasting effects.\n\nThe researchers investigated one class session's impact on eating meat. They chose this particular behavior for three reasons, according to study co-author Eric Schwitzgebel, a philosopher at the University of California, Riverside: students' attitudes on the topic are variable and unstable, behavior is easily measurable, and ethics literature largely agrees that eating less meat is good because it reduces environmental harm and animal suffering. Half of the students in four large philosophy classes read an article on the ethics of factory-farmed meat, optionally watched an 11-minute video on the topic and joined a 50-minute discussion. The other half focused on charitable giving instead. Then, unknown to the students, the researchers studied their anonymized meal-card purchases for that semester—nearly 14,000 receipts for almost 500 students.\n\nSchwitzgebel predicted the intervention would have no effect; he had previously found that ethics professors do not differ from other professors on a range of behaviors, including voting rates, blood donation and returning library books. But among student subjects who discussed meat ethics, meal purchases containing meat decreased from 52 to 45 percent—and this effect held steady for the study's duration of several weeks. Purchases from the other group remained at 52 percent.\n\n\"That's actually a pretty large effect for a pretty small intervention,\" Schwitzgebel says. Psychologist Nina Strohminger at the University of Pennsylvania, who was not involved in the study, says she wants the effect to be real but cannot rule out some unknown confounding variable. And if real, she notes, it might be reversible by another nudge: \"Easy come, easy go.\"\n\nSchwitzgebel suspects the greatest impact came from social influence—classmates or teaching assistants leading the discussions may have shared their own vegetarianism, showing it as achievable or more common. Second, the video may have had an emotional impact. Least rousing, he thinks, was rational argument, although his co-authors say reason might play a bigger role. Now the researchers are probing the specific effects of teaching style, teaching assistants' eating habits and students' video exposure. Meanwhile, Schwitzgebel—who had predicted no effect—will be eating his words.",
+  "passage_zh": "尽管伦理课程在世界各地很常见,但科学家们不确定这些课程是否真的能改变行为;无论哪种方向的证据都很薄弱,依赖于人为设计的实验室测试或有时不可靠的自我报告。但发表在《认知》期刊上的一项新研究发现,至少在一种真实世界的情况下,一堂伦理课可能产生了持久的影响。\n\n研究人员调查了一堂课对吃肉行为的影响。根据该研究的共同作者、加州大学河滨分校哲学家Eric Schwitzgebel的说法,他们选择这一特定行为有三个原因:学生对该话题的态度是可变且不稳定的,行为易于测量,伦理学文献在很大程度上认同少吃肉是好的,因为它减少了环境危害和动物痛苦。在四个大型哲学课堂中,一半学生阅读了一篇关于工厂化养殖肉类伦理的文章,自愿观看了一个11分钟的相关视频,并参加了50分钟的讨论。另一半则专注于慈善捐赠。然后,在学生不知情的情况下,研究人员研究了他们那个学期的匿名餐卡购买记录——近500名学生的近14000张收据。\n\nSchwitzgebel预测这一干预不会产生效果;他此前发现伦理学教授在一系列行为上与其他教授没有差异,包括投票率、献血和归还图书馆书籍。但在讨论了肉类伦理的学生受试者中,含肉的餐食购买从52%下降到45%——而且这一效果在研究持续的几周内保持稳定。另一组的购买则保持在52%。\n\nSchwitzgebel说:\"对于一个相当小的干预来说,这实际上是一个相当大的效果。\"未参与该研究的宾夕法尼亚大学心理学家Nina Strohminger说,她希望这个效果是真实的,但不能排除某些未知的混淆变量。她指出,如果是真实的,它可能会被另一个推动而逆转:\"来得容易,去得也快。\"\n\nSchwitzgebel怀疑最大的影响来自社会影响——主持讨论的同学或助教可能分享了他们自己的素食主义,表明这是可实现的或更常见的。其次,视频可能产生了情感影响。他认为,理性论证的激励作用最小,尽管他的共同作者们说理性可能发挥更大的作用。现在研究人员正在探究教学风格、助教的饮食习惯和学生观看视频的具体效果。与此同时,曾预测不会有效果的Schwitzgebel将要食言了。",
+  "questions": [
+   {
+    "q": "Scientists generally believe that the effects of ethics classes are____",
+    "opts": [
+     "hard to determine.",
+     "narrowly interpreted.",
+     "difficult to ignore.",
+     "poorly summarized."
+    ],
+    "ans": 0,
+    "explain": "答案A。预判要的是\"不确定/难以判定\"，四个选项中只有 hard to determine 直接命中这一语义。"
+   },
+   {
+    "q": "Which of the following is a reason for the researchers to study meat eating?",
+    "opts": [
+     "It is common among students.",
+     "It is a behavior easy to measure.",
+     "It is important to students' health.",
+     "It is a hot topic in ethics classes."
+    ],
+    "ans": 1,
+    "explain": "答案B。It is a behavior easy to measure 与预判清单的第二条 behavior is easily measurable 一一对应，是原文事实的同义改写。"
+   },
+   {
+    "q": "Eric Schwitzgebel's previous findings suggest that ethics professors____",
+    "opts": [
+     "are seldom critical of their students.",
+     "are less sociable than other professors.",
+     "are not sensitive to political issues.",
+     "are not necessarily ethically better."
+    ],
+    "ans": 3,
+    "explain": "答案D。预判要的是\"伦理教授在伦理行为上与他人无异\"，四项中只有 are not necessarily ethically better 直接对应这一上位结论。"
+   },
+   {
+    "q": "Nina Strohminger thinks that the effect of the intervention is____",
+    "opts": [
+     "permanent.",
+     "predictable.",
+     "uncertain.",
+     "unrepeatable."
+    ],
+    "ans": 2,
+    "explain": "答案C。预判要的是\"不下定论、保留怀疑\"，四项中只有 uncertain 直接命中。"
+   },
+   {
+    "q": "Eric Schwitzgebel suspects that the students' change in behavior____",
+    "opts": [
+     "can bring psychological benefits.",
+     "can be analyzed statistically.",
+     "is a result of multiple factors.",
+     "is a sign of self-development."
+    ],
+    "ans": 2,
+    "explain": "答案C。预判要的是\"多重原因\"，四项中只有 is a result of multiple factors 直接对应这一并列归因结构。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2022-cloze",
+  "type": "完形填空",
+  "title": "2022年真题 · 完形填空",
+  "score": 20,
+  "minutes": 15,
+  "passage": "Harlan Coben believes that if you're a writer, you'll find the time; and that if you can't find the time, then writing isn't a priority and you're not a writer. For him, writing is a __(1)__ job—a job like any other. He has __(2)__ it with plumbing, pointing out that a plumber doesn't wake up and say that he can't work with pipes today.\n\n__(3)__ , like most writers these days, you're holding down a job to pay the bills, it's not __(4)__ to find the time to write. But it's not impossible. It requires determination and single-mindedness. __(5)__ that most bestselling authors began writing when they were doing other things to earn a living. And today, even writers who are fairly __(6)__ often have to do other work to __(7)__ their writing income.\n\nAs Harlan Coben has suggested, it's a __(8)__ of priorities. To make writing a priority, you'll have to __(9)__ some of your day-to-day activities and some things you really enjoy. Depending on your __(10)__ and your lifestyle, that might mean spending less time watching television or listening to music, though some people can write __(11)__ they listen to music. You might have to __(12)__ the amount of exercise or sport you do. You'll have to make social media an __(13)__ activity rather than a daily, time-consuming __(14)__ . There'll probably have to be less socialising with your friends and less time with your family. It's a __(15)__ learning curve and it won't always make you popular.\n\nThere's just one thing you should try to keep at least some time for, __(16)__ your writing—and that's reading. Any writer needs to read as much and as widely as they can; it's the one __(17)__ supporter—something you can't do without.\n\nTime is finite. The older you get, the __(18)__ it seems to go. We need to use it as carefully and as __(19)__ as we can, that means prioritising our activities so that we spend most time on the things we really want to do. If you're a writer, that means— __(20)__ writing.",
+  "passage_zh": "Harlan Coben认为，如果你是一位作家，你就会找到时间；如果你找不到时间，那么写作就不是你的优先事项，你也就不是一位作家。对他来说,写作是一份普通的工作——一份和其他任何工作一样的工作。他曾把写作比作管道工，指出管道工不会在早上醒来后说他今天无法处理管道。\n\n如果你像如今大多数作家一样，正在做一份工作来支付账单，那么找时间写作并不容易。但这并非不可能。这需要决心和专注。请记住，大多数畅销书作家在开始写作时都在做其他事情来谋生。而如今，即使是相当知名的作家也常常不得不做其他工作来补充他们的写作收入。\n\n正如Harlan Coben所建议的，这是一个优先级的问题。要让写作成为优先事项，你就必须牺牲一些日常活动和一些你真正喜欢的事情。根据你的兴趣和生活方式，这可能意味着减少看电视或听音乐的时间，尽管有些人可以一边听音乐一边写作。你可能不得不减少锻炼或运动的时间。你必须把社交媒体变成偶尔进行的活动，而不是每天耗时的习惯。你可能不得不减少与朋友的社交活动以及与家人相处的时间。这是一条艰难的学习曲线，不会总是让你受欢迎。\n\n除了写作之外，只有一件事你应该尝试至少保留一些时间，那就是阅读。任何作家都需要尽可能多、尽可能广泛地阅读；这是唯一不可或缺的支撑——是你不能缺少的东西。\n\n时间是有限的。你年龄越大，时间似乎过得越快。我们需要尽可能谨慎和高效地利用时间，这意味着要对我们的活动进行优先排序，以便把大部分时间花在我们真正想做的事情上。如果你是一位作家，这意味着——首先是写作。",
+  "blanks": [
+   {
+    "opts": [
+     "difficult",
+     "normal",
+     "steady",
+     "pleasant"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：破折号后的同位复述就是答案近义词。与“like any other”同义改写"
+   },
+   {
+    "opts": [
+     "combined",
+     "compared",
+     "confused",
+     "confronted"
+    ],
+    "ans": 1,
+    "explain": "固定搭配：下句“水管工不会说不干”是类比内容。compare A with B 正中类比之义"
+   },
+   {
+    "opts": [
+     "If",
+     "Though",
+     "Once",
+     "Unless"
+    ],
+    "ans": 0,
+    "explain": "逻辑关系：主句是中性结果，需要假设引出。条件—结果链条吻合"
+   },
+   {
+    "opts": [
+     "enough",
+     "strange",
+     "wrong",
+     "easy"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：But not impossible 反推前文是 not easy。not easy 与 not impossible 完美呼应"
+   },
+   {
+    "opts": [
+     "Accept",
+     "Explain",
+     "Remember",
+     "Suppose"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：that 从句是一个事实，且服务于鼓励读者。祈使读者记住榜样事实"
+   },
+   {
+    "opts": [
+     "well-known",
+     "well-advised",
+     "well-informed",
+     "well-chosen"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：上句“畅销作家”提示同维度词。与“畅销作家”同维度且形成 even 反差"
+   },
+   {
+    "opts": [
+     "donate",
+     "generate",
+     "supplement",
+     "calculate"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：上文写作收入不够才兼职。supplement income 是固定且语义最贴的搭配"
+   },
+   {
+    "opts": [
+     "cause",
+     "purpose",
+     "question",
+     "condition"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：下句把“优先级”解释为要做取舍。a question of priorities 是固定表达"
+   },
+   {
+    "opts": [
+     "highlight",
+     "sacrifice",
+     "continue",
+     "explore"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：下文细数被让位的活动。sacrifice activities 与下文“减少”系列契合"
+   },
+   {
+    "opts": [
+     "relations",
+     "interests",
+     "memories",
+     "skills"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：举例皆为“爱好类活动”。interests 与爱好类举例同维"
+   },
+   {
+    "opts": [
+     "until",
+     "because",
+     "while",
+     "before"
+    ],
+    "ans": 2,
+    "explain": "逻辑关系：上句说“听音乐与写作冲突”，本句让步给出例外。while 表两动作并行"
+   },
+   {
+    "opts": [
+     "put up with",
+     "make up for",
+     "hang on to",
+     "cut down on"
+    ],
+    "ans": 3,
+    "explain": "固定搭配：整段“减少”链条延续。cut down on the amount 正中减少之义"
+   },
+   {
+    "opts": [
+     "intelligent",
+     "occasional",
+     "intensive",
+     "emotional"
+    ],
+    "ans": 1,
+    "explain": "词义辨析：rather than 后 daily 暗示前空“偶尔”。occasional 正是 daily 的对照面"
+   },
+   {
+    "opts": [
+     "habit",
+     "test",
+     "decision",
+     "plan"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：social media 的日常行为本质。daily habit 标准搭配"
+   },
+   {
+    "opts": [
+     "tough",
+     "gentle",
+     "rapid",
+     "funny"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：won't always make you popular 暗示前句负面。tough learning curve 是高频搭配且色彩负面"
+   },
+   {
+    "opts": [
+     "in place of",
+     "in charge of",
+     "in response to",
+     "in addition to"
+    ],
+    "ans": 3,
+    "explain": "固定搭配：“除写作外还要保留读书时间”。in addition to writing 表“除写作外还有读书”"
+   },
+   {
+    "opts": [
+     "indispensable",
+     "innovative",
+     "invisible",
+     "instant"
+    ],
+    "ans": 0,
+    "explain": "词义辨析：破折号后“something you can't do without”。indispensable=cannot do without"
+   },
+   {
+    "opts": [
+     "duller",
+     "harder",
+     "quieter",
+     "quicker"
+    ],
+    "ans": 3,
+    "explain": "词义辨析：常识＋主旨：年纪越大时间越快。quicker it goes 是固定共识表达"
+   },
+   {
+    "opts": [
+     "peacefully",
+     "generously",
+     "productively",
+     "gratefully"
+    ],
+    "ans": 2,
+    "explain": "词义辨析：that means 把“高效用时”具体化。productively＝高效，正合后文同位释义"
+   },
+   {
+    "opts": [
+     "at most",
+     "in turn",
+     "on average",
+     "above all"
+    ],
+    "ans": 3,
+    "explain": "固定搭配：整篇“写作是优先级”的最终升华。above all 收束全文"
+   }
+  ]
+ },
+ {
+  "id": "zy-2022-trans",
+  "type": "翻译",
+  "title": "2022年真题 · 翻译",
+  "score": 15,
+  "minutes": 20,
+  "passage": "Although we try our best, sometimes our paintings rarely turn out as originally planned. Changes in the light, the limitations of your painting materials, and the lack of experience and technique mean that what you start out trying to achieve may not come to life the way that you expected.\n\nAlthough this can be frustrating and disappointing, it turns out that this can actually be good for you. Unexpected results have two benefits: you pretty quickly learn to deal with disappointment and realise that when one door closes, another opens. You also quickly learn to adapt and come up with creative solutions to the problems the painting presents, and thinking outside the box will become your second nature.\n\nIn fact, creative problem-solving skills are incredibly useful in daily life, with which you're more likely to be able to find a solution when a problem arises.",
+  "passage_zh": "尽管我们竭尽全力，有时我们的画作却很少能按最初计划的样子呈现出来。光线的变化、你所用绘画材料的局限，以及经验和技巧的欠缺，都意味着你最初想要达成的目标，未必能按你预期的那样实现。\n\n尽管这种情况可能令人沮丧和失望，但结果证明，它其实对你是有好处的。意外的结果有两个好处：你会很快学会应对失望，并认识到当一扇门关闭时，另一扇门便会打开。你还会很快学会随机应变，针对绘画带来的种种问题想出富有创造性的解决办法，而跳出思维定式也会逐渐成为你的本能。\n\n事实上，创造性解决问题的能力在日常生活中也极其有用：凭借这种能力，当问题出现时，你就更有可能找到解决办法。",
+  "intro": "Translate the following text into Chinese. Write your translation on the ANSWER SHEET. (15 points)"
+ },
+ {
+  "id": "zy-2022-write-s",
+  "type": "写作",
+  "title": "2022年真题 · 小作文",
+  "score": 10,
+  "minutes": 15,
+  "prompt": "Suppose you are planning a campus food festival. Write an e-mail to the international students in your university to 1) introduce the food festival, and 2) invite them to participate. You should write about 100 words on the ANSWER SHEET.",
+  "tips": "写邮件介绍并邀请参加美食节；要点：美食节的时间与地点；美食节的内容与特色；发出邀请并说明意义"
+ },
+ {
+  "id": "zy-2022-write-b",
+  "type": "写作",
+  "title": "2022年真题 · 大作文",
+  "score": 15,
+  "minutes": 30,
+  "prompt": "Write an essay based on the following chart. In your writing, you should 1) interpret the chart, and 2) give your comments. You should write about 150 words on the ANSWER SHEET. (15 points)\n\n图表说明：这张图片是一个垂直柱状图，显示了2018年至2020年间某项统计数据的年度比较，涉及总体与农村的数据",
+  "chart": true,
+  "tips": "先客观读图，再给出个人评论；要点：读图：总体与农村逐年攀升；析因：网购普及＋农村基建改善；评意：数字经济繁荣与城乡缩差"
+ },
+ {
+  "id": "zy-2022-match",
+  "type": "新题型",
+  "title": "2022年真题 · 新题型（段落小标题 7选5）",
+  "score": 10,
+  "minutes": 8,
+  "intro": "Read the following text and answer the questions by choosing the most suitable subheading from the list A-G for each of the numbered paragraphs (41-45). There are two extra subheadings which you do not need to use. Mark your answers on the ANSWER SHEET. (10 points)",
+  "titles": [
+   "A. Make It a Habit.",
+   "B. Don't Go It Alone.",
+   "C. Start Low, Go Slow.",
+   "D. Talk With Your Doctor.",
+   "E. Listen to Your Body.",
+   "F. Go Through the Motions.",
+   "G. Round Out Your Routine."
+  ],
+  "paras": [
+   {
+    "text": "Don't try to go back to what you were doing before your break. If you were walking 3 miles a day, playing 18 holes of golf three times a week, or lifting 10-pound dumbbells for three sets of 10 reps, reduce activity to half a mile every other day, or nine holes of golf once a week with short walks on other days, or use 5-pound dumbbells for one set of 10 reps. Increase time, distance, and intensity gradually. \"This isn't something you can do overnight,\" says Keri L. Denay, MD, lead author of a recent American College of Sports Medicine advisory that encourages Americans to not overlook the benefits of activity during the pandemic. But you will reap benefits such as less anxiety and improve sleep right away.",
+    "ans": 2,
+    "explain": "答案C。主旨：重启时把运动量减半、循序渐进地加；依据：Start Low, Go Slow 正是减半加缓慢的同义改写"
+   },
+   {
+    "text": "If you're breathing too hard to talk in complete sentences, back off. If you feel good, go a little longer or faster. Feeling wiped out after a session? Go easier next time. And stay alert to serious symptoms, such as chest pain or pressure, severe shortness of breath or dizziness, or faintness, and seek medical attention immediately.",
+    "ans": 4,
+    "explain": "答案E。主旨：按身体当下的感觉来增减强度、警觉异常；依据：Listen to Your Body 概括以身体信号为准则"
+   },
+   {
+    "text": "Consistency is the key to getting stronger and building endurance and stamina. Ten minutes of activity per day is a good start, says Marcus Jackovitz, DPT, a physical therapist at the University of Miami Hospital. All the experts we spoke with highly recommend walking because it's the easiest, most accessible form of exercise. Although it can be a workout on its own, if your goal is to get back to Zumba classes, tennis, cycling, or any other activity, walking is also a great first step.",
+    "ans": 0,
+    "explain": "答案A。主旨：靠每天坚持的规律性来变强增耐力；依据：Make It a Habit 同义于 Consistency is the key"
+   },
+   {
+    "text": "Even if you can't yet do a favorite activity, you can practice the moves. With or without a club or racket, swing like you're hitting the ball. Paddle like you're in a kayak or canoe. Mimic your favorite swimming strokes. The action will remind you of the joy the activity brought you and prime your muscles for when you can get out there again.",
+    "ans": 5,
+    "explain": "答案F。主旨：做不了真项目时，先空练那套动作；依据：Go Through the Motions 正是空练动作的同义短语"
+   },
+   {
+    "text": "Exercising with others \"can keep you accountable and make it more fun, so you're more likely to do it again,\" Jackovitz says. You can do activities such as golf and tennis or take a walk with others and still be socially distant. But when you can't connect in person, consider using technology. Chat on the phone with a friend while you walk around your neighborhood. FaceTime with a relative as you strength train or stretch at home. You can also join a livestream or on-demand exercise class.",
+    "ans": 1,
+    "explain": "答案B。主旨：和别人一起练，必要时借技术远程连接；依据：Don't Go It Alone 含蓄否定即和他人一起"
+   }
+  ],
+  "passage": "Getting back into exercise can be a challenge in the best of times, but with gyms and in-person exercise classes off-limits to many people these days, it can be tricky to know where to start. And it's important to get the right dose of activity. \"Too much too soon either results in injury or burnout,\" says Mary Yoke, PhD, a faculty member in the kinesiology department at Indiana University in Bloomington. The following simple strategies will help you return to exercise safely after a break.\n\n(41)占位符这是等待完型填空的句子位置\n\nDon't try to go back to what you were doing before your break. If you were walking 3 miles a day, playing 18 holes of golf three times a week, or lifting 10-pound dumbbells for three sets of 10 reps, reduce activity to half a mile every other day, or nine holes of golf once a week with short walks on other days, or use 5-pound dumbbells for one set of 10 reps. Increase time, distance, and intensity gradually. \"This isn't something you can do overnight,\" says Keri L. Denay, MD, lead author of a recent American College of Sports Medicine advisory that encourages Americans to not overlook the benefits of activity during the pandemic. But you will reap benefits such as less anxiety and improve sleep right away.\n\n(42)占位符这是等待完型填空的句子位置\n\nIf you're breathing too hard to talk in complete sentences, back off. If you feel good, go a little longer or faster. Feeling wiped out after a session? Go easier next time. And stay alert to serious symptoms, such as chest pain or pressure, severe shortness of breath or dizziness, or faintness, and seek medical attention immediately.\n\n(43)占位符这是等待完型填空的句子位置\n\nConsistency is the key to getting stronger and building endurance and stamina. Ten minutes of activity per day is a good start, says Marcus Jackovitz, DPT, a physical therapist at the University of Miami Hospital. All the experts we spoke with highly recommend walking because it's the easiest, most accessible form of exercise. Although it can be a workout on its own, if your goal is to get back to Zumba classes, tennis, cycling, or any other activity, walking is also a great first step.\n\n(44)占位符这是等待完型填空的句子位置\n\nEven if you can't yet do a favorite activity, you can practice the moves. With or without a club or racket, swing like you're hitting the ball. Paddle like you're in a kayak or canoe. Mimic your favorite swimming strokes. The action will remind you of the joy the activity brought you and prime your muscles for when you can get out there again.\n\n(45)占位符这是等待完型填空的句子位置\n\nExercising with others \"can keep you accountable and make it more fun, so you're more likely to do it again,\" Jackovitz says. You can do activities such as golf and tennis or take a walk with others and still be socially distant. But when you can't connect in person, consider using technology. Chat on the phone with a friend while you walk around your neighborhood. FaceTime with a relative as you strength train or stretch at home. You can also join a livestream or on-demand exercise class.",
+  "passage_zh": "在最好的时期,重新开始锻炼都可能是一项挑战,但如今许多人无法去健身房和参加面对面的健身课程,知道从哪里开始可能会很棘手。获得适量的运动很重要。印第安纳大学布卢明顿分校运动机能学系教员Mary Yoke博士说:\"过多过快要么导致受伤,要么导致精疲力竭。\"以下简单策略将帮助你在中断后安全地恢复锻炼。\n\n从低起步,缓慢进行。\n\n不要试图回到中断前的状态。如果你之前每天走3英里,每周打三次18洞高尔夫球,或者举10磅哑铃做三组每组10次,那就把运动量减少到隔天半英里,或者每周打一次9洞高尔夫球并在其他日子短距离散步,或者使用5磅哑铃做一组10次。逐渐增加时间、距离和强度。美国运动医学会近期发布的一份建议的主要作者Keri L. Denay医学博士说:\"这不是一夜之间就能做到的事情。\"该建议鼓励美国人不要忽视疫情期间运动的益处。但你会立即收获诸如减少焦虑和改善睡眠等好处。\n\n倾听你的身体。\n\n如果你呼吸太急促以至于无法说完整的句子,就放慢速度。如果你感觉良好,就稍微延长时间或加快速度。一次锻炼后感到精疲力竭?下次就放松一些。并对严重症状保持警觉,如胸痛或胸闷、严重呼吸急促或头晕,或晕厥,并立即寻求医疗救助。\n\n养成习惯。\n\n迈阿密大学医院的物理治疗师Marcus Jackovitz表示,坚持是变得更强壮以及增强耐力和持久力的关键。每天10分钟的运动是一个好的开始。我们采访的所有专家都强烈推荐步行,因为它是最简单、最容易获得的运动形式。虽然它本身可以作为一项锻炼,但如果你的目标是重新参加Zumba课程、网球、骑行或任何其他活动,步行也是一个很好的第一步。\n\n做动作练习。\n\n即使你还不能做最喜欢的活动,你也可以练习这些动作。无论有没有球杆或球拍,都像击球一样挥动。像在皮划艇或独木舟里一样划桨。模仿你最喜欢的游泳姿势。这些动作会让你想起该活动带给你的快乐,并为你能再次出去活动时让肌肉做好准备。\n\n不要独自进行。\n\nJackovitz说,与他人一起锻炼\"可以让你保持自律,并使锻炼更有趣,所以你更有可能再次去做。\"你可以与他人一起进行高尔夫和网球等活动或散步,同时仍然保持社交距离。但当你无法面对面交流时,可以考虑使用技术手段。在你围绕社区散步时与朋友通电话聊天。在家进行力量训练或拉伸时与亲戚进行FaceTime视频通话。你还可以参加直播或点播健身课程。"
+ }
+]

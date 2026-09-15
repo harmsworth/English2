@@ -1,0 +1,550 @@
+[
+ {
+  "id": "zy-2019-read-1",
+  "type": "阅读理解",
+  "title": "2019年真题 · Text 1",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Unlike so-called basic emotions such as sadness, fear, and anger, guilt emerges a little later, in conjunction with a child's growing grasp of social and moral norms. Children aren't born knowing how to say \"I'm sorry\"; rather, they learn over time that such statements appease parents and friends – and their own consciences. This is why researchers generally regard so-called moral guilt, in the right amount, to be a good thing.\n\nIn the popular imagination, of course, guilt still gets a bad rap. It is deeply uncomfortable – it's the emotional equivalent of wearing a jacket weighted with stones. Yet this understanding is outdated. \"There has been a kind of revival or a rethinking about what guilt is and what role guilt can serve,\" says Amrisha Vaish, a psychology researcher at the University of Virginia, adding that this revival is part of a larger recognition that emotions aren't binary – feelings that may be advantageous in one context may be harmful in another. Jealousy and anger, for example, may have evolved to alert us to important inequalities. Too much happiness can be destructive.\n\nAnd guilt, by prompting us to think more deeply about our goodness, can encourage humans to make up for errors and fix relationships. Guilt, in other words, can help hold a cooperative species together. It is a kind of social glue.\n\nViewed in this light, guilt is an opportunity. Work by Tina Malti, a psychology professor at the University of Toronto, suggests that guilt may compensate for an emotional deficiency. In a number of studies, Malti and others have shown that guilt and sympathy may represent different pathways to cooperation and sharing. Some kids who are low in sympathy may make up for that shortfall by experiencing more guilt, which can rein in their nastier impulses. And vice versa: High sympathy can substitute for low guilt.\n\nIn a 2014 study, for example, Malti looked at 244 children. Using caregiver assessments and the children's self-observations, she rated each child's overall sympathy level and his or her tendency to feel negative emotions after moral transgressions. Then the kids were handed chocolate coins, and given a chance to share them with an anonymous child. For the low-sympathy kids, how much they shared appeared to turn on how inclined they were to feel guilty. The guilt-prone ones shared more, even though they hadn't magically become more sympathetic to the other child's deprivation.\n\n\"That's good news,\" Malti says. \"We can be prosocial because we caused harm and we feel regret.\"",
+  "passage_zh": "与所谓的悲伤、恐惧和愤怒等基本情绪不同，内疚出现得稍晚一些，与儿童对社会和道德规范的理解不断增强相伴而生。孩子们并非生来就知道如何说\"对不起\"；相反，他们随着时间推移逐渐了解到这样的表述能够安抚父母和朋友——以及他们自己的良心。这就是为什么研究人员普遍认为，适量的所谓道德内疚是一件好事。\n\n当然，在大众想象中，内疚仍然名声不佳。它令人深感不适——就像穿着一件装满石头的沉重外套。然而这种理解已经过时了。\"人们对内疚是什么以及内疚能发挥什么作用进行了某种复兴或重新思考，\"弗吉尼亚大学的心理学研究员Amrisha Vaish说道，并补充说这种复兴是更广泛认识的一部分，即情绪不是二元的——在某种情境下可能有利的情感在另一种情境下可能有害。例如，嫉妒和愤怒可能是进化出来提醒我们注意重要的不平等现象的。过多的快乐可能具有破坏性。\n\n而内疚，通过促使我们更深入地思考自己的善良，可以鼓励人类弥补错误和修复关系。换句话说，内疚可以帮助维系一个合作型物种。它是一种社会黏合剂。\n\n从这个角度来看，内疚是一个机会。多伦多大学心理学教授Tina Malti的研究表明，内疚可能弥补情感上的不足。在多项研究中，Malti和其他研究者已经表明，内疚和同情可能代表通往合作和分享的不同途径。一些同情心较低的孩子可能通过体验更多内疚来弥补这一缺陷，这可以约束他们更恶劣的冲动。反之亦然：高同情心可以替代低内疚感。\n\n例如，在2014年的一项研究中，Malti观察了244名儿童。利用看护者评估和儿童的自我观察，她评定了每个孩子的整体同情心水平以及他或她在道德过失后感受负面情绪的倾向。然后孩子们得到了巧克力硬币，并有机会与一个匿名儿童分享。对于同情心较低的孩子，他们分享多少似乎取决于他们有多倾向于感到内疚。容易感到内疚的孩子分享得更多，尽管他们并没有神奇地对另一个孩子的匮乏变得更有同情心。\n\n\"这是个好消息，\"Malti说。\"我们可以表现出亲社会行为，因为我们造成了伤害并感到后悔。\"",
+  "questions": [
+   {
+    "q": "Researchers think that guilt can be a good thing because it may help____.",
+    "opts": [
+     "regulate a child's basic emotions",
+     "improve a child's intellectual ability",
+     "foster a child's moral development",
+     "intensify a child's positive feelings"
+    ],
+    "ans": 2,
+    "explain": "定位句指出\"适量道德内疚被视作好事\"，因内疚与儿童对社会道德规范的理解同步发展，foster a child's moral development 与之吻合。"
+   },
+   {
+    "q": "According to Paragraph 2, many people still consider guilt to be____.",
+    "opts": [
+     "deceptive",
+     "burdensome",
+     "addictive",
+     "inexcusable"
+    ],
+    "ans": 1,
+    "explain": "P2 用\"像穿着灌满石头的夹克\"形容内疚令人沉重，故 burdensome。"
+   },
+   {
+    "q": "Vaish holds that the rethinking about guilt comes from an awareness that____.",
+    "opts": [
+     "emotions are context-independent",
+     "emotions are socially constructive",
+     "emotional stability can benefit health",
+     "an emotion can play opposing roles"
+    ],
+    "ans": 3,
+    "explain": "Vaish 指出情绪并非二元——在一种情境有利的感受在另一情境可能有害，即一种情绪可发挥相反作用。"
+   },
+   {
+    "q": "Malti and others have shown that cooperation and sharing____.",
+    "opts": [
+     "may help correct emotional deficiencies",
+     "can result from either sympathy or guilt",
+     "can bring about emotional satisfaction",
+     "may be the outcome of impulsive acts"
+    ],
+    "ans": 1,
+    "explain": "Malti 等证明内疚与同情是通向合作与分享的两条不同途径，即合作分享可源于同情或内疚。"
+   },
+   {
+    "q": "The word \"transgressions\" (Line 4, Para. 5) is closest in meaning to____.",
+    "opts": [
+     "teachings",
+     "discussions",
+     "restrictions",
+     "wrongdoings"
+    ],
+    "ans": 3,
+    "explain": "语境为\"道德过失后产生负面情绪\"，transgressions 即 wrongdoings（错误行为）。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2019-read-2",
+  "type": "阅读理解",
+  "title": "2019年真题 · Text 2",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Forests give us shade, quiet and one of the harder challenges in the fight against climate change. Even as we humans count on forests to soak up a good share of the carbon dioxide we produce, we are threatening their ability to do so. The climate change we are hastening could one day leave us with forests that emit more carbon than they absorb.\n\nThankfully, there is a way out of this trap – but it involves striking a subtle balance. Helping forests flourish as valuable \"carbon sinks\" long into the future may require reducing their capacity to absorb carbon now. California is leading the way, as it does on so many climate efforts, in figuring out the details.\n\nThe state's proposed Forest Carbon Plan aims to double efforts to thin out young trees and clear brush in parts of the forest. This temporarily lowers carbon-carrying capacity. But the remaining trees draw a greater share of the available moisture, so they grow and thrive, restoring the forest's capacity to pull carbon from the air. Healthy trees are also better able to fend off insects. The landscape is rendered less easily burnable. Even in the event of a fire, fewer trees are consumed.\n\nThe need for such planning is increasingly urgent. Already, since 2010, drought and insects have killed over 100 million trees in California, most of them in 2016 alone, and wildfires have burned hundreds of thousands of acres.\n\nCalifornia plans to treat 35,000 acres of forest a year by 2020, and 60,000 by 2030 – financed from the proceeds of the state's emissions-permit auctions. That's only a small share of the total acreage that could benefit, about half a million acres in all, so it will be vital to prioritize areas at greatest risk of fire or drought.\n\nThe strategy also aims to ensure that carbon in woody material removed from the forests is locked away in the form of solid lumber or burned as biofuel in vehicles that would otherwise run on fossil fuels. New research on transportation biofuels is already under way.\n\nState governments are well accustomed to managing forests, but traditionally they've focused on wildlife, watersheds and opportunities for recreation. Only recently have they come to see the vital part forests will have to play in storing carbon. California's plan, which is expected to be finalized by the governor next year, should serve as a model.",
+  "passage_zh": "森林为我们提供荫凉、宁静，以及应对气候变化斗争中较为艰巨的挑战之一。尽管我们人类指望森林吸收我们产生的大量二氧化碳，但我们正在威胁它们这样做的能力。我们正在加速的气候变化有朝一日可能使我们面临排放多于吸收碳的森林。\n\n值得庆幸的是，有一个办法可以摆脱这个困境——但这涉及达成一种微妙的平衡。帮助森林在未来长期作为有价值的\"碳汇\"繁荣发展，可能需要降低它们现在吸收碳的能力。California正在引领这一努力，就像它在许多气候工作中所做的那样，正在摸索具体细节。\n\n该州提出的森林碳计划旨在加倍努力疏伐部分森林中的幼树并清理灌木丛。这暂时降低了碳承载能力。但剩余的树木获得了更多可用水分，因此它们生长并茁壮成长，恢复了森林从空气中吸收碳的能力。健康的树木也更能抵御昆虫侵害。地貌变得不那么容易燃烧。即使发生火灾，被烧毁的树木也更少。\n\n这种规划的必要性日益紧迫。自2010年以来，干旱和昆虫已在California造成超过1亿棵树木死亡，其中大部分仅在2016年，而野火已烧毁数十万英亩土地。\n\nCalifornia计划到2020年每年处理35000英亩森林，到2030年处理60000英亩——资金来自该州排放许可证拍卖的收益。这只是可以受益的总面积中的一小部分，总计约50万英亩，因此优先处理火灾或干旱风险最大的地区至关重要。\n\n该战略还旨在确保从森林中移除的木质材料中的碳以实木木材的形式固定下来，或作为生物燃料在原本使用化石燃料的车辆中燃烧。关于运输生物燃料的新研究已经在进行中。\n\n州政府非常习惯于管理森林，但传统上它们关注的是野生动物、流域和娱乐机会。直到最近，它们才开始认识到森林在储存碳方面必须发挥的重要作用。California的计划预计将于明年由州长最终确定，应该作为一个典范。",
+  "questions": [
+   {
+    "q": "By saying \"one of the harder challenges,\" the author implies that____.",
+    "opts": [
+     "global climate change may get out of control",
+     "people may misunderstand global warming",
+     "extreme weather conditions may arise",
+     "forests may become a potential threat"
+    ],
+    "ans": 3,
+    "explain": "P1 指出气候变化或使森林排放多于吸收的碳，森林可能由\"帮手\"变为\"威胁\"。"
+   },
+   {
+    "q": "To maintain forests as valuable \"carbon sinks,\" we may need to____.",
+    "opts": [
+     "preserve the diversity of species in them",
+     "accelerate the growth of young trees",
+     "strike a balance among different plants",
+     "lower their present carbon-absorbing capacity"
+    ],
+    "ans": 3,
+    "explain": "P2 明示维持森林作为碳汇或需降低其当前的碳吸收能力。"
+   },
+   {
+    "q": "California's Forest Carbon Plan endeavors to____.",
+    "opts": [
+     "cultivate more drought-resistant trees",
+     "reduce the density of some of its forests",
+     "find more effective ways to kill insects",
+     "restore its forests quickly after wildfires"
+    ],
+    "ans": 1,
+    "explain": "该计划旨在疏伐部分森林中的幼树、清除灌木，即降低部分森林的密度。"
+   },
+   {
+    "q": "What is essential to California's plan according to Paragraph 5?",
+    "opts": [
+     "To handle the areas in serious danger first.",
+     "To carry it out before the year of 2020.",
+     "To perfect the emissions-permit auctions.",
+     "To obtain enough financial support."
+    ],
+    "ans": 0,
+    "explain": "P5 强调优先处理火灾或干旱风险最高的区域至关重要。"
+   },
+   {
+    "q": "The author's attitude to California's plan can best be described as____.",
+    "opts": [
+     "ambiguous",
+     "tolerant",
+     "supportive",
+     "cautious"
+    ],
+    "ans": 2,
+    "explain": "作者称加州引领气候行动并\"应成为典范\"（should serve as a model），态度为支持。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2019-read-3",
+  "type": "阅读理解",
+  "title": "2019年真题 · Text 3",
+  "score": 10,
+  "minutes": 8,
+  "passage": "American farmers have been complaining of labor shortages for several years. The complaints are unlikely to stop without an overhaul of immigration rules for farm workers.\n\nCongress has obstructed efforts to create a more straightforward visa for agricultural workers that would let foreign workers stay longer in the U.S. and change jobs within the industry. If this doesn't change, American businesses, communities, and consumers will be the losers.\n\nPerhaps half of U.S. farm laborers are undocumented immigrants. As fewer such workers enter the country, the characteristics of the agricultural workforce are changing. Today's farm laborers, while still predominantly born in Mexico, are more likely to be settled rather than migrating and more likely to be married than single. They're also aging. At the start of this century, about one-third of crop workers were over the age of 35. Now more than half are. And picking crops is hard on older bodies. One oft-debated cure for this labor shortage remains as implausible as it's been all along: Native U.S. workers won't be returning to the farm.\n\nMechanization isn't the answer, either – not yet, at least. Production of corn, cotton, rice, soybeans, and wheat has been largely mechanized, but many high-value, labor-intensive crops, such as strawberries, need labor. Even dairy farms, where robots do a small share of milking, have a long way to go before they're automated.\n\nAs a result, farms have grown increasingly reliant on temporary guest workers using the H-2A visa to fill the gaps in the workforce. Starting around 2012, requests for the visas rose sharply; from 2011 to 2016 the number of visas issued more than doubled.\n\nThe H-2A visa has no numerical cap, unlike the H-2B visa for nonagricultural work, which is limited to 66,000 a year. Even so, employers complain they aren't given all the workers they need. The process is cumbersome, expensive, and unreliable. One survey found that bureaucratic delays led the average H-2A worker to arrive on the job 22 days late. The shortage is compounded by federal immigration raids, which remove some workers and drive others underground.\n\nIn a 2012 survey, 71 percent of tree-fruit growers and almost 80 percent of raisin and berry growers said they were short of labor. Some western farmers have responded by moving operations to Mexico. From 1998 to 2000, 14.5 percent of the fruit Americans consumed was imported. Little more than a decade later, the share of imports was 25.8 percent.\n\nIn effect, the U.S. can import food or it can import the workers who pick it.",
+  "passage_zh": "美国农民多年来一直抱怨劳动力短缺。如果不对农业工人的移民规定进行全面改革，这些抱怨不太可能停止。\n\n国会一直阻挠为农业工人创建更简便签证的努力，这种签证将允许外国工人在美国停留更长时间并在该行业内更换工作。如果这种情况不改变，美国企业、社区和消费者将成为输家。\n\n美国农场劳动力中大约有一半是无证移民。随着此类工人进入该国的人数减少，农业劳动力的特征正在发生变化。今天的农场劳动者虽然仍以在墨西哥出生为主，但更可能是定居而非迁徙，更可能是已婚而非单身。他们也在老龄化。在本世纪初，约三分之一的农作物工人年龄在35岁以上。现在超过一半。而且采摘农作物对年长的身体来说很艰难。对于这种劳动力短缺，一个经常被辩论的解决方案仍然像一直以来那样不切实际：本土美国工人不会回到农场。\n\n机械化也不是答案——至少目前还不是。玉米、棉花、水稻、大豆和小麦的生产已经基本实现机械化，但许多高价值、劳动密集型作物，如草莓，需要劳动力。即使是奶牛场，机器人只完成一小部分挤奶工作，离自动化还有很长的路要走。\n\n因此，农场越来越依赖使用H-2A签证的临时客工来填补劳动力缺口。大约从2012年开始，签证申请急剧上升；从2011年到2016年，签证发放数量增加了一倍多。\n\nH-2A签证没有数量上限，不像用于非农业工作的H-2B签证，后者每年限制在66000个。即便如此，雇主仍抱怨他们没有得到所需的全部工人。这一过程繁琐、昂贵且不可靠。一项调查发现，官僚主义的延误导致H-2A工人平均晚到岗22天。联邦移民突击检查加剧了短缺，这些检查驱逐了一些工人并迫使其他工人转入地下。\n\n在2012年的一项调查中，71%的果树种植者和近80%的葡萄干和浆果种植者表示他们劳动力短缺。一些西部农民的应对方式是将业务转移到墨西哥。从1998年到2000年，美国人消费的水果中有14.5%是进口的。仅仅十多年后，进口份额达到了25.8%。\n\n实际上，美国可以进口食品，或者可以进口采摘食品的工人。",
+  "questions": [
+   {
+    "q": "What problem should be addressed according to the first two paragraphs?",
+    "opts": [
+     "Discrimination against foreign workers in the U.S.",
+     "Biased laws in favor of some American businesses.",
+     "Flaws in U.S. immigration rules for farm workers.",
+     "Decline of job opportunities in U.S. agriculture."
+    ],
+    "ans": 2,
+    "explain": "P1 说不全面改革农场工人移民规则则抱怨不会停止，问题正在于移民规则缺陷。"
+   },
+   {
+    "q": "One trouble with U.S. agricultural workforce is____.",
+    "opts": [
+     "the rising number of illegal immigrants",
+     "the high mobility of crop workers",
+     "the lack of experienced laborers",
+     "the aging of immigrant farm workers"
+    ],
+    "ans": 3,
+    "explain": "P3 指出农场工人也在老龄化，35 岁以上者已超过一半。"
+   },
+   {
+    "q": "What is the much-argued solution to the labor shortage in U.S. farming?",
+    "opts": [
+     "To attract younger laborers to farm work.",
+     "To get native U.S. workers back to farming.",
+     "To use more robots to grow high-value crops.",
+     "To strengthen financial support for farmers."
+    ],
+    "ans": 1,
+    "explain": "P3 提到常被争论的\"解药\"——让本土美国工人回到农场，但被认为不现实。"
+   },
+   {
+    "q": "Agricultural employers complain about the H-2A visa for its____.",
+    "opts": [
+     "slow granting procedures",
+     "limit on duration of stay",
+     "tightened requirements",
+     "control of annual admissions"
+    ],
+    "ans": 0,
+    "explain": "P6 说该签证流程繁琐、昂贵且不可靠，官僚拖延使工人平均迟到岗22天，即审批缓慢。"
+   },
+   {
+    "q": "Which of the following could be the best title for this text?",
+    "opts": [
+     "U.S. Agriculture in Decline?",
+     "Import Food or Labor?",
+     "America Saved by Mexico?",
+     "Manpower vs. Automation?"
+    ],
+    "ans": 1,
+    "explain": "尾段总结\"美国要么进口食品，要么进口采摘食品的工人\"，该标题覆盖劳动力与食物两端。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2019-read-4",
+  "type": "阅读理解",
+  "title": "2019年真题 · Text 4",
+  "score": 10,
+  "minutes": 8,
+  "passage": "Arnold Schwarzenegger, Dia Mirza and Adrian Grenier have a message for you: It's easy to beat plastic. They're part of a bunch of celebrities starring in a new video for World Environment Day – encouraging you, the consumer, to swap out your single-use plastic staples like straws and cutlery to combat the plastics crisis.\n\nThe key messages that have been put together for World Environment Day do include a call for governments to enact legislation to curb single-use plastics. But the overarching message is directed at individuals.\n\nMy concern with leaving it up to the individual, however, is our limited sense of what needs to be achieved. On their own, taking our own bags to the grocery store or quitting plastic straws, for example, will accomplish little and require very little of us. They could even be detrimental, satisfying a need to have \"done our bit\" without ever progressing onto bigger, bolder, more effective actions – a kind of \"moral licensing\" that allays our concerns and stops us doing more and asking more of those in charge.\n\nWhile the conversation around our environment and our responsibility toward it remains centered on shopping bags and straws, we're ignoring the balance of power that implies that as \"consumers\" we must shop sustainably, rather than as \"citizens\" hold our governments and industries to account to push for real systemic change.\n\nIt's important to acknowledge that the environment isn't everyone's priority – or even most people's. We shouldn't expect it to be. In her latest book, Why Good People Do Bad Environmental Things, Wellesley College professor Elizabeth R. DeSombre argues that the best way to collectively change the behavior of large numbers of people is for the change to be structural.\n\nThis might mean implementing policy such as a plastic tax that adds a cost to environmentally problematic action, or banning single-use plastics altogether. India has just announced it will \"eliminate all single-use plastic in the country by 2022.\" There are also incentive-based ways of making better environmental choices easier, such as ensuring recycling is at least as easy as trash disposal.\n\nDeSombre isn't saying people should stop caring about the environment. It's just that individual actions are too slow, she says, for that to be the only, or even primary, approach to changing widespread behavior.\n\nNone of this is about writing off the individual. It's just about putting things into perspective. We don't have time to wait. We need progressive policies that shape collective action (and rein in polluting businesses), alongside engaged citizens pushing for change.",
+  "passage_zh": "Arnold Schwarzenegger、Dia Mirza和Adrian Grenier向你传递一个信息：战胜塑料很容易。他们是为世界环境日拍摄新视频的一群名人中的一部分，该视频鼓励你这样的消费者，用可替代品取代你的一次性塑料必需品，如吸管和餐具，以应对塑料危机。\n\n为世界环境日整合的关键信息确实包括呼吁政府制定法律来遏制一次性塑料。但总体信息是针对个人的。\n\n然而，我对把这件事留给个人的担忧在于，我们对需要实现什么目标的认识有限。例如，仅靠我们自己带购物袋去杂货店或戒掉塑料吸管，将取得很少成就，也只需要我们付出很少。它们甚至可能是有害的，满足了一种\"我们已经尽力\"的需求，却从未进展到更大、更大胆、更有效的行动——一种\"道德许可\"，它缓解了我们的担忧，阻止我们做更多事情和向掌权者要求更多。\n\n当围绕我们的环境和我们对环境的责任的讨论仍然集中在购物袋和吸管上时，我们忽略了权力平衡，这种平衡意味着作为\"消费者\"，我们必须可持续地购物，而不是作为\"公民\"追究我们的政府和行业的责任，推动真正的系统性变革。\n\n重要的是要承认，环境并不是每个人的优先事项——甚至不是大多数人的优先事项。我们不应该期望它是。在她的最新著作《为什么好人做坏的环境事》中，Wellesley College教授Elizabeth R. DeSombre认为，集体改变大量人群行为的最佳方式是让改变成为结构性的。\n\n这可能意味着实施政策，如塑料税，为环境问题行为增加成本，或者完全禁止一次性塑料。印度刚刚宣布将\"在2022年之前消除该国所有一次性塑料\"。还有基于激励的方式使更好的环境选择变得更容易，例如确保回收至少与垃圾处理一样容易。\n\nDeSombre并不是说人们应该停止关心环境。她说，只是个人行动太慢了，不能成为改变广泛行为的唯一甚至主要方法。\n\n所有这些都不是要否定个人。这只是关乎正确看待事物。我们没有时间等待。我们需要塑造集体行动（并约束污染企业）的进步政策，以及推动变革的积极公民。",
+  "questions": [
+   {
+    "q": "Some celebrities star in a new video to____.",
+    "opts": [
+     "demand new laws on the use of plastics",
+     "urge consumers to cut the use of plastics",
+     "invite public opinion on the plastics crisis",
+     "disclose the causes of the plastics crisis"
+    ],
+    "ans": 1,
+    "explain": "视频鼓励作为消费者的你换掉吸管、餐具等一次性塑料用品，即敦促消费者减少塑料使用。"
+   },
+   {
+    "q": "The author is concerned that \"moral licensing\" may____.",
+    "opts": [
+     "mislead us into doing worthless things",
+     "prevent us from making further efforts",
+     "weaken our sense of accomplishment",
+     "suppress our desire for success"
+    ],
+    "ans": 1,
+    "explain": "道德许可平息担忧，让我们不再做更多、不再向掌权者要求更多，即阻止进一步努力。"
+   },
+   {
+    "q": "By pointing out our identity \"citizens\", the author indicates that____.",
+    "opts": [
+     "our focus should be shifted to community welfare",
+     "our relationship with local industries is improving",
+     "we have been actively exercising our civil rights",
+     "we should press our government to lead the combat"
+    ],
+    "ans": 3,
+    "explain": "作者认为作为\"公民\"应追究政府与企业责任、推动真正的系统性变革，即敦促政府主导行动。"
+   },
+   {
+    "q": "DeSombre argues that the best way for a collective change should be____.",
+    "opts": [
+     "a win-win arrangement",
+     "a self-driven mechanism",
+     "a cost-effective approach",
+     "a top-down process"
+    ],
+    "ans": 3,
+    "explain": "DeSombre 主张改变应是\"结构性的\"，由制度与政策自上而下推动。"
+   },
+   {
+    "q": "The author concludes that individual efforts____.",
+    "opts": [
+     "can be too aggressive",
+     "can be too inconsistent",
+     "are far from sufficient",
+     "are far from rational"
+    ],
+    "ans": 2,
+    "explain": "作者结论是单靠个人行动太慢、成效有限，必须搭配塑造集体行动的进步政策。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2019-cloze",
+  "type": "完形填空",
+  "title": "2019年真题 · 完形填空",
+  "score": 20,
+  "minutes": 15,
+  "passage": "Weighing yourself regularly is a wonderful way to stay aware of any significant weight fluctuations. However, when done too often, this habit can sometimes hurt more than it helps.\n\nAs for me, weighing myself every day caused me to shift my focus from being generally healthy and physically active, to focusing solely on the scale. That was bad for my overall fitness goals. I had gained weight in the form of muscle mass, but thinking only of lowering the number on the scale, I altered my training program. That conflicted with how I needed to train to reach my goals.\n\nI also found that weighing myself daily did not provide an accurate depiction of the hard work and progress I was making in the gym. It takes about three weeks to a month to notice significant changes in your weight due to altering your training program. The most immediate changes will be observed in skill level, strength and inches lost.\n\nFor these reasons, I stopped weighing myself every day and switched to a bimonthly weighing schedule instead. Since weight loss is not my goal, it is less important for me to track my weight each week. Weighing every other week allows me to observe and account for any significant weight changes. That tells me whether I need to adjust my training program.\n\nI use my bimonthly weigh-in results to get information about my nutrition as well. If my training intensity remains the same, but I'm constantly hungry and dropping weight, this is a sign that I need to increase my daily caloric intake.\n\nThe decision to stop weighing myself every day has done wonders for my overall health, fitness and well-being. I'm experiencing increased zeal for working out since I no longer carry the burden of a disappointing morning weigh-in. I've also experienced greater success in achieving my specific fitness goals, because I'm training according to those goals, not the numbers on a scale.\n\nRather than obsessing over the scale, turn your focus to how you look, feel, how your clothes fit and your overall energy level.",
+  "passage_zh": "定期称体重是了解体重显著波动的好方法。然而，当称重过于频繁时，这一习惯有时弊大于利。\n\n就我而言，每天称体重使我的注意力从保持总体健康和身体活跃转移到只关注体重秤上的数字。这对我的整体健身目标不利。我以肌肉质量的形式增加了体重，但由于只想着降低体重秤上的数字，我改变了训练计划。这与我为实现目标所需的训练方式相冲突。\n\n我还发现每天称体重无法准确反映我在健身房付出的努力和取得的进步。由于改变训练计划而导致体重发生显著变化大约需要三周到一个月的时间。最直接的变化将体现在技能水平、力量和减少的英寸数上。\n\n基于这些原因，我停止了每天称体重，改为每两周称一次体重。由于减重不是我的目标，每周追踪体重对我来说不那么重要。每两周称一次体重让我能够观察并解释任何显著的体重变化。这告诉我是否需要调整训练计划。\n\n我还利用每两周一次的称重结果来获取关于营养的信息。如果我的训练强度保持不变，但我经常感到饥饿并且体重下降，这表明我需要增加每日热量摄入。\n\n停止每天称体重的决定对我的整体健康、健身和幸福感产生了奇妙的效果。由于不再承受令人失望的晨间称重的负担，我对锻炼的热情增加了。我在实现具体健身目标方面也取得了更大的成功，因为我是根据这些目标进行训练，而不是根据体重秤上的数字。\n\n与其纠结于体重秤，不如将注意力转向你的外表、感觉、衣服的合身度以及整体精力水平。",
+  "blanks": [
+   {
+    "opts": [
+     "Besides",
+     "Therefore",
+     "Otherwise",
+     "However"
+    ],
+    "ans": 3,
+    "explain": "答案D（逻辑转折）。前句褒（wonderful way）后句贬（hurt more than it helps），需转折词 However。"
+   },
+   {
+    "opts": [
+     "helps",
+     "cares",
+     "warns",
+     "reduces"
+    ],
+    "ans": 0,
+    "explain": "答案A（固定表达）。hurt more than it helps 是\"弊大于利\"的固定对照。"
+   },
+   {
+    "opts": [
+     "initially",
+     "solely",
+     "occasionally",
+     "formally"
+    ],
+    "ans": 1,
+    "explain": "答案B（词义辨析）。与 generally（广泛）形成范围反义对照，solely（仅仅）。"
+   },
+   {
+    "opts": [
+     "recording",
+     "lowering",
+     "explaining",
+     "accepting"
+    ],
+    "ans": 1,
+    "explain": "答案B（词义辨析）。作者改训练计划是想把数字\"降下来\"，与 altered my training program 构成因果。"
+   },
+   {
+    "opts": [
+     "modify",
+     "set",
+     "review",
+     "reach"
+    ],
+    "ans": 3,
+    "explain": "答案D（固定搭配）。reach one's goals 达成目标，训练是为了达成既定目标。"
+   },
+   {
+    "opts": [
+     "definition",
+     "depiction",
+     "distribution",
+     "prediction"
+    ],
+    "ans": 1,
+    "explain": "答案B（固定搭配）。accurate depiction 准确反映、描绘努力与进展。"
+   },
+   {
+    "opts": [
+     "due to",
+     "regardless of",
+     "aside from",
+     "along with"
+    ],
+    "ans": 0,
+    "explain": "答案A（逻辑关系）。改训练计划是体重变化的原因，due to 表\"由于\"。"
+   },
+   {
+    "opts": [
+     "orderly",
+     "rigid",
+     "precise",
+     "immediate"
+    ],
+    "ans": 3,
+    "explain": "答案D（词义辨析）。与上句体重变化\"慢\"相对，最\"即时\"的变化先被看到。"
+   },
+   {
+    "opts": [
+     "claims",
+     "judgments",
+     "reasons",
+     "methods"
+    ],
+    "ans": 2,
+    "explain": "答案C（固定搭配）。for these reasons\"基于上述原因\"是高频回指搭配。"
+   },
+   {
+    "opts": [
+     "instead",
+     "though",
+     "again",
+     "indeed"
+    ],
+    "ans": 0,
+    "explain": "答案A（逻辑衔接）。stopped...and switched to... 是\"停A换B\"，instead 表\"取而代之\"。"
+   },
+   {
+    "opts": [
+     "track",
+     "overlook",
+     "conceal",
+     "report"
+    ],
+    "ans": 0,
+    "explain": "答案A（固定搭配）。减重非目标，故每周\"追踪\"体重不重要，track my weight 搭配自然。"
+   },
+   {
+    "opts": [
+     "depend on",
+     "approve of",
+     "hold onto",
+     "account for"
+    ],
+    "ans": 3,
+    "explain": "答案D（词义辨析）。observe 看到、account for 解释，构成\"看到—解释\"递进。"
+   },
+   {
+    "opts": [
+     "share",
+     "adjust",
+     "confirm",
+     "prepare"
+    ],
+    "ans": 1,
+    "explain": "答案B（固定搭配）。根据体重变化\"调整\"训练计划，adjust one's training program。"
+   },
+   {
+    "opts": [
+     "results",
+     "features",
+     "rules",
+     "tests"
+    ],
+    "ans": 0,
+    "explain": "答案A（词义辨析）。把称重\"结果\"用于获取营养信息。"
+   },
+   {
+    "opts": [
+     "bored",
+     "anxious",
+     "hungry",
+     "sick"
+    ],
+    "ans": 2,
+    "explain": "答案C（词义辨析）。需增加热量摄入的状态是\"饿\"，与 dropping weight 并列。"
+   },
+   {
+    "opts": [
+     "principle",
+     "secret",
+     "belief",
+     "sign"
+    ],
+    "ans": 3,
+    "explain": "答案D（固定搭配）。this is a sign that 是高频句式，\"饿+掉体重\"是需增摄入的\"迹象\"。"
+   },
+   {
+    "opts": [
+     "request",
+     "necessity",
+     "decision",
+     "wish"
+    ],
+    "ans": 2,
+    "explain": "答案C（词义辨析）。前文 I stopped 表明是作者主动做出的\"决定\"。"
+   },
+   {
+    "opts": [
+     "disappointing",
+     "surprising",
+     "restricting",
+     "consuming"
+    ],
+    "ans": 0,
+    "explain": "答案A（词义辨析）。burden 是负面词，晨间称重看到数字不佳正是\"令人失望\"。"
+   },
+   {
+    "opts": [
+     "if",
+     "unless",
+     "until",
+     "because"
+    ],
+    "ans": 3,
+    "explain": "答案D（逻辑关系）。\"按目标训练\"是\"取得成功\"的原因，because 连接果—因。"
+   },
+   {
+    "opts": [
+     "obsessing",
+     "dominating",
+     "puzzling",
+     "triumphing"
+    ],
+    "ans": 0,
+    "explain": "答案A（固定搭配）。obsess over\"痴迷于\"，与\"关注外观、感受\"形成反义对照。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2019-match",
+  "type": "新题型",
+  "title": "2019年真题 · 新题型",
+  "score": 10,
+  "minutes": 8,
+  "intro": "Directions: Read the following text and match each of the numbered items in the left column to its corresponding information in the right column. There are two extra choices in the right column. Mark your answers on the ANSWER SHEET. (10 points)",
+  "titles": [
+   "A. remarks that significant moves may pose challenges to children.",
+   "B. says that it is wise to leave kids in the dark about real estate decisions.",
+   "C. advises that home purchases should not be based only on children's opinions.",
+   "D. thinks that children should be given a sense of involvement in homebuying decisions.",
+   "E. notes that aspects like children's friends and social activities should be considered upon homebuying.",
+   "F. believes that homebuying decisions should be based on children's needs rather than their opinions.",
+   "G. assumes that many children's views on real estate are influenced by the media."
+  ],
+  "paras": [
+   {
+    "text": "41. Ryan Hooper",
+    "ans": 0,
+    "explain": "答案A。Hooper 说孩子在应对重大搬家时可能面临严重困难，对应 A（搬家可能给孩子带来挑战）。"
+   },
+   {
+    "text": "42. Adam Bailey",
+    "ans": 3,
+    "explain": "答案D。Bailey 主张让年幼孩子感觉参与了购房决策，对应 D（给孩子参与感）。"
+   },
+   {
+    "text": "43. Tracey Hampson",
+    "ans": 2,
+    "explain": "答案C。Hampson 说自己不会仅凭孩子意见做购房决定，对应 C（购房不应只凭孩子意见）。"
+   },
+   {
+    "text": "44. Aaron Norris",
+    "ans": 6,
+    "explain": "答案G。Norris 说孩子的房产知识受 HGTV 等电视媒体影响，对应 G（媒体影响孩子房产观）。"
+   },
+   {
+    "text": "45. Julie Gurner",
+    "ans": 5,
+    "explain": "答案F。Gurner 认为购房决定应充分考虑孩子的需求而非其意见，对应 F。"
+   }
+  ]
+ },
+ {
+  "id": "zy-2019-trans",
+  "type": "翻译",
+  "title": "2019年真题 · 翻译",
+  "score": 15,
+  "minutes": 20,
+  "intro": "Directions: Translate the following text into Chinese. Write your translation on the ANSWER SHEET. (15 points)",
+  "passage": "It is easy to underestimate English writer James Herriot. He had such a pleasant, readable style that one might think that anyone could imitate it. How many times have I heard people say, \"I could write a book. I just haven't the time.\" Easily said. Not so easily done. James Herriot, contrary to popular opinion, did not find it easy in his early days of, as he put it, \"having a go at the writing game\". While he obviously had an abundance of natural talent, the final, polished work that he gave to the world was the result of years of practicing, re-writing and reading. Like the majority of authors, he had to suffer many disappointments and rejections along the way, but these made him all the more determined to succeed. Everything he achieved in life was earned the hard way and his success in the literary field was no exception.",
+  "passage_zh": "人们很容易低估英国作家詹姆斯·赫里奥特。他的文风是如此令人愉悦、流畅易读，以致于人们可能会以为任何人都能模仿。我不知有多少次听到人们说：「我也能写本书，只不过没时间罢了。」话说起来容易，做起来却没那么简单。与一般人的看法相反，赫里奥特早年——用他自己的话说——在「尝试涉足写作这一行」时，并不觉得这是件容易的事。虽然他显然天赋异禀，但他最终奉献给世人的那些精雕细琢的作品，却是多年练习、反复修改和阅读的结果。和大多数作家一样，他一路上也不得不承受许多失望和退稿，但这些挫折反而使他更加坚定了成功的决心。他一生中所取得的一切都是历尽艰辛换来的，他在文学领域的成功也不例外。"
+ },
+ {
+  "id": "zy-2019-write-s",
+  "type": "写作",
+  "title": "2019年真题 · 小作文",
+  "score": 10,
+  "minutes": 15,
+  "prompt": "Directions: Suppose Professor Smith asked you to plan a debate on the theme of city traffic. Write him an email to 1)suggest a specific topic with your reasons, and 2)tell him about your arrangements. You should write about 100 words on the ANSWER SHEET. Do not use your own name. Use \"Li Ming\" instead. (10 points)",
+  "tips": "写作要点：给 Smith 教授写邮件，完成两件事——建议一个可辩的具体辩题（如\"是否应限制私家车进入市中心\"）并给出理由；交代辩论安排（时间、地点、人员分组、每队时长），结尾礼貌邀请教授到场指导。落款 Yours sincerely + Li Ming。参考范文见解析页：Dear Professor Smith, I am writing to share my plan for the debate on city traffic... 约100词。"
+ },
+ {
+  "id": "zy-2019-write-b",
+  "type": "写作",
+  "title": "2019年真题 · 大作文",
+  "score": 15,
+  "minutes": 30,
+  "prompt": "Directions: Write an essay based on the chart below. In your writing, you should 1)interpret the chart, and 2)give your comments. You should write about 150 words on the ANSWER SHEET. (15 points)",
+  "tips": "配图为柱状图（某高校 2013 与 2018 年本科毕业生去向）：就业从 68.1% 降至 60.7%；继续升学从 26.3% 升至 34.0%；自主创业从 1.3% 翻倍至 2.6%。写作思路：先总述三类去向并用对比突出\"就业降、升学升、创业翻倍\"的核心趋势；再从就业市场竞争加剧推升学、国家政策鼓励创业两个角度归因；最后表态肯定职业规划更趋理性多元，并建议高校加强就业与升学引导。参考范文见解析页，约150词。",
+  "chart": false
+ }
+]

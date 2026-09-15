@@ -1,0 +1,699 @@
+{
+ "schemaVersion": 1,
+ "extractedAt": "2026-09-14T07:27:43.350Z",
+ "stats": {
+  "before": {
+   "paperCount": 153,
+   "byType": {
+    "写作": 34,
+    "完形填空": 17,
+    "新题型": 17,
+    "翻译": 17,
+    "阅读理解": 68
+   },
+   "byYear": {
+    "2010": 9,
+    "2011": 9,
+    "2012": 9,
+    "2013": 9,
+    "2014": 9,
+    "2015": 9,
+    "2016": 9,
+    "2017": 9,
+    "2018": 9,
+    "2019": 9,
+    "2020": 9,
+    "2021": 9,
+    "2022": 9,
+    "2023": 9,
+    "2024": 9,
+    "2025": 9,
+    "2026": 9
+   },
+   "questionUnits": 765
+  },
+  "after": {
+   "paperCount": 153,
+   "byType": {
+    "写作": 34,
+    "完形填空": 17,
+    "新题型": 17,
+    "翻译": 17,
+    "阅读理解": 68
+   },
+   "byYear": {
+    "2010": 9,
+    "2011": 9,
+    "2012": 9,
+    "2013": 9,
+    "2014": 9,
+    "2015": 9,
+    "2016": 9,
+    "2017": 9,
+    "2018": 9,
+    "2019": 9,
+    "2020": 9,
+    "2021": 9,
+    "2022": 9,
+    "2023": 9,
+    "2024": 9,
+    "2025": 9,
+    "2026": 9
+   },
+   "questionUnits": 765
+  }
+ },
+ "files": {
+  "papers-2010.json": "ee3703cbdb6ec97204ae2c75626413a88c9e3cab4239b7aa467bce8bad9d7daf",
+  "papers-2011.json": "53fce05d02e642a32f43093936d043f3e6d2d1ab49e72c9de65cc08353027151",
+  "papers-2012.json": "e1ca772250a830bfceb9d83b779825e89aec1a75e04c2666f410afd84c654068",
+  "papers-2013.json": "d4b56f17bd1b9d7cb4318ab84342ccf3c9844f5528e290169d2a66687a631998",
+  "papers-2014.json": "2f630cfd1aa6c91aaba49a37729942564cfd40d1135765b83b2e627fd9d56028",
+  "papers-2015.json": "bc85a22a6b84ea89606ef0a495bced4408204625ef92b1cd5c3b02927df6984f",
+  "papers-2016.json": "acc764b27a9c15347b06e91f090af04c7a719b3126cdf05e1752101281567207",
+  "papers-2017.json": "4643373bfa8a91727ffcbec0428f33653fe7ef880128684929ad22d1d2af82ef",
+  "papers-2018.json": "309d67de33ec8c7d8ef48c33d9ab4e922fb8c2bb1e42af3044179a33c1d687df",
+  "papers-2019.json": "abaa79b96cf9be64db945c973b1ed6d7e0b664a2801a7070aa638a89f994b709",
+  "papers-2020.json": "864ed163cad23fa8c36225f0068b6406f24c58bb485f22daf0ec24b8323a6c6c",
+  "papers-2021.json": "720d6e43096c59d50a6d822c9c11705619f0929ecd719fdba8f731db8005c937",
+  "papers-2022.json": "e0fd43e00e1da3e18efa804743623da86cdb36bd2ed6ef37105c3725413d4715",
+  "papers-2023.json": "49799b312cd33220dee2fd304d0a0ece1da6a5feb5484e827167a1f69b61c790",
+  "papers-2024.json": "7044c4353fb4054201a239d5de91a5496112ce63f26a320ad00c8abdd893c8e3",
+  "papers-2025.json": "4a26f8cc6083393c646be9c6810d0fea5ab5853554cad1c0ae82c4251381f317",
+  "papers-2026.json": "e206acbd65909c36c336ebdcff315b90ed3ef07faec97bc3cd5a825a6517f36d"
+ },
+ "papers": [
+  {
+   "id": "zy-2010-read-1",
+   "hash": "c55861217fdfb51b"
+  },
+  {
+   "id": "zy-2010-read-2",
+   "hash": "56fc51765ed26678"
+  },
+  {
+   "id": "zy-2010-read-3",
+   "hash": "836bec5fc1fc5463"
+  },
+  {
+   "id": "zy-2010-read-4",
+   "hash": "5f684eea0408f53a"
+  },
+  {
+   "id": "zy-2010-cloze",
+   "hash": "4cb1aac130d34928"
+  },
+  {
+   "id": "zy-2010-match",
+   "hash": "2989bfcff86ac59d"
+  },
+  {
+   "id": "zy-2010-trans",
+   "hash": "d511f0981fda9765"
+  },
+  {
+   "id": "zy-2010-write-s",
+   "hash": "402fcc708bdca474"
+  },
+  {
+   "id": "zy-2010-write-b",
+   "hash": "a624a504d058f407"
+  },
+  {
+   "id": "zy-2011-read-1",
+   "hash": "73e6f22115b1c6eb"
+  },
+  {
+   "id": "zy-2011-read-2",
+   "hash": "cd9f44ebf95231d0"
+  },
+  {
+   "id": "zy-2011-read-3",
+   "hash": "0f8bf3c13c099ade"
+  },
+  {
+   "id": "zy-2011-read-4",
+   "hash": "8ac053ea7521dc82"
+  },
+  {
+   "id": "zy-2011-cloze",
+   "hash": "e5225e93cee01876"
+  },
+  {
+   "id": "zy-2011-match",
+   "hash": "e07dbbc11a210bb7"
+  },
+  {
+   "id": "zy-2011-trans",
+   "hash": "9617487959fe8e22"
+  },
+  {
+   "id": "zy-2011-write-s",
+   "hash": "f6c2e2c68357f76b"
+  },
+  {
+   "id": "zy-2011-write-b",
+   "hash": "6dbf6d06da291634"
+  },
+  {
+   "id": "zy-2012-read-1",
+   "hash": "a731757ecc4f9797"
+  },
+  {
+   "id": "zy-2012-read-2",
+   "hash": "718d67cdfe2b2065"
+  },
+  {
+   "id": "zy-2012-read-3",
+   "hash": "2afa31deb95ee047"
+  },
+  {
+   "id": "zy-2012-read-4",
+   "hash": "3c1d862305d79138"
+  },
+  {
+   "id": "zy-2012-cloze",
+   "hash": "654f41f0ebfd51cf"
+  },
+  {
+   "id": "zy-2012-match",
+   "hash": "b5060a0058a20818"
+  },
+  {
+   "id": "zy-2012-trans",
+   "hash": "6d1a1928fbe33278"
+  },
+  {
+   "id": "zy-2012-write-s",
+   "hash": "1fbcd555d8f6fc21"
+  },
+  {
+   "id": "zy-2012-write-b",
+   "hash": "596364089ebbbea3"
+  },
+  {
+   "id": "zy-2013-read-1",
+   "hash": "b2d10b63106ba29c"
+  },
+  {
+   "id": "zy-2013-read-2",
+   "hash": "09f48657aea320be"
+  },
+  {
+   "id": "zy-2013-read-3",
+   "hash": "95d0278b6897b254"
+  },
+  {
+   "id": "zy-2013-read-4",
+   "hash": "d64851d8f6faec5e"
+  },
+  {
+   "id": "zy-2013-cloze",
+   "hash": "fc3ab7bafef44e09"
+  },
+  {
+   "id": "zy-2013-match",
+   "hash": "1831a5d737fda4f0"
+  },
+  {
+   "id": "zy-2013-trans",
+   "hash": "1654715901b00124"
+  },
+  {
+   "id": "zy-2013-write-s",
+   "hash": "a8485478e72ad890"
+  },
+  {
+   "id": "zy-2013-write-b",
+   "hash": "c752538bd64d549e"
+  },
+  {
+   "id": "zy-2014-read-1",
+   "hash": "fecab05faad2f3c2"
+  },
+  {
+   "id": "zy-2014-read-2",
+   "hash": "5c5dfa6d2542e0e3"
+  },
+  {
+   "id": "zy-2014-read-3",
+   "hash": "b0e08be4ca317c7e"
+  },
+  {
+   "id": "zy-2014-read-4",
+   "hash": "b0562c12643b17a7"
+  },
+  {
+   "id": "zy-2014-cloze",
+   "hash": "76b0f38fdeedfe67"
+  },
+  {
+   "id": "zy-2014-match",
+   "hash": "97aba42eade2f2d0"
+  },
+  {
+   "id": "zy-2014-trans",
+   "hash": "27282c6954d97e9c"
+  },
+  {
+   "id": "zy-2014-write-s",
+   "hash": "77c08629169bb42f"
+  },
+  {
+   "id": "zy-2014-write-b",
+   "hash": "c04c5b9b8dfd3f6d"
+  },
+  {
+   "id": "zy-2015-cloze",
+   "hash": "7584c8bb0fab653d"
+  },
+  {
+   "id": "zy-2015-read-1",
+   "hash": "1399284192a85235"
+  },
+  {
+   "id": "zy-2015-read-2",
+   "hash": "5fa532fdb085594d"
+  },
+  {
+   "id": "zy-2015-read-3",
+   "hash": "8c09f2b2defbf933"
+  },
+  {
+   "id": "zy-2015-read-4",
+   "hash": "a28571df612aa7aa"
+  },
+  {
+   "id": "zy-2015-match",
+   "hash": "b906719261a98968"
+  },
+  {
+   "id": "zy-2015-trans",
+   "hash": "55aa4d33a319f994"
+  },
+  {
+   "id": "zy-2015-write-s",
+   "hash": "ae7a683ca7bf76ff"
+  },
+  {
+   "id": "zy-2015-write-b",
+   "hash": "733d8a9bbf5ae27e"
+  },
+  {
+   "id": "zy-2016-cloze",
+   "hash": "673eec045c83b0c7"
+  },
+  {
+   "id": "zy-2016-read-1",
+   "hash": "b08a050a51536e20"
+  },
+  {
+   "id": "zy-2016-read-2",
+   "hash": "801a7c47a7cebaa6"
+  },
+  {
+   "id": "zy-2016-read-3",
+   "hash": "7596f9d2cd096ef5"
+  },
+  {
+   "id": "zy-2016-read-4",
+   "hash": "aaef2eba80d405a6"
+  },
+  {
+   "id": "zy-2016-match",
+   "hash": "7388b22387fc1c4b"
+  },
+  {
+   "id": "zy-2016-trans",
+   "hash": "60660e1df36a7ea5"
+  },
+  {
+   "id": "zy-2016-write-s",
+   "hash": "88ee8f628771bcfd"
+  },
+  {
+   "id": "zy-2016-write-b",
+   "hash": "2019e79d7591a2ff"
+  },
+  {
+   "id": "zy-2017-read-1",
+   "hash": "afa994b7a89e0185"
+  },
+  {
+   "id": "zy-2017-read-2",
+   "hash": "118b21d4ad5cb577"
+  },
+  {
+   "id": "zy-2017-read-3",
+   "hash": "30186ae3aa471f46"
+  },
+  {
+   "id": "zy-2017-read-4",
+   "hash": "4e03e2907c8712e1"
+  },
+  {
+   "id": "zy-2017-match",
+   "hash": "af7f913d38aa5b8f"
+  },
+  {
+   "id": "zy-2017-cloze",
+   "hash": "aa6cfb503237eaec"
+  },
+  {
+   "id": "zy-2017-trans",
+   "hash": "7122dad482250ddd"
+  },
+  {
+   "id": "zy-2017-write-s",
+   "hash": "f6b479057d82efd1"
+  },
+  {
+   "id": "zy-2017-write-b",
+   "hash": "26d01a5c3457f9d9"
+  },
+  {
+   "id": "zy-2018-read-1",
+   "hash": "35cdf82610a1bdc3"
+  },
+  {
+   "id": "zy-2018-read-2",
+   "hash": "84d7b53c7cc6a036"
+  },
+  {
+   "id": "zy-2018-read-3",
+   "hash": "d2dc67fcf7259ebb"
+  },
+  {
+   "id": "zy-2018-read-4",
+   "hash": "3ba83b483c4e26de"
+  },
+  {
+   "id": "zy-2018-match",
+   "hash": "dd6e94a60eefa69f"
+  },
+  {
+   "id": "zy-2018-cloze",
+   "hash": "a8fb8482bff15cb6"
+  },
+  {
+   "id": "zy-2018-trans",
+   "hash": "8231d232f78070c3"
+  },
+  {
+   "id": "zy-2018-write-s",
+   "hash": "9881d8458d52791c"
+  },
+  {
+   "id": "zy-2018-write-b",
+   "hash": "1bdd4188952a8a6d"
+  },
+  {
+   "id": "zy-2019-read-1",
+   "hash": "74422e914b317053"
+  },
+  {
+   "id": "zy-2019-read-2",
+   "hash": "1cc06e3a4c5f4c12"
+  },
+  {
+   "id": "zy-2019-read-3",
+   "hash": "ab246bb8ab8c927d"
+  },
+  {
+   "id": "zy-2019-read-4",
+   "hash": "57a6456ba3adb523"
+  },
+  {
+   "id": "zy-2019-cloze",
+   "hash": "976ca9b7d338b985"
+  },
+  {
+   "id": "zy-2019-match",
+   "hash": "7b50188653be13aa"
+  },
+  {
+   "id": "zy-2019-trans",
+   "hash": "65eaaaaa6579dc9c"
+  },
+  {
+   "id": "zy-2019-write-s",
+   "hash": "01ee9af87613fa67"
+  },
+  {
+   "id": "zy-2019-write-b",
+   "hash": "b5956561610de0cb"
+  },
+  {
+   "id": "zy-2020-read-1",
+   "hash": "74bd759d4a17cac3"
+  },
+  {
+   "id": "zy-2020-read-2",
+   "hash": "7b4346a6a7ae6f01"
+  },
+  {
+   "id": "zy-2020-read-3",
+   "hash": "232226d57815225c"
+  },
+  {
+   "id": "zy-2020-read-4",
+   "hash": "39b9b059667e94a9"
+  },
+  {
+   "id": "zy-2020-cloze",
+   "hash": "bc4550985fe877e6"
+  },
+  {
+   "id": "zy-2020-match",
+   "hash": "7cd9d41de57085df"
+  },
+  {
+   "id": "zy-2020-trans",
+   "hash": "642df99214fe472f"
+  },
+  {
+   "id": "zy-2020-write-s",
+   "hash": "5f7867019e6b0efc"
+  },
+  {
+   "id": "zy-2020-write-b",
+   "hash": "e0d0278ccc7ef19f"
+  },
+  {
+   "id": "zy-2021-read-1",
+   "hash": "9bdcf665d4fc59d8"
+  },
+  {
+   "id": "zy-2021-read-2",
+   "hash": "38c95f83a13c4643"
+  },
+  {
+   "id": "zy-2021-read-3",
+   "hash": "5f5e6fc962e2ca2e"
+  },
+  {
+   "id": "zy-2021-read-4",
+   "hash": "d099ba3d5d37e1fc"
+  },
+  {
+   "id": "zy-2021-cloze",
+   "hash": "2dae43d5a6613b35"
+  },
+  {
+   "id": "zy-2021-trans",
+   "hash": "42adaa2c5c8ce542"
+  },
+  {
+   "id": "zy-2021-write-s",
+   "hash": "6524f0bdee593283"
+  },
+  {
+   "id": "zy-2021-write-b",
+   "hash": "48d5e5665a204cfe"
+  },
+  {
+   "id": "zy-2021-match",
+   "hash": "02afc8d681233427"
+  },
+  {
+   "id": "zy-2022-read-1",
+   "hash": "445cd803eb04be49"
+  },
+  {
+   "id": "zy-2022-read-2",
+   "hash": "1f9960afed3094cc"
+  },
+  {
+   "id": "zy-2022-read-3",
+   "hash": "779a57615c55d6a5"
+  },
+  {
+   "id": "zy-2022-read-4",
+   "hash": "3fc1a760ae4bdec0"
+  },
+  {
+   "id": "zy-2022-cloze",
+   "hash": "367a1c1e38304b60"
+  },
+  {
+   "id": "zy-2022-trans",
+   "hash": "45e8da007b5b23ae"
+  },
+  {
+   "id": "zy-2022-write-s",
+   "hash": "9ee51b88db3882b2"
+  },
+  {
+   "id": "zy-2022-write-b",
+   "hash": "18b8b4978b8fd8f2"
+  },
+  {
+   "id": "zy-2022-match",
+   "hash": "90d3afadb836859c"
+  },
+  {
+   "id": "zy-2023-read-1",
+   "hash": "a74abf70c0aeebae"
+  },
+  {
+   "id": "zy-2023-read-2",
+   "hash": "7bb5caa9e2850edd"
+  },
+  {
+   "id": "zy-2023-read-3",
+   "hash": "1a0bb074676961b8"
+  },
+  {
+   "id": "zy-2023-read-4",
+   "hash": "dc6dba810e75e466"
+  },
+  {
+   "id": "zy-2023-cloze",
+   "hash": "90a0c9a553cee68c"
+  },
+  {
+   "id": "zy-2023-trans",
+   "hash": "4a83e6920fe4388d"
+  },
+  {
+   "id": "zy-2023-write-s",
+   "hash": "7a468fe5c8c9c35b"
+  },
+  {
+   "id": "zy-2023-write-b",
+   "hash": "f86b59e617e9043e"
+  },
+  {
+   "id": "zy-2023-match",
+   "hash": "21a613e576933b87"
+  },
+  {
+   "id": "zy-2024-read-1",
+   "hash": "d649f2dfcc33a5a3"
+  },
+  {
+   "id": "zy-2024-read-2",
+   "hash": "f7c0769d9796a367"
+  },
+  {
+   "id": "zy-2024-read-3",
+   "hash": "be95abe587262e80"
+  },
+  {
+   "id": "zy-2024-read-4",
+   "hash": "eab2773ad2b31825"
+  },
+  {
+   "id": "zy-2025-read-1",
+   "hash": "d668c4c04501fbe4"
+  },
+  {
+   "id": "zy-2025-read-2",
+   "hash": "4adc2a97068b02d0"
+  },
+  {
+   "id": "zy-2025-read-3",
+   "hash": "91a8025816049be7"
+  },
+  {
+   "id": "zy-2025-read-4",
+   "hash": "739c87600c5e2ec8"
+  },
+  {
+   "id": "zy-2026-read-1",
+   "hash": "6fd1aa464218dce6"
+  },
+  {
+   "id": "zy-2026-read-2",
+   "hash": "fe28588b849c415c"
+  },
+  {
+   "id": "zy-2026-read-3",
+   "hash": "a15b0279c8111008"
+  },
+  {
+   "id": "zy-2026-read-4",
+   "hash": "fbba554bea8c469b"
+  },
+  {
+   "id": "zy-2026-cloze",
+   "hash": "8256e426115c5f60"
+  },
+  {
+   "id": "zy-2026-match",
+   "hash": "7fcb997c0b4e5e09"
+  },
+  {
+   "id": "zy-2026-trans",
+   "hash": "6b23393f9afc3853"
+  },
+  {
+   "id": "zy-2026-write-s",
+   "hash": "5e04535280779111"
+  },
+  {
+   "id": "zy-2026-write-b",
+   "hash": "dbfaa8002f708a97"
+  },
+  {
+   "id": "zy-2024-cloze",
+   "hash": "0635b0019ba88a67"
+  },
+  {
+   "id": "zy-2024-match",
+   "hash": "7701c2b703e54799"
+  },
+  {
+   "id": "zy-2024-trans",
+   "hash": "4d5836f6db1e85af"
+  },
+  {
+   "id": "zy-2024-write-a",
+   "hash": "a21db515c35e77f1"
+  },
+  {
+   "id": "zy-2024-write-b",
+   "hash": "2149c3a265ce226d"
+  },
+  {
+   "id": "zy-2025-cloze",
+   "hash": "87b1236fa4dd26b8"
+  },
+  {
+   "id": "zy-2025-match",
+   "hash": "0ca1b72fa46466b2"
+  },
+  {
+   "id": "zy-2025-trans",
+   "hash": "b1ba982e8407faa8"
+  },
+  {
+   "id": "zy-2025-write-a",
+   "hash": "ad7353f81016909d"
+  },
+  {
+   "id": "zy-2025-write-b",
+   "hash": "8c0dc1eaa5d64221"
+  }
+ ]
+}
