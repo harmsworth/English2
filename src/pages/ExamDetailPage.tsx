@@ -3,6 +3,7 @@ import { ExamSection } from '@/components/exams/ExamSection'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { useExamPaper } from '@/hooks/use-exam-paper'
+import { toExamErrorMessage } from '@/services/exams'
 
 /** 只接受标准 UUID，避免把 `/exams/abc` 这类地址发成无效的数据库查询。 */
 const UUID_PATTERN =
@@ -106,7 +107,8 @@ export default function ExamDetailPage() {
       <CenteredState
         eyebrow="出错了"
         title="试卷加载失败"
-        description={error instanceof Error ? error.message : '请稍后重试。'}
+        // 底层错误结构只在 service 层解读，页面只负责展示这句话。
+        description={toExamErrorMessage(error)}
         action={{
           label: '重新加载',
           onClick: () => {

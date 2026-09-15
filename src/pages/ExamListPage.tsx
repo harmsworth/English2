@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { useExamPapers } from '@/hooks/use-exam-papers'
+import { toExamErrorMessage } from '@/services/exams'
 
 function ListSkeleton() {
   return (
@@ -71,9 +72,8 @@ export default function ExamListPage() {
       {isError ? (
         <StateCard
           title="试卷列表加载失败"
-          description={
-            error instanceof Error ? error.message : '请稍后重试。'
-          }
+          // 底层错误结构只在 service 层解读，页面只负责展示这句话。
+          description={toExamErrorMessage(error)}
           onRetry={() => {
             void refetch()
           }}
