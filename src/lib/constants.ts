@@ -12,3 +12,24 @@ export const examKeys = {
   lists: () => [...examKeys.all, 'list'] as const,
   detail: (paperId: string) => [...examKeys.all, 'detail', paperId] as const,
 }
+
+/**
+ * Practice（练习会话 / 答题）query key 工厂，沿用 examKeys 的集中约定。
+ * 只包含 Phase 5A 数据层实际用到的键；未来的错题 / 统计等按需再加，不预先造。
+ */
+export const practiceKeys = {
+  all: ['practice'] as const,
+  session: (id: string) => [...practiceKeys.all, 'session', id] as const,
+  resumable: (
+    sessionType: string,
+    sectionId: string | null,
+    paperId: string | null,
+  ) =>
+    [
+      ...practiceKeys.all,
+      'resumable',
+      sessionType,
+      sectionId ?? '',
+      paperId ?? '',
+    ] as const,
+}
