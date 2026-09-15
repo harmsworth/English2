@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { useAuth } from '@/hooks/use-auth'
 
 export default function HomePage() {
   const { user, signOut } = useAuth()
+  const navigate = useNavigate()
 
   return (
     <main className="mx-auto flex min-h-svh w-full max-w-3xl flex-col justify-center px-5 py-16">
@@ -20,7 +22,13 @@ export default function HomePage() {
 
       <div className="mt-10 flex flex-wrap items-center gap-3">
         <Button type="button">开始学习</Button>
-        <Button type="button" variant="outline">
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => {
+            void navigate('/exams')
+          }}
+        >
           查看历年真题
         </Button>
       </div>
