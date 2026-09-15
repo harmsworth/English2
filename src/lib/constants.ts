@@ -1,17 +1,10 @@
 /**
- * GitHub 题库源数据目录（Source of Truth）。
- * 注意：不是 content/exams，不要改动。
+ * 全局常量。
+ *
+ * 注意：题库源数据 `data/exams/` 只用于同步 / 校验 / 审计（经 `sync_exam_paper`
+ * 写入 Supabase）；运行时前端一律从 Supabase 读取，不再通过 GitHub Raw 拉取，
+ * 因此这里不再维护题库文件清单。
  */
-export const GITHUB_RAW_BASE =
-  'https://raw.githubusercontent.com/harmsworth/English2/main/data/exams'
-
-/**
- * 当前参与同步的题库文件。
- * 新增年份时只在这里追加，例如 'papers-2011.json'。
- */
-export const EXAM_FILES = ['papers-2010.json'] as const
-
-export type ExamFileName = (typeof EXAM_FILES)[number]
 
 /** TanStack Query 的 query key 统一入口，避免页面里到处手写字符串 */
 export const examKeys = {
