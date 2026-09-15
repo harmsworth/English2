@@ -169,7 +169,7 @@ English2/
 ├── .gitignore
 ├── components.json            # shadcn 配置（style: base-nova, base: base）
 ├── package.json
-├── tsconfig.json              # 含 baseUrl + @/* paths（shadcn CLI 需要）
+├── tsconfig.json              # 仅 @/* paths，不写 baseUrl（TS 6 已废弃）
 ├── tsconfig.app.json
 ├── tsconfig.node.json
 └── vite.config.ts             # react + tailwindcss + @ alias

@@ -5,7 +5,8 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "baseUrl": ".",
+    // 不写 baseUrl：TS 6 已废弃（TS 7 将移除），
+    // TS 4.4+ 的 paths 可脱离 baseUrl，相对本 tsconfig 所在目录解析。
     "paths": {
       "@/*": ["./src/*"]
     }
