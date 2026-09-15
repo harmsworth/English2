@@ -52,6 +52,9 @@ export function useUpsertPracticeAnswer() {
       queryClient.invalidateQueries({
         queryKey: practiceKeys.session(answer.sessionId),
       })
+      queryClient.invalidateQueries({
+        queryKey: practiceKeys.answers(answer.sessionId),
+      })
     },
   })
 }

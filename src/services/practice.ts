@@ -27,6 +27,23 @@ type SessionUpdate = TablesUpdate<'practice_sessions'>
 type AnswerRow = Tables<'practice_answers'>
 type AnswerInsert = TablesInsert<'practice_answers'>
 
+/**
+ * `ANSWER_SELECT` 投影出的安全行。**故意不含** `is_correct` / `score`：
+ * 按 parse5b §18，判分列不得出现在任何 Practice 响应/DTO 中。
+ */
+type PracticeAnswerProjection = Pick<
+  AnswerRow,
+  | 'id'
+  | 'session_id'
+  | 'item_id'
+  | 'selected_option'
+  | 'text_answer'
+  | 'time_spent_seconds'
+  | 'answered_at'
+  | 'created_at'
+  | 'updated_at'
+>
+
 /** `practice_sessions.status` 允许值（DB CHECK: active|paused|completed|abandoned）。 */
 export type PracticeStatus = 'active' | 'paused' | 'completed' | 'abandoned'
 /** `practice_sessions.session_type` 允许值（DB CHECK: practice|exam|mistake）。 */
@@ -66,15 +83,16 @@ export type PracticeSession = {
   updatedAt: string
 }
 
-/** 答题公开 DTO。`isCorrect` / `score` 本阶段恒为数据库存下的 null（不判分）。 */
+/**
+ * 答题公开 DTO。**只暴露用户自己的作答数据**；判分列 `is_correct` / `score`
+ * 既不写入也不回读（不进入任何前端响应），故不出现在此 DTO 中（parse5b §18）。
+ */
 export type PracticeAnswer = {
   id: string
   sessionId: string
   itemId: string
   selectedOption: number | null
   textAnswer: string | null
-  isCorrect: boolean | null
-  score: number | null
   timeSpentSeconds: number
   answeredAt: string | null
   createdAt: string
@@ -185,7 +203,7 @@ const SESSION_SELECT =
   'id, user_id, session_type, status, section_id, paper_id, current_item_no, elapsed_seconds, time_limit_seconds, started_at, paused_at, completed_at, created_at, updated_at'
 
 const ANSWER_SELECT =
-  'id, session_id, item_id, selected_option, text_answer, is_correct, score, time_spent_seconds, answered_at, created_at, updated_at'
+  'id, session_id, item_id, selected_option, text_answer, time_spent_seconds, answered_at, created_at, updated_at'
 
 /* ------------------------------------------------------------------ *
  * 行 → DTO 逐字段映射（数据库类型的唯一消费点；异常状态直接失败，不臆测）
@@ -213,15 +231,13 @@ function toPracticeSession(row: SessionRow): PracticeSession {
   }
 }
 
-function toPracticeAnswer(row: AnswerRow): PracticeAnswer {
+function toPracticeAnswer(row: PracticeAnswerProjection): PracticeAnswer {
   return {
     id: row.id,
     sessionId: row.session_id,
     itemId: row.item_id,
     selectedOption: row.selected_option,
     textAnswer: row.text_answer,
-    isCorrect: row.is_correct,
-    score: row.score,
     timeSpentSeconds: row.time_spent_seconds,
     answeredAt: row.answered_at,
     createdAt: row.created_at,
@@ -436,4 +452,27 @@ export async function upsertPracticeAnswer(
 
   if (error) throw new PracticeError(toPracticeErrorMessage(error))
   return toPracticeAnswer(data)
+}
+
+/**
+ * 读取当前会话已保存的作答（供刷新 / 重进时恢复选项高亮，parse5b §13）。
+ *
+ * 只取 `ANSWER_SELECT` 安全列（无判分列）；会话归属由 RLS 的
+ * `EXISTS(session WHERE user_id = auth.uid())` 保证，拿不到他人答案。
+ * 本函数不判分、不读题库正确答案。
+ */
+export async function getPracticeAnswers(
+  sessionId: string,
+): Promise<PracticeAnswer[]> {
+  await currentUserId()
+  const supabase = getSupabaseClient()
+
+  const { data, error } = await supabase
+    .from('practice_answers')
+    .select(ANSWER_SELECT)
+    .eq('session_id', sessionId)
+    .order('answered_at', { ascending: true })
+
+  if (error) throw new PracticeError(toPracticeErrorMessage(error))
+  return (data ?? []).map(toPracticeAnswer)
 }

@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { practiceKeys } from '@/lib/constants'
 import {
+  getPracticeAnswers,
   getPracticeSessionById,
   getResumablePracticeSession,
   type PracticeTarget,
@@ -31,5 +32,20 @@ export function useResumablePracticeSession(target: PracticeTarget) {
       target.paperId ?? null,
     ),
     queryFn: () => getResumablePracticeSession(target),
+  })
+}
+
+/**
+ * 读取某会话已保存的作答，用于刷新 / 重进后恢复选项高亮（parse5b §13）。
+ * 会话确定后才启用；返回安全 DTO（不含判分列）。
+ */
+export function usePracticeAnswers(sessionId: string | undefined) {
+  return useQuery({
+    queryKey: sessionId
+      ? practiceKeys.answers(sessionId)
+      : [...practiceKeys.all, 'answers', '__none__'],
+    enabled: Boolean(sessionId),
+    queryFn: async () =>
+      sessionId ? await getPracticeAnswers(sessionId) : [],
   })
 }

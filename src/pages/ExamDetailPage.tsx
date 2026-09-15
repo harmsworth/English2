@@ -159,7 +159,15 @@ export default function ExamDetailPage() {
       ) : (
         <div className="mt-8 flex flex-col gap-6">
           {data.sections.map((section, index) => (
-            <ExamSection key={section.id} section={section} index={index} />
+            <div key={section.id} className="flex flex-col gap-2">
+              <ExamSection section={section} index={index} />
+              <Link
+                to={`/exams/${paperId}/practice/${section.id}`}
+                className="ml-auto text-sm font-medium text-primary underline underline-offset-4"
+              >
+                开始练习
+              </Link>
+            </div>
           ))}
         </div>
       )}

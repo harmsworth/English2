@@ -17,6 +17,7 @@ const LoginPage = lazy(() => import('@/pages/LoginPage'))
 const HomePage = lazy(() => import('@/pages/HomePage'))
 const ExamListPage = lazy(() => import('@/pages/ExamListPage'))
 const ExamDetailPage = lazy(() => import('@/pages/ExamDetailPage'))
+const PracticePage = lazy(() => import('@/pages/PracticePage'))
 
 /** lazy chunk 加载期间的最小占位，复用 ProtectedRoute 的居中 muted 文案风格，不做新视觉设计。 */
 function RouteFallback() {
@@ -53,6 +54,11 @@ export const router = createBrowserRouter([
         // 用试卷 id 定位，避免将来多版本共存的年份撞车
         path: '/exams/:paperId',
         element: lazyPage(<ExamDetailPage />),
+      },
+      {
+        // Practice：按大题（sectionId）练习，会话绑 section；受登录保护
+        path: '/exams/:paperId/practice/:sectionId',
+        element: lazyPage(<PracticePage />),
       },
     ],
   },
