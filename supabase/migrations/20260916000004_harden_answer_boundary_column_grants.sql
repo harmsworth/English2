@@ -7,9 +7,9 @@
 --   * 前端 Service 从不 SELECT 这些答案列（见 exams.ts 显式白名单），因此对现有查询无影响。
 --   * 关系内嵌所需的 join 键（section_items.section_id、exam_sections.paper_id）与 app 用到的列均已授予。
 --   * 判分所需的 correct_option/explanation/source_data **仍保留在库里**，供 Phase 5C 服务端 RPC(SECURITY DEFINER) 读取；不影响 service_role。
--- 残留（有意保留，交 5C）：exam_sections.passage_zh 仍列级可读（非翻译题需要它作“中文参考”）；
---   翻译题 passage_zh 的行级隐藏靠查询 `zh.type≠翻译` 完成，**列级权限无法按行取舍**，故翻译参考答案
---   在“绕过前端 + 指定行”下仍可能被直读。彻底收口需在 5C 建「按行 null 掉翻译 passage_zh」的安全视图。
+-- Phase 5C 收口：exam_sections 的 `passage_zh` 也已移出 authenticated 列权限（见下方 GRANT 列表）——
+--   题面一律不再经普通 REST 下发 passage_zh（翻译参考译文与非翻译题“中文参考”都不下发）。
+--   前端 exams.ts 已同步移除对该列的读取；列本身与数据仍保留在库内，未来如需展示走专门 RPC / 视图。
 -- 回退（如需）：grant select on public.section_items, public.exam_sections to authenticated;  （恢复表级）
 -- ============================================================================
 
@@ -18,5 +18,5 @@ grant select (id, section_id, source_id, item_no, item_type, content, created_at
   on public.section_items to authenticated;
 
 revoke select on public.exam_sections from authenticated;
-grant select (id, paper_id, source_id, type, title, score, minutes, intro, passage, passage_zh, prompt, tips, extra_data, sort_order, created_at, updated_at)
+grant select (id, paper_id, source_id, type, title, score, minutes, intro, passage, prompt, tips, extra_data, sort_order, created_at, updated_at)
   on public.exam_sections to authenticated;

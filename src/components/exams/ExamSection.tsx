@@ -27,11 +27,11 @@ function normalize(value: string | null | undefined): string {
  * 判断一个 section 是否为「翻译」大题。
  *
  * 机器契约是 `source_id`（形如 `zy-2026-trans`），而不是中文展示名 `type`：
- * 展示名可能随文案调整而漂移，`source_id` 才是稳定的题型标识。
+ * 展示名可能随文案调整而漂移，`source_id` 才是稳定的题型标识。用于给翻译题小题
+ * 选择「英文原文（请译成中文）」这一题面标签（见 `textItemLabel`）。
  *
- * 翻译题的 `passage_zh` 与参考答案同源（等于小题的 `reference_translation`），
- * 必须整段隐藏、不能折叠展示。自 Phase 4F-1 起服务层已不再下发翻译题的
- * `passage_zh`，本判断是第二道防线。
+ * 注：Phase 5C 起 `exam_sections.passage_zh` 已完全不再下发到前端，因此不再有
+ * 「中文参考」折叠；本判断仅用于题面文案，不再承担答案/参考译文隐藏的职责。
  */
 function isTranslationSection(sourceId: string): boolean {
   return sourceId.endsWith('-trans')
@@ -63,7 +63,7 @@ function SectionMeta({ section }: { section: ExamSectionWithItems }) {
  * - 阅读理解 / 完形填空：英文原文 + 5 / 20 道选择题（每小题 4 个选项）
  * - 新题型：指导语 + 原文 + 备选标题池 + 5 道小题（2010 只有 2 个可选，
  *   其余年份 7 个，因此序号由数据决定，不写死）
- * - 翻译：指导语 + 英文原文（中文参考译文即参考答案，整段隐藏）
+ * - 翻译：指导语 + 英文原文（Phase 5C 起不再展示“中文参考”，passage_zh 已不下发）
  * - 写作：题目要求 + 图表（如有）+ 写作要点 + 参考范文（默认折叠）
  *
  * 组级 `passage` / `prompt` 与唯一主观题的 `content` 完全重复时只渲染一次，
@@ -85,12 +85,6 @@ export function ExamSection({
   const prompt = section.prompt?.trim() ? section.prompt : null
   const showPassage = Boolean(passage) && !textContents.has(normalize(passage))
   const showPrompt = Boolean(prompt) && !textContents.has(normalize(prompt))
-
-  // 翻译题的 passage_zh 就是参考答案，必须整段隐藏。
-  // 服务层（Phase 4F-1）已不再下发翻译题的 passage_zh，此处按 source_id 兜底。
-  const zhReference = isTranslationSection(section.source_id)
-    ? null
-    : section.passage_zh
 
   const intro = section.intro?.trim() ? section.intro : null
   const tips = section.tips?.trim() ? section.tips : null
@@ -125,11 +119,7 @@ export function ExamSection({
         ) : null}
 
         {showPassage && passage ? (
-          <PassageText
-            text={passage}
-            label="英文原文"
-            collapsibleZh={zhReference}
-          />
+          <PassageText text={passage} label="英文原文" />
         ) : null}
 
         {showPrompt && prompt ? (
