@@ -431,27 +431,17 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      /**
-       * Phase 6 Goal 6.1：判分 RPC（方案 A，见 docs/development/decisions.md）。
-       *
-       * 签名取自真实线上 schema（`supabase gen types --project-id <ref>`，2026-09-16）。
-       * ⚠️ 唯一与生成器输出不同的地方是可空性：生成器对 `RETURNS TABLE` 不推导
-       * nullability，一律标为非空；但本函数对主观题（翻译 / 写作）会返回
-       * `is_correct = null` / `correct_option = null`，非翻译题的 `reference_translation`
-       * 也是 null。因此这里显式加 `| null`，避免出现「类型上说有值、运行时是 null」。
-       */
       grade_practice_section: {
         Args: { p_session_id: string }
         Returns: {
-          correct_option: number | null
-          explanation: string | null
-          is_correct: boolean | null
+          correct_option: number
+          explanation: string
+          is_correct: boolean
           item_id: string
           item_no: number
           item_type: string
-          reference_translation: string | null
-          /** 用户自己的选择；未作答的题不会出现在本结果中，故这里通常非 null，仍按可空处理 */
-          selected_option: number | null
+          reference_translation: string
+          selected_option: number
         }[]
       }
       sync_exam_paper: {

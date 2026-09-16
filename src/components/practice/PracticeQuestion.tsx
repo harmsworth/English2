@@ -1,10 +1,12 @@
 import type { ExamItemWithOptions } from '@/services/exams'
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 /**
  * 当前题目（presentational，无状态、不碰数据层）。
  * - choice：单选选项，`onSelect` 回传 `option_index`（0-based，与 selected_option 语义一致）。
- * - text（翻译 / 写作等主观题）：按 parse5b §17 显示友好提示，不实现在线作答、不显示任何参考答案。
+ * - text（翻译 / 写作等主观题）：**只有**传了 `onToggleTextAnswer` 才渲染「标记已完成作答」，
+ *   由页面决定要不要给（目前只有翻译题给）。提交后参考译文由判分 RPC 受控下发。
  *
  * 这里**只**使用已安全下发的题目数据（content / options），绝不读取
  * correct_option / explanation / passage_zh 等答案/参考列。
@@ -23,22 +25,66 @@ export function PracticeQuestion({
   item,
   selectedOption,
   onSelect,
+  isTextAnswered,
+  onToggleTextAnswer,
 }: {
   item: ExamItemWithOptions
   selectedOption: number | null
   onSelect: (optionIndex: number) => void
+  /** 主观题是否已标记「线下完成作答」 */
+  isTextAnswered?: boolean
+  /** 不传 = 不提供标记能力（页面据此决定这题有没有可查看的参考内容） */
+  onToggleTextAnswer?: () => void
 }) {
   if (item.item_type !== 'choice') {
+    // 只有真的拿到 onToggleTextAnswer 才渲染标记按钮。
+    // 否则会变成一个「看着能点、点了没反应」的死按钮 —— 比不渲染更糟。
+    const canMark = typeof onToggleTextAnswer === 'function'
+
     return (
-      <div className="rounded-lg border border-border bg-muted/40 px-4 py-4">
+      <div className="flex flex-col gap-4">
         {item.content ? (
-          <p className="whitespace-pre-line wrap-anywhere text-[0.9375rem] leading-7 text-foreground/90">
-            {item.content}
-          </p>
+          <div className="rounded-xl border border-border bg-card px-5 py-5">
+            <p className="whitespace-pre-line wrap-anywhere text-[0.9375rem] leading-7 text-foreground/90">
+              {item.content}
+            </p>
+          </div>
         ) : null}
-        <p className="mt-3 text-sm text-muted-foreground">
-          本题为主观题，当前练习模式暂不支持在线提交答案。
-        </p>
+
+        <div className="rounded-xl border border-border bg-muted/40 px-5 py-4">
+          <p className="text-sm font-medium text-foreground">主观题作答说明</p>
+
+          {canMark ? (
+            <>
+              <p className="mt-1 text-sm text-muted-foreground">
+                本题为主观题，建议在线下或草稿纸上完成作答。完成后点下方按钮确认，
+                提交后即可看到参考译文。
+              </p>
+
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <Button
+                  type="button"
+                  variant={isTextAnswered ? 'secondary' : 'default'}
+                  size="sm"
+                  aria-pressed={isTextAnswered === true}
+                  onClick={onToggleTextAnswer}
+                >
+                  {isTextAnswered ? '✓ 已标记完成（点击可撤销）' : '标记已完成作答'}
+                </Button>
+                {isTextAnswered ? (
+                  <span className="text-xs text-primary">
+                    已记录作答，可点击下方「提交并查看结果」查看参考译文
+                  </span>
+                ) : null}
+              </div>
+            </>
+          ) : (
+            <p className="mt-1 text-sm text-muted-foreground">
+              本题为主观题，练习模式不采集在线作答；写作题若有参考范文，
+              可在试卷详情页展开查看。
+            </p>
+          )}
+        </div>
       </div>
     )
   }

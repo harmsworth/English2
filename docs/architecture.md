@@ -1153,8 +1153,7 @@ src/
 数据库：
 
 ```text
-supabase/
-└── migrations/
+supabase/          （migrations/ 已删除，不使用 migration 工作流）
 ```
 
 离线数据：
@@ -1452,8 +1451,8 @@ src/pages/
 Services
 src/services/
 
-Database migrations
-supabase/migrations/
+Database changes
+直接线上执行（不使用 migration）
 ```
 
 ---

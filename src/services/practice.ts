@@ -454,6 +454,31 @@ export async function upsertPracticeAnswer(
   return toPracticeAnswer(data)
 }
 
+/**
+ * 删除某道题在本会话下的作答（Phase 6 Goal 6.3：「撤销主观题的完成标记」）。
+ *
+ * 按 `UNIQUE (session_id, item_id)` 精确定位，只删这一行；会话归属由 RLS 的
+ * `EXISTS(session WHERE user_id = auth.uid())` 保证，删不到他人数据。
+ *
+ * 语义上必须真删而不是置空：判分 RPC 的下发范围是「本次会话实际作答过的题」，
+ * 只要行还在，撤销后提交仍会看到参考内容 —— 那样「可撤销」就是假的。
+ */
+export async function deletePracticeAnswer(input: {
+  sessionId: string
+  itemId: string
+}): Promise<void> {
+  await currentUserId()
+  const supabase = getSupabaseClient()
+
+  const { error } = await supabase
+    .from('practice_answers')
+    .delete()
+    .eq('session_id', input.sessionId)
+    .eq('item_id', input.itemId)
+
+  if (error) throw new PracticeError(toPracticeErrorMessage(error))
+}
+
 /* ------------------------------------------------------------------ *
  * 判分（Phase 6 Goal 6.1，方案 A）
  * ------------------------------------------------------------------ */
@@ -510,15 +535,17 @@ export async function gradePracticeSection(
 
   if (error) throw new PracticeError(toPracticeErrorMessage(error))
 
+  // Supabase CLI 自动推导 RETURNS TABLE 为非空，但服务端对主观题或无解析/译文情况实际返回 null。
+  // 通过业务 DTO 映射层进行防御性空值收敛：
   return (data ?? []).map((row) => ({
     itemId: row.item_id,
     itemNo: row.item_no,
     itemType: row.item_type,
-    isCorrect: row.is_correct,
-    selectedOption: row.selected_option,
-    correctOption: row.correct_option,
-    explanation: row.explanation,
-    referenceTranslation: row.reference_translation,
+    isCorrect: row.is_correct ?? null,
+    selectedOption: row.selected_option ?? null,
+    correctOption: row.correct_option ?? null,
+    explanation: row.explanation ?? null,
+    referenceTranslation: row.reference_translation ?? null,
   }))
 }
 

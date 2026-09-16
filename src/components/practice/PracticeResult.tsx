@@ -52,10 +52,16 @@ export function PracticeResult({
         <p className="text-sm font-medium text-foreground">
           已作答 {results.length} / {totalItemCount} 题
         </p>
-        <p className="mt-1.5 text-sm text-muted-foreground">
-          答对 {correctCount} 题 · 答错 {wrongCount} 题
-          {objective.length > 0 ? ` · 正确率 ${accuracy}%` : ''}
-        </p>
+        {objective.length > 0 ? (
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            答对 {correctCount} 题 · 答错 {wrongCount} 题 · 正确率 {accuracy}%
+          </p>
+        ) : (
+          // 全主观题（如翻译大题）：报「答对 0 题 · 答错 0 题」是无意义的，直接说明不判分
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            本大题只有主观题，不判分，提交后直接对照参考内容。
+          </p>
+        )}
         {unanswered > 0 ? (
           <p className="mt-2 text-xs text-muted-foreground">
             未作答 {unanswered} 题，不参与判分，也不会显示答案。

@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { practiceKeys } from '@/lib/constants'
 import {
   createPracticeSession,
+  deletePracticeAnswer,
   gradePracticeSection,
   updatePracticeSessionProgress,
   upsertPracticeAnswer,
@@ -76,6 +77,27 @@ export function useUpsertPracticeAnswer() {
       })
       queryClient.invalidateQueries({
         queryKey: practiceKeys.answers(answer.sessionId),
+      })
+    },
+  })
+}
+
+/**
+ * 删除某道题的作答（Phase 6 Goal 6.3：「撤销」主观题的完成标记）。
+ *
+ * 行被真删之后，该题重新回到「未作答」，因此也不会再出现在判分结果里。
+ */
+export function useDeletePracticeAnswer() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (input: { sessionId: string; itemId: string }) =>
+      deletePracticeAnswer(input),
+    onSuccess: (_void, input) => {
+      queryClient.invalidateQueries({
+        queryKey: practiceKeys.session(input.sessionId),
+      })
+      queryClient.invalidateQueries({
+        queryKey: practiceKeys.answers(input.sessionId),
       })
     },
   })

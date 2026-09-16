@@ -1,7 +1,7 @@
 # English2 当前进度
 
 **性质：** 状态文件，不是聊天记录
-**最后更新：** 2026-09-16（Phase 6 Goal 6.1–6.2 落地并通过验证）
+**最后更新：** 2026-09-16（Phase 6 Goal 6.0–6.4 全部落地并通过验证）
 
 ---
 
@@ -10,14 +10,14 @@
 **[Phase 6 — 答案、判分与解析](../phases/phase-06-answer-review.md)**（`in-progress`）
 
 用户已于 2026-09-16 授权进入 Phase 6，并选定判分通路为**方案 A（服务端判分 RPC）**。
-Goal 6.0 / 6.1 / 6.2 / 6.4 已完成；Goal 6.3 因与 Phase 6 不包含范围冲突而挂起（见下）。
+**Goal 6.0 / 6.1 / 6.2 / 6.3 / 6.4 全部完成**，Goal 6.3 已按「离线作答 + 在线标记」方案收口。
 
 ---
 
 ## Current Goal
 
-**Goal 6.1 — 客观题判分** ✅ **已完成**
-**Goal 6.2 — 结果展示** ✅ **已完成**
+**Phase 6 已可收口** —— 五个 Goal 全部完成并通过验证，可进入
+[Phase 7 — 学习记录、错题与复习](../phases/phase-07-learning-loop.md)。
 
 ### Completed Goals
 
@@ -26,8 +26,8 @@ Goal 6.0 / 6.1 / 6.2 / 6.4 已完成；Goal 6.3 因与 Phase 6 不包含范围�
 | 6.0 | 确定答案与判分的数据通路 | ✅ 完成（选定方案 A） |
 | 6.1 | 客观题判分 | ✅ 完成 |
 | 6.2 | 结果展示 | ✅ 完成 |
+| 6.3 | 翻译题参考答案展示 | ✅ 完成（离线作答 + 在线标记） |
 | 6.4 | 写作题处理（不判分） | ✅ 完成（`is_correct` 为 `null` → 标「主观题」） |
-| 6.3 | 翻译题参考答案展示 | ⚠️ **挂起**（见下） |
 
 **6.1 / 6.2 落地内容：**
 
@@ -40,25 +40,37 @@ Goal 6.0 / 6.1 / 6.2 / 6.4 已完成；Goal 6.3 因与 Phase 6 不包含范围�
 4. `src/components/practice/PracticeResult.tsx`（新）—— 结果渲染，纯展示、不发请求
 5. `src/pages/PracticePage.tsx` —— 提交动作 + 结果视图 + 「正在判分…」态
 
-**6.3 为什么挂起：**
+**6.3 落地内容（原「与 §4 冲突」已解决）：**
 
-Goal 6.3 要求「翻译题的参考答案在提交后展示」，但 6.3 的前提是翻译题**能被提交**；
-而 Phase 6 §4「不包含范围」明确排除「主观题在线输入提交」，翻译题因此永远产生不了
-`practice_answers` 行 → RPC 永远不返回它 → 参考译文区块不可达。
+原冲突：§4 排除了「主观题在线输入提交」→ 翻译题永远产生不了 `practice_answers` 行
+→ RPC 永远不返回它 → 参考译文区块不可达。
 
-RPC 侧已经能返回 `extra_data.reference_translation`，`PracticeResult` 也能渲染它，
-**只是没有触达路径**。需要用户在两者间选一个，本 Goal 才能收口：
+**解法：「离线作答 + 在线标记」** —— 用户在草稿纸上翻译，回页面点「标记已完成作答」，
+写一条 `text_answer = ''`、`selected_option = null` 的**纯标记行**（不采集任何在线文本输入，
+不触碰 §4 红线）；提交后由 RPC 下发 `reference_translation`。
 
-- (a) 删除 / 重写 Goal 6.3，把翻译参考译文归到「主观题在线作答」的后续 Phase；
-- (b) 给主观题加独立入口（如「查看参考译文」按钮，不走提交判分）—— 会扩张 Phase 6 范围。
+1. `src/pages/PracticePage.tsx` —— 标记/撤销、`answeredCount` 修正、`canSubmit` 分流
+2. `src/components/practice/PracticeQuestion.tsx` —— `isTextAnswered` / `onToggleTextAnswer`
+   （未传回调则不渲染按钮，避免"点了没反应的死按钮"）
+3. `src/services/practice.ts` —— `deletePracticeAnswer()`（撤销标记 = 真删行）
+4. `src/hooks/use-practice-mutations.ts` —— `useDeletePracticeAnswer()`
+
+**两条踩过的坑：**
+
+- `answeredCount` 不能用 `savedByItem.size`：主观题 `selected_option` 恒为 `null`，
+  按选项集合计数会让翻译大题（只有 1 小题）永远停在 0，提交按钮永远点不动。
+  改为「本题选过选项 **或** 标记过完成」逐题判定。
+- `canSubmit` 不能用 `!hasChoiceItems`：会把写作题也当成翻译题，渲染一个点了没用的提交按钮。
+  改为 `canSubmit = hasChoiceItems || canRevealReference`（写作题两者皆无 → 无提交入口）。
 
 ---
 
 ## Next Goal
 
-**待用户决策：Goal 6.3 的处置（选项 a / b，见上）。**
+**收口 Phase 6，进入 [Phase 7 — 学习记录、错题与复习](../phases/phase-07-learning-loop.md)。**
 
-决策后可收口 Phase 6，进入 [Phase 7 — 学习记录、错题与复习](../phases/phase-07-learning-loop.md)。
+Phase 6 待收口事项：仅剩文档同步与一次收尾确认（无未完成实现）。
+Phase 7 入口候选（见下方 Known Issues 1 / 3 / 4）。
 
 ---
 
@@ -73,12 +85,14 @@ RPC 侧已经能返回 `extra_data.reference_translation`，`PracticeResult` 也
 | [3 用户身份与访问入口](../phases/phase-03-auth.md) | `done` | Supabase Auth、ProtectedRoute、LoginPage |
 | [4 真题浏览](../phases/phase-04-exam-browse.md) | `done` | 首页 / 列表 / 详情 + 各题型渲染 |
 | [5 在线练习](../phases/phase-05-practice.md) | `done` | 会话 / 作答 / 保存 / 恢复；不判分 |
-| [6 答案、判分与解析](../phases/phase-06-answer-review.md) | `in-progress` | 6.0 / 6.1 / 6.2 / 6.4 完成，6.3 待决策 |
+| [6 答案、判分与解析](../phases/phase-06-answer-review.md) | `in-progress` | 6.0–6.4 全部完成；可收口 |
 
 ### 关键里程碑（提交）
 
 ```text
-6e9a400  security: narrow exam_papers read columns        ← HEAD
+9621c4e  提交                                        ← HEAD == origin/main
+                                                        （Phase 6 代码 + docs + ExamListPage 重构 + 删 migration）
+6e9a400  security: narrow exam_papers read columns
 37217cd  fix: close passage_zh boundary (drop frontend read + revoke)
 9383666  chore: bootstrap database migrations and permissions
 4a8b47c  feat: add practice answering ui
@@ -109,7 +123,7 @@ bc9e6db  perf: add route-level code splitting
 | # | 问题 | 位置 | 归属 |
 | --- | --- | --- | --- |
 | 1 | 练习结果不可回看：结果只在页面内存里，提交后会话变 `completed`，可恢复查询只认 `active` / `paused`，离开再回来是新会话 | `src/pages/PracticePage.tsx` | Phase 7 |
-| 2 | 主观题（翻译 / 写作）不支持在线作答 | `src/components/practice/PracticeQuestion.tsx` | Phase 6 之后 |
+| 2 | 主观题不支持**在线作答**：翻译题只能「标记已完成作答」（不采集文本），写作题无作答 / 提交入口（范文看详情页） | `src/components/practice/PracticeQuestion.tsx` | Phase 6 之后 |
 | 3 | `mistakes` / `mistake_reviews` 表已建、已授权，但无任何前端代码使用 | 数据库 | Phase 7 |
 | 4 | `practice_answers.score` 字段存在但从不写入（`is_correct` 已由 RPC 写入） | 数据库 | 后续 Phase |
 | 5 | 首页两个 CTA（「开始学习」/「查看历年真题」）指向同一路由 `/exams` | `src/pages/HomePage.tsx` | 待 Phase 7 学习记录就绪后，可让「开始学习」= 继续上次练习 |
@@ -126,12 +140,17 @@ bc9e6db  perf: add route-level code splitting
 - 练习页无提交 / 结果，做完不知道对错 → Goal 6.1 / 6.2 已补齐
 - `practice_answers.is_correct` 从不写入 → 判分 RPC 已服务端写回
 - `practice.md` 示例错写「第 21 小题」→ 已按真实 `item_no`（大题内 1..N）修正
+- 翻译题参考译文不可达（Goal 6.3 与 §4 冲突）→ 已按「离线作答 + 在线标记」收口
+- `PracticeQuestion.tsx` 的「标记已完成作答」曾是 **死按钮**（`PracticePage.tsx` 未接线，
+  点击零网络请求、静默失败）→ 已接线，并加「未传回调则不渲染按钮」的守卫
+- `answeredCount = savedByItem.size` 导致翻译大题提交按钮永远禁用 → 已改逐题判定
+- `canSubmit = !hasChoiceItems` 让写作题也长出提交按钮 → 已改 `hasChoiceItems || canRevealReference`
 
 ---
 
 ## Last Verification
 
-**本次任务**：Phase 6 Goal 6.1 / 6.2 实现 + 全量验证（2026-09-16）。
+**本次任务**：Phase 6 Goal 6.1 / 6.2 / 6.3 实现 + 全量验证（2026-09-16）。
 
 ### 构建门槛
 
@@ -197,49 +216,77 @@ option  层键集合 == 白名单（195/195 全部匹配）
 结论：**Phase 2 的答案边界未被破坏**；判分 RPC 是答案的唯一出口。
 （另：直接读 `correct_option` 仍返回 `42501`，本回合未复测，沿用上次结论。）
 
+**第三轮 — Goal 6.3 翻译 / 写作 / 选择题 E2E，29/29 通过**（Playwright，dev server :5203）：
+
+| 断言组 | 结果 |
+| --- | --- |
+| 翻译题渲染「标记已完成作答」按钮（count=1） | ✅ |
+| 点击标记 → **产生 1 次 POST**（原来 0 次） | ✅ |
+| 标记后「已作答 1 题」、提交按钮解禁 | ✅ |
+| 再次点击 → **产生 1 次 DELETE**（真删行，非仅改 state） | ✅ |
+| 撤销后计数回落、提交按钮重新禁用 | ✅ |
+| 重新标记 → 提交 → 参考译文渲染（327 字符，与 DB 一致） | ✅ |
+| 写作题：如实说明文案 + 提交按钮 count = **0** | ✅ |
+| 选择题回归：正确率仍为 `round(1/3*100) = 33%` | ✅ |
+| 作答阶段仍无 `correct_option` / `explanation` / `reference_translation` 泄漏 | ✅ 0 命中 |
+| console error / pageerror | ✅ 均为 0 |
+
+> 首轮 E2E 曾 27/28 失败：写作题出现了提交按钮 + 「提交后可查看参考译文」的假承诺。
+> 根因是 `canSubmit` 用 `!hasChoiceItems` 把写作题当成翻译题。修成
+> `hasChoiceItems || canRevealReference` 后 29/29。
+
 ### 测试数据清理
 
 验证过程在 dev 账号（`08a4c6f9-…`）下产生的 `practice_sessions` / `practice_answers`
-已全部删除，读回线上为 `remaining_sessions = 0, remaining_answers = 0`。
+已全部删除。Goal 6.3 的 E2E 又新增 5 个会话（含 `mistakes` 一并清理），
+读回线上为：
+
+```text
+remaining_sessions = 0
+remaining_answers  = 0
+remaining_mistakes = 0
+```
 
 ### 工作区状态
 
 ```text
 分支        main
-HEAD        6e9a400
-origin/main 9383666      （本地领先 3 个提交，未推送）
+HEAD        9621c4e      （已推送）
+origin/main 9621c4e
 ```
 
 **本次改动（均为已修改未提交）：**
 
+Phase 6 代码（Goal 6.1 / 6.2 / 6.3）：
+
 ```text
-M src/pages/PracticePage.tsx              提交动作 + 结果视图 + 会话创建守卫修正
-M src/services/practice.ts                PracticeGradeResult + gradePracticeSection
-M src/hooks/use-practice-mutations.ts     useGradePracticeSection
-M src/types/database.ts                   Functions 增加 grade_practice_section
-A src/components/practice/PracticeResult.tsx
+M src/pages/PracticePage.tsx                 提交动作 + 结果视图 + 会话创建守卫修正
+                                             + 翻译题标记/撤销 + answeredCount 修正 + canSubmit 分流
+M src/components/practice/PracticeQuestion.tsx  主观题标记按钮（未传回调则不渲染）
+M src/components/practice/PracticeResult.tsx    正确率 + 全主观题文案 + 无解析占位
+M src/services/practice.ts                   PracticeGradeResult + gradePracticeSection + deletePracticeAnswer
+M src/hooks/use-practice-mutations.ts        useGradePracticeSection + useDeletePracticeAnswer
 ```
 
-**用户自己的工作内容（不得清理 / 回滚 / 覆盖）：**
+用户自己的工作内容（**不改动 / 不回滚 / 不覆盖**）：
 
 ```text
-M .codebuddy/CODEBUDDY.md
-M .codebuddy/rules/phase-discipline.md
-M .workbuddy/memory/2026-09-15.md
-M .workbuddy/memory/MEMORY.md
-M src/pages/ExamListPage.tsx              （PaperRow 抽取重构，非本次任务）
-D docs/database-schema.md
-D docs/parse1.md
-D docs/parse2.md
-D supabase/migrations/*.sql               （6 个基线文件，用户已删）
-?? docs/00-product-requirements.md
-?? docs/AGENTS.md
-?? docs/architecture.md
-?? docs/data/  docs/development/  docs/pages/  docs/phases/
-?? .workbuddy/memory/2026-09-16.md
+M src/types/database.ts      重新 codegen（去掉手写 | null 与注释）
+M package.json               新增 db:types 脚本
+M README.md / docs/architecture.md / docs/phases/README.md   文档同步
+M .workbuddy/memory/*        memory 快照
+```
+
+文档（本轮同步）：
+
+```text
+M docs/pages/practice.md                     Goal 6.3 标记流程 + 已知限制
+M docs/development/progress.md               本文件
+M docs/phases/phase-06-answer-review.md      6.3 收口方案与落地
 ```
 
 `git diff --check` 仅报 Git 自身的 LF→CRLF 提示，**无空白错误**。
+**本轮未 commit、未 push**（按约定等用户确认）。
 
 ---
 
@@ -249,5 +296,10 @@ D supabase/migrations/*.sql               （6 个基线文件，用户已删）
 - `item_no` 是**大题内** 1..N 连续编号（阅读 1–5、完形 1–20、新题型 1–5、翻译 / 写作恒为 1），
   17 个年份已逐一核对
 - 前端运行时**不读取**：`passage_zh`、`source_data`、`correct_option`、`explanation`、`section_items.extra_data`
-- 判分唯一通路：RPC `public.grade_practice_section(uuid)`
+- 判分唯一通路：RPC `public.grade_practice_section(uuid)`；**翻译参考译文也走这条通路**，
+  只在提交后下发（`source_id.endsWith('-trans')` 是前端唯一能判断的线索）
+- `practice_answers` **没有** `selected_option` / `text_answer` 二选一的 CHECK，
+  所以「`text_answer = ''` 的纯标记行」是合法数据
+- `src/types/database.ts` 是 `pnpm db:types` 的 **codegen 产物，不手改**；
+  codegen 把 `RETURNS TABLE` 推成非空，「可为 null」由 service DTO 层 `?? null` 收口
 - 详见 [`docs/data/README.md`](../data/README.md)、[`docs/pages/practice.md`](../pages/practice.md)

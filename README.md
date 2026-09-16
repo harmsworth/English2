@@ -2,7 +2,7 @@
 
 一个**个人 / 家庭使用**的考研英语二（Postgraduate Entrance Exam English II）真题系统练习 Web App，PC 与手机都能用。
 
-> 当前能力：真题数据（2010–2026 共 17 套）已入库，前端已可**登录并浏览题库列表与试卷详情**。**做题、错题、完整考试、学习统计等尚未实现**（见「Roadmap」）。本 README 只描述仓库里真实存在的状态。
+> 当前能力：真题数据（2010–2026 共 17 套）已入库，前端已可**登录、浏览题库、在线练习并查看判分结果**。错题本、完整考试、学习统计等尚未实现（见「Roadmap」）。本 README 只描述仓库里真实存在的状态。
 
 - **不是**《新概念英语 2》App；New Concept English 2 属于个人英语学习计划，不在本项目范围内。
 
@@ -18,7 +18,7 @@
 
 - 正常学习：`React → Supabase`。
 - 题库同步：`data/exams/ →（计算 SHA-256）→ sync_exam_paper RPC → Supabase`，是**受控的后端 / 脚本动作**（现由 service_role / CLI 通道完成），**不是**前端运行时去 fetch GitHub Raw。
-- 学习进度持久化（如答题记录、错题）目前**尚未实现**，见 Roadmap。
+- 学习进度持久化：答题记录已实现（`practice_sessions` / `practice_answers`）；错题收录尚未实现，见 Roadmap。
 
 ---
 
@@ -58,7 +58,7 @@ Page  →  Hook  →  Service  →  Supabase
 
 ```text
 exam_papers · exam_sections · section_items · item_options   （题库，只读）
-practice_sessions · practice_answers · mistakes · mistake_reviews   （用户行为，尚未接入写入）
+practice_sessions · practice_answers · mistakes · mistake_reviews   （用户行为，前两表已接入读写，后两表 Phase 7）
 ```
 
 - **真题源**：仓库 `data/exams/papers-YYYY.json`（Source of Truth，不可移动 / 重命名）。每年 9 大题：4 阅读 + 1 完形 + 1 新题型 + 1 翻译 + 2 写作；顶层为长度 9 的数组（元素是大题，不是 paper）。
@@ -71,26 +71,27 @@ practice_sessions · practice_answers · mistakes · mistake_reviews   （用户
 ## 已实现功能
 
 ```text
-登录（Supabase Auth）· 首页 · 真题列表 · 真题详情（只读题面） · 404 / 试卷不存在 / 非法 UUID 兜底 · Protected Route · 路由级代码分割 · 题库错误文案归一化
+登录（Supabase Auth）· 首页 · 真题列表 · 真题详情（只读题面） · 在线练习（逐题作答、保存、断点恢复） · 提交判分（服务端 RPC，客观题自动判分） · 结果展示（对错、正确答案、解析） · 404 / 试卷不存在 / 非法 UUID 兜底 · Protected Route · 路由级代码分割 · 题库错误文案归一化
 ```
 
-- 路由：`/login`、`/`（首页）、`/exams`（列表，17 套按年份倒序）、`/exams/:paperId`（详情，按真实 UUID 定位，只铺题面）、`*`（404）。应用内路由在 `ProtectedRoute` 之下，未登录跳 `/login`。
+- 路由：`/login`、`/`（首页）、`/exams`（列表，17 套按年份倒序）、`/exams/:paperId`（详情，只铺题面）、`/exams/:paperId/practice/:sectionId`（在线练习 + 判分结果）、`*`（404）。应用内路由在 `ProtectedRoute` 之下，未登录跳 `/login`。
 - 详情按题型渲染并做了数据容错：选项字母优先沿用题面自带前缀（如 2010 新题型 `T/F`、2026 `A–G`），翻译题隐藏中文参考，写作图表支持「结构化图 / 图片 / 占位提示」三态。
+- 练习支持选择题逐题点选、自动保存、断点恢复。提交后由服务端 RPC 判分，结果页展示对错、正确答案与解析；未作答的题不参与判分也不暴露答案。
 
 ## 学习闭环（长期目标）
 
 ```text
-真题 → 练习 → 答题记录 → 错题 → 错题复习 → 完整考试 → 学习统计
+真题 → 练习 → 答题记录 → 判分 → 错题 → 错题复习 → 完整考试 → 学习统计
 ```
 
-这是产品规划，**当前只到「真题浏览」**；练习及其之后的环节尚未实现。
+这是产品规划，**当前已到「判分与结果展示」**；错题及其之后的环节尚未实现。
 
 ## Roadmap / 尚未实现
 
-- Practice：做题、答题记录、提交后显示答案与解析
 - 错题本与错题复习
 - 完整考试模式
 - 学习统计
+- 主观题（翻译 / 写作）在线作答
 - PWA / 移动端完整体验 / 离线
 - 题库同步的前端 UI（目前同步为受控脚本 / 后台动作，无应用内「同步」按钮）
 
@@ -98,13 +99,15 @@ practice_sessions · practice_answers · mistakes · mistake_reviews   （用户
 
 ## 开发阶段
 
-| 阶段 | 内容 |
-| --- | --- |
-| Phase 1 | 项目初始化：脚手架、规则、技术栈 |
-| Phase 2 | Supabase 类型化数据访问（生成 `database.ts`、typed client） |
-| Phase 3 | Authentication（Supabase Auth + `ProtectedRoute` + 登录页） |
-| Phase 4 | 题库数据基础设施与安全：4A 全量真题同步 → 4B 死代码常量清理 → 4C 前端数据层（嵌套查询 + DTO） → 4D 题库列表与详情 UI → 4E 答案数据隔离 + 题库 RLS 收口 |
-| Phase 4F | 收尾加固：F1 翻译参考隔离 · F5 结构化图表 · F6 以 `source_id` 判定题型 · F7 错误文案归一化 · F8 路由级代码分割 · F9 / F12 文档对齐 |
+| 阶段 | 内容 | 状态 |
+| --- | --- | --- |
+| Phase 1 | 项目初始化：脚手架、规则、技术栈 | `done` |
+| Phase 2 | 真题内容体系与数据边界：17 套入库、答案隔离 | `done` |
+| Phase 3 | Authentication（Supabase Auth + `ProtectedRoute` + 登录页） | `done` |
+| Phase 4 | 真题浏览：首页、列表、详情 + 各题型渲染 | `done` |
+| Phase 5 | 在线练习：会话、作答、保存、断点恢复 | `done` |
+| Phase 6 | 答案、判分与解析 | `in-progress` |
+| Phase 7 | 学习记录、错题与复习 | `planned` |
 
 ---
 
@@ -142,16 +145,17 @@ English2/
 ├── src/
 │   ├── components/
 │   │   ├── exams/             # PassageText / ChoiceQuestion / TextQuestion / ExamSection / json-utils
+│   │   ├── practice/          # PracticeQuestion / PracticeResult
 │   │   ├── ui/                # shadcn/ui 组件（Base UI）
 │   │   └── protected-route.tsx
-│   ├── hooks/                 # use-auth / use-exam-papers / use-exam-paper
+│   ├── hooks/                 # use-auth / use-exam-papers / use-exam-paper / use-practice-session / use-practice-mutations
 │   ├── lib/
 │   │   ├── constants.ts       # examKeys（TanStack Query key 工厂）
 │   │   └── utils.ts           # cn()
-│   ├── pages/                 # LoginPage / HomePage / ExamListPage / ExamDetailPage / NotFoundPage
+│   ├── pages/                 # LoginPage / HomePage / ExamListPage / ExamDetailPage / PracticePage / NotFoundPage
 │   ├── providers/             # auth-context / auth-provider
 │   ├── router/index.tsx       # createBrowserRouter + 路由级 React.lazy
-│   ├── services/              # supabase / exams / auth（唯一访问库的层）
+│   ├── services/              # supabase / exams / practice / auth（唯一访问库的层）
 │   ├── types/database.ts      # 由真实 Supabase schema 生成
 │   ├── App.tsx                # RouterProvider
 │   ├── main.tsx               # QueryClientProvider + AuthProvider
@@ -169,7 +173,7 @@ English2/
 - 路径别名 `@/*` → `src/*`（Vite 与 TypeScript 均已配置，根 `tsconfig.json` 不写 `baseUrl`）。
 - `cn()` 统一在 `src/lib/utils.ts`（clsx + tailwind-merge）。shadcn CLI 新生成组件默认 `import { cn } from 'cn'`，加组件后需改回 `@/lib/utils`。
 - 页面不直接写 `supabase.from(...)`，统一走 `Service → Hook → Page`。
-- 详情页**不渲染**任何答案 / 解析；未来做题功能才在提交后展示。
+- 详情页**不渲染**任何答案 / 解析；练习页在提交判分后展示正确答案与解析。
 - 不为「目录好看」提前创建空目录，随阶段逐步建立。
 
 ---

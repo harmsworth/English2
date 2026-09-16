@@ -112,7 +112,7 @@ Git Diff 检查完成（只改了本 Phase 相关文件）
 | 3 | [用户身份与访问入口](./phase-03-auth.md) | 只有本人能进本人学习数据 | `done` |
 | 4 | [真题浏览](./phase-04-exam-browse.md) | 能找到并看清任意一年的真题 | `done` |
 | 5 | [在线练习](./phase-05-practice.md) | 能做题、能保存、能断点恢复 | `done` |
-| 6 | [答案、判分与解析](./phase-06-answer-review.md) | 做完知道对错、知道为什么 | `planned` ← 下一步 |
+| 6 | [答案、判分与解析](./phase-06-answer-review.md) | 做完知道对错、知道为什么 | `in-progress` ← 当前 |
 | 7 | [学习记录、错题与复习](./phase-07-learning-loop.md) | 错题留得下、找得到、能重做 | `planned` |
 
 **未排期方向**（产品需求中提到但当前无足够细节，暂不建独立文档）：
