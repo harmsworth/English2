@@ -96,20 +96,12 @@ React Query 相关逻辑放在 Hook。
 
 项目采用 Phase 渐进式开发。
 
-当前规划：
+**Phase 的唯一定义源是 `docs/phases/`**（`README.md` 给出划分方式与路线图总表，
+`phase-*.md` 给出每阶段的目标、范围、Goal 与验收标准）。
+当前进度读 `docs/development/progress.md`。
 
-```text
-Phase 1  — Project initialization
-Phase 2  — Database types and data access foundation
-Phase 3  — Authentication
-Phase 4  — Question-bank synchronization
-Phase 5  — Historical exam practice
-Phase 6  — Normal practice
-Phase 7  — Mistakes
-Phase 8  — Full exam mode
-Phase 9  — Statistics
-Phase 10 — PWA / mobile / offline
-```
+本文件不再维护 Phase 清单。历史上一份按代码模块划分的 10 阶段清单已废弃，
+改用 `docs/phases/` 中按**用户价值**划分的阶段。
 
 规则：
 

@@ -454,6 +454,74 @@ export async function upsertPracticeAnswer(
   return toPracticeAnswer(data)
 }
 
+/* ------------------------------------------------------------------ *
+ * 判分（Phase 6 Goal 6.1，方案 A）
+ * ------------------------------------------------------------------ */
+
+/**
+ * 一道题的判分结果。
+ *
+ * 关键边界：**只包含本次会话实际作答过的题**。
+ * 未作答的题不在 `practice_answers` 里，RPC 也就不会返回 —— 因此「提交后能看见全大题答案」
+ * 这条路是不存在的。题库的 `correct_option` / `explanation` / `extra_data` 依然不对
+ * authenticated 开放，答案只经由这一个受控 RPC 出口按题下发。
+ *
+ * 主观题（翻译 / 写作）：`is_correct` / `correct_option` 为 `null`（不判分）；
+ * 翻译题会带 `referenceTranslation`（参考译文），其余为 `null`。
+ */
+export type PracticeGradeResult = {
+  itemId: string
+  itemNo: number
+  itemType: string
+  /** 客观题 true/false；主观题为 null（不判分） */
+  isCorrect: boolean | null
+  /** 用户自己的选择（0-based）；主观题通常为 null */
+  selectedOption: number | null
+  /** 0-based 正确选项下标；主观题为 null */
+  correctOption: number | null
+  /** 解析；无解析时为 null */
+  explanation: string | null
+  /** 翻译题参考译文；非翻译题为 null */
+  referenceTranslation: string | null
+}
+
+/**
+ * 提交并判分整个大题。
+ *
+ * 走服务端 RPC `grade_practice_section`（SECURITY DEFINER）：
+ * - 答案比对在服务端完成，题库答案列**不下发**给前端常规查询；
+ * - RPC 内部校验 `session.user_id = auth.uid()`，传他人 / 伪造 session 会被拒绝；
+ * - `is_correct` 由服务端写回，前端不回写（否则用户可篡改自己的判分结果）；
+ * - 会话推进到 `completed`。
+ *
+ * 答案的下发范围 = **本次会话实际作答过的题**，这是刻意的安全边界，不是遗漏。
+ * 安全目标不是"用户永远看不到答案"（提交后看到正确答案正是学习闭环的核心），
+ * 而是"不能在未作答的情况下批量获取全库答案"。
+ */
+export async function gradePracticeSection(
+  sessionId: string,
+): Promise<PracticeGradeResult[]> {
+  await currentUserId()
+  const supabase = getSupabaseClient()
+
+  const { data, error } = await supabase.rpc('grade_practice_section', {
+    p_session_id: sessionId,
+  })
+
+  if (error) throw new PracticeError(toPracticeErrorMessage(error))
+
+  return (data ?? []).map((row) => ({
+    itemId: row.item_id,
+    itemNo: row.item_no,
+    itemType: row.item_type,
+    isCorrect: row.is_correct,
+    selectedOption: row.selected_option,
+    correctOption: row.correct_option,
+    explanation: row.explanation,
+    referenceTranslation: row.reference_translation,
+  }))
+}
+
 /**
  * 读取当前会话已保存的作答（供刷新 / 重进时恢复选项高亮，parse5b §13）。
  *

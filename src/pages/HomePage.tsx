@@ -21,7 +21,14 @@ export default function HomePage() {
       </p>
 
       <div className="mt-10 flex flex-wrap items-center gap-3">
-        <Button type="button">开始学习</Button>
+        <Button
+          type="button"
+          onClick={() => {
+            void navigate('/exams')
+          }}
+        >
+          开始学习
+        </Button>
         <Button
           type="button"
           variant="outline"
@@ -32,8 +39,6 @@ export default function HomePage() {
           查看历年真题
         </Button>
       </div>
-
-      <p className="mt-12 text-sm text-muted-foreground">项目初始化成功。</p>
 
       {/* 最小 logout 入口，Phase 3 只提供退出登录能力 */}
       <div className="mt-6 flex flex-wrap items-center gap-3 border-t pt-6">

@@ -7,18 +7,14 @@ alwaysApply: true
 
 ## Phase 列表
 
-```text
-Phase 1  — Project initialization               ✅ 已完成
-Phase 2  — Database types and data access foundation
-Phase 3  — Authentication
-Phase 4  — Question-bank synchronization
-Phase 5  — Historical exam practice
-Phase 6  — Normal practice
-Phase 7  — Mistakes
-Phase 8  — Full exam mode
-Phase 9  — Statistics
-Phase 10 — PWA / mobile / offline
-```
+> ⚠️ **Phase 的唯一定义源是 `docs/phases/`（`README.md` + `phase-*.md`）。**
+> 本文件**不再**维护 Phase 清单，只维护跨阶段的开发纪律。
+> 需要知道"现在在哪个 Phase / 这一阶段做什么"时，读 `docs/phases/README.md` 与
+> `docs/development/progress.md`，**不要**凭本文件推断。
+
+历史上本文件曾列过一份按代码模块划分的 10 阶段清单（Project initialization /
+Database types / Authentication / Question-bank synchronization / …），
+**该清单已废弃** —— 它与 `docs/phases/` 的编号相同但含义不同，容易取错文档。
 
 ## 规则
 

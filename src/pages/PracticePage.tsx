@@ -9,6 +9,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { PracticeQuestion } from '@/components/practice/PracticeQuestion'
+import { PracticeResult } from '@/components/practice/PracticeResult'
 import { useExamPaper } from '@/hooks/use-exam-paper'
 import {
   usePracticeAnswers,
@@ -16,13 +17,14 @@ import {
 } from '@/hooks/use-practice-session'
 import {
   useCreatePracticeSession,
+  useGradePracticeSection,
   useUpdatePracticeSessionProgress,
   useUpsertPracticeAnswer,
 } from '@/hooks/use-practice-mutations'
 import { toExamErrorMessage } from '@/services/exams'
-import { PracticeError } from '@/services/practice'
+import { PracticeError, type PracticeGradeResult } from '@/services/practice'
 
-/** Practice 答题页（Phase 5B）。只做到「能答题、能保存、能恢复」；不判分、不显示答案。 */
+/** Practice 答题页。Phase 5B 做到「能答题、能保存、能恢复」；Phase 6 起支持提交判分与结果展示。 */
 
 function clamp(value: number, min: number, max: number): number {
   if (max < min) return min
@@ -60,17 +62,30 @@ export default function PracticePage() {
   const createSession = useCreatePracticeSession()
   const updateProgress = useUpdatePracticeSessionProgress()
   const upsertAnswer = useUpsertPracticeAnswer()
+  const gradeMutation = useGradePracticeSection()
   const session = resumable.data ?? createSession.data ?? null
   const sessionId = session?.id
 
+  /**
+   * 判分结果（Phase 6 Goal 6.1）。非 null 即本页进入「结果视图」。
+   *
+   * 结果只活在本次页面会话的内存里：提交后会话变为 `completed`，而 resumable 查询只认
+   * `active / paused`（见 `getResumablePracticeSession`），所以离开本页再回来看到的是一条
+   * 全新会话，而不是上次的结果。回看历史成绩属于后续 Phase，不在 6.1 范围内。
+   */
+  const [graded, setGraded] = useState<PracticeGradeResult[] | null>(null)
+
   // 保证存在会话：无 active/paused → 创建一次（isPending/isSuccess 守卫防重复）。
+  // 结果视图下不再创建：否则提交后 resumable 一旦刷新为 null（窗口重新聚焦等），
+  // 会凭空多出一条新会话。
   useEffect(() => {
     if (!sectionId) return
+    if (graded) return
     if (resumable.isPending) return
     if (resumable.data) return
     if (createSession.isPending || createSession.isSuccess) return
     createSession.mutate({ sessionType: 'practice', sectionId })
-  }, [sectionId, resumable.isPending, resumable.data, createSession])
+  }, [sectionId, graded, resumable.isPending, resumable.data, createSession])
 
   // 当前题索引（UI 态）；会话就绪后按已存进度恢复一次。
   const [index, setIndex] = useState(0)
@@ -125,6 +140,21 @@ export default function PracticePage() {
     )
   }
 
+  // ── 提交判分（Phase 6 Goal 6.1）────────────────────────────────
+  const gradeMutate = gradeMutation.mutate
+
+  /**
+   * 提交：交给服务端 `grade_practice_section` 判分，结果放进本页状态直接渲染。
+   * RPC 幂等（同一次作答重复提交得到同一结果），因此不需要额外的「已提交」防重。
+   */
+  const submit = () => {
+    if (!session) return
+    gradeMutate(session.id, { onSuccess: (rows) => setGraded(rows) })
+  }
+
+  const answeredCount = savedByItem.size
+  const isSubmitting = gradeMutation.isPending
+
   // ── 状态：加载 / 错误 / 空 ─────────────────────────────────────
   if (paperQuery.isPending) return <FullScreen text="正在加载题目…" />
   if (paperQuery.isError) {
@@ -159,6 +189,57 @@ export default function PracticePage() {
     )
   }
   if (!session) return <FullScreen text="正在准备练习…" />
+
+  // 已判分：本次提交成功后进入结果视图
+  if (graded) {
+    return (
+      <main className="mx-auto w-full max-w-3xl px-5 py-10">
+        <Link
+          to={`/exams/${paperId}`}
+          className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          ← 返回试卷详情
+        </Link>
+
+        <header className="mt-4 flex flex-col gap-1">
+          <h1 className="font-heading text-2xl font-semibold tracking-tight">
+            {section.title || '本大题'} · 结果
+          </h1>
+          <p className="text-sm text-muted-foreground">
+            {sectionPosition >= 0 ? `第 ${sectionPosition + 1} 大题 · ` : ''}
+            {section.type}
+          </p>
+        </header>
+
+        <div className="mt-6">
+          <PracticeResult
+            items={items}
+            results={graded}
+            totalItemCount={items.length}
+          />
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center gap-4 border-t pt-6">
+          <Button
+            type="button"
+            onClick={() => {
+              void navigate(`/exams/${paperId}`)
+            }}
+          >
+            返回试卷详情
+          </Button>
+          <Link
+            to="/exams"
+            className="text-sm font-medium text-primary underline underline-offset-4"
+          >
+            返回历年真题
+          </Link>
+        </div>
+      </main>
+    )
+  }
+
+  if (isSubmitting) return <FullScreen text="正在判分…" />
 
   const current = items[index]
   if (!current) {
@@ -231,16 +312,34 @@ export default function PracticePage() {
       </div>
 
       <div className="mt-8 border-t pt-6">
-        <Button
-          type="button"
-          variant="outline"
-          size="sm"
-          onClick={pauseAndExit}
-        >
-          暂停并退出
-        </Button>
+        <div className="flex flex-wrap items-center gap-3">
+          <Button
+            type="button"
+            onClick={submit}
+            disabled={isSubmitting || answeredCount === 0}
+          >
+            {isSubmitting ? '提交中…' : '提交并查看结果'}
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={pauseAndExit}
+          >
+            暂停并退出
+          </Button>
+        </div>
+
+        {gradeMutation.isError ? (
+          <p className="mt-3 text-sm text-destructive">
+            {readableError(gradeMutation.error)}
+          </p>
+        ) : null}
+
         <p className="mt-2 text-xs text-muted-foreground">
-          当前练习模式只记录你的选择，不判分、不显示答案或解析。
+          {answeredCount === 0
+            ? '先选择至少一个答案，才能提交。'
+            : `已作答 ${answeredCount} 题。提交后可查看对错、正确答案与解析；未作答的题目不参与判分，也不会显示答案。`}
         </p>
       </div>
     </main>

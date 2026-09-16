@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { practiceKeys } from '@/lib/constants'
 import {
   createPracticeSession,
+  gradePracticeSection,
   updatePracticeSessionProgress,
   upsertPracticeAnswer,
   type CreatePracticeSessionInput,
@@ -39,6 +40,27 @@ export function useUpdatePracticeSessionProgress() {
           queryKey: practiceKeys.session(session.id),
         })
       }
+    },
+  })
+}
+
+/**
+ * 提交并判分整个大题（Phase 6 Goal 6.1）。
+ *
+ * 成功后刷新该会话与其作答缓存 —— 会话会变成 `completed`，
+ * 而 `practice_answers.is_correct` 由服务端写回（前端不回写）。
+ */
+export function useGradePracticeSection() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (sessionId: string) => gradePracticeSection(sessionId),
+    onSuccess: (_results, sessionId) => {
+      queryClient.invalidateQueries({
+        queryKey: practiceKeys.session(sessionId),
+      })
+      queryClient.invalidateQueries({
+        queryKey: practiceKeys.answers(sessionId),
+      })
     },
   })
 }
