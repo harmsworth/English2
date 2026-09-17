@@ -35,3 +35,12 @@ export const practiceKeys = {
       paperId ?? '',
     ] as const,
 }
+
+/**
+ * 错题本（mistakes）query key 工厂。
+ * 列表以当前用户为界（RLS 已限本人），故不需要把 user id 拼进 key。
+ */
+export const mistakeKeys = {
+  all: ['mistakes'] as const,
+  list: () => [...mistakeKeys.all, 'list'] as const,
+}

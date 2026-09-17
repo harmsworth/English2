@@ -38,6 +38,16 @@ export default function HomePage() {
         >
           查看历年真题
         </Button>
+        {/* Phase 7：错题本入口（错题由提交判分自动收录） */}
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => {
+            void navigate('/mistakes')
+          }}
+        >
+          我的错题
+        </Button>
       </div>
 
       {/* 最小 logout 入口，Phase 3 只提供退出登录能力 */}

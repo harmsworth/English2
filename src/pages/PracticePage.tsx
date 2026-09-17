@@ -329,6 +329,15 @@ export default function PracticePage() {
           >
             返回历年真题
           </Link>
+          {/* 只有真的有答错才提错题本 —— 全对还给入口是误导（Phase 7） */}
+          {graded.some((result) => result.isCorrect === false) ? (
+            <Link
+              to="/mistakes"
+              className="text-sm font-medium text-primary underline underline-offset-4"
+            >
+              查看错题本
+            </Link>
+          ) : null}
         </div>
       </main>
     )
