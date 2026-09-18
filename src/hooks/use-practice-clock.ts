@@ -72,3 +72,21 @@ export function formatDuration(totalSeconds: number): string {
   const pad = (value: number) => String(value).padStart(2, '0')
   return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`
 }
+
+/**
+ * 倒计时专用：秒 → `MM:SS`。分钟位**不进位到小时**，超过 59 分钟照常显示
+ * （整卷 180 分钟 → `180:00` → `179:59` …）。秒位始终补零，保持等宽数字不抖。
+ *
+ * 与 `formatDuration` 刻意分开：
+ * - 练习页的**剩余时间**要让人一眼读出「还剩几分钟」——前面的 `HH:` 位常年是 `00`，
+ *   纯占版面且把真正的分钟数挤到中间，扫描成本高；
+ * - 记录页的**累计用时**是事后汇总，可能真的跨小时，那里仍用 `HH:MM:SS`。
+ */
+export function formatCountdown(totalSeconds: number): string {
+  const safe =
+    Number.isFinite(totalSeconds) && totalSeconds > 0 ? Math.floor(totalSeconds) : 0
+  const minutes = Math.floor(safe / 60)
+  const seconds = safe % 60
+  const pad = (value: number) => String(value).padStart(2, '0')
+  return `${pad(minutes)}:${pad(seconds)}`
+}

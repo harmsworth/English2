@@ -1,6 +1,9 @@
 import { Clock } from 'lucide-react'
 import { COUNTDOWN_WARNING_SECONDS } from '@/lib/constants'
-import { formatDuration } from '@/hooks/use-practice-clock'
+import {
+  formatCountdown,
+  formatDuration,
+} from '@/hooks/use-practice-clock'
 import { cn } from '@/lib/utils'
 
 /**
@@ -24,6 +27,8 @@ export function TimerChip({
   const isCountdown = remainingSeconds !== undefined && remainingSeconds !== null
   const value = isCountdown ? remainingSeconds : (elapsedSeconds ?? 0)
   const isWarning = isCountdown && remainingSeconds <= COUNTDOWN_WARNING_SECONDS
+  // 倒计时读「还剩几分钟」，用 MM:SS；正计时仍用 HH:MM:SS（见 formatCountdown 注释）。
+  const shown = isCountdown ? formatCountdown(value) : formatDuration(value)
 
   return (
     <span
@@ -37,12 +42,10 @@ export function TimerChip({
       <Clock aria-hidden="true" className="size-4" strokeWidth={1.5} />
       <span
         aria-label={
-          isCountdown
-            ? `剩余时间 ${formatDuration(value)}`
-            : `已用时 ${formatDuration(value)}`
+          isCountdown ? `剩余时间 ${shown}` : `已用时 ${shown}`
         }
       >
-        {formatDuration(value)}
+        {shown}
       </span>
       {isCountdown ? null : (
         <span className="sr-only">已用时正计时</span>
