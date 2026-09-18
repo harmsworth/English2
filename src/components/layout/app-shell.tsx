@@ -1,6 +1,7 @@
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { History, House, LibraryBig, NotebookPen } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Icon } from '@/components/ui/icon'
 import { useAuth } from '@/hooks/use-auth'
 import { cn } from '@/lib/utils'
 
@@ -122,26 +123,33 @@ function BottomTabBar() {
     >
       <ul className="flex list-none">
         {NAV_ITEMS.map((item) => {
-          const Icon = item.icon
+          const TabIcon = item.icon
           return (
             <li key={item.to} className="flex-1">
               <NavLink
                 to={item.to}
                 end={item.to === '/'}
+                aria-label={item.label}
                 className={({ isActive }) =>
                   cn(
-                    'relative flex h-14 flex-col items-center justify-center gap-1 text-[10px] font-medium transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50',
-                    isActive ? 'text-primary' : 'text-muted-foreground'
+                    'flex h-14 flex-col items-center justify-center gap-1 text-[10px] font-medium transition-all outline-none focus-visible:ring-3 focus-visible:ring-ring/50',
+                    isActive
+                      ? 'text-primary'
+                      : 'text-subtle-foreground hover:text-muted-foreground',
                   )
                 }
               >
                 {({ isActive }) => (
                   <>
-                    {isActive ? (
-                      <span className="absolute inset-x-6 top-0 h-[2.5px] rounded-full bg-primary" />
-                    ) : null}
-                    <Icon aria-hidden="true" className="size-4" strokeWidth={1.5} />
-                    <span>{item.label}</span>
+                    {/* 移动端高亮只靠颜色 + 图标体量：Icon 内部 currentColor，激活随
+                        NavLink 的 text-primary 变深主色、图标更大更粗；未激活用更浅的
+                        subtle-foreground 拉开对比（与设计稿移动端灰态一致），不叠底色块、不加指示条。 */}
+                    <Icon
+                      icon={TabIcon}
+                      size={isActive ? 22 : 19}
+                      strokeWidth={isActive ? 2.2 : 1.6}
+                    />
+                    <span className={cn(isActive && 'font-semibold')}>{item.label}</span>
                   </>
                 )}
               </NavLink>
