@@ -16,6 +16,17 @@
 
 ---
 
+## 初始化 / 上手文档
+
+| 文件 | 内容 | 什么时候看 |
+| --- | --- | --- |
+| [`getting-started.md`](./getting-started.md) | **怎么把项目跑起来**：环境/工具链、`pnpm install`、`.env.local`、Supabase 数据库初始化、`db:types`、题库同步、运行与验证、常见环境坑 | 第一次拉代码 / 环境坏了 / 接手部署时 |
+| [`project-initialization.md`](./project-initialization.md) | **为什么这样搭 + 设计时要考虑什么**：技术栈选型与约束、分层架构、目录、答案隔离安全边界、TS 严格约定、开发纪律 | 动手写代码 / 评审架构与边界时 |
+
+> 硬约束原文见仓库根 [`.codebuddy/CODEBUDDY.md`](../.codebuddy/CODEBUDDY.md)；能力现状与 Roadmap 见根 [`README.md`](../README.md)。
+
+---
+
 ## 与现有文档的关系
 
 ```

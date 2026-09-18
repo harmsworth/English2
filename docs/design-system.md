@@ -22,6 +22,7 @@
 | `≈` | 桌面稿视觉采样估算，落地时以设计稿为基准核对一次 |
 | `⚠️` | 有陷阱 / 已发现问题 |
 | `🔲` | 现有代码缺失，需要新建 |
+| `✅` | 已落地（代码已实现） |
 
 ---
 
@@ -327,15 +328,16 @@
 
 ### 8.13 BottomTabBar 🔲（移动端）
 - 高 56 + 安全区 12，`surface` + 顶部 `1px border`；4 项等分（93.75 宽）。
-- 图标 16 线性 + 标签 10；当前项 `primary` + 顶部 2.5px 指示条。
+- 图标 16 线性 + 标签 10；当前项**靠颜色 + 图标体量高亮**：激活 `primary`（图标更大更粗、标签加粗），未激活 `subtle-foreground`——**不用底色块、不用指示条**（与桌面顶栏的下划线指示条区分）。
 - 语义：`<nav>` + `aria-current="page"`。
 - ⚠️ 入口映射待决策：Home `/`、Exams `/exams`、**Study = ?（错题本 `/mistakes`？）**、Settings（无路由）。
 
-### 8.14 Sheet（底部抽屉）🔲
+### 8.14 Sheet（底部抽屉）✅
 - 顶部两角 16 圆角，拖拽把手 36×4 居中，遮罩 `rgb(26 38 38 / 40%)`。
 - 内容节奏：标题 → 进度标签 + 细进度条 → 题号网格 → 图例 → **底部主按钮**（距底 8）。
 - 高度 ≤ 屏高的 55%，保证底层内容仍可见。
 - a11y：`role="dialog"` + `aria-modal` + 焦点陷阱 + Esc 关闭。
+- **落地（2026-09-18）**：`ui/sheet.tsx`（封装 Base UI `Dialog`，非 Drawer——免 swipe CSS 且自带焦点陷阱/Esc/滚动锁）+ `practice/AnswerSheet.tsx`（7 列题号网格 + 进度 + 图例 + 底部提交）；入口是移动端底部操作条中间的「答题卡」按钮。⚠️ 实际用 `max-h-[80vh]`（整卷题多，55% 会挤），与上面的 55% 建议值有出入，待后续按真机手感定档。
 
 ### 8.15 Divider / SectionHeader
 - 分隔：`1px border`（区块间）/ `#F0EEE9`（卡片内）。
@@ -407,7 +409,7 @@
 | ProgressBar | **无**（`ExamListPage` 内联） | 内联 | 新建 `ui/progress.tsx` | P1 |
 | Input / Select | `src/components/ui/input.tsx` | 仅 Input | 补 Select（原生 + 同款样式） | P2 |
 | Table | **无** | — | 如需桌面表格，新建 `ui/table.tsx` | P2 |
-| Sheet / Drawer | **无** | — | 新建（或复用 Base UI Dialog + 定位） | P2 |
+| Sheet / Drawer | `ui/sheet.tsx` + `practice/AnswerSheet.tsx` | 新建 | 已落地：Base UI `Dialog` 封装底部抽屉 + 移动端答题卡 ✅ | P2 |
 | App Shell（TopBar + BottomTabBar） | **无**（`src/router/index.tsx` 直接铺页面） | 每页各自返回链接 | 🔲 新建 `components/layout/app-shell.tsx` | P2 |
 | 页面容器（768 单栏） | 所有 `src/pages/*.tsx` | `max-w-3xl px-5` | 检索页加宽到 1280；阅读区保持 768 | P2 |
 | 题目渲染 | `components/exams/{ExamSection,ChoiceQuestion,PassageText,TextQuestion}.tsx` | 已有 | 换 token；选项态按 §8.8 | P1 |
