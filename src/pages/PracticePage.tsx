@@ -1,16 +1,13 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import {
-  PracticeRunner,
-  toRunnerStem,
-  type RunnerQuestion,
-} from '@/components/practice/PracticeRunner'
+import { PracticeRunner, type RunnerQuestion } from '@/components/practice/PracticeRunner'
 import type { NavigatorGroup } from '@/components/practice/QuestionNavigator'
 import { useExamPaper } from '@/hooks/use-exam-paper'
 import { useResumablePracticeSession } from '@/hooks/use-practice-session'
 import { useCreatePracticeSession } from '@/hooks/use-practice-mutations'
 import { deriveTimeLimitSeconds } from '@/lib/constants'
+import { toExamStem } from '@/services/exam-stem'
 import { toExamErrorMessage, type ExamSectionWithItems } from '@/services/exams'
 import {
   PracticeError,
@@ -40,7 +37,7 @@ function buildSectionPractice(section: ExamSectionWithItems | null): {
 
   const groupTitle = section.type
   // 大题带过来的原文 / 要求 / 图表 —— 答题页靠它渲染题干，不能只留小题。
-  const stem = toRunnerStem(section)
+  const stem = toExamStem(section)
   const questions: RunnerQuestion[] = section.items.map((item, offset) => ({
     key: item.id,
     globalNo: offset + 1,

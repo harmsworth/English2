@@ -446,7 +446,7 @@ export async function getIncompletePracticeSessions(
 /**
  * 更新会话进度 / 状态。只允许改动进度相关列（不整行覆盖 DTO）。
  * `updated_at` 由数据库 `set_updated_at()` 触发器维护，这里不手动写。
- * 返回更新后的会话；会话不存在 / 非本人 → null。
+ * 返回更新后的会话；会话不存在 / 非本人 / 被 `guard` 挡下 → null。
  */
 export type PracticeProgressPatch = {
   currentItemNo?: number
@@ -457,9 +457,28 @@ export type PracticeProgressPatch = {
   completedAt?: string | null
 }
 
+/**
+ * 写回时的附加约束 —— 「离开答题页」这类**静默兜底写回**用的第二道防线。
+ *
+ * - `notTerminal`：只在会话还没结束（`status` 是 `active` / `paused`）时才允许写入。
+ *
+ * 为什么需要它：离开答题页会把会话写成 `paused`，但判分成功后组件并不卸载，
+ * 只是换成结果页 —— 于是「点提交 → 点查看记录」这条路上卸载兜底照样会跑，
+ * 一条 `paused` 就把判分 RPC 刚写好的 `completed` 覆盖掉了。用户看到的就是
+ * 「我都交卷了，这张卷子还在记录页的未完成里」。
+ *
+ * 前端已经有 `terminalRef` 把这种情况挡掉；这里再加一层数据库过滤，是为了让
+ * **「终态不可回退」成为数据库保证**，而不是某处调用记得判断。被挡下时更新
+ * 匹配 0 行，返回 null（调用方本来就是 fire-and-forget，忽略即可）。
+ */
+export type PracticeProgressGuard = {
+  notTerminal?: boolean
+}
+
 export async function updatePracticeSessionProgress(
   id: string,
   patch: PracticeProgressPatch,
+  guard: PracticeProgressGuard = {},
 ): Promise<PracticeSession | null> {
   const uid = await currentUserId()
   const supabase = getSupabaseClient()
@@ -480,13 +499,17 @@ export async function updatePracticeSessionProgress(
     return getPracticeSessionById(id)
   }
 
-  const { data, error } = await supabase
+  const owned = supabase
     .from('practice_sessions')
     .update(payload)
     .eq('id', id)
     .eq('user_id', uid)
-    .select(SESSION_SELECT)
-    .maybeSingle()
+  // 只改「还没结束」的会话：completed / abandoned 匹配不到，静默 no-op。
+  const scoped = guard.notTerminal
+    ? owned.in('status', ['active', 'paused'])
+    : owned
+
+  const { data, error } = await scoped.select(SESSION_SELECT).maybeSingle()
 
   if (error) throw new PracticeError(toPracticeErrorMessage(error))
   return data ? toPracticeSession(data) : null

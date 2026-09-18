@@ -14,7 +14,7 @@ import { Icon } from '@/components/ui/icon'
 import { BROWSE_CONTAINER } from '@/components/layout/app-shell'
 import { AnswerSheet } from '@/components/practice/AnswerSheet'
 import { PracticeQuestion } from '@/components/practice/PracticeQuestion'
-import { QuestionStem } from '@/components/practice/QuestionStem'
+import { QuestionStem } from '@/components/exams/QuestionStem'
 import { PracticeResult } from '@/components/practice/PracticeResult'
 import { PracticeSettings } from '@/components/practice/PracticeSettings'
 import {
@@ -33,13 +33,8 @@ import {
   useUpdatePracticeSessionProgress,
 } from '@/hooks/use-practice-mutations'
 import { usePracticeClock } from '@/hooks/use-practice-clock'
-import type { ExamItemWithOptions, ExamSection } from '@/services/exams'
-import {
-  readBoolean,
-  readString,
-  readStructuredChart,
-  type StructuredChart,
-} from '@/components/exams/json-utils'
+import type { ExamItemWithOptions } from '@/services/exams'
+import type { ExamStem } from '@/services/exam-stem'
 import {
   peekItemAnswer,
   type PracticeAnswerDraft,
@@ -71,10 +66,20 @@ import {
  * | --- | --- |
  * | 选中选项 / 打字 / 标记 | **只改内存**（`pending`），零请求 |
  * | 切换上一题 / 下一题 | **只改内存**，零请求 |
- * | 点「退出」 | 批量落库（≤2 次写）+ 写回进度，**成功后**才离开 |
- * | 返回上一页 / 点链接 | 卸载时批量落库（fire-and-forget） |
- * | 标签页隐藏 / 关闭 | 同上，兜底保存 |
+ * | 点「退出」 | 批量落库（≤2 次写）+ 写回进度与 `paused`，**成功后**才离开 |
+ * | 返回上一页 / 点链接（路由卸载） | 卸载时批量落库 + `paused`（fire-and-forget） |
+ * | 关标签 / 后退到站外（`pagehide`） | 同上，落库 + `paused` |
+ * | 切后台 / 切标签页（`visibilitychange`） | 只落库，**不改状态**（可能马上回来） |
  * | 提交判分 | **先落库并 await，再调判分 RPC**（否则判分读不到作答） |
+ *
+ * ⚠️ **「离开」= 一定会被写成 `paused`**，这是 `statusLabel`「已暂停」能成立的前提：
+ * 只要有一条离开路径漏了写状态，那条会话就永远停在「进行中」，记录页的标签就成了假话。
+ *
+ * ⚠️ **但「已交卷」的会话例外：一条 PATCH 都不许发。**
+ * 判分成功后组件**不会卸载**，只是换成结果页 —— 于是「点提交 → 点查看练习记录」
+ * 这条路上，卸载兜底照样会跑。如果它无条件写 `paused`，就会把判分 RPC 刚写好的
+ * `completed` 覆盖回去，用户交完卷、记录页里那张卷子却还挂在「未完成」。
+ * 见 `terminalRef` 与 `flushAll` 里的处理。
  */
 export type RunnerQuestion = {
   /** 唯一键 = item id */
@@ -88,57 +93,8 @@ export type RunnerQuestion = {
   /** 是否翻译题：决定有没有「标记已完成 → 提交看参考译文」这条通路 */
   isTranslation: boolean
   /** 所属大题的题干上下文（原文 / 要求 / 图表） —— 答题时**必须**能看，见 QuestionStem */
-  stem: RunnerStem
+  stem: ExamStem
   item: ExamItemWithOptions
-}
-
-/**
- * 大题级别的「题干上下文」。
- *
- * 一次练习只显示一道小题，而小题题面往往只是一句提问（「According to Paragraph 3…」），
- * 原文、写作要求、图表全挂在大题上 —— 不带过来的话用户只能对着残句硬猜。
- *
- * ⚠️ 全部来自**已下发的公开字段**（四层查询本来就取了 `intro` / `passage` /
- * `prompt` / `tips` / `extra_data`），这里只是不再丢弃：
- * - 不读 `passage_zh` / `source_data`；
- * - 不读小题级 `extra_data`（翻译参考译文在里面）；
- * - 不带 `sample`（参考范文 = 答案），答题时不能看。
- */
-export type RunnerStem = {
-  /** 大题 id：作为「是否已展开」的键（同一大题内切题保持展开） */
-  key: string
-  sectionType: string
-  sectionTitle: string
-  /** 指导语 */
-  intro: string | null
-  /** 篇章原文（阅读 / 完形 / 翻译） */
-  passage: string | null
-  /** 题目要求（写作） */
-  prompt: string | null
-  /** 补充提示（写作要点等） */
-  tips: string | null
-  /** 结构化图表（写作大作文，承载真实数据） */
-  chart: StructuredChart | null
-  /** 图表原图地址 */
-  chartUrl: string | null
-  /** `chart: true` 这类仅有布尔标记、数据未收录的情形 */
-  chartFlag: boolean
-}
-
-/** 大题 → 答题用的题干上下文。整卷 / 题型练习两边共用，避免口径漂移。 */
-export function toRunnerStem(section: ExamSection): RunnerStem {
-  return {
-    key: section.id,
-    sectionType: section.type,
-    sectionTitle: section.title,
-    intro: section.intro?.trim() ? section.intro : null,
-    passage: section.passage?.trim() ? section.passage : null,
-    prompt: section.prompt?.trim() ? section.prompt : null,
-    tips: section.tips?.trim() ? section.tips : null,
-    chart: readStructuredChart(section.extra_data, 'chart'),
-    chartUrl: readString(section.extra_data, 'chart_url'),
-    chartFlag: readBoolean(section.extra_data, 'chart') ?? false,
-  }
 }
 
 /** 「离开时落库」的待写集合：同一题多次改动合并成一条，撤销则记为待删。 */
@@ -299,26 +255,50 @@ export function PracticeRunner({
   const leftRef = useRef(false)
   /** 卸载兜底要用的最新进度快照（**在 effect 里写**，不在 render 期写 ref）。 */
   const exitSnapshotRef = useRef({ currentNo: 1, seconds: 0 })
+  /**
+   * 会话是否已经「结束」（`completed` / `abandoned`）。
+   *
+   * ⚠️ 这个 ref 是本文件最容易漏的地方，别删。
+   *
+   * 判分成功后组件**不卸载**，只是 `if (graded)` 换成结果页 —— 所以
+   * 「点提交并查看结果 → 点查看练习记录」这条路上，**卸载兜底照样会跑**。
+   * 它若是无条件写 `paused`，就会把判分 RPC 刚写好的 `completed` 覆盖回去。
+   * 实测复现过一次：同一条会话 `completed_at` 08:49:09.505、`paused_at`
+   * 08:49:09.600（相差 0.1 秒），结果用户交完卷，那张卷子还挂在「未完成」里。
+   *
+   * 终态会话的静默重写没有任何意义，必须整条跳过。
+   * 初值取会话自身状态 —— **重进一份已交卷的卷子看结果**时走的是同样的离开路径。
+   */
+  const terminalRef = useRef(
+    session.status === 'completed' || session.status === 'abandoned',
+  )
 
   /**
    * 落库作答 + 写回进度。
    *
    * 无改动且不是「退出」时**直接返回**：既避免在什么都没做的情况下打扰服务端，
    * 也让 StrictMode 的开发期二次挂载不会多出一条空 PATCH。
+   *
+   * 终态会话（见 `terminalRef`）**一条 PATCH 都不发**：既不写 `paused`，也不写
+   * 进度 —— 卷子已经交完了，离开结果页不该在它身上留下任何痕迹。
    */
   const flushAll = useCallback(
     async (options: { paused: boolean; currentNo: number; seconds: number }) => {
       const wrote = await flushAnswers()
-      if (!wrote && !options.paused) return
+      const shouldPause = options.paused && !terminalRef.current
+      if (!wrote && !shouldPause) return
       await updateProgressAsync({
         id: sessionId,
         patch: {
           currentItemNo: options.currentNo,
           elapsedSeconds: options.seconds,
-          ...(options.paused
+          ...(shouldPause
             ? { status: 'paused' as const, pausedAt: new Date().toISOString() }
             : {}),
         },
+        // 第二道防线：万一前端判漏（例如同一份会话在另一个标签页被交卷），
+        // 数据库层也不允许把 completed / abandoned 改回 paused。
+        guard: { notTerminal: true },
       })
     },
     [flushAnswers, sessionId, updateProgressAsync],
@@ -328,34 +308,57 @@ export function PracticeRunner({
     flushAllRef.current = flushAll
   }, [flushAll])
 
-  // 卸载兜底：**返回上一页 / 点别处链接 / 路由跳走**都走这里。
-  // 用 fire-and-forget：清理函数不能是 async，请求也不依赖组件是否还挂着。
+  /**
+   * 卸载兜底：**返回上一页 / 点别处链接 / 路由跳走**都走这里。
+   * 用 fire-and-forget：清理函数不能是 async，请求也不依赖组件是否还挂着。
+   *
+   * ⚠️ 这里**要写 `paused`**（此前写的是 false，是个 bug）：用户既然已经离开答题页，
+   * 这次练习就是「中途离开」，状态必须落成 paused。否则会话永远停在 active，
+   * 记录页/首页给它贴「进行中」—— 标签看着就是错的（用户报障的根因之一）。
+   * 唯一的例外是**已经结束**的会话（`terminalRef`）—— 那条路会在 `flushAll` 里整条跳过。
+   *
+   * ⚠️ **推迟一拍再判定**，而不是直接写：开发期 `<StrictMode>` 会「setup → cleanup →
+   * setup」同步跑一轮，直接写会让**刚建好的会话瞬间变成已暂停**（实测复现）。
+   * 下一拍若组件又挂上了（下面的 `clearTimeout`），说明用户还在/又回到了答题页，
+   * 这次「离开」就是假的，直接取消 —— 比用「挂载时长 > N 毫秒」这类阈值更精确，
+   * 也不依赖魔法数字。
+   * （SPA 内跳转时定时器一定会跑；真的整页卸载走 `pagehide`，那条路径不经过这里。）
+   */
+  const leaveTimerRef = useRef<number | undefined>(undefined)
   useEffect(() => {
+    window.clearTimeout(leaveTimerRef.current)
     mountedRef.current = true
     return () => {
       mountedRef.current = false
       if (leftRef.current) return
       const { currentNo, seconds } = exitSnapshotRef.current
-      void flushAllRef.current({ paused: false, currentNo, seconds }).catch(() => {
-        // 卸载后没有任何提示位可挂，只能放弃这次兜底；用户下次进入会从服务端状态继续。
-      })
+      leaveTimerRef.current = window.setTimeout(() => {
+        void flushAllRef.current({ paused: true, currentNo, seconds }).catch(() => {
+          // 卸载后没有任何提示位可挂，只能放弃这次兜底；用户下次进入会从服务端状态继续。
+        })
+      }, 0)
     }
   }, [])
 
-  // 标签页隐藏 / 关闭：同样的兜底（移动端切后台、关标签都算「离开」）。
+  /**
+   * 关标签 / 后退到站外 / 刷新 → `pagehide`：这是真的「离开」，同样落 paused。
+   * 切后台 / 切标签页 → `visibilitychange`：只保存作答、**不改状态**，
+   * 因为很可能马上回来（每次切标签都写一条 PATCH 是纯噪音）。
+   */
   useEffect(() => {
-    const onHide = () => {
+    const flush = (paused: boolean) => {
       if (leftRef.current) return
       const { currentNo, seconds } = exitSnapshotRef.current
-      void flushAllRef.current({ paused: false, currentNo, seconds }).catch(() => {})
+      void flushAllRef.current({ paused, currentNo, seconds }).catch(() => {})
     }
+    const onPageHide = () => flush(true)
     const onVisibilityChange = () => {
-      if (document.visibilityState === 'hidden') onHide()
+      if (document.visibilityState === 'hidden') flush(false)
     }
-    window.addEventListener('pagehide', onHide)
+    window.addEventListener('pagehide', onPageHide)
     document.addEventListener('visibilitychange', onVisibilityChange)
     return () => {
-      window.removeEventListener('pagehide', onHide)
+      window.removeEventListener('pagehide', onPageHide)
       document.removeEventListener('visibilitychange', onVisibilityChange)
     }
   }, [])
@@ -376,7 +379,15 @@ export function PracticeRunner({
         // 硬提交会得到一份缺题的结果页，比「稍后重试」更难解释。
         return
       }
-      gradeMutate(sessionId, { onSuccess: (rows) => onGraded(rows) })
+      gradeMutate(sessionId, {
+        onSuccess: (rows) => {
+          // 判分成功 = 这次练习已经结束（RPC 会把会话置 completed）。
+          // 必须在离开页面**之前**打上终态标记，否则紧接着的卸载兜底
+          // 会写一条 `paused` 把它覆盖掉（用户报障的根因）。
+          terminalRef.current = true
+          onGraded(rows)
+        },
+      })
     })()
   }, [flushAnswers, gradeMutate, onGraded, sessionId, updateProgressAsync])
 
@@ -436,6 +447,7 @@ export function PracticeRunner({
       // 一题未答就没有可判的东西：置为 abandoned，别产出一个空结果页。
       setExpiredEmpty(true)
       leftRef.current = true
+      terminalRef.current = true
       void updateProgressAsync({
         id: sessionId,
         patch: { status: 'abandoned', elapsedSeconds: timeLimitSeconds },

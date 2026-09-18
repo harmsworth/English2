@@ -29,7 +29,7 @@
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
-  /* 设计系统扩展色（docs-next/design-system.md §3） */
+  /* 设计系统扩展色（docs/design-system.md §3） */
   --color-border-strong: var(--border-strong);
   --color-subtle-foreground: var(--subtle-foreground);
   --color-passage: var(--passage);
@@ -72,7 +72,7 @@
   --radius-4xl: 2rem;
 }
 
-/* 色板：暖白纸感 + 深墨绿主色（docs-next/design-system.md §3）。
+/* 色板：暖白纸感 + 深墨绿主色（docs/design-system.md §3）。
    对比度已脚本实测（sRGB → OKLCH → WCAG 2.1）：正文/大字/徽章小字均达 AA。 */
 :root {
   --background: oklch(0.982 0.004 91); /* #FAF9F6 暖白 */

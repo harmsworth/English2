@@ -191,12 +191,15 @@ export function PracticeResult({
               ) : null}
 
               {isChoice ? (
+                // 「你的选择 / 正确答案」的配色口径与练习页选区、错题本一致：
+                // 选中=答案 → 绿；选中≠答案 → 红；正确答案本身就是绿。
                 <dl className="mt-3 flex flex-col gap-1.5 text-sm">
                   <div className="flex flex-wrap gap-x-2">
                     <dt className="text-muted-foreground">你的选择：</dt>
                     <dd
                       className={cn(
                         'wrap-anywhere',
+                        isCorrect === true ? 'text-success' : '',
                         isCorrect === false ? 'text-destructive' : '',
                       )}
                     >
@@ -207,7 +210,7 @@ export function PracticeResult({
                   </div>
                   <div className="flex flex-wrap gap-x-2">
                     <dt className="text-muted-foreground">正确答案：</dt>
-                    <dd className="wrap-anywhere text-primary">
+                    <dd className="wrap-anywhere text-success">
                       {rightOption
                         ? optionLabel(
                             rightOption.content,

@@ -59,7 +59,75 @@ export function recordTitle(
   return '错题重做'
 }
 
-/** 会话状态 → 中文标签（含颜色语义之外的文字，不靠颜色单独表意）。 */
+/* ------------------------------------------------------------------ *
+ * 「最近」的唯一定义
+ * ------------------------------------------------------------------ */
+
+/** ISO 串 → 毫秒；解析失败当 0（排到最后），绝不因一条脏数据让整个 sort 变 NaN。 */
+function timeOf(iso: string): number {
+  const value = Date.parse(iso)
+  return Number.isNaN(value) ? 0 : value
+}
+
+/**
+ * 「练习记录」的**唯一定序口径：按最后更新时间倒序**。
+ *
+ * 为什么不是 `started_at`：一次练习的「最近」是**你上次碰到它的时刻**。
+ * 反例（真实数据）：一条昨天开始、今天才暂停的会话，若按开始时间排会被压在
+ * 今天新建的那条下面 —— 用户刚退出它，却在列表里找不到自己刚做的事。
+ *
+ * 也因此，这个函数必须被**所有**列表共用（首页未完成块 / 记录页未完成区 /
+ * 记录页历史列表 / 趋势图取材）。之前记录页直接沿用 `practice_session_stats`
+ * RPC 的返回顺序（该 RPC 是 `started_at desc`），而首页走的是
+ * `getIncompletePracticeSessions`（`updated_at desc`）——
+ * 同一个概念两套顺序，看到的「最近」自然不一样。
+ *
+ * ⚠️ SQL 的返回顺序**不是契约**，页面必须自己排。
+ */
+export function byRecentUpdate<T extends { updatedAt: string; startedAt: string }>(
+  a: T,
+  b: T,
+): number {
+  const diff = timeOf(b.updatedAt) - timeOf(a.updatedAt)
+  // 同一毫秒（或时间戳缺失）时用开始时间兜底，保证顺序稳定可预期。
+  return diff !== 0 ? diff : timeOf(b.startedAt) - timeOf(a.startedAt)
+}
+
+/**
+ * 记录行上显示的时间戳 —— 与 `byRecentUpdate` **用同一个字段**。
+ *
+ * - 已完成 → 完成时间（判分那一刻，即 updated_at）
+ * - 未完成 → 最后更新时间（你上次打开 / 离开它的时刻）
+ *
+ * 若这里显示 `started_at` 而列表按 `updated_at` 排，就会出现
+ * 「排在最上面、时间却是最旧」的错位感 —— 这正是用户报障的观感来源之一。
+ */
+export function recordTimestamp(record: {
+  status: PracticeStatus
+  startedAt: string
+  completedAt: string | null
+  updatedAt: string
+}): string {
+  if (record.status === 'completed' && record.completedAt) {
+    return `完成于 ${formatTimestamp(record.completedAt)}`
+  }
+  return `更新于 ${formatTimestamp(record.updatedAt)}`
+}
+
+/**
+ * 会话状态 → 中文标签（含颜色语义之外的文字，不靠颜色单独表意）。
+ *
+ * 四个取值的含义（前端只读、只在下列时机被写入，见 `services/practice.ts` 与本文件顶部）：
+ * | status | 含义 | 谁写的 |
+ * | --- | --- | --- |
+ * | `active` | 刚建好、还没离开过 | 数据库 DEFAULT（前端从不写 active） |
+ * | `paused` | 中途离开，可继续 | 退出按钮 / 路由卸载 / 页面隐藏 |
+ * | `completed` | 已提交判分 | `grade_practice_section` RPC |
+ * | `abandoned` | 时间到且一题未答 | 计时器到期兜底 |
+ *
+ * ⚠️ 标签的「准不准」取决于写入是否到位：只要有一条离开路径忘了写 `paused`，
+ * 这个会话就会永远停在「进行中」，看起来就是标签错了。
+ */
 export function statusLabel(status: PracticeStatus): string {
   if (status === 'active') return '进行中'
   if (status === 'paused') return '已暂停'

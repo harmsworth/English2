@@ -10,6 +10,7 @@ import {
   upsertPracticeAnswer,
   type CreatePracticeSessionInput,
   type PracticeAnswerDraft,
+  type PracticeProgressGuard,
   type PracticeProgressPatch,
   type UpsertPracticeAnswerInput,
 } from '@/services/practice'
@@ -52,12 +53,20 @@ export function useCreatePracticeSession() {
   })
 }
 
-/** 保存会话进度 / 暂停 / 恢复 / 完成。成功后刷新该会话缓存。 */
+/**
+ * 保存会话进度 / 暂停 / 恢复 / 完成。成功后刷新该会话缓存。
+ *
+ * `guard.notTerminal`：把「不许回退终态」交给数据库过滤（见该类型注释）。
+ * 离开答题页的静默兜底写回必须带上它，否则会把已判分的 `completed` 改回 `paused`。
+ */
 export function useUpdatePracticeSessionProgress() {
   const queryClient = useQueryClient()
   return useMutation({
-    mutationFn: (args: { id: string; patch: PracticeProgressPatch }) =>
-      updatePracticeSessionProgress(args.id, args.patch),
+    mutationFn: (args: {
+      id: string
+      patch: PracticeProgressPatch
+      guard?: PracticeProgressGuard
+    }) => updatePracticeSessionProgress(args.id, args.patch, args.guard),
     onSuccess: (session) => {
       if (session) {
         queryClient.invalidateQueries({

@@ -1,5 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
+import { RevealedAnswer, type RevealableAnswer } from '@/components/exams/RevealedAnswer'
+import { optionLabel } from '@/lib/option-label'
 import { cn } from '@/lib/utils'
 import type { ExamItemWithOptions } from '@/services/exams'
 
@@ -13,76 +15,9 @@ import type { ExamItemWithOptions } from '@/services/exams'
  *
  * 这里**只**使用已安全下发的题目数据（content / options），绝不读取
  * correct_option / explanation / passage_zh 等答案/参考列。
+ * 「答案与解析」块的渲染与选项文案口径见 `@/components/exams/RevealedAnswer`
+ * 与 `@/lib/option-label`（错题本共用同一套）。
  */
-
-const LETTERS = 'ABCDEFGH'
-
-/** 提前揭示的答案（打开「答题时显示答案」后，由单题 RPC 下发）。 */
-export type RevealableAnswer = {
-  /** 0-based 正确选项下标；主观题为 null */
-  correctOption: number | null
-  explanation: string | null
-  /** 翻译题参考译文 */
-  referenceTranslation: string | null
-}
-
-/** 选项标签：题面若自带「A. 」类前缀则原样，否则按 option_index 生成字母。 */
-function optionLabel(content: string, optionIndex: number): string {
-  if (/^\s*[A-J]\s*[.)]/.test(content)) return content
-  const letter = LETTERS[optionIndex] ?? String(optionIndex + 1)
-  return `${letter}. ${content}`
-}
-
-/** 取选项展示文案（带字母前缀）。 */
-function optionText(
-  options: ExamItemWithOptions['options'],
-  optionIndex: number | null,
-): string | null {
-  if (optionIndex === null) return null
-  const option = options.find((item) => item.option_index === optionIndex)
-  return option ? optionLabel(option.content, option.option_index) : null
-}
-
-/** 答案揭示块：答题过程中提前看到的内容，视觉上要明显区别于「解析」正文。 */
-function RevealedAnswer({
-  answer,
-  options,
-}: {
-  answer: RevealableAnswer
-  options: ExamItemWithOptions['options']
-}) {
-  const correct = optionText(options, answer.correctOption)
-
-  return (
-    <div className="rounded-lg border border-primary-soft-border bg-primary-soft px-4 py-3">
-      <p className="text-[10px] font-bold tracking-[1.2px] text-primary uppercase">
-        Answer
-      </p>
-
-      {correct ? (
-        <p className="mt-2 text-sm font-medium text-foreground">
-          正确答案：{correct}
-        </p>
-      ) : null}
-
-      {answer.explanation ? (
-        <p className="mt-2 wrap-anywhere text-sm leading-7 text-muted-foreground">
-          {answer.explanation}
-        </p>
-      ) : null}
-
-      {answer.referenceTranslation ? (
-        <p className="mt-2 wrap-anywhere text-sm leading-7 text-muted-foreground">
-          {answer.referenceTranslation}
-        </p>
-      ) : null}
-
-      {!correct && !answer.explanation && !answer.referenceTranslation ? (
-        <p className="mt-2 text-sm text-muted-foreground">本题暂无答案内容。</p>
-      ) : null}
-    </div>
-  )
-}
 
 /** 主观题输入框的最小高度：翻译一段 / 写一篇作文都需要足够的书写空间。 */
 const TEXTAREA_MIN_HEIGHT = 240
@@ -204,15 +139,34 @@ export function PracticeQuestion({
         <legend className="sr-only">请选择一个答案</legend>
         {item.options.map((option) => {
           const checked = selectedOption === option.option_index
+          // 揭示答案之后才知道对错：选中项与答案相同 → 绿，不同 → 红
+          // （与错题本同一口径，见 MistakeCard）。
+          const isCorrect =
+            revealed !== undefined && revealed.correctOption === option.option_index
+          const isWrongPick =
+            revealed !== undefined && checked && !isCorrect
+          // 颜色不单独表意（design-system §3.3）：还在答题时勾选只是「已选」，
+          // 不能借用对错色，所以未揭示时选中的仍是 primary。
+          const tone = isCorrect
+            ? 'correct'
+            : isWrongPick
+              ? 'wrong'
+              : checked
+                ? 'picked'
+                : 'rest'
           return (
             <label
               key={option.id}
               className={cn(
                 // §8.8：rest 白底 + border-strong；selected 用 primary-selected 底 + primary ring
                 'flex min-h-[56px] cursor-pointer items-start gap-3 rounded-md border px-4 py-3 transition-colors',
-                checked
-                  ? 'border-primary bg-primary-selected ring-1 ring-primary/40'
-                  : 'border-border-strong hover:bg-muted/50',
+                tone === 'correct' &&
+                  'border-success bg-success-soft ring-1 ring-success/40',
+                tone === 'wrong' &&
+                  'border-danger bg-danger-soft ring-1 ring-danger/40',
+                tone === 'picked' &&
+                  'border-primary bg-primary-selected ring-1 ring-primary/40',
+                tone === 'rest' && 'border-border-strong hover:bg-muted/50',
               )}
             >
               <input
@@ -225,6 +179,15 @@ export function PracticeQuestion({
               <span className="wrap-anywhere text-sm leading-6 text-foreground/90">
                 {optionLabel(option.content, option.option_index)}
               </span>
+              {isCorrect ? (
+                <span className="ml-auto shrink-0 text-xs font-medium text-success">
+                  正确答案
+                </span>
+              ) : isWrongPick ? (
+                <span className="ml-auto shrink-0 text-xs font-medium text-danger">
+                  你选错了
+                </span>
+              ) : null}
             </label>
           )
         })}

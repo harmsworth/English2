@@ -3,17 +3,14 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { BROWSE_CONTAINER } from '@/components/layout/app-shell'
-import {
-  PracticeRunner,
-  toRunnerStem,
-  type RunnerQuestion,
-} from '@/components/practice/PracticeRunner'
+import { PracticeRunner, type RunnerQuestion } from '@/components/practice/PracticeRunner'
 import type { NavigatorGroup } from '@/components/practice/QuestionNavigator'
 import { formatDuration } from '@/hooks/use-practice-clock'
 import { usePracticeSession } from '@/hooks/use-practice-session'
 import { useSectionsByTypeAndYears } from '@/hooks/use-exam-sections'
 import { useCreatePracticeSession } from '@/hooks/use-practice-mutations'
 import { deriveTimeLimitSeconds } from '@/lib/constants'
+import { toExamStem } from '@/services/exam-stem'
 import { toExamErrorMessage, type ExamSectionWithYear } from '@/services/exams'
 import {
   toPracticeErrorMessage,
@@ -66,7 +63,7 @@ function buildDrillPractice(sections: ExamSectionWithYear[]): {
         : `${section.year} 年 ${section.type}`
 
     // 大题带过来的原文 / 要求 / 图表 —— 答题页靠它渲染题干，不能只留小题。
-    const stem = toRunnerStem(section)
+    const stem = toExamStem(section)
 
     for (const item of section.items) {
       questions.push({

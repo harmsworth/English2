@@ -3,23 +3,26 @@ import { Icon } from '@/components/ui/icon'
 import { ChartFigure } from '@/components/exams/ChartFigure'
 import { PassageText } from '@/components/exams/PassageText'
 import { cn } from '@/lib/utils'
-import type { RunnerStem } from './PracticeRunner'
+import type { ExamStem } from '@/services/exam-stem'
 
 /**
- * 答题时的**大题题干**（原文 / 题目要求 / 指导语 / 写作要点 / 图表）。
+ * **大题题干**（原文 / 题目要求 / 指导语 / 写作要点 / 图表）。练习页与错题本共用。
  *
- * 为什么必须有它：练习页一次只显示一道小题，而小题内容通常只是一句提问
+ * 为什么必须有它：一次练习只显示一道小题，而小题内容通常只是一句提问
  * （「According to Paragraph 3…」）—— 原文、写作要求这些都挂在大题上。
- * 之前展平题目序列时把它们丢了，用户在答题页只能对着残句硬猜，这是**设计缺陷**。
+ * 之前展平题目序列时把它们丢了，用户只能对着残句硬猜，这是**设计缺陷**。
+ * 错题本同病（只显示题面 + 选项，读不出自己错在哪），所以两处用同一个组件、
+ * 同一份 `ExamStem`（`@/services/exam-stem`），口径不允许各写一套。
  *
  * 数据全部来自**已经下发的公开字段**（`intro` / `passage` / `prompt` / `tips`
  * 与大题级 `extra_data` 里的 `chart`），没有新增任何查询，也没放宽答案边界：
  * - 不碰 `passage_zh` / `source_data`；
  * - 不读小题级 `extra_data`（翻译参考译文藏在那里）；
- * - 不渲染大题 `extra_data` 里的 `sample`（参考范文 = 答案，答题时不能看到）。
+ * - 不渲染大题 `extra_data` 里的 `sample`（参考范文 = 答案）。
  *
  * 交互：默认**收起**（移动端一屏放不下 2400 字的原文，收起才能留出答题区），
- * 展开状态由 `PracticeRunner` 按**大题**记住 —— 同一篇阅读的 5 道题只需展开一次。
+ * `open` / `onToggle` 由调用方持有 —— 练习页按**大题 id** 记住（同一篇阅读的
+ * 5 道题只展开一次），错题本则是每张卡片各自一份。
  */
 export function QuestionStem({
   stem,
@@ -27,7 +30,7 @@ export function QuestionStem({
   onToggle,
   itemContent,
 }: {
-  stem: RunnerStem
+  stem: ExamStem
   open: boolean
   onToggle: () => void
   /** 当前小题题面：与它完全重复的大题 passage / prompt 不再渲染第二遍 */

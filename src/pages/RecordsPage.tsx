@@ -12,8 +12,9 @@ import {
 } from '@/hooks/use-practice-session'
 import {
   accuracyPercent,
+  byRecentUpdate,
   formatShortDate,
-  formatTimestamp,
+  recordTimestamp,
   recordTitle,
   resumeTarget,
   statusLabel,
@@ -50,9 +51,13 @@ export default function RecordsPage() {
   const typeAccuracy = usePracticeTypeAccuracy()
   const [tab, setTab] = useState<TabValue>('paper')
 
-  const all = useMemo(() => stats.data ?? [], [stats.data])
+  // ⚠️ 排序必须在这里做：`practice_session_stats` 内部是 `started_at desc`，
+  // 而「最近」的定义是 `updated_at desc`（见 lib/practice-record.ts 的 byRecentUpdate）。
+  // 一处排好，下面「未完成 / 两个历史分栏 / 趋势取材」全部继承同一个顺序，
+  // 不会再出现「首页说的最近」和「记录页说的最近」不一致。
+  const all = useMemo(() => [...(stats.data ?? [])].sort(byRecentUpdate), [stats.data])
 
-  /** 未完成：active / paused。RPC 已按创建时间倒序，直接沿用。 */
+  /** 未完成：active / paused（顺序继承上面的「最近更新」）。 */
   const incomplete = useMemo(
     () => all.filter((row) => row.status === 'active' || row.status === 'paused'),
     [all],
@@ -98,7 +103,11 @@ export default function RecordsPage() {
       .sort((a, b) => b.graded - a.graded)
   }, [typeAccuracy.data])
 
-  /** 趋势取最近 12 次「有客观题可判分」的练习，按时间正序画。 */
+  /**
+   * 趋势取最近 12 次「有客观题可判分」的练习，按时间正序画。
+   * 「最近」同样是 updated_at 口径（继承 `all`），横轴用完成/更新时间，
+   * 与排序字段一致，不会出现柱子在右、日期在左的错位。
+   */
   const trend = useMemo(() => {
     return all
       .filter((row) => row.gradedCount > 0)
@@ -106,7 +115,7 @@ export default function RecordsPage() {
       .reverse()
       .map((row) => ({
         key: row.sessionId,
-        label: formatShortDate(row.startedAt),
+        label: formatShortDate(row.completedAt ?? row.updatedAt),
         title: recordTitle(row),
         percent: accuracyPercent(row.correctCount, row.gradedCount) ?? 0,
         correct: row.correctCount,
@@ -187,7 +196,7 @@ export default function RecordsPage() {
                                 ? ''
                                 : ` / ${formatDuration(row.timeLimitSeconds)}`}
                               {' · '}
-                              更新于 {formatTimestamp(row.updatedAt)}
+                              {recordTimestamp(row)}
                             </p>
                           </div>
                           {target ? (
@@ -436,7 +445,7 @@ function RecordRow({ row }: { row: PracticeSessionStat }) {
           {recordTitle(row)}
         </span>
         <span className="text-xs text-muted-foreground tabular-nums">
-          {formatTimestamp(row.startedAt)}
+          {recordTimestamp(row)}
         </span>
       </div>
 
