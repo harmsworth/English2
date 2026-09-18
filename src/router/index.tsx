@@ -38,6 +38,14 @@ function lazyPage(element: ReactElement) {
   return <Suspense fallback={<RouteFallback />}>{element}</Suspense>
 }
 
+/**
+ * 部署前缀。Vite 的 `base` 只负责给静态资源 URL 加前缀，**Router 必须拿到同一个前缀**，
+ * 否则部署到 GitHub Pages 子路径后 `location.pathname` 会带着 `/English2`，
+ * 与路由表里的 `/exams`、`/records` 全部匹配不上 ⇒ 整站直接落到 `*` 的 404 兜底页。
+ * `BASE_URL` 就是 vite.config.ts 里的 base（本地为 `/`），去掉尾斜杠以符合 basename 约定。
+ */
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
+
 export const router = createBrowserRouter([
   {
     path: '/login',
@@ -99,4 +107,4 @@ export const router = createBrowserRouter([
     path: '*',
     element: <NotFoundPage />,
   },
-])
+], { basename })

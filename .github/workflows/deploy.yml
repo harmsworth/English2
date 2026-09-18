@@ -1,0 +1,72 @@
+name: Deploy React App to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  # 允许在 Actions 页面手动触发（改完 secrets / 打开 Pages 后不必再造一次提交）
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 本项目用 pnpm：仓库里只有 pnpm-lock.yaml，没有 package-lock.json，
+      # 所以 `npm ci` 必然失败（The `npm ci` command can only install with an existing package-lock.json）。
+      # 版本与本地 / lockfileVersion 9.0 对齐。
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      # vite@8 / @types/node@24 要求 Node 20.19+ 或 22.12+，Node 18 装不上也构建不了。
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        env:
+          # 这两个是构建期「内联进 bundle」的公开值（publishable key，靠 RLS 兜底）。
+          # ⚠️ 不要把 VITE_DEV_LOGIN_* 放进来：那是仅本地 dev 读取的登录凭据。
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          # GitHub Pages 项目站点在 /<repo>/ 子路径下，资源与路由都要带这个前缀。
+          DEPLOY_BASE: /English2/
+        run: pnpm build
+
+      # SPA 兜底：GitHub Pages 是纯静态托管、没有 rewrite，
+      # 直接访问 /English2/records 这类深链会 404。把 index.html 复制一份成 404.html，
+      # Pages 在找不到路径时就会返回它，客户端路由随即接管（配合 router 的 basename）。
+      - name: Add SPA fallback (404.html)
+        run: cp dist/index.html dist/404.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Vite 打包产物目录
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
