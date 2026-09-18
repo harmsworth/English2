@@ -6,7 +6,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-heading: var(--font-sans);
+  /* 标题走衬线：Latin serif 在前，CJK 用黑体回退（⚠️ 不要把宋体写进栈，
+     Windows 会落宋体）。正文永远无衬线 —— 长英文阅读更稳，也与设计稿一致。 */
+  --font-heading: Georgia, 'Times New Roman', 'Source Serif 4',
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', serif;
   --font-sans: 'Geist Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
     'Helvetica Neue', Arial, sans-serif;
@@ -26,6 +29,23 @@
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
+  /* 设计系统扩展色（docs-next/design-system.md §3） */
+  --color-border-strong: var(--border-strong);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-passage: var(--passage);
+  --color-track: var(--track);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-soft-border: var(--primary-soft-border);
+  --color-primary-selected: var(--primary-selected);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--destructive);
+  --color-danger-soft: var(--danger-soft);
+  --color-neutral-soft: var(--neutral-soft);
+  --color-neutral-soft-foreground: var(--neutral-soft-foreground);
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
@@ -41,51 +61,71 @@
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
+  /* 圆角按设计系统显式取值（§6）：tile 7 / control 8 / card 12 / sheet 16，
+     不再按 --radius 比例推算，避免改 --radius 时控件圆角跟着变形。 */
+  --radius-sm: 0.4375rem;
+  --radius-md: 0.5rem;
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
 }
 
-/* 主色：克制的 indigo / blue，仅用于强调与选中态 */
+/* 色板：暖白纸感 + 深墨绿主色（docs-next/design-system.md §3）。
+   对比度已脚本实测（sRGB → OKLCH → WCAG 2.1）：正文/大字/徽章小字均达 AA。 */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.21 0.012 265);
+  --background: oklch(0.982 0.004 91); /* #FAF9F6 暖白 */
+  --foreground: oklch(0.258 0.017 196); /* #1A2626 墨黑 */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.21 0.012 265);
+  --card-foreground: oklch(0.258 0.017 196);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.21 0.012 265);
-  --primary: oklch(0.53 0.16 265);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.968 0.004 265);
-  --secondary-foreground: oklch(0.21 0.012 265);
-  --muted: oklch(0.968 0.004 265);
-  --muted-foreground: oklch(0.556 0.012 265);
-  --accent: oklch(0.968 0.004 265);
-  --accent-foreground: oklch(0.21 0.012 265);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.925 0.005 265);
-  --input: oklch(0.925 0.005 265);
-  --ring: oklch(0.53 0.16 265);
+  --popover-foreground: oklch(0.258 0.017 196);
+  --primary: oklch(0.377 0.049 185); /* #1F4A45 */
+  --primary-foreground: oklch(1 0 0);
+  --primary-hover: oklch(0.325 0.042 186); /* #173B37 */
+  --primary-soft: oklch(0.941 0.011 176); /* #E4EEEB */
+  --primary-soft-border: oklch(0.879 0.021 178); /* #C9DCD7 */
+  --primary-selected: oklch(0.973 0.006 176); /* #F2F7F5 */
+  --secondary: oklch(0.941 0.011 176);
+  --secondary-foreground: oklch(0.377 0.049 185);
+  --muted: oklch(0.98 0.004 91);
+  --muted-foreground: oklch(0.552 0.015 172); /* #6A7571，4.54 ✅ */
+  --subtle-foreground: oklch(0.657 0.014 165); /* #8A948F，仅装饰/占位符 */
+  --accent: oklch(0.973 0.006 176);
+  --accent-foreground: oklch(0.325 0.042 186);
+  --destructive: oklch(0.541 0.136 29); /* #B04A3E */
+  --danger-soft: oklch(0.946 0.018 30);
+  --success: oklch(0.519 0.093 162); /* #2C7958，on soft 4.53 ✅ */
+  --success-soft: oklch(0.946 0.018 165);
+  --warning: oklch(0.541 0.108 76); /* #926511，on soft 4.54 ✅ */
+  --warning-soft: oklch(0.958 0.033 86);
+  --neutral-soft: oklch(0.95 0.006 91); /* #F0EEE9 */
+  --neutral-soft-foreground: oklch(0.53 0.013 172); /* #5B6663 */
+  --passage: oklch(0.385 0.018 180); /* #3A4744 篇章正文 */
+  --track: oklch(0.925 0.008 92); /* #E8E6E0 进度轨道 */
+  --border: oklch(0.932 0.009 85); /* #EBE8E2 */
+  --border-strong: oklch(0.871 0.012 85); /* #D8D4CC */
+  --input: oklch(0.871 0.012 85);
+  --ring: oklch(0.377 0.049 185);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.984 0.003 265);
-  --sidebar-foreground: oklch(0.21 0.012 265);
-  --sidebar-primary: oklch(0.53 0.16 265);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.968 0.004 265);
-  --sidebar-accent-foreground: oklch(0.21 0.012 265);
-  --sidebar-border: oklch(0.925 0.005 265);
-  --sidebar-ring: oklch(0.53 0.16 265);
+  --radius: 0.75rem; /* 12px：卡片 */
+  --sidebar: oklch(0.982 0.004 91);
+  --sidebar-foreground: oklch(0.258 0.017 196);
+  --sidebar-primary: oklch(0.377 0.049 185);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.941 0.011 176);
+  --sidebar-accent-foreground: oklch(0.377 0.049 185);
+  --sidebar-border: oklch(0.932 0.009 85);
+  --sidebar-ring: oklch(0.377 0.049 185);
 }
 
+/* ⚠️ 深色模式已冻结（2026-09-17 决策）：设计稿只有浅色态，无切换入口。
+   不要基于下面这组值继续开发，也不要自动反色 —— 需要时另出一套深色 token。 */
 .dark {
   --background: oklch(0.175 0.008 265);
   --foreground: oklch(0.95 0.005 265);
@@ -135,6 +175,14 @@
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* 标题统一衬线（中英混排：Latin serif + CJK 黑体回退） */
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+    letter-spacing: -0.01em;
   }
 
   /* 尊重系统的「减少动效」设置 */

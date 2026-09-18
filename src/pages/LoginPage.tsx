@@ -52,6 +52,15 @@ export default function LoginPage() {
 
   return (
     <main className="mx-auto flex min-h-svh w-full max-w-md flex-col justify-center px-5 py-16">
+      <div className="mb-6 flex items-center gap-2">
+        <span className="font-heading text-[21px] leading-none font-bold text-[#17332F]">
+          English2
+        </span>
+        <span className="rounded-[4px] bg-primary-soft px-1.5 py-0.5 text-[8px] leading-none font-bold tracking-[1.2px] text-primary">
+          EXAM ARCHIVE
+        </span>
+      </div>
+
       <Card>
         <CardHeader>
           <CardTitle>考研英语二 · 真题学习</CardTitle>
@@ -79,7 +88,7 @@ export default function LoginPage() {
                 })}
               />
               {errors.email ? (
-                <p className="text-sm text-destructive">
+                <p className="text-sm text-destructive" role="alert">
                   {errors.email.message}
                 </p>
               ) : null}
@@ -99,14 +108,16 @@ export default function LoginPage() {
                 })}
               />
               {errors.password ? (
-                <p className="text-sm text-destructive">
+                <p className="text-sm text-destructive" role="alert">
                   {errors.password.message}
                 </p>
               ) : null}
             </div>
 
             {errors.root ? (
-              <p className="text-sm text-destructive">{errors.root.message}</p>
+              <p className="text-sm text-destructive" role="alert">
+                {errors.root.message}
+              </p>
             ) : null}
 
             {isSupabaseConfigured ? null : (
@@ -115,7 +126,12 @@ export default function LoginPage() {
               </p>
             )}
 
-            <Button type="submit" size="lg" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              size="md"
+              className="h-11 w-full md:h-10"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? '登录中…' : '登录'}
             </Button>
           </form>

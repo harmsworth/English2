@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { MistakeCard } from '@/components/mistakes/MistakeCard'
+import { READING_CONTAINER } from '@/components/layout/app-shell'
 import { useMistakes, useUpdateMistakeStatus } from '@/hooks/use-mistakes'
 import {
   groupOfStatus,
@@ -107,14 +107,11 @@ export default function MistakesPage() {
 
   if (isError) {
     return (
-      <main className="mx-auto w-full max-w-3xl px-5 py-12">
-        <Link
-          to="/"
-          className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-        >
-          ← 返回首页
-        </Link>
-        <h1 className="mt-4 font-heading text-3xl font-semibold tracking-tight">
+      <main className={`${READING_CONTAINER} py-12`}>
+        <p className="text-[10px] font-bold tracking-[1.2px] text-subtle-foreground uppercase">
+          Mistake Book
+        </p>
+        <h1 className="mt-3 font-heading text-2xl leading-tight font-semibold md:text-[2.5rem]">
           我的错题
         </h1>
         <StateCard
@@ -130,15 +127,11 @@ export default function MistakesPage() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-5 py-12">
-      <Link
-        to="/"
-        className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-        ← 返回首页
-      </Link>
-
-      <h1 className="mt-4 font-heading text-3xl font-semibold tracking-tight">
+    <main className={`${READING_CONTAINER} py-12`}>
+      <p className="text-[10px] font-bold tracking-[1.2px] text-subtle-foreground uppercase">
+        Mistake Book
+      </p>
+      <h1 className="mt-3 font-heading text-2xl leading-tight font-semibold md:text-[2.5rem]">
         我的错题
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
@@ -171,10 +164,11 @@ export default function MistakesPage() {
                     setGroup(item)
                   }}
                   className={cn(
-                    'rounded-lg border px-3 py-1.5 text-sm font-medium tabular-nums transition-colors',
+                    // 移动端补足 44px 触控高度（WCAG 2.5.5），桌面回到紧凑档
+                    'inline-flex h-11 items-center rounded-md border px-4 text-sm font-medium transition-colors tabular-nums md:h-9 md:px-3',
                     active
-                      ? 'border-primary bg-primary/5 text-primary'
-                      : 'border-border text-muted-foreground hover:text-foreground',
+                      ? 'border-primary-soft-border bg-primary-soft text-primary'
+                      : 'border-border bg-card text-muted-foreground hover:text-foreground',
                   )}
                 >
                   {GROUP_LABEL[item]} {counts[item]}

@@ -315,6 +315,8 @@ export type Database = {
           completed_at: string | null
           created_at: string
           current_item_no: number
+          drill_type: string | null
+          drill_years: number[] | null
           elapsed_seconds: number
           id: string
           paper_id: string | null
@@ -331,6 +333,8 @@ export type Database = {
           completed_at?: string | null
           created_at?: string
           current_item_no?: number
+          drill_type?: string | null
+          drill_years?: number[] | null
           elapsed_seconds?: number
           id?: string
           paper_id?: string | null
@@ -347,6 +351,8 @@ export type Database = {
           completed_at?: string | null
           created_at?: string
           current_item_no?: number
+          drill_type?: string | null
+          drill_years?: number[] | null
           elapsed_seconds?: number
           id?: string
           paper_id?: string | null
@@ -442,6 +448,46 @@ export type Database = {
           item_type: string
           reference_translation: string
           selected_option: number
+        }[]
+      }
+      peek_item_answer: {
+        Args: { p_item_id: string; p_session_id: string }
+        Returns: {
+          correct_option: number
+          explanation: string
+          item_id: string
+          reference_translation: string
+        }[]
+      }
+      practice_session_stats: {
+        Args: never
+        Returns: {
+          answered_count: number
+          completed_at: string
+          correct_count: number
+          drill_type: string
+          drill_years: number[]
+          elapsed_seconds: number
+          graded_count: number
+          paper_id: string
+          paper_title: string
+          paper_year: number
+          section_type: string
+          session_id: string
+          session_type: string
+          started_at: string
+          status: string
+          time_limit_seconds: number
+          updated_at: string
+        }[]
+      }
+      practice_type_accuracy: {
+        Args: never
+        Returns: {
+          answered_count: number
+          correct_count: number
+          graded_count: number
+          section_type: string
         }[]
       }
       sync_exam_paper: {

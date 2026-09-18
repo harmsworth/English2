@@ -1,0 +1,141 @@
+<svg width="375" height="1120" viewBox="0 0 375 1120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- English2 · 首页 · 移动端 375（依据 svgs/home.svg 桌面稿样式重排） -->
+  <style>
+    .sans { font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+    .serif { font-family: Georgia, 'Source Serif 4', 'Times New Roman', serif; }
+    text:not([fill]) { fill: #1A2626; }
+    .muted { fill: #6F7B77; }
+    .card { fill: #FFFFFF; stroke: #EBE8E2; stroke-width: 1; }
+    .chip-soft { fill: #E4EEEB; }
+    .chip-soft-text { fill: #1F4A45; }
+  </style>
+
+  <rect width="375" height="1120" fill="#FAF9F6"/>
+
+  <!-- ═══ 系统状态栏 ═══ -->
+  <text x="20" y="20" class="sans" font-size="12" font-weight="600">9:41</text>
+  <g fill="#1A2626">
+    <rect x="298" y="13" width="2.5" height="4" rx="0.5"/>
+    <rect x="302" y="11" width="2.5" height="6" rx="0.5"/>
+    <rect x="306" y="9" width="2.5" height="8" rx="0.5"/>
+    <rect x="310" y="7" width="2.5" height="10" rx="0.5"/>
+  </g>
+  <path d="M320 15.5a8 8 0 0 1 11 0" stroke="#1A2626" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <path d="M322.5 18.5a4.5 4.5 0 0 1 6 0" stroke="#1A2626" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <circle cx="325.5" cy="21" r="1.1" fill="#1A2626"/>
+  <rect x="338" y="8" width="19" height="10" rx="2.5" stroke="#1A2626" stroke-width="1.2" fill="none"/>
+  <rect x="340" y="10" width="12" height="6" rx="1" fill="#1A2626"/>
+
+  <!-- ═══ 顶栏（logo + 徽标 + 头像，导航移至底部标签栏） ═══ -->
+  <line x1="0" y1="84" x2="375" y2="84" stroke="#EBE8E2"/>
+  <text x="20" y="63" class="serif" font-size="21" font-weight="700" fill="#17332F">English2</text>
+  <rect x="110" y="46" width="88" height="19" rx="4" class="chip-soft"/>
+  <text x="154" y="59" text-anchor="middle" class="sans" font-size="8" font-weight="700" letter-spacing="1.2" class="chip-soft-text" fill="#1F4A45">EXAM ARCHIVE</text>
+  <circle cx="337" cy="56" r="14" class="chip-soft"/>
+  <text x="337" y="60" text-anchor="middle" class="sans" font-size="10" font-weight="700" fill="#1F4A45">AL</text>
+
+  <!-- ═══ Hero ═══ -->
+  <text x="20" y="150" class="serif" font-size="24" font-weight="600">Systematic practice</text>
+  <text x="20" y="182" class="serif" font-size="24" font-weight="600">for real historical</text>
+  <text x="20" y="214" class="serif" font-size="24" font-weight="600">English examinations.</text>
+
+  <text x="20" y="246" class="sans muted" font-size="12.5" fill="#6F7B77">English2 provides a rigorous, distraction-free</text>
+  <text x="20" y="266" class="sans muted" font-size="12.5" fill="#6F7B77">environment for adult learners to study</text>
+  <text x="20" y="286" class="sans muted" font-size="12.5" fill="#6F7B77">authentic papers from 2010 to 2026. Build</text>
+  <text x="20" y="306" class="sans muted" font-size="12.5" fill="#6F7B77">scholarly habits through deliberate, measured</text>
+  <text x="20" y="326" class="sans muted" font-size="12.5" fill="#6F7B77">preparation.</text>
+
+  <!-- 主按钮纵排（移动端触达高度 44+） -->
+  <rect x="20" y="350" width="335" height="46" rx="8" fill="#1F4A45"/>
+  <text x="187.5" y="378" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#FFFFFF">Start Learning</text>
+  <rect x="20" y="406" width="335" height="46" rx="8" fill="#FFFFFF" stroke="#D8D4CC"/>
+  <text x="187.5" y="434" text-anchor="middle" class="sans" font-size="13.5" font-weight="600">Browse Archive</text>
+
+  <!-- ═══ Recommended Papers ═══ -->
+  <text x="20" y="494" class="serif" font-size="19" font-weight="600">Recommended Papers</text>
+
+  <!-- 卡片 1 · 2026 Not Started -->
+  <rect x="20" y="512" width="335" height="90" rx="10" class="card"/>
+  <rect x="36" y="532" width="48" height="48" rx="8" class="chip-soft"/>
+  <text x="60" y="561" text-anchor="middle" class="serif" font-size="15" font-weight="700" fill="#1F4A45">2026</text>
+  <text x="100" y="545" class="sans" font-size="12.5" font-weight="600">National College Entrance English</text>
+  <text x="100" y="561" class="sans" font-size="12.5" font-weight="600">Examination (Paper I)</text>
+  <rect x="100" y="572" width="66" height="19" rx="4" fill="#F0EEE9"/>
+  <text x="133" y="585" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#5B6663">Not Started</text>
+  <text x="176" y="585" class="sans muted" font-size="10.5" fill="#6F7B77">Historical Real Paper</text>
+  <rect x="281" y="542" width="64" height="28" rx="6" class="chip-soft"/>
+  <text x="313" y="560" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">Practice</text>
+
+  <!-- 卡片 2 · 2025 In Progress -->
+  <rect x="20" y="616" width="335" height="90" rx="10" class="card"/>
+  <rect x="36" y="636" width="48" height="48" rx="8" class="chip-soft"/>
+  <text x="60" y="665" text-anchor="middle" class="serif" font-size="15" font-weight="700" fill="#1F4A45">2025</text>
+  <text x="100" y="649" class="sans" font-size="12.5" font-weight="600">National College Entrance English</text>
+  <text x="100" y="665" class="sans" font-size="12.5" font-weight="600">Examination (Paper II)</text>
+  <rect x="100" y="676" width="70" height="19" rx="4" fill="#FBF0D9"/>
+  <text x="135" y="689" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#9A6B12">In Progress</text>
+  <text x="180" y="689" class="sans muted" font-size="10.5" fill="#6F7B77">Historical Real Paper</text>
+  <rect x="281" y="646" width="64" height="28" rx="6" class="chip-soft"/>
+  <text x="313" y="664" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">Practice</text>
+
+  <!-- 卡片 3 · 2023 Completed -->
+  <rect x="20" y="720" width="335" height="90" rx="10" class="card"/>
+  <rect x="36" y="740" width="48" height="48" rx="8" class="chip-soft"/>
+  <text x="60" y="769" text-anchor="middle" class="serif" font-size="15" font-weight="700" fill="#1F4A45">2023</text>
+  <text x="100" y="753" class="sans" font-size="12.5" font-weight="600">Unified Standard Graduate</text>
+  <text x="100" y="769" class="sans" font-size="12.5" font-weight="600">Enrollment English Exam</text>
+  <rect x="100" y="780" width="70" height="19" rx="4" fill="#E3F1EA"/>
+  <text x="135" y="793" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#2E7D5B">Completed</text>
+  <text x="180" y="793" class="sans muted" font-size="10.5" fill="#6F7B77">Historical Real Paper</text>
+  <rect x="281" y="750" width="64" height="28" rx="6" class="chip-soft"/>
+  <text x="313" y="768" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">Practice</text>
+
+  <!-- ═══ Your Performance（桌面右栏卡片，移动端下移为整宽卡片） ═══ -->
+  <rect x="20" y="846" width="335" height="188" rx="10" class="card"/>
+  <text x="38" y="884" class="serif" font-size="18" font-weight="600">Your Performance</text>
+
+  <text x="38" y="926" class="sans muted" font-size="12.5" fill="#6F7B77">Completed Papers</text>
+  <text x="337" y="926" text-anchor="end" class="sans" font-size="13.5" font-weight="700">14 / 45</text>
+  <line x1="38" y1="944" x2="337" y2="944" stroke="#F0EEE9"/>
+
+  <text x="38" y="972" class="sans muted" font-size="12.5" fill="#6F7B77">Total Hours Practiced</text>
+  <text x="337" y="972" text-anchor="end" class="sans" font-size="13.5" font-weight="700">32.5h</text>
+  <line x1="38" y1="990" x2="337" y2="990" stroke="#F0EEE9"/>
+
+  <text x="38" y="1018" class="sans muted" font-size="12.5" fill="#6F7B77">Current Streak</text>
+  <text x="337" y="1018" text-anchor="end" class="sans" font-size="13.5" font-weight="700" fill="#1F4A45">5 Days</text>
+
+  <!-- ═══ 底部标签栏（桌面顶部导航的移动形态） ═══ -->
+  <g transform="translate(0,1052)">
+    <rect x="0" y="0" width="375" height="68" fill="#FFFFFF"/>
+    <line x1="0" y1="0" x2="375" y2="0" stroke="#EBE8E2"/>
+    <!-- Home · 激活 -->
+    <rect x="13" y="0" width="68" height="2.5" rx="1" fill="#1F4A45"/>
+    <g transform="translate(47,22)" stroke="#1F4A45" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-7 0.5 L0 -5.5 L7 0.5"/>
+      <path d="M-4.8 -1.5 V6.5 H4.8 V-1.5"/>
+    </g>
+    <text x="47" y="44" text-anchor="middle" class="sans" font-size="10" font-weight="600" fill="#1F4A45">Home</text>
+    <!-- Exams -->
+    <g transform="translate(140.6,22)" stroke="#8A948F" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="-6.5" y="-4" width="13" height="10.5" rx="1.5"/>
+      <path d="M-6.5 -0.5 H6.5"/>
+      <path d="M-3 -6.8 H3"/>
+    </g>
+    <text x="140.6" y="44" text-anchor="middle" class="sans" font-size="10" fill="#8A948F">Exams</text>
+    <!-- Study -->
+    <g transform="translate(234.4,22)" stroke="#8A948F" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 -4.5 C-2 -6.2 -4.8 -5.8 -6.5 -4.8 V5.2 C-4.8 4.3 -2 4.6 0 5.8 C2 4.6 4.8 4.3 6.5 5.2 V-4.8 C4.8 -5.8 2 -6.2 0 -4.5 Z"/>
+      <path d="M0 -4.5 V5.8"/>
+    </g>
+    <text x="234.4" y="44" text-anchor="middle" class="sans" font-size="10" fill="#8A948F">Study</text>
+    <!-- Settings -->
+    <g transform="translate(328.1,22)" stroke="#8A948F" stroke-width="1.6" fill="none" stroke-linecap="round">
+      <circle r="2.4"/>
+      <path d="M0 -6.4 V-4.2 M0 4.2 V6.4 M-6.4 0 H-4.2 M4.2 0 H6.4 M-4.5 -4.5 L-3 -3 M3 3 L4.5 4.5 M4.5 -4.5 L3 -3 M-3 3 L-4.5 4.5"/>
+    </g>
+    <text x="328.1" y="44" text-anchor="middle" class="sans" font-size="10" fill="#8A948F">Settings</text>
+    <!-- iOS 安全区 -->
+    <rect x="152" y="60" width="71" height="4" rx="2" fill="#1A2626" opacity="0.85"/>
+  </g>
+</svg>

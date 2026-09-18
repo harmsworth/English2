@@ -40,3 +40,7 @@ lerna-debug.log*
 
 # Supabase CLI 临时状态（gen types 等命令会产生，属于本地状态，不提交）
 supabase/.temp/
+
+# 本地校验输出（tsc / oxlint / vite build 的 stdout 重定向产物）
+# 不是项目文件，随时可重新生成：pnpm build / pnpm lint
+.*-out.txt

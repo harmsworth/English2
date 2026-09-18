@@ -1,0 +1,203 @@
+<svg width="375" height="1800" viewBox="0 0 375 1800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- English2 · 练习页 · 移动端 375（依据 svgs/practice.svg 桌面稿样式重排）
+       第一屏：主答题屏（sticky 底部操作条替代桌面右侧栏）
+       第二屏：Question Map 底部抽屉态 -->
+  <style>
+    .sans { font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+    .serif { font-family: Georgia, 'Source Serif 4', 'Times New Roman', serif; }
+    text:not([fill]) { fill: #1A2626; }
+    .muted { fill: #6F7B77; }
+    .card { fill: #FFFFFF; stroke: #EBE8E2; stroke-width: 1; }
+  </style>
+
+  <rect width="375" height="1800" fill="#FAF9F6"/>
+
+  <!-- ══════════════ 第一屏 · 主答题屏（0 – 812） ══════════════ -->
+  <!-- 系统状态栏 -->
+  <text x="20" y="20" class="sans" font-size="12" font-weight="600">9:41</text>
+  <g fill="#1A2626">
+    <rect x="298" y="13" width="2.5" height="4" rx="0.5"/>
+    <rect x="302" y="11" width="2.5" height="6" rx="0.5"/>
+    <rect x="306" y="9" width="2.5" height="8" rx="0.5"/>
+    <rect x="310" y="7" width="2.5" height="10" rx="0.5"/>
+  </g>
+  <path d="M320 15.5a8 8 0 0 1 11 0" stroke="#1A2626" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <path d="M322.5 18.5a4.5 4.5 0 0 1 6 0" stroke="#1A2626" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <circle cx="325.5" cy="21" r="1.1" fill="#1A2626"/>
+  <rect x="338" y="8" width="19" height="10" rx="2.5" stroke="#1A2626" stroke-width="1.2" fill="none"/>
+  <rect x="340" y="10" width="12" height="6" rx="1" fill="#1A2626"/>
+
+  <!-- 练习页头部：退出 + 计时 -->
+  <line x1="0" y1="72" x2="375" y2="72" stroke="#EBE8E2"/>
+  <path d="M26 46 L36 56 M36 46 L26 56" stroke="#1A2626" stroke-width="1.6" stroke-linecap="round"/>
+  <text x="46" y="56" class="sans" font-size="12.5" font-weight="600">Exit Practice</text>
+  <rect x="272" y="36" width="83" height="26" rx="13" fill="#E4EEEB"/>
+  <circle cx="286" cy="49" r="6" stroke="#1F4A45" stroke-width="1.4" fill="none"/>
+  <path d="M286 46.5 V49 L288 50.2" stroke="#1F4A45" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <text x="298" y="53" class="sans" font-size="11.5" font-weight="600" fill="#1F4A45">01:14:22</text>
+
+  <text x="20" y="94" class="sans" font-size="12" font-weight="600">2026 National Exam Paper I</text>
+  <text x="355" y="94" text-anchor="end" class="sans" font-size="11" font-weight="700" fill="#1F4A45">Q 12 / 61</text>
+  <line x1="0" y1="108" x2="375" y2="108" stroke="#EBE8E2"/>
+
+  <!-- 题干 -->
+  <text x="20" y="138" class="sans" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#1F4A45">QUESTION 12 OF 61</text>
+  <text x="20" y="168" class="serif" font-size="19" font-weight="600">According to the text, which of the</text>
+  <text x="20" y="194" class="serif" font-size="19" font-weight="600">following statements best describes</text>
+  <text x="20" y="220" class="serif" font-size="19" font-weight="600">the modern scholar's duty?</text>
+
+  <!-- 阅读篇章卡 -->
+  <rect x="20" y="240" width="335" height="212" rx="10" class="card"/>
+  <text x="38" y="266" class="serif" font-size="11.5" fill="#3A4744">The scholarly study of history requires not merely</text>
+  <text x="38" y="284" class="serif" font-size="11.5" fill="#3A4744">the passive assimilation of dates and events, but the</text>
+  <text x="38" y="302" class="serif" font-size="11.5" fill="#3A4744">active cross-examination of primary evidence. Over</text>
+  <text x="38" y="320" class="serif" font-size="11.5" fill="#3A4744">centuries, records are inevitably filtered, edited, or</text>
+  <text x="38" y="338" class="serif" font-size="11.5" fill="#3A4744">destroyed by subsequent generations. Hence, the</text>
+  <text x="38" y="356" class="serif" font-size="11.5" fill="#3A4744">modern academic must develop a healthy skepticism</text>
+  <text x="38" y="374" class="serif" font-size="11.5" fill="#3A4744">toward the neat, linear narratives presented in state-</text>
+  <text x="38" y="392" class="serif" font-size="11.5" fill="#3A4744">sponsored archives. Only by contrasting disparate,</text>
+  <text x="38" y="410" class="serif" font-size="11.5" fill="#3A4744">often contradictory local accounts can we arrive at</text>
+  <text x="38" y="428" class="serif" font-size="11.5" fill="#3A4744">a more authentic approximation of the past.</text>
+
+  <!-- 选项 -->
+  <rect x="20" y="472" width="335" height="58" rx="8" fill="#FFFFFF" stroke="#D8D4CC"/>
+  <circle cx="40" cy="501" r="8" stroke="#B5B0A6" stroke-width="1.5" fill="#FFFFFF"/>
+  <text x="58" y="505" class="sans" font-size="12" font-weight="700">A.</text>
+  <text x="80" y="497" class="sans" font-size="11.5">Historical analysis should focus on</text>
+  <text x="80" y="513" class="sans" font-size="11.5">memorizing chronological datasets.</text>
+
+  <rect x="20" y="540" width="335" height="58" rx="8" fill="#F2F7F5" stroke="#1F4A45" stroke-width="1.5"/>
+  <circle cx="40" cy="569" r="8" fill="#1F4A45"/>
+  <circle cx="40" cy="569" r="3" fill="#FFFFFF"/>
+  <text x="58" y="573" class="sans" font-size="12" font-weight="700" fill="#1F4A45">B.</text>
+  <text x="80" y="565" class="sans" font-size="11.5">Scholars must critically evaluate and</text>
+  <text x="80" y="581" class="sans" font-size="11.5">contrast contradictory primary sources.</text>
+
+  <rect x="20" y="608" width="335" height="58" rx="8" fill="#FFFFFF" stroke="#D8D4CC"/>
+  <circle cx="40" cy="637" r="8" stroke="#B5B0A6" stroke-width="1.5" fill="#FFFFFF"/>
+  <text x="58" y="641" class="sans" font-size="12" font-weight="700">C.</text>
+  <text x="80" y="633" class="sans" font-size="11.5">Archives maintained by states are</text>
+  <text x="80" y="649" class="sans" font-size="11.5">universally reliable and complete.</text>
+
+  <rect x="20" y="676" width="335" height="58" rx="8" fill="#FFFFFF" stroke="#D8D4CC"/>
+  <circle cx="40" cy="705" r="8" stroke="#B5B0A6" stroke-width="1.5" fill="#FFFFFF"/>
+  <text x="58" y="709" class="sans" font-size="12" font-weight="700">D.</text>
+  <text x="80" y="701" class="sans" font-size="11.5">Contradictory local accounts should be</text>
+  <text x="80" y="717" class="sans" font-size="11.5">dismissed as historically invalid.</text>
+
+  <!-- 章节进度（桌面右栏 Question Map 的进度条前移到操作条上方） -->
+  <text x="355" y="746" text-anchor="end" class="sans" font-size="9.5" font-weight="600" fill="#6F7B77">SECTION 2 · READING · 22%</text>
+  <rect x="20" y="750" width="335" height="4" rx="2" fill="#E8E6E0"/>
+  <rect x="20" y="750" width="74" height="4" rx="2" fill="#1F4A45"/>
+
+  <!-- sticky 底部操作条 -->
+  <rect x="0" y="758" width="375" height="54" fill="#FFFFFF"/>
+  <line x1="0" y1="758" x2="375" y2="758" stroke="#EBE8E2"/>
+  <rect x="20" y="766" width="74" height="40" rx="8" fill="#FFFFFF" stroke="#D8D4CC"/>
+  <path d="M32 779 v14 M32 779 h9 l-2.5 3.5 L41 786 h-9" stroke="#1A2626" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="47" y="790" class="sans" font-size="11.5" font-weight="600">Mark</text>
+  <rect x="102" y="766" width="86" height="40" rx="8" fill="#FFFFFF" stroke="#D8D4CC"/>
+  <text x="145" y="790" text-anchor="middle" class="sans" font-size="11.5" font-weight="600">Previous</text>
+  <rect x="196" y="766" width="159" height="40" rx="8" fill="#1F4A45"/>
+  <text x="275.5" y="790" text-anchor="middle" class="sans" font-size="12" font-weight="600" fill="#FFFFFF">Next Question</text>
+  <rect x="152" y="806" width="71" height="4" rx="2" fill="#1A2626" opacity="0.85"/>
+
+  <!-- ══════════════ 分隔与标注 ══════════════ -->
+  <text x="20" y="942" class="sans" font-size="12" font-weight="600" fill="#6F7B77">▍Question Map · 底部抽屉态（桌面右侧栏的移动形态）</text>
+
+  <!-- ══════════════ 第二屏 · Question Map 抽屉（960 – 1772） ══════════════ -->
+  <g transform="translate(0,960)">
+    <!-- 被抽屉压暗的底层屏幕（简化示意） -->
+    <text x="20" y="46" class="sans" font-size="12.5" font-weight="600">2026 National Exam Paper I</text>
+    <text x="20" y="160" class="serif" font-size="19" font-weight="600">According to the text, which of the</text>
+    <text x="20" y="186" class="serif" font-size="19" font-weight="600">following statements best describes</text>
+    <rect x="20" y="240" width="335" height="180" rx="10" fill="#FFFFFF" stroke="#EBE8E2"/>
+    <rect x="20" y="472" width="335" height="58" rx="8" fill="#FFFFFF" stroke="#D8D4CC"/>
+    <rect x="20" y="540" width="335" height="58" rx="8" fill="#FFFFFF" stroke="#D8D4CC"/>
+    <rect x="0" y="72" width="375" height="740" fill="#1A2626" opacity="0.42"/>
+
+    <!-- 抽屉面板 -->
+    <path d="M0 396 a16 16 0 0 1 16 -16 H359 a16 16 0 0 1 16 16 V812 H0 Z" fill="#FFFFFF"/>
+    <rect x="169.5" y="392" width="36" height="4" rx="2" fill="#D8D4CC"/>
+
+    <text x="20" y="434" class="serif" font-size="17" font-weight="600">Question Map</text>
+
+    <text x="20" y="462" class="sans" font-size="9.5" font-weight="700" letter-spacing="1" fill="#8A948F">SECTION 2 PROGRESS</text>
+    <text x="355" y="462" text-anchor="end" class="sans" font-size="10.5" font-weight="700" fill="#1F4A45">22%</text>
+    <rect x="20" y="470" width="335" height="5" rx="2.5" fill="#E8E6E0"/>
+    <rect x="20" y="470" width="74" height="5" rx="2.5" fill="#1F4A45"/>
+
+    <!-- 题号格子：7 列 × 38px，1–10 已答、12 当前、其余未答 -->
+    <!-- row 1: 1..7 已答 -->
+    <g>
+      <rect x="20" y="492" width="38" height="38" rx="7" fill="#E4EEEB"/><text x="39" y="515" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">1</text>
+      <rect x="66" y="492" width="38" height="38" rx="7" fill="#E4EEEB"/><text x="85" y="515" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">2</text>
+      <rect x="112" y="492" width="38" height="38" rx="7" fill="#E4EEEB"/><text x="131" y="515" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">3</text>
+      <rect x="158" y="492" width="38" height="38" rx="7" fill="#E4EEEB"/><text x="177" y="515" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">4</text>
+      <rect x="204" y="492" width="38" height="38" rx="7" fill="#E4EEEB"/><text x="223" y="515" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">5</text>
+      <rect x="250" y="492" width="38" height="38" rx="7" fill="#E4EEEB"/><text x="269" y="515" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">6</text>
+      <rect x="296" y="492" width="38" height="38" rx="7" fill="#E4EEEB"/><text x="315" y="515" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">7</text>
+    </g>
+    <!-- row 2: 8..11 已答、12 当前、13..14 未答 -->
+    <g>
+      <rect x="20" y="534" width="38" height="38" rx="7" fill="#E4EEEB"/><text x="39" y="557" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">8</text>
+      <rect x="66" y="534" width="38" height="38" rx="7" fill="#E4EEEB"/><text x="85" y="557" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">9</text>
+      <rect x="112" y="534" width="38" height="38" rx="7" fill="#E4EEEB"/><text x="131" y="557" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#1F4A45">10</text>
+      <rect x="158" y="534" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="177" y="557" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">11</text>
+      <rect x="204" y="534" width="38" height="38" rx="7" fill="#1F4A45"/><text x="223" y="557" text-anchor="middle" class="sans" font-size="11" font-weight="700" fill="#FFFFFF">12</text>
+      <rect x="250" y="534" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="269" y="557" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">13</text>
+      <rect x="296" y="534" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="315" y="557" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">14</text>
+    </g>
+    <!-- row 3: 15..21 -->
+    <g>
+      <rect x="20" y="576" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="39" y="599" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">15</text>
+      <rect x="66" y="576" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="85" y="599" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">16</text>
+      <rect x="112" y="576" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="131" y="599" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">17</text>
+      <rect x="158" y="576" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="177" y="599" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">18</text>
+      <rect x="204" y="576" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="223" y="599" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">19</text>
+      <rect x="250" y="576" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="269" y="599" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">20</text>
+      <rect x="296" y="576" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="315" y="599" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">21</text>
+    </g>
+    <!-- row 4: 22..28 -->
+    <g>
+      <rect x="20" y="618" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="39" y="641" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">22</text>
+      <rect x="66" y="618" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="85" y="641" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">23</text>
+      <rect x="112" y="618" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="131" y="641" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">24</text>
+      <rect x="158" y="618" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="177" y="641" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">25</text>
+      <rect x="204" y="618" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="223" y="641" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">26</text>
+      <rect x="250" y="618" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="269" y="641" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">27</text>
+      <rect x="296" y="618" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="315" y="641" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">28</text>
+    </g>
+    <!-- row 5: 29..35 -->
+    <g>
+      <rect x="20" y="660" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="39" y="683" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">29</text>
+      <rect x="66" y="660" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="85" y="683" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">30</text>
+      <rect x="112" y="660" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="131" y="683" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">31</text>
+      <rect x="158" y="660" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="177" y="683" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">32</text>
+      <rect x="204" y="660" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="223" y="683" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">33</text>
+      <rect x="250" y="660" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="269" y="683" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">34</text>
+      <rect x="296" y="660" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="315" y="683" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">35</text>
+    </g>
+    <!-- row 6: 36..40 -->
+    <g>
+      <rect x="20" y="702" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="39" y="725" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">36</text>
+      <rect x="66" y="702" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="85" y="725" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">37</text>
+      <rect x="112" y="702" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="131" y="725" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">38</text>
+      <rect x="158" y="702" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="177" y="725" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">39</text>
+      <rect x="204" y="702" width="38" height="38" rx="7" fill="#F0EEE9"/><text x="223" y="725" text-anchor="middle" class="sans" font-size="11" fill="#5B6663">40</text>
+    </g>
+
+    <!-- 图例 -->
+    <rect x="20" y="747" width="9" height="9" rx="2" fill="#1F4A45"/>
+    <text x="34" y="755.5" class="sans" font-size="10" fill="#6F7B77">Current</text>
+    <rect x="92" y="747" width="9" height="9" rx="2" fill="#E4EEEB"/>
+    <text x="106" y="755.5" class="sans" font-size="10" fill="#6F7B77">Answered</text>
+    <rect x="172" y="747" width="9" height="9" rx="2" fill="#F0EEE9"/>
+    <text x="186" y="755.5" class="sans" font-size="10" fill="#6F7B77">Unanswered</text>
+
+    <!-- 提交 -->
+    <rect x="20" y="766" width="335" height="42" rx="8" fill="#1F4A45"/>
+    <text x="187.5" y="792" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="#FFFFFF">Submit Examination</text>
+  </g>
+</svg>
+

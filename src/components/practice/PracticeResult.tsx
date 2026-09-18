@@ -1,3 +1,5 @@
+import { Badge } from '@/components/ui/badge'
+import { Card, CardContent } from '@/components/ui/card'
 import type { ExamItemWithOptions } from '@/services/exams'
 import type { PracticeGradeResult } from '@/services/practice'
 import { cn } from '@/lib/utils'
@@ -23,15 +25,60 @@ function optionLabel(content: string, index: number): string {
   return `${LETTERS[index] ?? String(index + 1)}. ${content}`
 }
 
+/** 统计块（design-system §8.11）：标签 eyebrow + 数值 serif，正向指标用 success。 */
+function StatBlock({
+  label,
+  value,
+  tone,
+}: {
+  label: string
+  value: number
+  tone: 'success' | 'danger' | 'neutral'
+}) {
+  return (
+    <div className="rounded-lg border border-border bg-card px-3 py-3 text-center">
+      <p className="text-[10px] font-bold tracking-[0.6px] text-subtle-foreground uppercase">
+        {label}
+      </p>
+      <p
+        className={cn(
+          'mt-1 font-heading text-2xl leading-none font-semibold tabular-nums',
+          tone === 'success' && 'text-success',
+          tone === 'danger' && 'text-destructive',
+          tone === 'neutral' && 'text-foreground',
+        )}
+      >
+        {value}
+      </p>
+    </div>
+  )
+}
+
 export function PracticeResult({
   items,
   results,
   totalItemCount,
+  textAnswers,
+  labels,
 }: {
   items: ExamItemWithOptions[]
   results: PracticeGradeResult[]
-  /** 本大题总题数，用于算出「未作答」数量 */
+  /** 本大题/全卷总题数，用于算出「未作答」数量 */
   totalItemCount: number
+  /**
+   * itemId → 用户的主观题输入。
+   * 判分 RPC 的返回列里**没有** `text_answer`（只有参考译文），
+   * 所以「我的译文 / 我的作文」只能从会话已保存的作答里取。
+   */
+  textAnswers?: Record<string, string>
+  /**
+   * itemId → 题号显示文案。
+   *
+   * 跨大题的练习（整卷 / 题型练习）里 `item_no` 是**大题内**序号，
+   * 直接渲染会连着出现四个「第 1 题」；那种场景由调用方传入
+   * 「第 N 题 · 所属大题」，本页单大题练习不传，保持原样。
+   */
+  labels?: Record<string, string>
 }) {
   const itemById = new Map(items.map((item) => [item.id, item]))
 
@@ -47,27 +94,49 @@ export function PracticeResult({
       : 0
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="rounded-xl border border-border bg-muted/40 px-4 py-4">
-        <p className="text-sm font-medium text-foreground">
-          已作答 {results.length} / {totalItemCount} 题
+    <div className="flex flex-col gap-8">
+      {/* Hero：大分数 + 三个统计块（design-system §8.11 StatBlock） */}
+      <Card>
+        <CardContent className="flex flex-wrap items-center justify-between gap-8">
+          <div>
+            <p className="text-[10px] font-bold tracking-[1.2px] text-subtle-foreground uppercase">
+              {objective.length > 0 ? 'Accuracy' : 'Submitted'}
+            </p>
+            <p className="mt-2 font-heading text-[2.5rem] leading-none font-semibold tabular-nums">
+              {objective.length > 0 ? `${accuracy}%` : `${results.length}`}
+              {objective.length === 0 ? (
+                <span className="ml-1 text-base font-medium text-muted-foreground">
+                  题
+                </span>
+              ) : null}
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              已作答 {results.length} / {totalItemCount} 题
+            </p>
+          </div>
+
+          <div className="grid w-full grid-cols-3 gap-3 md:w-auto">
+            <StatBlock label="答对" value={correctCount} tone="success" />
+            <StatBlock label="答错" value={wrongCount} tone="danger" />
+            <StatBlock label="未作答" value={unanswered} tone="neutral" />
+          </div>
+        </CardContent>
+      </Card>
+
+      {objective.length === 0 ? (
+        // 全主观题（如翻译大题）：报「答对 0 题 · 答错 0 题」是无意义的，直接说明不判分
+        <p className="text-sm text-muted-foreground">
+          本大题只有主观题，不判分，提交后直接对照参考内容。
         </p>
-        {objective.length > 0 ? (
-          <p className="mt-1.5 text-sm text-muted-foreground">
-            答对 {correctCount} 题 · 答错 {wrongCount} 题 · 正确率 {accuracy}%
-          </p>
-        ) : (
-          // 全主观题（如翻译大题）：报「答对 0 题 · 答错 0 题」是无意义的，直接说明不判分
-          <p className="mt-1.5 text-sm text-muted-foreground">
-            本大题只有主观题，不判分，提交后直接对照参考内容。
-          </p>
-        )}
-        {unanswered > 0 ? (
-          <p className="mt-2 text-xs text-muted-foreground">
-            未作答 {unanswered} 题，不参与判分，也不会显示答案。
-          </p>
-        ) : null}
-      </div>
+      ) : null}
+
+      {unanswered > 0 ? (
+        <p className="text-xs text-muted-foreground">
+          未作答 {unanswered} 题，不参与判分，也不会显示答案。
+        </p>
+      ) : null}
+
+      <h2 className="font-heading text-[19px] font-semibold">逐题回顾</h2>
 
       <ol className="flex list-none flex-col gap-4">
         {results.map((result) => {
@@ -87,31 +156,31 @@ export function PracticeResult({
           return (
             <li
               key={result.itemId}
-              className="rounded-xl border border-border px-4 py-4"
+              className="rounded-lg border border-border bg-card px-4 py-4"
             >
               <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
                 <span className="text-sm font-medium text-foreground">
-                  第 {result.itemNo} 题
+                  {labels?.[result.itemId] ?? `第 ${result.itemNo} 题`}
                 </span>
                 {isChoice ? (
-                  <span
-                    className={cn(
-                      'text-xs font-medium',
+                  // 徽章带文字，不靠颜色单独表意（design-system §3.3）
+                  <Badge
+                    variant={
                       isCorrect === true
-                        ? 'text-primary'
+                        ? 'success'
                         : isCorrect === false
-                          ? 'text-destructive'
-                          : 'text-muted-foreground',
-                    )}
+                          ? 'danger'
+                          : 'neutral'
+                    }
                   >
                     {isCorrect === true
                       ? '答对'
                       : isCorrect === false
                         ? '答错'
                         : '未判分'}
-                  </span>
+                  </Badge>
                 ) : (
-                  <span className="text-xs text-muted-foreground">主观题</span>
+                  <Badge variant="neutral">主观题</Badge>
                 )}
               </div>
 
@@ -149,9 +218,25 @@ export function PracticeResult({
                   </div>
                 </dl>
               ) : (
-                <p className="mt-3 text-sm text-muted-foreground">
-                  主观题不判分，可对照参考内容自查。
-                </p>
+                <div className="mt-3 flex flex-col gap-2">
+                  {textAnswers?.[result.itemId] ? (
+                    <div className="rounded-lg bg-muted/40 px-3 py-3">
+                      <p className="text-xs font-medium tracking-wide text-muted-foreground">
+                        我的作答
+                      </p>
+                      <p className="mt-1.5 wrap-anywhere whitespace-pre-line text-sm leading-7 text-foreground/90">
+                        {textAnswers[result.itemId]}
+                      </p>
+                    </div>
+                  ) : (
+                    <p className="text-xs text-muted-foreground">
+                      未记录作答内容。
+                    </p>
+                  )}
+                  <p className="text-sm text-muted-foreground">
+                    主观题不判分，可对照参考内容自查。
+                  </p>
+                </div>
               )}
 
               {result.explanation ? (

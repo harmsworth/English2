@@ -1,0 +1,157 @@
+<svg width="375" height="1040" viewBox="0 0 375 1040" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- English2 · Examination Archive · 移动端 375（依据 svgs/exam-list.svg 桌面稿样式重排：表格 → 卡片列表） -->
+  <style>
+    .sans { font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+    .serif { font-family: Georgia, 'Source Serif 4', 'Times New Roman', serif; }
+    text:not([fill]) { fill: #1A2626; }
+    .muted { fill: #6F7B77; }
+    .card { fill: #FFFFFF; stroke: #EBE8E2; stroke-width: 1; }
+  </style>
+
+  <rect width="375" height="1040" fill="#FAF9F6"/>
+
+  <!-- ═══ 系统状态栏 ═══ -->
+  <text x="20" y="20" class="sans" font-size="12" font-weight="600">9:41</text>
+  <g fill="#1A2626">
+    <rect x="298" y="13" width="2.5" height="4" rx="0.5"/>
+    <rect x="302" y="11" width="2.5" height="6" rx="0.5"/>
+    <rect x="306" y="9" width="2.5" height="8" rx="0.5"/>
+    <rect x="310" y="7" width="2.5" height="10" rx="0.5"/>
+  </g>
+  <path d="M320 15.5a8 8 0 0 1 11 0" stroke="#1A2626" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <path d="M322.5 18.5a4.5 4.5 0 0 1 6 0" stroke="#1A2626" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <circle cx="325.5" cy="21" r="1.1" fill="#1A2626"/>
+  <rect x="338" y="8" width="19" height="10" rx="2.5" stroke="#1A2626" stroke-width="1.2" fill="none"/>
+  <rect x="340" y="10" width="12" height="6" rx="1" fill="#1A2626"/>
+
+  <!-- ═══ 顶栏 ═══ -->
+  <line x1="0" y1="84" x2="375" y2="84" stroke="#EBE8E2"/>
+  <text x="20" y="63" class="serif" font-size="21" font-weight="700" fill="#17332F">English2</text>
+  <rect x="110" y="46" width="88" height="19" rx="4" fill="#E4EEEB"/>
+  <text x="154" y="59" text-anchor="middle" class="sans" font-size="8" font-weight="700" letter-spacing="1.2" fill="#1F4A45">EXAM ARCHIVE</text>
+  <circle cx="337" cy="56" r="14" fill="#E4EEEB"/>
+  <text x="337" y="60" text-anchor="middle" class="sans" font-size="10" font-weight="700" fill="#1F4A45">AL</text>
+
+  <!-- ═══ 页面标题 + 筛选 ═══ -->
+  <text x="20" y="136" class="serif" font-size="24" font-weight="600">Examination Archive</text>
+
+  <!-- 搜索框 -->
+  <rect x="20" y="154" width="335" height="40" rx="8" fill="#FFFFFF" stroke="#D8D4CC"/>
+  <g transform="translate(38,174)" stroke="#8A948F" stroke-width="1.5" fill="none" stroke-linecap="round">
+    <circle cx="-1" cy="-1" r="4.5"/>
+    <path d="M2.5 2.5 L6 6"/>
+  </g>
+  <text x="54" y="178" class="sans muted" font-size="12.5" fill="#8A948F">Search papers…</text>
+
+  <!-- 年份筛选 -->
+  <rect x="20" y="204" width="335" height="40" rx="8" fill="#FFFFFF" stroke="#D8D4CC"/>
+  <text x="36" y="228" class="sans muted" font-size="12" fill="#6F7B77">Year</text>
+  <text x="330" y="228" text-anchor="end" class="sans" font-size="12.5" font-weight="600">All</text>
+  <path d="M336 216.5 L341 221.5 L346 216.5" stroke="#6F7B77" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ═══ 试卷卡片列表（桌面表格的移动形态） ═══ -->
+
+  <!-- 2026 Paper I · Not Started · 0% -->
+  <rect x="20" y="266" width="335" height="96" rx="10" class="card"/>
+  <text x="36" y="290" class="serif" font-size="14" font-weight="700" fill="#1F4A45">2026</text>
+  <rect x="275" y="276" width="64" height="19" rx="4" fill="#F0EEE9"/>
+  <text x="307" y="289" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#5B6663">Not Started</text>
+  <text x="36" y="314" class="sans" font-size="12.5" font-weight="600">National Entrance Examination Paper I</text>
+  <rect x="36" y="332" width="170" height="6" rx="3" fill="#E8E6E0"/>
+  <rect x="36" y="332" width="0" height="6" rx="3" fill="#1F4A45"/>
+  <text x="214" y="340" class="sans muted" font-size="10.5" fill="#6F7B77">0%</text>
+  <rect x="259" y="322" width="80" height="30" rx="7" fill="#1F4A45"/>
+  <text x="299" y="341" text-anchor="middle" class="sans" font-size="11.5" font-weight="600" fill="#FFFFFF">Open</text>
+
+  <!-- 2026 Paper II · In Progress · 45% -->
+  <rect x="20" y="374" width="335" height="96" rx="10" class="card"/>
+  <text x="36" y="398" class="serif" font-size="14" font-weight="700" fill="#1F4A45">2026</text>
+  <rect x="269" y="384" width="70" height="19" rx="4" fill="#FBF0D9"/>
+  <text x="304" y="397" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#9A6B12">In Progress</text>
+  <text x="36" y="422" class="sans" font-size="12.5" font-weight="600">National Entrance Examination Paper II</text>
+  <rect x="36" y="440" width="170" height="6" rx="3" fill="#E8E6E0"/>
+  <rect x="36" y="440" width="76.5" height="6" rx="3" fill="#1F4A45"/>
+  <text x="214" y="448" class="sans muted" font-size="10.5" fill="#6F7B77">45%</text>
+  <rect x="259" y="430" width="80" height="30" rx="7" fill="#1F4A45"/>
+  <text x="299" y="449" text-anchor="middle" class="sans" font-size="11.5" font-weight="600" fill="#FFFFFF">Open</text>
+
+  <!-- 2025 Paper I · Completed · 100% -->
+  <rect x="20" y="482" width="335" height="96" rx="10" class="card"/>
+  <text x="36" y="506" class="serif" font-size="14" font-weight="700" fill="#1F4A45">2025</text>
+  <rect x="271" y="492" width="68" height="19" rx="4" fill="#E3F1EA"/>
+  <text x="305" y="505" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#2E7D5B">Completed</text>
+  <text x="36" y="530" class="sans" font-size="12.5" font-weight="600">National Entrance Examination Paper I</text>
+  <rect x="36" y="548" width="170" height="6" rx="3" fill="#E8E6E0"/>
+  <rect x="36" y="548" width="170" height="6" rx="3" fill="#1F4A45"/>
+  <text x="214" y="556" class="sans muted" font-size="10.5" fill="#6F7B77">100%</text>
+  <rect x="259" y="538" width="80" height="30" rx="7" fill="#FFFFFF" stroke="#D8D4CC"/>
+  <text x="299" y="557" text-anchor="middle" class="sans" font-size="11.5" font-weight="600">Open</text>
+
+  <!-- 2025 Paper II · Not Started · 0% -->
+  <rect x="20" y="590" width="335" height="96" rx="10" class="card"/>
+  <text x="36" y="614" class="serif" font-size="14" font-weight="700" fill="#1F4A45">2025</text>
+  <rect x="275" y="600" width="64" height="19" rx="4" fill="#F0EEE9"/>
+  <text x="307" y="613" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#5B6663">Not Started</text>
+  <text x="36" y="638" class="sans" font-size="12.5" font-weight="600">National Entrance Examination Paper II</text>
+  <rect x="36" y="656" width="170" height="6" rx="3" fill="#E8E6E0"/>
+  <text x="214" y="664" class="sans muted" font-size="10.5" fill="#6F7B77">0%</text>
+  <rect x="259" y="646" width="80" height="30" rx="7" fill="#1F4A45"/>
+  <text x="299" y="665" text-anchor="middle" class="sans" font-size="11.5" font-weight="600" fill="#FFFFFF">Open</text>
+
+  <!-- 2024 · Completed · 100%（长标题两行） -->
+  <rect x="20" y="698" width="335" height="96" rx="10" class="card"/>
+  <text x="36" y="722" class="serif" font-size="14" font-weight="700" fill="#1F4A45">2024</text>
+  <rect x="271" y="708" width="68" height="19" rx="4" fill="#E3F1EA"/>
+  <text x="305" y="721" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#2E7D5B">Completed</text>
+  <text x="36" y="744" class="sans" font-size="12.5" font-weight="600">Unified Graduate Admission</text>
+  <text x="36" y="760" class="sans" font-size="12.5" font-weight="600">English Exam (Paper II)</text>
+  <rect x="36" y="772" width="170" height="6" rx="3" fill="#E8E6E0"/>
+  <rect x="36" y="772" width="170" height="6" rx="3" fill="#1F4A45"/>
+  <text x="214" y="780" class="sans muted" font-size="10.5" fill="#6F7B77">100%</text>
+  <rect x="259" y="762" width="80" height="30" rx="7" fill="#FFFFFF" stroke="#D8D4CC"/>
+  <text x="299" y="781" text-anchor="middle" class="sans" font-size="11.5" font-weight="600">Open</text>
+
+  <!-- 2023 · Completed · 100% -->
+  <rect x="20" y="806" width="335" height="96" rx="10" class="card"/>
+  <text x="36" y="830" class="serif" font-size="14" font-weight="700" fill="#1F4A45">2023</text>
+  <rect x="271" y="816" width="68" height="19" rx="4" fill="#E3F1EA"/>
+  <text x="305" y="829" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#2E7D5B">Completed</text>
+  <text x="36" y="854" class="sans" font-size="12.5" font-weight="600">National Entrance Examination Paper I</text>
+  <rect x="36" y="872" width="170" height="6" rx="3" fill="#E8E6E0"/>
+  <rect x="36" y="872" width="170" height="6" rx="3" fill="#1F4A45"/>
+  <text x="214" y="880" class="sans muted" font-size="10.5" fill="#6F7B77">100%</text>
+  <rect x="259" y="862" width="80" height="30" rx="7" fill="#FFFFFF" stroke="#D8D4CC"/>
+  <text x="299" y="881" text-anchor="middle" class="sans" font-size="11.5" font-weight="600">Open</text>
+
+  <!-- 列表尾注 -->
+  <text x="187.5" y="936" text-anchor="middle" class="sans muted" font-size="11" fill="#8A948F">Showing 6 of 17 papers · 2010 – 2026</text>
+
+  <!-- ═══ 底部标签栏（Exams 激活） ═══ -->
+  <g transform="translate(0,972)">
+    <rect x="0" y="0" width="375" height="68" fill="#FFFFFF"/>
+    <line x1="0" y1="0" x2="375" y2="0" stroke="#EBE8E2"/>
+    <g transform="translate(47,22)" stroke="#8A948F" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-7 0.5 L0 -5.5 L7 0.5"/>
+      <path d="M-4.8 -1.5 V6.5 H4.8 V-1.5"/>
+    </g>
+    <text x="47" y="44" text-anchor="middle" class="sans" font-size="10" fill="#8A948F">Home</text>
+    <rect x="106.6" y="0" width="68" height="2.5" rx="1" fill="#1F4A45"/>
+    <g transform="translate(140.6,22)" stroke="#1F4A45" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="-6.5" y="-4" width="13" height="10.5" rx="1.5"/>
+      <path d="M-6.5 -0.5 H6.5"/>
+      <path d="M-3 -6.8 H3"/>
+    </g>
+    <text x="140.6" y="44" text-anchor="middle" class="sans" font-size="10" font-weight="600" fill="#1F4A45">Exams</text>
+    <g transform="translate(234.4,22)" stroke="#8A948F" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 -4.5 C-2 -6.2 -4.8 -5.8 -6.5 -4.8 V5.2 C-4.8 4.3 -2 4.6 0 5.8 C2 4.6 4.8 4.3 6.5 5.2 V-4.8 C4.8 -5.8 2 -6.2 0 -4.5 Z"/>
+      <path d="M0 -4.5 V5.8"/>
+    </g>
+    <text x="234.4" y="44" text-anchor="middle" class="sans" font-size="10" fill="#8A948F">Study</text>
+    <g transform="translate(328.1,22)" stroke="#8A948F" stroke-width="1.6" fill="none" stroke-linecap="round">
+      <circle r="2.4"/>
+      <path d="M0 -6.4 V-4.2 M0 4.2 V6.4 M-6.4 0 H-4.2 M4.2 0 H6.4 M-4.5 -4.5 L-3 -3 M3 3 L4.5 4.5 M4.5 -4.5 L3 -3 M-3 3 L-4.5 4.5"/>
+    </g>
+    <text x="328.1" y="44" text-anchor="middle" class="sans" font-size="10" fill="#8A948F">Settings</text>
+    <rect x="152" y="60" width="71" height="4" rx="2" fill="#1A2626" opacity="0.85"/>
+  </g>
+</svg>

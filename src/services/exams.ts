@@ -100,6 +100,13 @@ const PAPER_LIST_SELECT = 'id, year, title' as const
 const PAPER_DETAIL_SELECT =
   'id, year, title, all:exam_sections(id, paper_id, source_id, type, title, score, minutes, intro, passage, prompt, tips, extra_data, sort_order, section_items(id, item_no, item_type, content, item_options(id, option_index, content)))' as const
 
+/**
+ * 题型练习用的大题投影：与详情页同一套公开字段，只是**不带 paper 层**
+ * （paper 的年份另行查询后拼上）。同样禁止 `*`，理由同上。
+ */
+const SECTION_WITH_ITEMS_SELECT =
+  'id, paper_id, source_id, type, title, score, minutes, intro, passage, prompt, tips, extra_data, sort_order, section_items(id, item_no, item_type, content, item_options(id, option_index, content))' as const
+
 /* ------------------------------------------------------------------ *
  * 数据库原始返回行（仅本文件内部使用）
  * ------------------------------------------------------------------ */
@@ -117,6 +124,39 @@ type RawPaperDetailRow = ExamPaper & { all: RawSectionRow[] }
  * 逐字段重建（而不是 `...row`）是刻意的第二道防线：即使将来查询白名单被改宽，
  * 多出来的列也不会自动流进 DTO。排序则是为了不依赖 PostgreSQL 的默认返回顺序。
  */
+function toExamSection(section: RawSectionRow): ExamSectionWithItems {
+  return {
+    id: section.id,
+    paper_id: section.paper_id,
+    source_id: section.source_id,
+    type: section.type,
+    title: section.title,
+    score: section.score,
+    minutes: section.minutes,
+    intro: section.intro,
+    passage: section.passage,
+    prompt: section.prompt,
+    tips: section.tips,
+    extra_data: section.extra_data,
+    sort_order: section.sort_order,
+    items: [...section.section_items]
+      .sort((a, b) => a.item_no - b.item_no)
+      .map((item) => ({
+        id: item.id,
+        item_no: item.item_no,
+        item_type: item.item_type,
+        content: item.content,
+        options: [...item.item_options]
+          .sort((a, b) => a.option_index - b.option_index)
+          .map((option) => ({
+            id: option.id,
+            option_index: option.option_index,
+            content: option.content,
+          })),
+      })),
+  }
+}
+
 function toExamPaperDetail(row: RawPaperDetailRow): ExamPaperDetail {
   return {
     id: row.id,
@@ -124,36 +164,7 @@ function toExamPaperDetail(row: RawPaperDetailRow): ExamPaperDetail {
     title: row.title,
     sections: [...row.all]
       .sort((a, b) => a.sort_order - b.sort_order)
-      .map((section) => ({
-        id: section.id,
-        paper_id: section.paper_id,
-        source_id: section.source_id,
-        type: section.type,
-        title: section.title,
-        score: section.score,
-        minutes: section.minutes,
-        intro: section.intro,
-        passage: section.passage,
-        prompt: section.prompt,
-        tips: section.tips,
-        extra_data: section.extra_data,
-        sort_order: section.sort_order,
-        items: [...section.section_items]
-          .sort((a, b) => a.item_no - b.item_no)
-          .map((item) => ({
-            id: item.id,
-            item_no: item.item_no,
-            item_type: item.item_type,
-            content: item.content,
-            options: [...item.item_options]
-              .sort((a, b) => a.option_index - b.option_index)
-              .map((option) => ({
-                id: option.id,
-                option_index: option.option_index,
-                content: option.content,
-              })),
-          })),
-      })),
+      .map(toExamSection),
   }
 }
 
@@ -218,6 +229,80 @@ export async function getExamPaperById(
   }
 
   return data === null ? null : toExamPaperDetail(data)
+}
+
+/** 题型练习用：大题 + 它所属试卷的年份/标题（年份在 UI 上要显示，用于区分年份）。 */
+export type ExamSectionWithYear = ExamSectionWithItems & {
+  year: number
+  paperTitle: string
+}
+
+/**
+ * 按「题型 + 年份集合」取大题，用于题型练习（如「2020–2024 的阅读理解」）。
+ *
+ * 刻意拆成**两段查询**而不是一次带过滤的嵌入查询：
+ * `.eq('exam_papers.year', ...)` 这类「过滤外层按内层字段」的写法在 PostgREST 上
+ * 需要 `!inner` 提示且容易踩别名坑；两次简单查询更可读、可预期，
+ * 数据量也只有 17 套 × 9 大题。
+ *
+ * 排序契约：年份升序（按时间顺序做同一个题型），同年内按 `sort_order` 升序；
+ * items / options 仍按 `item_no` / `option_index` 升序。服务端 order + 客户端强制排序双保险。
+ *
+ * 返回**只有公开字段**，不含 correct_option / explanation / source_data / passage_zh。
+ */
+export async function getSectionsByTypeAndYears(
+  type: string,
+  years: number[],
+): Promise<ExamSectionWithYear[]> {
+  const uniqueYears = [...new Set(years)]
+  if (uniqueYears.length === 0) return []
+
+  const supabase = getSupabaseClient()
+
+  const { data: papers, error: paperError } = await supabase
+    .from('exam_papers')
+    .select(PAPER_LIST_SELECT)
+    .eq('is_current', true)
+    .in('year', uniqueYears)
+    .order('year', { ascending: true })
+
+  if (paperError) throw paperError
+  if (papers.length === 0) return []
+
+  const paperById = new Map(papers.map((paper) => [paper.id, paper]))
+
+  const { data, error } = await supabase
+    .from('exam_sections')
+    .select(SECTION_WITH_ITEMS_SELECT)
+    .in(
+      'paper_id',
+      papers.map((paper) => paper.id),
+    )
+    .eq('type', type)
+    .order('sort_order', { ascending: true })
+    .order('item_no', { referencedTable: 'section_items', ascending: true })
+    .order('option_index', {
+      referencedTable: 'section_items.item_options',
+      ascending: true,
+    })
+
+  if (error) throw error
+
+  return [...data]
+    .sort((a, b) => {
+      const yearA = paperById.get(a.paper_id)?.year ?? 0
+      const yearB = paperById.get(b.paper_id)?.year ?? 0
+      if (yearA !== yearB) return yearA - yearB
+      return a.sort_order - b.sort_order
+    })
+    .map((section) => {
+      const paper = paperById.get(section.paper_id)
+      return {
+        ...toExamSection(section),
+        year: paper?.year ?? 0,
+        paperTitle: paper?.title ?? '',
+      }
+    })
 }
 
 /* ------------------------------------------------------------------ *

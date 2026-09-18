@@ -1,77 +1,65 @@
 # English2 项目长期记忆
 
-## 项目定位
-考研英语二真题学习系统（2010–2026，17 套）。`D:\workSpace\github\English2`，main 分支。
-Vite + React 19 + TS6(strict) + Tailwind 4 + shadcn/ui(Base UI) + Supabase + TanStack Query + React Router 7 + oxlint。
-`pnpm dev` / `build`(= tsc -b && vite build) / `lint` / `db:types`。
-**Phase 1–7 全部 done（Phase 7 E2E 52/52 通过）。** 设计重构方案见 `docs-next/`（4 份文档，尚未动代码）。
+> 只记**文档里没有的**约定与坑；规格类查 `docs/`（`phases/`、`pages/`、`architecture.md`、`development/`）。开工顺序：`docs/development/progress.md` → phase → page → 代码。
 
-## 架构铁律
-- 数据链路只能 `Page → hooks → services → getSupabaseClient()`；**service 是唯一访问 Supabase 的层**。
-- `data/exams/` 是源题库（不可移动/重命名），**不作运行时数据源**；路径别名 `@/*`，根 tsconfig 不写 `baseUrl`。
-- **开工顺序：`docs/development/progress.md` → phase → page → 代码。**
-- ⚠️ Phase 唯一定义源 = `docs/phases/`（7 阶段）；`.codebuddy/rules/phase-discipline.md` 与 `CODEBUDDY.md` 的旧「10 阶段」清单已废弃。
-- 路由参数统一 `:paperId`；docs 根目录写相对链接用 `./phases/...`。
+## 定位
+考研英语二真题（2010–2026，17 套）。`D:\workSpace\github\English2`，main。
+Vite+React 19+TS6(strict)+Tailwind 4+shadcn/ui+Supabase+TanStack Query+RR7+oxlint；`pnpm dev`/`build`(tsc -b && vite build)/`lint`/`db:types`。**Phase 1–7 全 done**。
 
-## 题库结构（易踩错）
-- `papers-YYYY.json` 顶层是 **array(9)，元素是「大题/section」**不是 paper；每年恒定 9 大题（4 阅读+完形+新题型+翻译+2 写作）。
-- section 键是 `id`（`zy-2010-read-1`/`-cloze`/`-match`/`-trans`/`-write-s`/`-write-b`），**无 source_id**（由 `sync_exam_paper` 生成）。⚠️ 2024/2025 小作文是 `-write-a`。
-- ⚠️ `index.json` 是 **153 条 section 级**条目，**不是 paper 列表** —— 严禁当 `/exams` 数据源（已踩坑）。
-- `ans` **0-based** → DB `correct_option` 直接沿用；`item_options` 无 is_correct。
-- `item_no` 是**大题内 1..N**（5/20/5/1/1），**非全局题号**；**禁止按 sort_order 推断题型**。
-- 变体：2 份完形缺 passage_zh、2 份新题型无 passage、写作 chart/chart_url/sample 三态。
-- 翻译 17/17 有 `extra_data.reference_translation`，**全无 explanation/correct_option**；写作 sample 只在 2024/2025 的 4 个大题，在 `exam_sections.extra_data`。
-- 去重：翻译 `section.passage` ≡ 唯一 text item content；写作 prompt/tips 同理 → 只渲染一次。
+## 铁律
+- 链路只能 `Page → hooks → services → getSupabaseClient()`；**service 是唯一访问 Supabase 的层**。
+- `data/exams/` 是源题库、**不作运行时数据源**；别名 `@/*`；根 tsconfig 不写 `baseUrl`；路由参数 `:paperId`。
+- Phase 唯一定义源 = `docs/phases/`；旧「10 阶段」清单（`CODEBUDDY.md`/`.codebuddy/rules/`）**已废弃**。
 
-## 前端数据契约
-- 类型全在 `src/services/exams.ts`，基于 `Pick<Tables<...>, 白名单>`，**不手写第二套 DB 类型**。`ExamSection` **无 passage_zh**。
-- `ExamPaperDetail = paper & { sections: (section & { items: (item & { options })[] })[] }`。
-- **排序契约（硬性）**：sections→sort_order、items→**item_no**（section_items 无 sort_order！）、options→option_index，全升序；服务端 referencedTable + 客户端 `toExamPaperDetail()` 双保险。
-- 查询一律显式白名单，**禁止 `*`**；`toExamPaperDetail()` 逐字段重建（不 `...row`）。
-- 详情用嵌入别名 `all:exam_sections(...)`；⚠️ `.order(..., { referencedTable: 'all' })` **必须用别名**，真实表名报 `400 not an embedded resource`。
-- 错误文案：`toExamErrorMessage`/`toPracticeErrorMessage`/`toMistakeErrorMessage` 是各域唯一解读处；页面只写 `description={toXxxErrorMessage(error)}`。
-- PostgREST：✅ 同关系重复嵌入（必须带别名）；❌ select 内 SQL 函数（`coalesce`→400 PGRST100）、无名重复嵌入（400 42803）。
-- `src/types/database.ts` 是**纯 codegen（不手改）**；codegen 对 RETURNS TABLE 推非空 ⇒ null 收敛统一落在 **service DTO 层**（`row.is_correct ?? null`）。
-- Practice：`PracticeGradeResult` camelCase，`isCorrect === null` = 主观题。`practice_answers` **无「选项/文本二选一」CHECK** ⇒ 纯文本/纯标记行合法（主观题无需 DDL）。
+## 数据 / 查询坑
+- ⚠️ `index.json` 是 **153 条 section 级**索引、**不是 paper 列表** ⇒ 严禁当 `/exams` 数据源。
+- ⚠️ `exam_sections` **无 `year` 列**（在 `exam_papers`）；`section_items` **无 `sort_order`**（用 `item_no`）。
+- `ans` **0-based** → `correct_option` 直接沿用；`item_no` 是**大题内 1..N**；禁止按 `sort_order` 推题型。
+- 查询一律显式白名单、**禁止 `*`**（列级 REVOKE ⇒ `42501`）；详情用嵌入别名 `all:exam_sections(...)`，且 `.order(...,{referencedTable:'all'})` **必须用别名**（真名报 400）；❌ select 内 SQL 函数（`coalesce`→PGRST100）。
+- 类型全在 `src/services/exams.ts`（`Pick<Tables<...>, 白名单>`），**不手写第二套 DB 类型**；`src/types/database.ts` 是**纯 codegen（不手改）**，RETURNS TABLE 推非空 ⇒ null 收敛在 **service DTO 层**；**新增 RPC 先 `pnpm db:types` 再 tsc**。
+- 求和一律用 `src/lib/number.ts`（`sum`/`sumBy`/`sumPrecise`/`roundTo`），**别手写 `reduce((t,x)=>t+x,0)`**：整数用 `sumBy`，小数（题分/金额）用 `sumPrecise`。
 
 ## 答案边界（不可回退）
-- 前端**不读取**：`exam_sections.passage_zh`/`source_data`、`section_items.correct_option`/`explanation`/`extra_data`、`exam_papers` 除 id/year/title、`practice_answers.is_correct`/`score`。实现：列白名单 + DTO + 列级 GRANT/REVOKE（不建 View）。
-- 翻译判断走 `source_id.endsWith('-trans')`，**不用**中文 `type === '翻译'`。
-- 答案唯一出口 = RPC `grade_practice_section(uuid)`（SECURITY DEFINER、校验 auth.uid()、只返回实际作答过的题）。`PracticeResult.tsx` 是全站**唯一**可渲染答案/解析处，且仅在提交后。
-- ⚠️ `/mistakes` **刻意不展示答案与解析**（MistakeCard DTO 里没有这些列）；对照答案只能走「重做 → 判分」。
-- 「中文参考」折叠已下线（Phase 5C `37217cd`），passage_zh 完全不下发。
+- 前端**不读** `passage_zh`/`source_data`/`correct_option`/`explanation`/`extra_data`、`exam_papers` 除 id/year/title、`practice_answers.is_correct`/`score`。实现 = 列白名单 + DTO + **列级 GRANT/REVOKE**（不建 View）。
+- 受控出口 = SECURITY DEFINER RPC（校验 `auth.uid()` + `search_path=public,pg_temp`）：`grade_practice_section`、`peek_item_answer`（一次一题）、`practice_session_stats`/`practice_type_accuracy`（counts-only）。
+- 翻译判断走 `source_id.endsWith('-trans')`；⚠️ `/mistakes` **刻意不展示答案与解析**，对照只能走「重做 → 判分」。
 
-## 数据库 / 权限
-- Project Ref `btrgtbhiheosntzfjhxh`。
-- ⚠️ **用户豁免（2026-09-16）**：**不写 migration**（变更直接 `npx supabase db query --linked` 线上执行，不落 `supabase/migrations/`）；**不做 SQL 备份**。代价：不可追溯/不可回滚 ⇒ 执行前 git status、把 SQL 摊给用户、跑完立即读回核对。
-- 8 表：题库 4（`exam_papers`/`exam_sections`/`section_items`/`item_options`，authenticated 仅 SELECT）+ 学习 4（`practice_sessions`/`practice_answers`/`mistakes`/`mistake_reviews`，RLS own-only + 完整 DML）。
-- ⚠️ 同步需 **service_role/postgres 通道**；前端绝不出现 service_role。
-- `mistakes`：`status` CHECK(active|reviewing|mastered|removed) 默认 active；**UNIQUE(user_id,item_id)**（收录靠它 upsert）；item_id FK **RESTRICT**；**有 `mistakes_updated_at` 触发器 ⇒ service 不要手写 updated_at**。`mistake_reviews` 无 updated_at/触发器，mistake_id FK CASCADE。
-- `grade_practice_section` 流程：判分写回 → **错题收录**（`on conflict (user_id,item_id) do update`，只收 choice + correct_option 非 null + is_correct=false；原 removed 则复活为 active）→ session 置 completed。改 body 用 `create or replace`；⚠️ **改返回列必须 drop + 重新 GRANT**。
+## 数据库 / 权限（高危）
+- Ref `btrgtbhiheosntzfjhxh`。8 表：题库 4（authenticated 仅 SELECT）+ 学习 4（RLS own-only + 完整 DML）；同步需 **service_role/postgres**，前端绝不出现。
+- ⚠️ **用户豁免（2026-09-16）**：**不写 migration**、**不做 SQL 备份** ⇒ 变更不可追溯/回滚；执行前 `git status`、SQL 摊给用户、跑完读回核对。⚠️ **`supabase` CLI 已不可复现** ⇒ 改用 **`supabase-js` + `.env.local` 的 publishable key + 用户登录**（RLS 限本人），先只读盘点再动手。
+- `mistakes`：**UNIQUE(user_id,item_id)**；item_id FK RESTRICT；**有 updated_at 触发器 ⇒ 别手写**。⚠️ 删会话**不会**删 mistakes（**无 session FK**）⇒ 清理探针必须**单独删 mistakes**。
+- ⚠️ `practice_sessions` **两个 CHECK**（`..._target_check`+`..._type_check`）：**加新 session_type 必须两个都改**，只改一个报 23514。drill 是跨年跨卷同题型集合 ⇒ 对账按 **year-set 相等**（`.contains()` 只是子集）。
+- `grade_practice_section`：判分写回 → **错题收录**（细节见 `docs/pages/mistakes.md` §7）→ session 置 completed。改 body 用 `create or replace`；⚠️ **改返回列必须 drop + 重新 GRANT**；⚠️ 整卷会话 `order by coalesce(es.sort_order,0), si.item_no`。
+- ⚠️ `peek_item_answer` 的 scoped 判断要**覆盖 practice/exam/drill 三支**（漏一支 = 该模式选完不揭示）。
 
-## UI 契约
-- 路由：`/login`、`/`、`/exams`、`/exams/:paperId`、`/exams/:paperId/practice/:sectionId`、`/mistakes`、`*`。
-- 查询键集中 `src/lib/constants.ts`：`examKeys`/`practiceKeys`/`mistakeKeys`；状态类 mutation invalidate `xxxKeys.all`。
-- 练习页（已判分，答题/结果共路由）：
-  - `answeredCount` = 「选过选项」**或**「标记过完成」逐题判定；⚠️ 不能用 `savedByItem.size`（主观题 selected_option 恒 null ⇒ 翻译大题计数恒 0、按钮永禁）。
-  - `canSubmit = hasChoiceItems || source_id.endsWith('-trans')`；⚠️ 不能用 `!hasChoiceItems`（写作题会长出假提交按钮）。
-  - 翻译「标记已完成」= upsert `text_answer=''`/`selected_option=null` 纯标记行；撤销 = `deletePracticeAnswer()` **真删行**（只改本地 state 不够）。
-  - `PracticeQuestion` 的 `onToggleTextAnswer` **不传则不渲染按钮**（防死按钮）。
-- 错题页三视图由 `groupOfStatus(status)` 派生（active+reviewing→open）；卡片操作按 status 显隐；`lastSelectedOption` 来自 practice_answers 回查，**不是答案泄露**。
+## 作答保存契约（硬性）
+- **作答期零网络请求**：点选/标记/输入/切题**只改内存**（`PracticeRunner.pendingRef`）。
+- **只在**退出/返回上一页/提交判分/卸载/`pagehide`/`visibilitychange` 落库；提交时 **`flushAnswers()` 先于判分 RPC**。
+- **唯一写入口** `useSavePracticeAnswerDrafts()` → `savePracticeAnswerDrafts({sessionId,upserts,deletes})`：**一次** `upsert(rows,{onConflict:'session_id,item_id'})`（+ 必要时一次 `delete().in(...)`）。⚠️ rows **每行键必须一致**（缺的写 `null`），否则 PGRST102。
+- ⚠️ **30s 周期回写已删除**；⚠️ 卸载兜底**不能返回 Promise**（写 `void flush()`）；⚠️ `useUpsertPracticeAnswer`/`useDeletePracticeAnswer` **答题页禁止再引入**。
 
-## 验证技巧
-- **Vite `ssrLoadModule` 可在 Node 跑真实前端模块**（解析 `@/`、注入 `.env.local`、共享 client 可登录后跑 authenticated 查询）。
-- 浏览器验证用 **Python Playwright**（`…\python\envs\default\Scripts\python.exe`）；dev server 只用 `http://localhost:<p>`（127.0.0.1 连不上）。
-- **答案泄露扫描必须结构级**：响应 json 后断言**键集合恰等于白名单**，再递归 walk 禁字段 0 命中（子串法会误报）；必须在**全新 context**（React Query 缓存会让二次进入不发请求）+ 正向对照（`"item_no" in body`）。
-- 错误注入：`route.fulfill(status=...)` 必须补 CORS 头并对 OPTIONS 单独 fulfill(204)，否则伪装成网络错误；React Query 默认 retry 3 次（≈7s）。
-- ⚠️ 空结果 + 非零退出码 ≠ 查询成功无数据（查 information_schema.triggers 曾误判）→ 用「无论有无数据都返回行」的查询交叉验证。
-- 收尾必须清理 dev 账号测试数据并读回 `remaining = 0`。
+## 缓存失效契约（跨域）
+- ⚠️ 全局 `staleTime` = **5 分钟**（`src/main.tsx`）⇒ **跨域写入必须显式失效对方缓存**，否则切页面不重取、用户以为没生效。
+- 硬性：`useGradePracticeSection` 成功 → 除 practice 域外**必须**失效 `mistakeKeys.all`（判分 RPC 会写 `mistakes`）；漏了 = 「提交完点错题本还是旧列表、得手动刷新」。失效默认 `refetchType:'active'`（未挂载只标脏、挂载即重取），别改成 `'none'`。
+
+## UI 契约（文档未覆盖的）
+- ⚠️ `/exams/:paperId` 有页面级**「← 返回题库」文字链**（四态都在，标题上方）：用文字链非按钮（不跟主 CTA 争权重）、**硬编码 `to="/exams"`**（`navigate(-1)` 在直达/刷新时没有上一页）。
+- ⚠️ **乐观态必须有**（`answeredIndices` = 服务端行 ∪ 本地乐观态），否则 Playwright `check()` 报 "did not change its state"。
+- ⚠️ **`DrillPage`「已结束」只判一次**：`(status==='completed'||'abandoned') && graded===null`；跟着 `status` 走会让**判分结果页被结束态顶掉**；用 `useEffect` 快照会触发 `react(set-state-in-effect)` ⇒ 用**纯派生**。
+- `canSubmit = hasChoiceItems || source_id.endsWith('-trans')`（不能用 `!hasChoiceItems`，否则写作题长出假提交按钮）。
+- 计时是**倒计时**；超时自动提交，**0 作答则置 abandoned**。「显示答案」= **仅 choice 且用户已选**；**翻译/写作永不揭示**。
 
 ## 环境坑位（Windows）
-- **Bash 工具 PATH 不完整**（缺 date/ls/dirname/sed）→ 一律用 PowerShell 工具；输出被吞时写文件再 Read。
-- push 失败（`cannot spawn sh`）→ SSH：`git push git@github.com:harmsworth/English2.git main`；显式 URL 推送**不更新** origin/main，需手动 fetch 刷新。
-- `pnpm exec tsc -b` 偶发失败 → `node node_modules/typescript/bin/tsc -b`；脚本落盘用 `json.dump(ensure_ascii=False)` 写 UTF-8；线上 SQL 一律**英文注释**（CLI 通道中文会乱码）。
+- **PowerShell 只回传退出码、吞 stdout** ⇒ 一律 `命令 | Out-File -Encoding utf8 x.txt` 再 Read；失败会**中断整条管道**（日志没生成 = 前面命令没跑成）；**`cmd /c` 被禁**。**Bash PATH 残缺**（只有 `git`）⇒ 文件操作走专用工具。
+- ⚠️ **删文件被沙箱接管**：`Remove-Item` 走 safe-delete（回收站），通道失败报 `SAFE_DELETE_FAIL_CLOSED` 且**拒绝硬删** ⇒ 改用 `Move-Item` 挪去 `$env:TEMP`。
+- **浏览器验证**：`agent-browser` **未装**；用 `playwright-core` + 显式 `executablePath`。⚠️ 模块在 **`C:\Users\BSI\.workbuddy\binaries\node\workspace\node_modules`**（**不在项目里**），`NODE_PATH` 要指过去，否则 MODULE_NOT_FOUND；chromium 用 `…\ms-playwright\chromium-1228\chrome-win64\chrome.exe`。
+- dev server：`node node_modules/vite/bin/vite.js --port 5173 --strictPort`（后台任务；`Start-Process -WindowStyle Hidden` 会静默退出）。⚠️ 它绑 **IPv6 `[::1]`** ⇒ `Test-NetConnection 127.0.0.1` 报 False 但服务在跑；判断用 `netstat -ano | Select-String :5173`，探测用 `localhost`。
+- ⚠️ 断言异步渲染的元素**先 `waitFor` 再 `count()`**：直接数会得 0，误判成功能坏了。
+- ⚠️ `uppercase` 眉栏的 `innerText` 返回**大写** ⇒ 断言忽略大小写；冒烟按钮文案会撞车（「退出」也匹配顶栏登出）⇒ 用 `page.locator('main button', ...)`。
+- ⚠️ 只断言「答案未泄露」不够：切题后**答案块应消失**并数 `peek_item_answer` 次数（翻译/写作应为 0）；泄露扫描要**结构级**且排除受控 RPC。
+- ⚠️ **同一文件并行发多个 Edit 会互相覆盖**（曾「删导入」没生效 ⇒ tsc TS6133）⇒ 改完必须 Read 复核，或整文件 Write。
 
-## 工作区纪律
-- 用户常在 `.workbuddy/`、`docs/` 下有未提交在制品：任何任务**不得**删除/覆盖/回滚/`git add .`/`git clean`/commit/push（除非明确要求）。
-- 开工先 `git status`，收尾再 `git status` / `git diff` / `git diff --check`。
+## 纪律 / 待清理
+- 用户常在 `.workbuddy/`、`docs/`、`src/` 下有未提交在制品：**不得**删除/覆盖/回滚/`git add .`/`git clean`/commit/push（除非明确要求）。开工先 `git status`，收尾 `git status`/`git diff`/`git diff --check`。
+- ⚠️ 自动化探针会污染线上库（**会话 + 作答 + 错题**）：跑完必须清干净，**只删自己造的**；清错题的锚点 = 「本会话作答过的 item_id」∩「`updated_at >= 会话 created_at`」，再核对删前删后总数。用户真实数据宁可保留。
+- 非缺陷待办：`shadcn`(CLI) 应在 `devDependencies`；`cn@0.2.6` 是它的传递依赖，不是没用到。

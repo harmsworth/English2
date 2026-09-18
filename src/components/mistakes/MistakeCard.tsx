@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import type { MistakeItem, MistakeStatus } from '@/services/mistakes'
@@ -29,6 +30,16 @@ const STATUS_LABEL: Readonly<Record<MistakeStatus, string>> = {
   reviewing: '复习中',
   mastered: '已掌握',
   removed: '已移出',
+}
+
+/** 状态 → Badge 变体（design-system §8.3）：徽章一律带文字，不靠颜色单独表意。 */
+const STATUS_VARIANT: Readonly<
+  Record<MistakeStatus, 'neutral' | 'warning' | 'success' | 'danger'>
+> = {
+  active: 'danger',
+  reviewing: 'warning',
+  mastered: 'success',
+  removed: 'neutral',
 }
 
 /**
@@ -72,17 +83,9 @@ export function MistakeCard({
             {source.join(' · ')}
           </p>
           <p className="flex items-center gap-2 text-xs text-muted-foreground">
-            <span
-              className={cn(
-                'rounded-md px-1.5 py-0.5 font-medium',
-                status === 'mastered' && 'bg-primary/10 text-primary',
-                status === 'removed' && 'bg-muted text-muted-foreground',
-                (status === 'active' || status === 'reviewing') &&
-                  'bg-destructive/10 text-destructive',
-              )}
-            >
+            <Badge variant={STATUS_VARIANT[status]}>
               {STATUS_LABEL[status]}
-            </span>
+            </Badge>
             <span className="tabular-nums">
               最近错 {formatDateTime(mistake.lastWrongAt)}
             </span>
@@ -104,7 +107,7 @@ export function MistakeCard({
                   key={option.id}
                   className={cn(
                     'flex flex-wrap items-baseline gap-2.5 rounded-md px-2 py-1 text-[0.9375rem] leading-7 text-foreground/85',
-                    picked && 'bg-primary/5 ring-1 ring-primary/30',
+                    picked && 'bg-primary-selected ring-1 ring-primary/40',
                   )}
                 >
                   {hasOwnLetter(option.content) ? null : (
@@ -136,6 +139,8 @@ export function MistakeCard({
                 type="button"
                 variant="outline"
                 size="sm"
+                // 移动端补足 44px 触控高度，桌面回到紧凑档（WCAG 2.5.5）
+                className="h-11 px-3 md:h-7 md:px-2.5"
                 disabled={isMutating}
                 onClick={() => onStatusChange('active')}
               >
@@ -147,6 +152,8 @@ export function MistakeCard({
                 type="button"
                 variant="outline"
                 size="sm"
+                // 移动端补足 44px 触控高度，桌面回到紧凑档（WCAG 2.5.5）
+                className="h-11 px-3 md:h-7 md:px-2.5"
                 disabled={isMutating}
                 onClick={() => onStatusChange('mastered')}
               >
@@ -158,6 +165,8 @@ export function MistakeCard({
                 type="button"
                 variant="outline"
                 size="sm"
+                // 移动端补足 44px 触控高度，桌面回到紧凑档（WCAG 2.5.5）
+                className="h-11 px-3 md:h-7 md:px-2.5"
                 disabled={isMutating}
                 onClick={() => onStatusChange('removed')}
               >

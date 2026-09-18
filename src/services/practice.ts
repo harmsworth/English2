@@ -46,8 +46,16 @@ type PracticeAnswerProjection = Pick<
 
 /** `practice_sessions.status` 允许值（DB CHECK: active|paused|completed|abandoned）。 */
 export type PracticeStatus = 'active' | 'paused' | 'completed' | 'abandoned'
-/** `practice_sessions.session_type` 允许值（DB CHECK: practice|exam|mistake）。 */
-export type PracticeSessionType = 'practice' | 'exam' | 'mistake'
+/**
+ * `practice_sessions.session_type` 允许值。
+ *
+ * - `exam`——整卷练习（绑 paper_id）
+ * - `drill`——题型练习（绑 drill_type + drill_years，**跨年份跨试卷**，所以既没有
+ *   section_id 也没有 paper_id）
+ * - `practice`——单大题练习（绑 section_id，历史形态，当前无 UI 入口）
+ * - `mistake`——错题重做（预留）
+ */
+export type PracticeSessionType = 'practice' | 'exam' | 'drill' | 'mistake'
 
 function isPracticeStatus(value: string): value is PracticeStatus {
   return (
@@ -59,7 +67,12 @@ function isPracticeStatus(value: string): value is PracticeStatus {
 }
 
 function isPracticeSessionType(value: string): value is PracticeSessionType {
-  return value === 'practice' || value === 'exam' || value === 'mistake'
+  return (
+    value === 'practice' ||
+    value === 'exam' ||
+    value === 'drill' ||
+    value === 'mistake'
+  )
 }
 
 /**
@@ -73,6 +86,10 @@ export type PracticeSession = {
   status: PracticeStatus
   sectionId: string | null
   paperId: string | null
+  /** 题型练习的题型（中文 section type，如「阅读理解」）；非 drill 会话为 null */
+  drillType: string | null
+  /** 题型练习覆盖的年份；非 drill 会话为 null */
+  drillYears: number[] | null
   currentItemNo: number
   elapsedSeconds: number
   timeLimitSeconds: number | null
@@ -200,7 +217,7 @@ export function toPracticeErrorMessage(error: unknown): string {
  * ------------------------------------------------------------------ */
 
 const SESSION_SELECT =
-  'id, user_id, session_type, status, section_id, paper_id, current_item_no, elapsed_seconds, time_limit_seconds, started_at, paused_at, completed_at, created_at, updated_at'
+  'id, user_id, session_type, status, section_id, paper_id, drill_type, drill_years, current_item_no, elapsed_seconds, time_limit_seconds, started_at, paused_at, completed_at, created_at, updated_at'
 
 const ANSWER_SELECT =
   'id, session_id, item_id, selected_option, text_answer, time_spent_seconds, answered_at, created_at, updated_at'
@@ -220,6 +237,8 @@ function toPracticeSession(row: SessionRow): PracticeSession {
     status: row.status,
     sectionId: row.section_id,
     paperId: row.paper_id,
+    drillType: row.drill_type,
+    drillYears: row.drill_years,
     currentItemNo: row.current_item_no,
     elapsedSeconds: row.elapsed_seconds,
     timeLimitSeconds: row.time_limit_seconds,
@@ -269,13 +288,18 @@ async function currentUserId(): Promise<string> {
 /**
  * 创建练习会话的入参。参数由数据库真实约束决定：
  * - `practice` 会话必须带 `sectionId` 且不能带 `paperId`（DB target CHECK）；
- * - `exam` 会话必须带 `paperId`；`mistake` 二者皆可选。
+ * - `exam` 会话必须带 `paperId`；
+ * - `drill` 会话必须带 `drillType` + 至少一个 `drillYears`，且**不能**带
+ *   `sectionId` / `paperId`（题型练习跨年份跨试卷，落不到单个 section/paper 上）；
+ * - `mistake` 二者皆可选。
  * 这里只做参数装配，不重复实现 CHECK 逻辑（数据库是权威），也不会替你猜默认值。
  */
 export type CreatePracticeSessionInput = {
   sessionType: PracticeSessionType
   sectionId?: string
   paperId?: string
+  drillType?: string
+  drillYears?: number[]
   timeLimitSeconds?: number
 }
 
@@ -291,6 +315,8 @@ export async function createPracticeSession(
   }
   if (input.sectionId !== undefined) row.section_id = input.sectionId
   if (input.paperId !== undefined) row.paper_id = input.paperId
+  if (input.drillType !== undefined) row.drill_type = input.drillType
+  if (input.drillYears !== undefined) row.drill_years = input.drillYears
   if (input.timeLimitSeconds !== undefined)
     row.time_limit_seconds = input.timeLimitSeconds
 
@@ -326,6 +352,16 @@ export type PracticeTarget = {
   sessionType: PracticeSessionType
   sectionId?: string
   paperId?: string
+  /** drill 会话用它 + drillYears 一起判定「同一次题型练习」 */
+  drillType?: string
+  drillYears?: number[]
+}
+
+/** 年份集合的规范化字符串，用于「同一次题型练习」的精确比对（顺序无关、去重）。 */
+function yearsKey(years: number[] | null): string {
+  return [...new Set(years ?? [])]
+    .sort((a, b) => a - b)
+    .join(',')
 }
 
 /**
@@ -334,6 +370,10 @@ export type PracticeTarget = {
  * ⚠️ 数据库**没有**保证「一个用户同时只有一个 active 会话」的唯一约束，
  * 因此这里返回的是**符合条件中 updated_at 最新的一条**（不是“唯一的那个”），
  * 不伪造任何“最多一个”的业务规则。若无匹配返回 null。
+ *
+ * 题型练习（drill）多一道工序：`contains` 只能保证「库里那条包含你选的年份」，
+ * 选 3 年时可能命中一次 5 年的练习。所以取最近若干条后，在内存里做
+ * **集合相等**判定 —— 恢复的必须是同一次选择，不能张冠李戴。
  */
 export async function getResumablePracticeSession(
   target: PracticeTarget,
@@ -351,14 +391,56 @@ export async function getResumablePracticeSession(
   if (target.sectionId !== undefined)
     query = query.eq('section_id', target.sectionId)
   if (target.paperId !== undefined) query = query.eq('paper_id', target.paperId)
+  if (target.drillType !== undefined)
+    query = query.eq('drill_type', target.drillType)
+  if (target.drillYears !== undefined)
+    query = query.contains('drill_years', target.drillYears)
 
   const { data, error } = await query
     .order('updated_at', { ascending: false })
-    .limit(1)
-    .maybeSingle()
+    .limit(20)
 
   if (error) throw new PracticeError(toPracticeErrorMessage(error))
-  return data ? toPracticeSession(data) : null
+
+  const rows = data ?? []
+  const wantedKey =
+    target.drillYears !== undefined && target.drillYears.length > 0
+      ? yearsKey(target.drillYears)
+      : null
+  const row =
+    wantedKey === null
+      ? (rows[0] ?? null)
+      : (rows.find((candidate) => yearsKey(candidate.drill_years) === wantedKey) ??
+        null)
+
+  return row ? toPracticeSession(row) : null
+}
+
+/**
+ * 列出当前用户**未完成**（active / paused）的会话，最近更新的在前。
+ *
+ * `practice_sessions` 本身不含任何答案列，RLS 已限本人，所以这里不需要 RPC；
+ * 但仍显式 `.eq('user_id', uid)` 做纵深防御。
+ *
+ * 用途：首页「未完成的练习」提示 + 记录页顶部继续入口。
+ * `limit` 默认 20——首页只展示前几条，完整列表走记录页。
+ */
+export async function getIncompletePracticeSessions(
+  limit = 20,
+): Promise<PracticeSession[]> {
+  const uid = await currentUserId()
+  const supabase = getSupabaseClient()
+
+  const { data, error } = await supabase
+    .from('practice_sessions')
+    .select(SESSION_SELECT)
+    .eq('user_id', uid)
+    .in('status', ['active', 'paused'])
+    .order('updated_at', { ascending: false })
+    .limit(limit)
+
+  if (error) throw new PracticeError(toPracticeErrorMessage(error))
+  return (data ?? []).map(toPracticeSession)
 }
 
 /**
@@ -369,6 +451,7 @@ export async function getResumablePracticeSession(
 export type PracticeProgressPatch = {
   currentItemNo?: number
   elapsedSeconds?: number
+  timeLimitSeconds?: number
   status?: PracticeStatus
   pausedAt?: string | null
   completedAt?: string | null
@@ -386,6 +469,8 @@ export async function updatePracticeSessionProgress(
     payload.current_item_no = patch.currentItemNo
   if (patch.elapsedSeconds !== undefined)
     payload.elapsed_seconds = patch.elapsedSeconds
+  if (patch.timeLimitSeconds !== undefined)
+    payload.time_limit_seconds = patch.timeLimitSeconds
   if (patch.status !== undefined) payload.status = patch.status
   if (patch.pausedAt !== undefined) payload.paused_at = patch.pausedAt
   if (patch.completedAt !== undefined) payload.completed_at = patch.completedAt
@@ -480,6 +565,66 @@ export async function deletePracticeAnswer(input: {
 }
 
 /* ------------------------------------------------------------------ *
+ * 批量保存作答（交互只改内存，离开页面时一次性落库）
+ * ------------------------------------------------------------------ */
+
+/** 一道题待保存的作答差异。 */
+export type PracticeAnswerDraft = {
+  itemId: string
+  /** 选择题选中的选项下标；主观题不需要传 */
+  selectedOption?: number | null
+  /** 主观题文本（翻译 / 写作）；翻译题的「标记已完成」传空串 */
+  textAnswer?: string | null
+}
+
+/**
+ * 把本次练习期间累积的作答**一次性**写库。
+ *
+ * 为什么是「批量 + 离开时」而不是「每次交互都写」：
+ * 逐次点选项就发请求，会让页面在整个作答过程中持续联网（还会连带刷新缓存），
+ * 对用户是纯噪音；而作答数据真正被服务端使用的时刻只有一个 —— **提交判分**。
+ * 因此交互只改内存，离开页面时把差异合并成最多两条请求（一次 upsert + 一次 delete）。
+ *
+ * ⚠️ **提交判分前必须先 await 本函数**：判分 RPC 的下发范围是
+ * 「`practice_answers` 里实际存在的行」，没落库就提交会得到一张空结果页。
+ */
+export async function savePracticeAnswerDrafts(input: {
+  sessionId: string
+  upserts: PracticeAnswerDraft[]
+  deletes: string[]
+}): Promise<void> {
+  if (input.upserts.length === 0 && input.deletes.length === 0) return
+  await currentUserId()
+  const supabase = getSupabaseClient()
+  const answeredAt = new Date().toISOString()
+
+  if (input.upserts.length > 0) {
+    // PostgREST 要求数组里每个对象的键**完全一致**，所以两个可空列都显式给出。
+    // 显式 null 在这里是安全的：一道题只可能是选择题或主观题，不会两列都有值。
+    const rows: AnswerInsert[] = input.upserts.map((draft) => ({
+      session_id: input.sessionId,
+      item_id: draft.itemId,
+      answered_at: answeredAt,
+      selected_option: draft.selectedOption ?? null,
+      text_answer: draft.textAnswer ?? null,
+    }))
+    const { error } = await supabase
+      .from('practice_answers')
+      .upsert(rows, { onConflict: 'session_id,item_id' })
+    if (error) throw new PracticeError(toPracticeErrorMessage(error))
+  }
+
+  if (input.deletes.length > 0) {
+    const { error } = await supabase
+      .from('practice_answers')
+      .delete()
+      .eq('session_id', input.sessionId)
+      .in('item_id', input.deletes)
+    if (error) throw new PracticeError(toPracticeErrorMessage(error))
+  }
+}
+
+/* ------------------------------------------------------------------ *
  * 判分（Phase 6 Goal 6.1，方案 A）
  * ------------------------------------------------------------------ */
 
@@ -549,6 +694,56 @@ export async function gradePracticeSection(
   }))
 }
 
+/* ------------------------------------------------------------------ *
+ * 单题答案揭示（「答题时显示答案」开关）
+ * ------------------------------------------------------------------ */
+
+/** 一题被提前揭示的答案。字段与判分结果保持一致，便于组件复用。 */
+export type RevealedItemAnswer = {
+  itemId: string
+  /** 0-based 正确选项下标；主观题为 null */
+  correctOption: number | null
+  explanation: string | null
+  /** 翻译题参考译文；非翻译题为 null */
+  referenceTranslation: string | null
+}
+
+/**
+ * 在答题过程中查看**当前这一题**的答案。
+ *
+ * 与判分的区别：
+ * - 判分（`grade_practice_section`）是「提交后按已作答题批量下发」；
+ * - 这里是「用户显式打开开关后，一次只取一题」，且不写回判分、不推进会话状态。
+ *
+ * 安全口径不变：答案仍然**只**经由 SECURITY DEFINER 的 RPC 下发，
+ * 常规表查询依旧拿不到 `correct_option` / `explanation`（列级 REVOKE 未动）。
+ * 放宽的是"什么时候看"，不是"能不能批量拿"。
+ */
+export async function peekItemAnswer(input: {
+  sessionId: string
+  itemId: string
+}): Promise<RevealedItemAnswer | null> {
+  await currentUserId()
+  const supabase = getSupabaseClient()
+
+  const { data, error } = await supabase.rpc('peek_item_answer', {
+    p_session_id: input.sessionId,
+    p_item_id: input.itemId,
+  })
+
+  if (error) throw new PracticeError(toPracticeErrorMessage(error))
+
+  const row = (data ?? [])[0]
+  if (!row) return null
+
+  return {
+    itemId: row.item_id,
+    correctOption: row.correct_option ?? null,
+    explanation: row.explanation ?? null,
+    referenceTranslation: row.reference_translation ?? null,
+  }
+}
+
 /**
  * 读取当前会话已保存的作答（供刷新 / 重进时恢复选项高亮，parse5b §13）。
  *
@@ -570,4 +765,98 @@ export async function getPracticeAnswers(
 
   if (error) throw new PracticeError(toPracticeErrorMessage(error))
   return (data ?? []).map(toPracticeAnswer)
+}
+
+/* ------------------------------------------------------------------ *
+ * 统计（练习记录页）
+ *
+ * ⚠️ 为什么要走 RPC 而不是直接查表：
+ * `practice_answers.is_correct` / `score` 已被列级 REVOKE，authenticated **读不到**，
+ * 所以前端无法自己算分数与正确率。这里新增的两个聚合函数是 SECURITY DEFINER，
+ * 自己用 `user_id = auth.uid()` 重新确立归属。
+ *
+ * 它们**只回计数**（答了几题 / 判了几题 / 对了几题），不回 item_id、不回任何答案内容，
+ * 因此无法用来批量取答案 —— 与 `grade_practice_section` / `peek_item_answer`
+ * 属同一套受控出口思路，而不是把答案列加回白名单。
+ * ------------------------------------------------------------------ */
+
+/** 一条练习记录（含判分聚合）。标题由 UI 按类型拼，service 只给事实字段。 */
+export type PracticeSessionStat = {
+  sessionId: string
+  sessionType: PracticeSessionType
+  status: PracticeStatus
+  paperId: string | null
+  paperYear: number | null
+  paperTitle: string | null
+  sectionType: string | null
+  drillType: string | null
+  drillYears: number[] | null
+  startedAt: string
+  completedAt: string | null
+  updatedAt: string
+  elapsedSeconds: number
+  timeLimitSeconds: number | null
+  answeredCount: number
+  /** 已判分的客观题数 —— 正确率的分母 */
+  gradedCount: number
+  correctCount: number
+}
+
+export async function getPracticeSessionStats(): Promise<PracticeSessionStat[]> {
+  await currentUserId()
+  const supabase = getSupabaseClient()
+
+  const { data, error } = await supabase.rpc('practice_session_stats')
+  if (error) throw new PracticeError(toPracticeErrorMessage(error))
+
+  return (data ?? []).map((row) => {
+    // codegen 对 RETURNS TABLE 一律推非空 ⇒ null 收敛只能在这一层做。
+    const status: string = row.status
+    const sessionType: string = row.session_type
+    if (!isPracticeStatus(status) || !isPracticeSessionType(sessionType)) {
+      throw new PracticeError('练习数据格式异常，请刷新后重试。')
+    }
+    return {
+      sessionId: row.session_id,
+      sessionType,
+      status,
+      paperId: row.paper_id ?? null,
+      paperYear: row.paper_year ?? null,
+      paperTitle: row.paper_title ?? null,
+      sectionType: row.section_type ?? null,
+      drillType: row.drill_type ?? null,
+      drillYears: row.drill_years ?? null,
+      startedAt: row.started_at,
+      completedAt: row.completed_at ?? null,
+      updatedAt: row.updated_at,
+      elapsedSeconds: row.elapsed_seconds,
+      timeLimitSeconds: row.time_limit_seconds ?? null,
+      answeredCount: row.answered_count,
+      gradedCount: row.graded_count,
+      correctCount: row.correct_count,
+    }
+  })
+}
+
+/** 按题型汇总的正确率（用于「各题型掌握度」图表）。 */
+export type PracticeTypeAccuracy = {
+  sectionType: string
+  answeredCount: number
+  gradedCount: number
+  correctCount: number
+}
+
+export async function getPracticeTypeAccuracy(): Promise<PracticeTypeAccuracy[]> {
+  await currentUserId()
+  const supabase = getSupabaseClient()
+
+  const { data, error } = await supabase.rpc('practice_type_accuracy')
+  if (error) throw new PracticeError(toPracticeErrorMessage(error))
+
+  return (data ?? []).map((row) => ({
+    sectionType: row.section_type,
+    answeredCount: row.answered_count,
+    gradedCount: row.graded_count,
+    correctCount: row.correct_count,
+  }))
 }
