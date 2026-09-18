@@ -44,3 +44,11 @@ supabase/.temp/
 # 本地校验输出（tsc / oxlint / vite build 的 stdout 重定向产物）
 # 不是项目文件，随时可重新生成：pnpm build / pnpm lint
 .*-out.txt
+
+# .workbuddy/ —— AI 协作的本地工作记忆与日志，属于本机产物，不入库
+# ⚠️ 注意：.workbuddy/memory/* 在 2026-09-18 之前**已被跟踪并推送过**。
+# 本规则只阻止**未来**的提交；要让 GitHub 上不再有它们，需要
+# `git rm -r --cached .workbuddy` 后再提交推送。
+# 另外：历史提交里仍然查得到（要彻底清除得用 filter-repo 改写历史，风险自担）。
+.workbuddy/
+
