@@ -6,12 +6,21 @@ import {
   useState,
   type ReactNode,
 } from 'react'
+import { LayoutGrid } from 'lucide-react'
+import { AnimatePresence, domMax, LazyMotion, MotionConfig } from 'motion/react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { Icon } from '@/components/ui/icon'
 import { BROWSE_CONTAINER } from '@/components/layout/app-shell'
+import { AnswerSheet } from '@/components/practice/AnswerSheet'
 import { PracticeQuestion } from '@/components/practice/PracticeQuestion'
+import { QuestionStem } from '@/components/practice/QuestionStem'
 import { PracticeResult } from '@/components/practice/PracticeResult'
 import { PracticeSettings } from '@/components/practice/PracticeSettings'
+import {
+  SwipeQuestionCard,
+  type SwipeCardEnter,
+} from '@/components/practice/SwipeQuestionCard'
 import {
   QuestionNavigator,
   type NavigatorGroup,
@@ -24,8 +33,13 @@ import {
   useUpdatePracticeSessionProgress,
 } from '@/hooks/use-practice-mutations'
 import { usePracticeClock } from '@/hooks/use-practice-clock'
-import { useSwipe } from '@/hooks/use-swipe'
-import type { ExamItemWithOptions } from '@/services/exams'
+import type { ExamItemWithOptions, ExamSection } from '@/services/exams'
+import {
+  readBoolean,
+  readString,
+  readStructuredChart,
+  type StructuredChart,
+} from '@/components/exams/json-utils'
 import {
   peekItemAnswer,
   type PracticeAnswerDraft,
@@ -73,7 +87,58 @@ export type RunnerQuestion = {
   groupTitle: string
   /** 是否翻译题：决定有没有「标记已完成 → 提交看参考译文」这条通路 */
   isTranslation: boolean
+  /** 所属大题的题干上下文（原文 / 要求 / 图表） —— 答题时**必须**能看，见 QuestionStem */
+  stem: RunnerStem
   item: ExamItemWithOptions
+}
+
+/**
+ * 大题级别的「题干上下文」。
+ *
+ * 一次练习只显示一道小题，而小题题面往往只是一句提问（「According to Paragraph 3…」），
+ * 原文、写作要求、图表全挂在大题上 —— 不带过来的话用户只能对着残句硬猜。
+ *
+ * ⚠️ 全部来自**已下发的公开字段**（四层查询本来就取了 `intro` / `passage` /
+ * `prompt` / `tips` / `extra_data`），这里只是不再丢弃：
+ * - 不读 `passage_zh` / `source_data`；
+ * - 不读小题级 `extra_data`（翻译参考译文在里面）；
+ * - 不带 `sample`（参考范文 = 答案），答题时不能看。
+ */
+export type RunnerStem = {
+  /** 大题 id：作为「是否已展开」的键（同一大题内切题保持展开） */
+  key: string
+  sectionType: string
+  sectionTitle: string
+  /** 指导语 */
+  intro: string | null
+  /** 篇章原文（阅读 / 完形 / 翻译） */
+  passage: string | null
+  /** 题目要求（写作） */
+  prompt: string | null
+  /** 补充提示（写作要点等） */
+  tips: string | null
+  /** 结构化图表（写作大作文，承载真实数据） */
+  chart: StructuredChart | null
+  /** 图表原图地址 */
+  chartUrl: string | null
+  /** `chart: true` 这类仅有布尔标记、数据未收录的情形 */
+  chartFlag: boolean
+}
+
+/** 大题 → 答题用的题干上下文。整卷 / 题型练习两边共用，避免口径漂移。 */
+export function toRunnerStem(section: ExamSection): RunnerStem {
+  return {
+    key: section.id,
+    sectionType: section.type,
+    sectionTitle: section.title,
+    intro: section.intro?.trim() ? section.intro : null,
+    passage: section.passage?.trim() ? section.passage : null,
+    prompt: section.prompt?.trim() ? section.prompt : null,
+    tips: section.tips?.trim() ? section.tips : null,
+    chart: readStructuredChart(section.extra_data, 'chart'),
+    chartUrl: readString(section.extra_data, 'chart_url'),
+    chartFlag: readBoolean(section.extra_data, 'chart') ?? false,
+  }
 }
 
 /** 「离开时落库」的待写集合：同一题多次改动合并成一条，撤销则记为待删。 */
@@ -318,13 +383,52 @@ export function PracticeRunner({
   const [expiredEmpty, setExpiredEmpty] = useState(false)
   /** 「退出」正在批量落库中：置灰按钮，避免连点出两次写。 */
   const [exitPending, setExitPending] = useState(false)
-  const answeredCount = answeredIndicesOf(
-    questions,
-    answerByItem,
-    pendingSelection,
-    pendingMarks,
-    draftText,
-  ).size
+  /** 移动端「答题卡」抽屉开关。 */
+  const [sheetOpen, setSheetOpen] = useState(false)
+  /**
+   * 已展开题干的大题 id 集合。
+   *
+   * 按**大题**而不是按题记：一篇阅读的 5 道题共用同一段原文，
+   * 展开一次就该一直可见，否则每题都要重新点开（等于没有题干）。
+   */
+  const [openStems, setOpenStems] = useState<ReadonlySet<string>>(
+    () => new Set<string>(),
+  )
+  const toggleStem = useCallback((stemKey: string) => {
+    setOpenStems((prev) => {
+      const next = new Set(prev)
+      if (next.has(stemKey)) next.delete(stemKey)
+      else next.add(stemKey)
+      return next
+    })
+  }, [])
+  /** 边界反馈：在首/末题朝墙外滑动时闪现的一次性提示（null = 不显示）。 */
+  const [boundaryHint, setBoundaryHint] = useState<string | null>(null)
+  const boundaryTimerRef = useRef<number | undefined>(undefined)
+
+  const flashBoundaryHint = useCallback((message: string) => {
+    window.clearTimeout(boundaryTimerRef.current)
+    setBoundaryHint(message)
+    boundaryTimerRef.current = window.setTimeout(
+      () => setBoundaryHint(null),
+      1400,
+    )
+  }, [])
+  // 卸载时清掉提示定时器，避免对已卸载组件 setState。
+  useEffect(() => () => window.clearTimeout(boundaryTimerRef.current), [])
+  /** 「已作答下标集合」只算一次，供已作答计数 / 桌面栏 / 移动抽屉共用（此前内联算三遍）。 */
+  const answeredIndices = useMemo(
+    () =>
+      answeredIndicesOf(
+        questions,
+        answerByItem,
+        pendingSelection,
+        pendingMarks,
+        draftText,
+      ),
+    [questions, answerByItem, pendingSelection, pendingMarks, draftText],
+  )
+  const answeredCount = answeredIndices.size
 
   // ── 计时（到点自动交卷）────────────────────────────────────
   const handleExpire = useCallback(() => {
@@ -398,15 +502,20 @@ export function PracticeRunner({
   }, [revealEnabled, sessionId, itemId, revealedByItem])
 
   // ── 切题（只改内存，不写库）──────────────────────────────────
+  /**
+   * 入场方向：相邻切题（滑动 / 上一题 / 下一题 / 答题卡点相邻题）给 180ms
+   * 整程滑行；跨多题跳转（桌面导航器远跳 / 首屏定位）直接换，大跳做整程滑行反而晃眼。
+   */
+  const [enterFrom, setEnterFrom] = useState<SwipeCardEnter>(null)
   const goTo = (next: number) => {
     if (questions.length === 0) return
-    setIndex(Math.min(Math.max(next, 0), questions.length - 1))
+    const target = Math.min(Math.max(next, 0), questions.length - 1)
+    if (target === index) return
+    setEnterFrom(
+      Math.abs(target - index) === 1 ? (target > index ? 'right' : 'left') : null,
+    )
+    setIndex(target)
   }
-
-  const swipe = useSwipe({
-    onSwipeLeft: () => goTo(index + 1),
-    onSwipeRight: () => goTo(index - 1),
-  })
 
   // ── 结果视图 ──────────────────────────────────────────────
   if (graded) {
@@ -571,111 +680,127 @@ export function PracticeRunner({
       </header>
 
       <div className="mt-6 flex gap-8">
-        <div className="min-w-0 flex-1" {...swipe}>
-          {/* 移动端：题号条在上方 */}
-          <div className="md:hidden">
-            <QuestionNavigator
-              variant="bar"
-              groups={groups}
-              currentIndex={index}
-              answeredIndices={answeredIndicesOf(
-                questions,
-                answerByItem,
-                pendingSelection,
-                pendingMarks,
-                draftText,
-              )}
-              onSelect={goTo}
-            />
-          </div>
-
-          <Card className="mt-4 md:mt-0">
-            <CardContent className="flex flex-col gap-4">
-              <div className="flex items-baseline justify-between gap-3 border-b pb-3">
-                <span className="text-sm font-semibold text-foreground">
-                  第 {current.globalNo} 题
-                  <span className="ml-2 font-normal text-muted-foreground">
-                    （{current.groupTitle} 第 {current.item.item_no} 小题）
-                  </span>
-                </span>
-                <span className="shrink-0 text-right">
-                  <span className="block text-xs text-muted-foreground tabular-nums">
-                    已作答 {answeredCount}/{questions.length}
-                  </span>
-                  {saveHint ? (
-                    <span
-                      className={
-                        saveState === 'error'
-                          ? 'block text-xs text-destructive'
-                          : 'block text-xs text-muted-foreground'
-                      }
-                      role={saveState === 'error' ? 'alert' : undefined}
-                    >
-                      {saveHint}
-                    </span>
-                  ) : null}
-                </span>
-              </div>
-
-              <PracticeQuestion
-                item={current.item}
-                selectedOption={selectedOption}
-                onSelect={choose}
-                isTextAnswered={isTranslation ? isMarked : undefined}
-                onToggleTextAnswer={isTranslation ? toggleMark : undefined}
-                textAnswer={textValue}
-                onTextAnswerChange={handleTextChange}
-                textPlaceholder={isTranslation ? '在此输入你的译文…' : '在此写作…'}
-                revealed={
-                  revealed
-                    ? {
-                        correctOption: revealed.correctOption,
-                        explanation: revealed.explanation,
-                        referenceTranslation: revealed.referenceTranslation,
-                      }
-                    : undefined
+        {/* reducedMotion="user"：系统开「减弱动效」时动画直接跳终态，手势保留 */}
+        <MotionConfig reducedMotion="user">
+          <LazyMotion features={domMax}>
+          {/* overflow-x-clip：切题滑行时卡住横向溢出，不出水平滚动条 */}
+          <div className="relative min-w-0 flex-1 overflow-x-clip">
+            {/* custom=入场侧方向：AnimatePresence 会把它喂给进出场双方的 variants，
+                退场中的旧卡随之重新求值 exit —— 方向绝不能存在卡片自己的 state 里 */}
+            <AnimatePresence initial={false} mode="popLayout" custom={enterFrom}>
+              <SwipeQuestionCard
+                key={index}
+                enterFrom={enterFrom}
+                canSwipeNext={index < questions.length - 1}
+                canSwipePrev={index > 0}
+                onCommit={(direction) =>
+                  goTo(direction === 'left' ? index + 1 : index - 1)
                 }
-              />
-
-              {showAnswer && isChoice && selectedOption === null ? (
-                <p className="text-xs text-muted-foreground">
-                  选中一个选项后，这里会显示这道题的答案。
-                </p>
-              ) : null}
-
-              {revealError ? (
-                <p className="text-sm text-destructive" role="alert">
-                  {revealError}
-                </p>
-              ) : null}
-            </CardContent>
-          </Card>
-
-          {/* 提交区（内容流内） */}
-          <div className="mt-6 border-t pt-6">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button
-                type="button"
-                size="md"
-                className="h-11 w-full md:h-10 md:w-auto"
-                onClick={submitNow}
-                disabled={answeredCount === 0}
+                onBoundaryHit={(direction) =>
+                  flashBoundaryHint(
+                    direction === 'left' ? '已是最后一题' : '已是第一题',
+                  )
+                }
               >
-                提交并查看结果
-              </Button>
-              <p className="text-xs text-muted-foreground">
-                {answeredCount === 0
-                  ? '至少作答一题才能提交。'
-                  : `已作答 ${answeredCount} 题，未作答的题不参与判分；提交时自动保存，时间到会自动交卷。`}
-              </p>
-            </div>
-            {gradeMutation.isError ? (
-              <p className="mt-3 text-sm text-destructive" role="alert">
-                提交失败，请稍后重试。
-              </p>
-            ) : null}
+                <Card>
+                  <CardContent className="flex flex-col gap-4">
+                    <div className="flex items-baseline justify-between gap-3 border-b pb-3">
+                      <span className="text-sm font-semibold text-foreground">
+                        第 {current.globalNo} 题
+                        <span className="ml-2 font-normal text-muted-foreground">
+                          （{current.groupTitle} 第 {current.item.item_no} 小题）
+                        </span>
+                      </span>
+                      <span className="shrink-0 text-right">
+                        <span className="block text-xs text-muted-foreground tabular-nums">
+                          已作答 {answeredCount}/{questions.length}
+                        </span>
+                        {saveHint ? (
+                          <span
+                            className={
+                              saveState === 'error'
+                                ? 'block text-xs text-destructive'
+                                : 'block text-xs text-muted-foreground'
+                            }
+                            role={saveState === 'error' ? 'alert' : undefined}
+                          >
+                            {saveHint}
+                          </span>
+                        ) : null}
+                      </span>
+                    </div>
+
+                    {/* 大题题干：原文 / 题目要求 / 图表。默认收起，展开状态按大题记住。 */}
+                    <QuestionStem
+                      stem={current.stem}
+                      open={openStems.has(current.stem.key)}
+                      onToggle={() => toggleStem(current.stem.key)}
+                      itemContent={current.item.content}
+                    />
+
+                    <PracticeQuestion
+                      item={current.item}
+                      selectedOption={selectedOption}
+                      onSelect={choose}
+                      isTextAnswered={isTranslation ? isMarked : undefined}
+                      onToggleTextAnswer={isTranslation ? toggleMark : undefined}
+                      textAnswer={textValue}
+                      onTextAnswerChange={handleTextChange}
+                      textPlaceholder={isTranslation ? '在此输入你的译文…' : '在此写作…'}
+                      revealed={
+                        revealed
+                          ? {
+                              correctOption: revealed.correctOption,
+                              explanation: revealed.explanation,
+                              referenceTranslation: revealed.referenceTranslation,
+                            }
+                          : undefined
+                      }
+                    />
+
+                    {showAnswer && isChoice && selectedOption === null ? (
+                      <p className="text-xs text-muted-foreground">
+                        选中一个选项后，这里会显示这道题的答案。
+                      </p>
+                    ) : null}
+
+                    {revealError ? (
+                      <p className="text-sm text-destructive" role="alert">
+                        {revealError}
+                      </p>
+                    ) : null}
+                  </CardContent>
+                </Card>
+
+                {/* 提交区（内容流内）：桌面在此提交；移动端提交收进「答题卡」抽屉底部，避免两处提交 */}
+                <div className="mt-6 hidden border-t pt-6 md:block">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                    <Button
+                      type="button"
+                      size="md"
+                      className="h-11 w-full md:h-10 md:w-auto"
+                      onClick={submitNow}
+                      disabled={answeredCount === 0}
+                    >
+                      提交并查看结果
+                    </Button>
+                    <p className="text-xs text-muted-foreground">
+                      {answeredCount === 0
+                        ? '至少作答一题才能提交。'
+                        : `已作答 ${answeredCount} 题，未作答的题不参与判分；提交时自动保存，时间到会自动交卷。`}
+                    </p>
+                  </div>
+                  {gradeMutation.isError ? (
+                    <p className="mt-3 text-sm text-destructive" role="alert">
+                      提交失败，请稍后重试。
+                    </p>
+                  ) : null}
+                </div>
+              </SwipeQuestionCard>
+            </AnimatePresence>
           </div>
-        </div>
+          </LazyMotion>
+        </MotionConfig>
 
         {/* 桌面：题号导航在右侧 sticky */}
         <aside className="hidden w-[300px] shrink-0 md:block">
@@ -683,22 +808,27 @@ export function PracticeRunner({
             <Card>
               <CardContent>
                 <QuestionNavigator
-                  variant="sidebar"
                   groups={groups}
                   currentIndex={index}
-                  answeredIndices={answeredIndicesOf(
-                    questions,
-                    answerByItem,
-                    pendingSelection,
-                    pendingMarks,
-                    draftText,
-                  )}
+                  answeredIndices={answeredIndices}
                   onSelect={goTo}
                 />
               </CardContent>
             </Card>
           </div>
         </aside>
+      </div>
+
+      {/* 边界反馈提示：常驻 aria-live 区域（滑动只存在于移动端，桌面直接隐藏）。 */}
+      <div
+        aria-live="polite"
+        className="pointer-events-none fixed inset-x-0 bottom-16 z-20 flex justify-center md:hidden"
+      >
+        {boundaryHint ? (
+          <span className="animate-in fade-in-0 slide-in-from-bottom-2 rounded-full border border-border bg-popover px-3 py-1 text-xs text-popover-foreground shadow-sm duration-150">
+            {boundaryHint}
+          </span>
+        ) : null}
       </div>
 
       {/* 移动端 sticky 操作条 */}
@@ -714,6 +844,18 @@ export function PracticeRunner({
           >
             上一题
           </Button>
+          {/* 中间：打开「答题卡」抽屉（考试类 App 的标配入口，拇指可及） */}
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            className="h-11 shrink-0 gap-1.5 px-4"
+            onClick={() => setSheetOpen(true)}
+            aria-label="打开答题卡"
+          >
+            <Icon icon={LayoutGrid} size={16} />
+            答题卡
+          </Button>
           <Button
             type="button"
             size="sm"
@@ -725,6 +867,19 @@ export function PracticeRunner({
           </Button>
         </div>
       </div>
+
+      {/* 移动端「答题卡」底部抽屉（design-system §8.14） */}
+      <AnswerSheet
+        open={sheetOpen}
+        onOpenChange={setSheetOpen}
+        groups={groups}
+        currentIndex={index}
+        answeredIndices={answeredIndices}
+        onSelect={goTo}
+        onSubmit={submitNow}
+        answeredCount={answeredCount}
+        total={questions.length}
+      />
     </main>
   )
 }

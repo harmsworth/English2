@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import {
   PracticeRunner,
+  toRunnerStem,
   type RunnerQuestion,
 } from '@/components/practice/PracticeRunner'
 import type { NavigatorGroup } from '@/components/practice/QuestionNavigator'
@@ -38,12 +39,15 @@ function buildSectionPractice(section: ExamSectionWithItems | null): {
   if (!section || section.items.length === 0) return { questions: [], groups: [] }
 
   const groupTitle = section.type
+  // 大题带过来的原文 / 要求 / 图表 —— 答题页靠它渲染题干，不能只留小题。
+  const stem = toRunnerStem(section)
   const questions: RunnerQuestion[] = section.items.map((item, offset) => ({
     key: item.id,
     globalNo: offset + 1,
     groupIndex: 0,
     groupTitle,
     isTranslation: section.source_id.endsWith('-trans'),
+    stem,
     item,
   }))
 

@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { BROWSE_CONTAINER } from '@/components/layout/app-shell'
 import {
   PracticeRunner,
+  toRunnerStem,
   type RunnerQuestion,
 } from '@/components/practice/PracticeRunner'
 import type { NavigatorGroup } from '@/components/practice/QuestionNavigator'
@@ -64,6 +65,9 @@ function buildDrillPractice(sections: ExamSectionWithYear[]): {
         ? `${section.year} 年 ${section.type} · 第 ${nth} 篇`
         : `${section.year} 年 ${section.type}`
 
+    // 大题带过来的原文 / 要求 / 图表 —— 答题页靠它渲染题干，不能只留小题。
+    const stem = toRunnerStem(section)
+
     for (const item of section.items) {
       questions.push({
         key: item.id,
@@ -71,6 +75,7 @@ function buildDrillPractice(sections: ExamSectionWithYear[]): {
         groupIndex: groups.length,
         groupTitle,
         isTranslation: section.source_id.endsWith('-trans'),
+        stem,
         item,
       })
     }

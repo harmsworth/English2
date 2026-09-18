@@ -6,17 +6,11 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import type { ExamSectionWithItems } from '@/services/exams'
+import { ChartFigure } from './ChartFigure'
 import { ChoiceQuestion, TitlePool } from './ChoiceQuestion'
 import { PassageText } from './PassageText'
 import { TextQuestion } from './TextQuestion'
 import { readBoolean, readString, readStringArray, readStructuredChart } from './json-utils'
-
-/** 图表类型的展示名；未知类型回退为原始值。 */
-const CHART_TYPE_LABELS: Record<string, string> = {
-  bar: '柱状图',
-  line: '折线图',
-  pie: '饼图',
-}
 
 /** 比较文本是否「实质相同」，用于组级字段与小级内容的去重。 */
 function normalize(value: string | null | undefined): string {
@@ -97,10 +91,6 @@ export function ExamSection({
   // （其余年份，仅表示「本题是图表作文」），分别用 readStructuredChart / readBoolean 读。
   const chart = readStructuredChart(section.extra_data, 'chart')
   const chartFlag = readBoolean(section.extra_data, 'chart') ?? false
-  // 条形宽度按各数据项相对最大值换算；设下限 1 避免全 0 时除零。
-  const chartMax = chart
-    ? Math.max(1, ...chart.items.map((item) => item.value))
-    : 1
   const sample = readString(section.extra_data, 'sample')
 
   return (
@@ -134,58 +124,12 @@ export function ExamSection({
           />
         ))}
 
-        {chart ? (
-          <figure className="rounded-lg border border-border bg-muted/40 px-4 py-4">
-            <figcaption className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-              <span className="text-xs font-medium tracking-wide text-muted-foreground">
-                {chart.title || '图表'}
-              </span>
-              <span className="text-xs text-muted-foreground">
-                {CHART_TYPE_LABELS[chart.type] ?? chart.type}
-                {chart.unit ? ` · 单位：${chart.unit}` : ''}
-              </span>
-            </figcaption>
-
-            <ul className="mt-3 flex flex-col gap-2.5">
-              {chart.items.map((item, itemIndex) => (
-                <li
-                  key={`${item.label}-${itemIndex}`}
-                  className="grid grid-cols-[minmax(0,7rem)_1fr_auto] items-center gap-3"
-                >
-                  <span
-                    className="truncate text-sm text-foreground/90"
-                    title={item.label}
-                  >
-                    {item.label}
-                  </span>
-                  <span className="h-2 overflow-hidden rounded-full bg-border">
-                    <span
-                      className="block h-full rounded-full bg-primary"
-                      style={{ width: `${(item.value / chartMax) * 100}%` }}
-                    />
-                  </span>
-                  <span className="text-sm tabular-nums text-muted-foreground">
-                    {item.value}
-                    {chart.unit}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </figure>
-        ) : chartUrl ? (
-          <figure className="flex min-h-48 items-center justify-center overflow-hidden rounded-lg border border-border bg-muted/40">
-            <img
-              src={chartUrl}
-              alt={`${section.title} 图表`}
-              loading="lazy"
-              className="block h-auto w-full"
-            />
-          </figure>
-        ) : chartFlag ? (
-          <p className="text-xs text-muted-foreground">
-            本题为图表作文，图表原图尚未收录。
-          </p>
-        ) : null}
+        <ChartFigure
+          chart={chart}
+          chartUrl={chartUrl}
+          chartFlag={chartFlag}
+          alt={`${section.title} 图表`}
+        />
 
         {tips ? (
           <div className="rounded-lg border border-border bg-muted/40 px-4 py-3">
