@@ -86,6 +86,9 @@ Vite+React 19+TS6(strict)+Tailwind 4+shadcn/ui+Supabase+TanStack Query+RR7+oxlin
 - ⚠️ **同一文件并行发多个 Edit 会互相覆盖**（曾「删导入」没生效 ⇒ tsc TS6133）⇒ 改完必须 Read 复核，或整文件 Write。
 - ⚠️ **`pnpm exec tsc` / `pnpm exec oxlint` 会随机报「不是内部或外部命令」** ⇒ 直接调二进制最稳：
   `& node node_modules/typescript/bin/tsc -b`、`& .\node_modules\.bin\oxlint.CMD`。
+- ⚠️ **本会话 `git push` 报 `cannot spawn sh`**：`~/.gitconfig` 里 gh 的凭据助手是 `!'…\gh.exe' auth git-credential`（`!` ⇒ git 用 `sh -c` 跑），而 PATH 被剪了找不到 `D:\program\Git\usr\bin\sh.exe`，**补 PATH 也没用**。绕过：`git push "https://$(gh auth token)@github.com/OWNER/REPO.git" main`（token 不落配置）。普通终端不需要。
+- ⚠️ 用**显式 URL 推完不会更新 `refs/remotes/origin/main`**（`git status -sb` 仍显示 ahead N），而 `git fetch` 会因同样的凭据问题失败 ⇒ 手动 `git update-ref refs/remotes/origin/main HEAD`（远端 HEAD 先用 `gh api repos/OWNER/REPO/commits/main` 核对）。
+- ⚠️ PowerShell 里 `git log --format='%H %s'` 会被安全策略拦（`%VAR%` 被判成 cmd 语法）⇒ 别用 `%` 占位符。要看清中文提交信息先设 `[Console]::OutputEncoding=[System.Text.Encoding]::UTF8`，否则日志乱码（**commit 本身是对的**）。
 - ⚠️ **改了 `package.json`（加依赖）后 dev server 会 504「Outdated Optimize Dep」**：
   动态 import 全部失败（表现为登录页 `Failed to fetch dynamically imported module`），
   看着像代码坏了，其实是 vite 的 optimize 缓存失效 ⇒ **重启 dev server**（`netstat` 找 PID →
@@ -102,3 +105,5 @@ Vite+React 19+TS6(strict)+Tailwind 4+shadcn/ui+Supabase+TanStack Query+RR7+oxlin
 - ⚠️ **`.workbuddy/memory/*`（4 份日志 + MEMORY.md）已被跟踪并推过**，里面有 Supabase project ref、RLS 收口操作记录、线上数据体量。现在加 `.gitignore` 只能止损未来，**历史里仍然找得到**（要彻底清得用 filter-repo 改写历史，风险自担）。
 - 仓库很小：diskUsage 2.3MB / 119 文件（最大 `pnpm-lock.yaml` 152KB + 17 份真题 JSON 共 ~835KB）。无 `.github/` ⇒ 无 CI、Pages 未启用（API 404）。
 - 部署注意：这是 SPA（`createBrowserRouter`），静态托管**深链会 404** —— GitHub Pages 没有 SPA fallback（要配 `base=/English2/` + 404.html 兜底），Vercel/Netlify/CF Pages 一条 rewrite 就行。`VITE_*` 是**构建期内联进 bundle**的，值必然公开（anon/publishable 级别可接受，靠 RLS 兜），`service_role` 绝不能进。
+- ⚠️ 可见性**会变**：2026-09-18 下午盘点是 PUBLIC，推送后再查是 PRIVATE。做任何「公开」假设前用 `gh repo view --json visibility` 现查。公开前要想清楚：Supabase Auth 若开放注册，任何人都注册并往你的学习表写数据。
+- 提交顺序的硬约束（改这批文件时同样适用）：新组件文件先提交 → 再提交接线；`use-swipe.ts` 的删除必须和 `PracticeRunner` 同批（旧 PracticeRunner import 它）；`PracticeRunner` 必须和三个 `pages/*` 同批（`RunnerQuestion.stem` 是必填）。否则中间 commit 编译不过。
