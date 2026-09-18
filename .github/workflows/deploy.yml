@@ -20,22 +20,31 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    # ⚠️ 不要写 `ubuntu-latest`：GitHub 会随镜像推进自动换底座（当前公告是 2026-10-19 迁到 Ubuntu 26），
+    # 构建环境的 glibc / Node 预编译包会跟着变，属于「没人改代码但部署挂了」的典型来源。
+    # 固定到 24.04，想升级时显式改这一行。
+    runs-on: ubuntu-24.04
     steps:
+      # ⚠️ 官方 action 的 @vN 同时决定「action 自己跑在哪个 Node 运行时」。
+      # 旧的 @v4 声明 node20，会被 Runner 强制迁移到 Node 24 并在 Summary 里打一条
+      # 「Node.js 20 is deprecated ... forced to run on Node.js 24」的提醒。
+      # 升级到声明 node24 的新大版本即可消除。版本号以 `gh api repos/<owner>/<repo>/releases/latest` 为准。
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # 本项目用 pnpm：仓库里只有 pnpm-lock.yaml，没有 package-lock.json，
       # 所以 `npm ci` 必然失败（The `npm ci` command can only install with an existing package-lock.json）。
       # 版本与本地 / lockfileVersion 9.0 对齐。
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           version: 10
 
-      # vite@8 / @types/node@24 要求 Node 20.19+ 或 22.12+，Node 18 装不上也构建不了。
+      # 注意区分两个「Node」：
+      # ① `node-version: 22` —— 跑 `pnpm build` 用的运行时。vite@8 / @types/node@24 要求 20.19+ 或 22.12+。
+      # ② action 自己的执行运行时 —— 由 `uses: ...@vN` 决定，与 ① 无关。下面这些已全部升到声明 node24 的大版本。
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: 'pnpm'
@@ -60,13 +69,13 @@ jobs:
         run: cp dist/index.html dist/404.html
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: './dist' # Vite 打包产物目录
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
